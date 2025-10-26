@@ -1,4 +1,3 @@
-<!-- custom-addons/boat_core/views/core_menus.xml -->
 <odoo>
   <menuitem id="menu_boat_root" name="Boats" sequence="10"/>
   <menuitem id="menu_boat_master" name="Master Data" parent="menu_boat_root" sequence="20"/>
