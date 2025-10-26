@@ -1,0 +1,89 @@
+<odoo noupdate="1">
+  <record id="bt_design" model="boat.type">
+    <field name="name">By Design/Build</field>
+  </record>
+  <record id="bt_catamaran" model="boat.type">
+    <field name="name">Catamaran Houseboats</field>
+    <field name="parent_id" ref="bt_design" />
+  </record>
+  <record id="bt_eco" model="boat.type">
+    <field name="name">Eco-Friendly Houseboats</field>
+    <field name="parent_id" ref="bt_design" />
+  </record>
+  <record id="bt_villas" model="boat.type">
+    <field name="name">Floating Villas / Bungalows</field>
+    <field name="parent_id" ref="bt_design" />
+  </record>
+  <record id="bt_glass" model="boat.type">
+    <field name="name">Glass-Wall Houseboats</field>
+    <field name="parent_id" ref="bt_design" />
+  </record>
+  <record id="bt_motor" model="boat.type">
+    <field name="name">Modern Motorized Houseboats</field>
+    <field name="parent_id" ref="bt_design" />
+  </record>
+  <record id="bt_pontoon" model="boat.type">
+    <field name="name">Pontoon Houseboats</field>
+    <field name="parent_id" ref="bt_design" />
+  </record>
+  <record id="bt_kettu" model="boat.type">
+    <field name="name">Traditional Kettuvallam</field>
+    <field name="parent_id" ref="bt_design" />
+  </record>
+
+  <record id="bt_size" model="boat.type">
+    <field name="name">By Size/Capacity</field>
+  </record>
+  <record id="bt_1_2" model="boat.type">
+    <field name="name">1–2 Bedroom Houseboats</field>
+    <field name="parent_id" ref="bt_size" />
+  </record>
+  <record id="bt_3_4" model="boat.type">
+    <field name="name">3–4 Bedroom Houseboats</field>
+    <field name="parent_id" ref="bt_size" />
+  </record>
+  <record id="bt_5p" model="boat.type">
+    <field name="name">5+ Bedroom Houseboats</field>
+    <field name="parent_id" ref="bt_size" />
+  </record>
+
+  <record id="bt_lux" model="boat.type">
+    <field name="name">Luxury / Amenities-Based</field>
+  </record>
+  <record id="bt_budget" model="boat.type">
+    <field name="name">Budget Houseboats</field>
+    <field name="parent_id" ref="bt_lux" />
+  </record>
+  <record id="bt_deluxe" model="boat.type">
+    <field name="name">Deluxe Houseboats</field>
+    <field name="parent_id" ref="bt_lux" />
+  </record>
+  <record id="bt_luxury" model="boat.type">
+    <field name="name">Luxury Houseboats</field>
+    <field name="parent_id" ref="bt_lux" />
+  </record>
+  <record id="bt_premium" model="boat.type">
+    <field name="name">Premium Floating Resorts</field>
+    <field name="parent_id" ref="bt_lux" />
+  </record>
+
+  <record id="bt_usage" model="boat.type">
+    <field name="name">Usage/Occasion-Based</field>
+  </record>
+  <record id="bt_corp" model="boat.type">
+    <field name="name">Corporate Retreat Houseboats</field>
+    <field name="parent_id" ref="bt_usage" />
+  </record>
+  <record id="bt_family" model="boat.type">
+    <field name="name">Family Houseboats</field>
+    <field name="parent_id" ref="bt_usage" />
+  </record>
+  <record id="bt_honey" model="boat.type">
+    <field name="name">Honeymoon Houseboats</field>
+    <field name="parent_id" ref="bt_usage" />
+  </record>
+  <record id="bt_party" model="boat.type">
+    <field name="name">Party / Event Houseboats</field>
+    <field name="parent_id" ref="bt_usage" />
+  </record>
+</odoo>

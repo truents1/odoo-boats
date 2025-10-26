@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_boat_portal,access.boat.portal,boat_core.model_boat_boat,base.group_portal,1,0,1,0
+access_boat_image_portal,access.boat.image.portal,boat_core.model_boat_boat_image,base.group_portal,1,0,1,0

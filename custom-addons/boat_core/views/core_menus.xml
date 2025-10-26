@@ -1,0 +1,33 @@
+<!-- custom-addons/boat_core/views/core_menus.xml -->
+<odoo>
+  <menuitem id="menu_boat_root" name="Boats" sequence="10"/>
+  <menuitem id="menu_boat_master" name="Master Data" parent="menu_boat_root" sequence="20"/>
+
+  <record id="action_boat_tree" model="ir.actions.act_window">
+    <field name="name">Boats</field>
+    <field name="res_model">boat.boat</field>
+    <field name="view_mode">tree,kanban,form</field>
+  </record>
+  <menuitem id="menu_boat_boats" name="Boats" parent="menu_boat_root" action="action_boat_tree" sequence="15"/>
+
+  <record id="action_location" model="ir.actions.act_window">
+    <field name="name">Locations</field>
+    <field name="res_model">boat.location</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  <menuitem id="menu_location" name="Locations" parent="menu_boat_master" action="action_location"/>
+
+  <record id="action_type" model="ir.actions.act_window">
+    <field name="name">Types</field>
+    <field name="res_model">boat.type</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  <menuitem id="menu_type" name="Types" parent="menu_boat_master" action="action_type"/>
+
+  <record id="action_amenity" model="ir.actions.act_window">
+    <field name="name">Amenities</field>
+    <field name="res_model">boat.amenity</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+  <menuitem id="menu_amenity" name="Amenities" parent="menu_boat_master" action="action_amenity"/>
+</odoo>

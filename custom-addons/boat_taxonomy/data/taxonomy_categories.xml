@@ -1,0 +1,14 @@
+<odoo>
+  <record id="cat_location" model="boat.taxonomy.category">
+    <field name="name">Locations</field>
+    <field name="code">location</field>
+  </record>
+  <record id="cat_amenity" model="boat.taxonomy.category">
+    <field name="name">Amenities</field>
+    <field name="code">amenity</field>
+  </record>
+  <record id="cat_boat_type" model="boat.taxonomy.category">
+    <field name="name">Boat Types</field>
+    <field name="code">boat_type</field>
+  </record>
+</odoo>

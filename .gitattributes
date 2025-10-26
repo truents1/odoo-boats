@@ -1,0 +1,7 @@
+# enforce LF for most text files
+* text=auto eol=lf
+
+# common binaries
+*.png binary
+*.jpg binary
+*.gif binary

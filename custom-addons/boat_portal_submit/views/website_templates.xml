@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="boat_new_template" model="ir.ui.view">
+    <field name="name">boat.new.template</field>
+    <field name="type">qweb</field>
+    <field name="key">boat_portal_submit.boat_new_template</field>
+    <field name="arch" type="xml">
+      <t t-name="boat_portal_submit.boat_new_template" owl="1">
+        <t t-call="website.layout">
+          <div class="container py-5">
+            <h1 class="mb-4">Submit a Boat</h1>
+            <t t-if="request.params.get('error') == 'missing'">
+              <div class="alert alert-danger">All fields are required, including at least one image.</div>
+            </t>
+            <form action="/boats/create" method="post" enctype="multipart/form-data"
+              class="o_website_form">
+              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input class="form-control" type="text" name="name" required="required" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="description" rows="5" required="required"></textarea>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Location</label>
+                <select class="form-select" name="location_id" required="required">
+                  <option value="" disabled="disabled" selected="selected">Select a location</option>
+                  <t t-foreach="locations" t-as="loc">
+                    <option t-att-value="loc.id" t-esc="loc.name" />
+                  </t>
+                </select>
+              </div>
+              <t t-set="types" t-value="types" />
+              <t t-set="amenities" t-value="amenities" />
+
+              <div class="mb-3">
+                <label class="form-label">Boat Type</label>
+                <select class="form-select" name="type_id" required="required">
+                  <option value="" disabled="disabled" selected="selected">Select a type</option>
+                  <t t-foreach="types" t-as="t">
+                    <option t-att-value="t.id" t-esc="('— ' * (t.parent_id and 1 or 0)) + t.name" />
+                  </t>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Amenities</label>
+                <select class="form-select" name="amenity_ids" multiple="multiple"
+                  required="required">
+                  <t t-foreach="amenities" t-as="a">
+                    <option t-att-value="a.id" t-esc="a.name" />
+                  </t>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Images</label>
+                <input class="form-control" type="file" name="images" accept="image/*"
+                  multiple="multiple" required="required" />
+                <div class="form-text">Upload one or more images. First image will be used as main.</div>
+              </div>
+              <button class="btn btn-primary" type="submit">Submit for Review</button>
+            </form>
+          </div>
+        </t>
+      </t>
+    </field>
+  </record>
+
+  <record id="boat_submitted_template" model="ir.ui.view">
+    <field name="name">boat.submitted.template</field>
+    <field name="type">qweb</field>
+    <field name="key">boat_portal_submit.boat_submitted_template</field>
+    <field name="arch" type="xml">
+      <t t-name="boat_portal_submit.boat_submitted_template" owl="1">
+        <t t-call="website.layout">
+          <div class="container py-5 text-center">
+            <h2>Your boat was submitted.</h2>
+            <p>It will be reviewed by a moderator. You will see it once approved.</p>
+            <a class="btn btn-secondary" href="/">Back to Home</a>
+          </div>
+        </t>
+      </t>
+    </field>
+  </record>
+</odoo>

@@ -1,0 +1,42 @@
+#version: '3.7'
+services:
+  # 1. PostgreSQL Database Service
+  odoo-boats-db:
+    image: postgres:15
+    container_name: odoo-boats-db
+    environment:
+      POSTGRES_DB: odoo-boats-db
+      # Variables pulled from .env
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USER}
+    # Mount the host path you specified for database persistence
+    volumes:
+      - /srv/odoo-db/odoo-boats:/var/lib/postgresql/data
+    restart: always
+
+  # 2. Odoo Application Service
+  odoo-boats-app:
+    image: odoo:17
+    container_name: odoo-boats-app
+    # Ensure this depends on the database service name
+    depends_on:
+      - odoo-boats-db
+    ports:
+      # Port mapping pulled from .env
+      - "${ODOO_HOST_PORT}:8069"
+    volumes:
+      # Mount your custom code directory
+      - ./custom-addons:/mnt/extra-addons
+      # Mount the configuration file for Odoo to use
+      - ./odoo.conf:/etc/odoo/odoo.conf
+    # Tell Odoo to use the mounted config file
+    #command: --config=/etc/odoo/odoo.conf
+    environment:
+      # IMPORTANT: HOST must be the name of the database service
+      HOST: odoo-boats-db
+      PORT: ${DB_PORT}
+      USER: ${DB_USER}
+      PASSWORD: ${DB_PASSWORD}
+    restart: always
+
+# Named volumes are not needed since you are using a host mount for DB

@@ -1,0 +1,38 @@
+# docker-compose.yml
+services:
+  odoo-boats-db:
+    image: postgres:15
+    container_name: odoo-boats-db
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: Semarang@2015
+      POSTGRES_DB: odoo-boats-db
+    volumes:
+      - /srv/odoo-db/odoo-boats:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo -d odoo-boats-db"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  odoo-boats-app:
+    build: .
+    container_name: odoo-boats-app
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+    depends_on:
+      odoo-boats-db:
+        condition: service_healthy
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./odoo.conf:/etc/odoo/odoo.conf:ro
+      - ./custom-addons:/mnt/extra-addons/custom
+      - ./third_party_addons:/mnt/extra-addons/third-party
+      - ./filestore:/var/lib/odoo/.local/share/Odoo/filestore
+      - odoo-data:/var/lib/odoo
+    command: odoo -u all --config=/etc/odoo/odoo.conf
+    restart: always
+
+volumes:
+  odoo-data:
