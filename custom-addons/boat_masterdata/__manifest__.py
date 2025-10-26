@@ -3,7 +3,7 @@
     "summary": "Static, admin-managed dropdowns used on website and back-office",
     "version": "17.0.1.0.0",
     "license": "LGPL-3",
-    "depends": ["base"],
+    "depends": ["boat_taxonomy"],
     "data": [
         "security/security.xml",
         "security/ir.model.access.csv",

@@ -4,7 +4,7 @@
     "version": "17.0.1.0.0",
     "license": "LGPL-3",
     "author": "Anil Nair",
-    "depends": ["base", "website", "portal", "boat_taxonomy", "boat_masterdata"],
+    "depends": ["base", "website", "portal", "boat_masterdata"],
     "data": [
         "security/security.xml",
         "security/ir.model.access.csv",
