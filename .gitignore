@@ -1,24 +1,45 @@
-# Python
+# --- Python ---
+# Compiled files
 __pycache__/
 *.pyc
+# Odoo-specific cache
+.odoo_extra_*.zip
+.odoo_sessions
+# Testing
+.coverage
+htmlcov/
+.tox/
 
-# Node/JS
+# --- Odoo Runtime Data ---
+# CRITICAL: These MUST NOT be committed as they are user data or dynamic
+# The default path for the filestore and sessions is typically $HOME/.local/share/Odoo/
+.local/share/Odoo/
+# The 'filestore' directory itself if configured to be local to the project
+filestore/
+# Odoo logs
+logs/
+# Database backups
+backups/
+
+# --- Frontend/Assets (Odoo) ---
+# Odoo compiled web assets
+web/static/lib/
+# General JavaScript/Node dependencies
 node_modules/
 
+# --- IDE/Environment ---
 # VS Code
 .vscode/
 
-# Odoo runtime data
-# odoo-local/
-# filestore/
-# logs/
-backups/
-
-# Docker
+# Docker/Environment variables
 *.env
 *.env.*
-**/.DS_Store
 
-# Build/OS
+# --- Build/OS Files ---
+# Log and Temporary files
 *.log
 *.tmp
+# Mac OS-specific files
+**/.DS_Store
+# Linux/vim swap files
+*~

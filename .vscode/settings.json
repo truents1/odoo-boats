@@ -1,8 +1,0 @@
-{
-  "files.encoding": "utf8",
-  "files.eol": "\n",
-  "files.exclude": {
-    "logs": false,
-    "custom-addons\\boat_moderation": false
-  }
-}
