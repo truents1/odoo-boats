@@ -1,6 +1,7 @@
 services:
   odoo-boats-db:
     image: postgres:15
+    container_name: odoo-boats-db
     environment:
       POSTGRES_USER: odoo
       POSTGRES_PASSWORD: odoo
@@ -16,6 +17,7 @@ services:
   odoo-boats-app:
     build: .
     image: odoo-boats:17-custom
+    container_name: odoo-boats-app
     depends_on:
       odoo-boats-db:
         condition: service_healthy
@@ -23,44 +25,18 @@ services:
       - "8069:8069"
     environment:
       PYTHONDONTWRITEBYTECODE: "1"
+      TZ: Asia/Kolkata
     volumes:
       - ./odoo.conf:/etc/odoo/odoo.conf:ro
       - ./logs:/var/log/odoo
+      - ./start-odoo.sh:/start-odoo.sh:ro
       - ./odoo-local:/var/lib/odoo/.local
-      - ./filestore:/var/lib/odoo/.local/share/Odoo/filestore
+      # - ./filestore:/var/lib/odoo/.local/share/Odoo/filestore
       - ./custom-addons:/mnt/extra-addons/custom:ro
       - ./third_party_addons:/mnt/extra-addons/third-party:ro
-    command: ["odoo", "--config=/etc/odoo/odoo.conf"]
+    command: ["/bin/bash", "/start-odoo.sh"]
+    #command: ["odoo", "--config=/etc/odoo/odoo.conf"]
     restart: unless-stopped
-
-  # odoo-backup-trigger:
-  #   image: alpine:3.20
-  #   depends_on:
-  #     odoo-boats-app:
-  #       condition: service_healthy
-  #   profiles: ["backup"]
-  #   environment:
-  #     ADMIN_PWD: "YOUR_MASTER_PASSWORD"
-  #   volumes:
-  #     - ./scripts:/scripts:ro
-  #     - ./backups:/backups               # <-- host folder
-  #   entrypoint: ["/bin/sh","-c"]
-  #   command: |
-  #     set -e
-  #     apk add --no-cache curl tar
-  #     TS=$(date +%Y%m%d_%H%M%S)
-  #     DIR=/backups/odoo-boats_backup_$TS
-  #     mkdir -p "$DIR"
-  #     echo "Backing up DB+filestore..."
-  #     curl -sS -f -X POST http://odoo-boats-app:8069/web/database/backup \
-  #       -d "master_pwd=$ADMIN_PWD&backup_format=zip&name=odoo-boats-db" \
-  #       -o "$DIR/odoo-boats-db.zip"
-  #     echo "Archiving code..."
-  #     tar czf "$DIR/odoo-boats-code.tar.gz" -C /project \
-  #       odoo.conf docker-compose.yml Dockerfile custom-addons third_party_addons scripts
-  #     echo "OK -> $DIR"
-  #   working_dir: /project
-  #   restart: "no"
 
 volumes:
   odoo-data:

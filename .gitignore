@@ -9,9 +9,9 @@ node_modules/
 .vscode/
 
 # Odoo runtime data
-odoo-local/
-filestore/
-logs/
+# odoo-local/
+# filestore/
+# logs/
 backups/
 
 # Docker
