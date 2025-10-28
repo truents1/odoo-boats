@@ -1,0 +1,11 @@
+# 1. Ensure you own the project (for development access)
+sudo chown -R anil:anil .
+
+# 2. Grant ALL users execute permission on scripts (Fixes backup script execution)
+sudo chmod -R a+x scripts/
+
+# 3. Grant group write access on volume directories (Helps with sessions/logs/backups)
+sudo chmod -R g+rwX logs/ odoo-local/ backups/
+
+# 4. Clean up any wrongly-permissioned sessions directory
+sudo rm -rf odoo-local/share/Odoo/sessions

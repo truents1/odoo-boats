@@ -1,0 +1,5 @@
+sudo git add . -v
+sudo git commit -v -m "some git test"
+git pull origin main -v
+git push origin main -v
+git rm -r --cached

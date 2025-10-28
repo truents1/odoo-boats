@@ -1,0 +1,14 @@
+--for odoo shell
+docker exec -it odoo-boats-app /bin/bash
+
+--Odoo shell connected to your database.
+odoo shell -c /etc/odoo/odoo.conf -d odoo-boats-db
+
+# This command searches for all ir.attachment records
+# and attempts to delete any whose file cannot be found in the filestore.
+env['ir.attachment'].search([])._full_unlink()
+
+print("Mass cleanup of orphaned attachment records executed.")
+
+# 3. Type 'exit()' to leave the Odoo shell
+exit()

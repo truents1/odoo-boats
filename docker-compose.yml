@@ -28,15 +28,22 @@ services:
       TZ: Asia/Kolkata
     volumes:
       - ./odoo.conf:/etc/odoo/odoo.conf:ro
+      - ./scripts/entrypoint-perms-fix.sh:/entrypoint-perms-fix.sh:ro
       - ./logs:/var/log/odoo
       - ./start-odoo.sh:/start-odoo.sh:ro
       - ./odoo-local:/var/lib/odoo/.local
-      # - ./filestore:/var/lib/odoo/.local/share/Odoo/filestore
+      - ./filestore:/var/lib/odoo/.local/share/Odoo/filestore
       - ./custom-addons:/mnt/extra-addons/custom:ro
       - ./third_party_addons:/mnt/extra-addons/third-party:ro
+      - ./scripts:/usr/src/app/scripts:ro
     command: ["/bin/bash", "/start-odoo.sh"]
-    #command: ["odoo", "--config=/etc/odoo/odoo.conf"]
+    # command: ["odoo", "--config=/etc/odoo/odoo.conf"]
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8069/web"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   odoo-data:
