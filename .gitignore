@@ -14,11 +14,10 @@ htmlcov/
 # CRITICAL: These MUST NOT be committed as they are user data or dynamic
 # The default path for the filestore and sessions is typically $HOME/.local/share/Odoo/
 .local/share/Odoo/
-# The 'filestore' directory itself if configured to be local to the project
+
+# ignore folders
 filestore/
-# Odoo logs
 logs/
-# Database backups
 backups/
 temp/
 
