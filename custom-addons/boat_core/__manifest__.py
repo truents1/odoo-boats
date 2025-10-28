@@ -3,7 +3,7 @@
     "summary": "Core boat master data and states",
     "version": "17.0.1.0.0",
     "license": "LGPL-3",
-    "author": "Anil Nair",
+    "author": "Anil",
     "depends": ["base", "website", "portal", "boat_masterdata"],
     "data": [
         "security/security.xml",
