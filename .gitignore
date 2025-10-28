@@ -20,6 +20,7 @@ filestore/
 logs/
 # Database backups
 backups/
+temp/
 
 # --- Frontend/Assets (Odoo) ---
 # Odoo compiled web assets
