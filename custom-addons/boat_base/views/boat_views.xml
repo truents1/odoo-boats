@@ -1,0 +1,163 @@
+<!-- ============================================ -->
+<!-- boat_base/views/boat_views.xml -->
+<!-- ============================================ -->
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_boat_boat_tree" model="ir.ui.view">
+        <field name="name">boat.boat.tree</field>
+        <field name="model">boat.boat</field>
+        <field name="arch" type="xml">
+            <tree string="Boats" decoration-success="state=='approved'" decoration-warning="state=='pending'" decoration-danger="state=='rejected'">
+                <field name="sequence" widget="handle" groups="boat_base.group_boat_moderator"/>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="owner_id"/>
+                <field name="location_id"/>
+                <field name="category_id"/>
+                <field name="guest_capacity"/>
+                <field name="base_price_per_day"/>
+                <field name="featured" widget="boolean_toggle" groups="boat_base.group_boat_manager"/>
+                <field name="state" widget="badge" decoration-success="state=='approved'" decoration-warning="state=='pending'" decoration-danger="state in ['rejected','suspended']"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- Form View -->
+    <record id="view_boat_boat_form" model="ir.ui.view">
+        <field name="name">boat.boat.form</field>
+        <field name="model">boat.boat</field>
+        <field name="arch" type="xml">
+            <form string="Boat">
+                <header>
+                    <button name="action_submit_review" string="Submit for Review" type="object" class="btn-primary" states="draft"/>
+                    <button name="action_approve" string="Approve" type="object" class="btn-success" states="pending" groups="boat_base.group_boat_moderator"/>
+                    <button name="action_reject" string="Reject" type="object" class="btn-danger" states="pending" groups="boat_base.group_boat_moderator"/>
+                    <button name="action_suspend" string="Suspend" type="object" states="approved" groups="boat_base.group_boat_moderator"/>
+                    <button name="action_reactivate" string="Reactivate" type="object" class="btn-primary" states="suspended" groups="boat_base.group_boat_moderator"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,pending,approved"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <widget name="web_ribbon" text="Featured" bg_color="bg-success" attrs="{'invisible': [('featured', '=', False)]}"/>
+                    <field name="image_main" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="Boat Name"/>
+                        </h1>
+                        <field name="code" readonly="1"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active" invisible="1"/>
+                            <field name="owner_id" options="{'no_create': True}"/>
+                            <field name="location_id" options="{'no_create': True}"/>
+                            <field name="category_id" options="{'no_create': True}"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="base_price_per_day" widget="monetary"/>
+                            <field name="base_price_per_person" widget="monetary"/>
+                            <field name="booking_advance_percentage" widget="percentage"/>
+                            <field name="min_booking_days"/>
+                            <field name="advance_booking_days"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Specifications">
+                            <group>
+                                <group string="Capacity">
+                                    <field name="guest_capacity"/>
+                                    <field name="sleeping_capacity"/>
+                                    <field name="num_bedrooms"/>
+                                    <field name="num_bathrooms"/>
+                                </group>
+                                <group string="Details">
+                                    <field name="num_decks"/>
+                                    <field name="onboard_staff"/>
+                                    <field name="boat_length"/>
+                                    <field name="boat_width"/>
+                                    <field name="build_year"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Amenities">
+                            <field name="amenity_ids" widget="many2many_tags" options="{'color_field': 'category'}"/>
+                        </page>
+                        <page string="Operating Details">
+                            <group>
+                                <group>
+                                    <field name="check_in_time" widget="float_time"/>
+                                    <field name="check_out_time" widget="float_time"/>
+                                </group>
+                                <group>
+                                    <field name="operating_routes" placeholder="Routes covered by this boat..."/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Description">
+                            <field name="description"/>
+                            <separator string="Meal Options"/>
+                            <field name="meal_options"/>
+                        </page>
+                        <page string="Policies">
+                            <group>
+                                <field name="safety_rules" placeholder="Safety rules and policies..."/>
+                                <field name="cancellation_policy" placeholder="Cancellation policy..."/>
+                            </group>
+                        </page>
+                        <page string="Address">
+                            <group>
+                                <group>
+                                    <field name="street" placeholder="Street..."/>
+                                    <field name="street2" placeholder="Street 2..."/>
+                                    <field name="city" placeholder="City"/>
+                                    <field name="zip" placeholder="ZIP"/>
+                                </group>
+                                <group>
+                                    <field name="state_id" placeholder="State" options="{'no_create': True}"/>
+                                    <field name="country_id" placeholder="Country" options="{'no_create': True}"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Premium Features" groups="boat_base.group_boat_manager">
+                            <group>
+                                <field name="featured"/>
+                                <field name="featured_until" attrs="{'invisible': [('featured', '=', False)], 'required': [('featured', '=', True)]}"/>
+                                <field name="max_images"/>
+                            </group>
+                        </page>
+                        <page string="Statistics" groups="boat_base.group_boat_owner">
+                            <group>
+                                <field name="total_bookings"/>
+                                <field name="total_revenue" widget="monetary"/>
+                                <field name="avg_rating" widget="percentage"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Action -->
+    <record id="action_boat_boat" model="ir.actions.act_window">
+        <field name="name">Boats</field>
+        <field name="res_model">boat.boat</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add your first boat
+            </p>
+            <p>
+                Start adding boats to your rental platform.
+            </p>
+        </field>
+    </record>
+</odoo>

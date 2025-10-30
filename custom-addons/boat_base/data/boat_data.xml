@@ -1,0 +1,157 @@
+<!-- boat_base/data/boat_data.xml -->
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequence for Boat Code -->
+        <record id="seq_boat_boat" model="ir.sequence">
+            <field name="name">Boat Sequence</field>
+            <field name="code">boat.boat</field>
+            <field name="prefix">BOAT</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+    
+    <data>
+        <!-- Default Amenities -->
+        <record id="amenity_wifi" model="boat.amenity">
+            <field name="name">WiFi</field>
+            <field name="code">wifi</field>
+            <field name="category">connectivity</field>
+            <field name="icon">fa-wifi</field>
+            <field name="description">High-speed WiFi connection</field>
+        </record>
+        
+        <record id="amenity_ac" model="boat.amenity">
+            <field name="name">Air Conditioning</field>
+            <field name="code">ac</field>
+            <field name="category">comfort</field>
+            <field name="icon">fa-snowflake</field>
+            <field name="description">Climate controlled cabins</field>
+        </record>
+        
+        <record id="amenity_tv" model="boat.amenity">
+            <field name="name">Television</field>
+            <field name="code">tv</field>
+            <field name="category">entertainment</field>
+            <field name="icon">fa-tv</field>
+            <field name="description">LCD TV with cable channels</field>
+        </record>
+        
+        <record id="amenity_music" model="boat.amenity">
+            <field name="name">Music System</field>
+            <field name="code">music</field>
+            <field name="category">entertainment</field>
+            <field name="icon">fa-music</field>
+            <field name="description">Premium sound system</field>
+        </record>
+        
+        <record id="amenity_lifejacket" model="boat.amenity">
+            <field name="name">Life Jackets</field>
+            <field name="code">lifejacket</field>
+            <field name="category">safety</field>
+            <field name="icon">fa-life-ring</field>
+            <field name="description">Safety life jackets for all guests</field>
+        </record>
+        
+        <record id="amenity_firstaid" model="boat.amenity">
+            <field name="name">First Aid Kit</field>
+            <field name="code">firstaid</field>
+            <field name="category">safety</field>
+            <field name="icon">fa-medkit</field>
+            <field name="description">Complete first aid medical kit</field>
+        </record>
+        
+        <record id="amenity_kitchen" model="boat.amenity">
+            <field name="name">Kitchen</field>
+            <field name="code">kitchen</field>
+            <field name="category">dining</field>
+            <field name="icon">fa-utensils</field>
+            <field name="description">Fully equipped kitchen</field>
+        </record>
+        
+        <record id="amenity_sundeck" model="boat.amenity">
+            <field name="name">Sun Deck</field>
+            <field name="code">sundeck</field>
+            <field name="category">outdoor</field>
+            <field name="icon">fa-sun</field>
+            <field name="description">Open sun deck for relaxation</field>
+        </record>
+        
+        <!-- Default Categories -->
+        <record id="category_houseboat" model="boat.category">
+            <field name="name">Houseboat</field>
+            <field name="code">houseboat</field>
+            <field name="description">Traditional houseboats for leisure cruising</field>
+        </record>
+        
+        <record id="category_kettuvallam" model="boat.category">
+            <field name="name">Kettuvallam</field>
+            <field name="code">kettuvallam</field>
+            <field name="parent_id" ref="category_houseboat"/>
+            <field name="description">Traditional Kerala rice barge converted to houseboat</field>
+            <field name="characteristics">Thatched roof, bamboo and coir construction, traditional design</field>
+        </record>
+        
+        <record id="category_premium" model="boat.category">
+            <field name="name">Premium Houseboat</field>
+            <field name="code">premium</field>
+            <field name="parent_id" ref="category_houseboat"/>
+            <field name="description">Luxury houseboats with modern amenities</field>
+            <field name="characteristics">AC bedrooms, modern bathrooms, premium furnishing</field>
+        </record>
+        
+        <record id="category_shikara" model="boat.category">
+            <field name="name">Shikara</field>
+            <field name="code">shikara</field>
+            <field name="description">Small boats for day trips</field>
+            <field name="characteristics">Open boats, 4-6 person capacity, day trips only</field>
+        </record>
+        
+        <!-- Kerala Locations -->
+        <record id="location_alleppey" model="boat.location">
+            <field name="name">Alleppey</field>
+            <field name="code">ALP</field>
+            <field name="city">Alappuzha</field>
+            <field name="state_id" ref="base.state_in_kl"/>
+            <field name="country_id" ref="base.in"/>
+            <field name="latitude">9.4981</field>
+            <field name="longitude">76.3388</field>
+            <field name="description"><![CDATA[
+                <p>Known as the "Venice of the East", Alleppey is the hub of Kerala's backwaters.</p>
+                <p>Famous for its houseboat cruises, pristine beaches, and annual boat races.</p>
+            ]]></field>
+            <field name="highlights">Backwater cruises, Alleppey Beach, Nehru Trophy Boat Race, Kuttanad region</field>
+        </record>
+        
+        <record id="location_kumarakom" model="boat.location">
+            <field name="name">Kumarakom</field>
+            <field name="code">KMK</field>
+            <field name="city">Kottayam</field>
+            <field name="state_id" ref="base.state_in_kl"/>
+            <field name="country_id" ref="base.in"/>
+            <field name="latitude">9.6178</field>
+            <field name="longitude">76.4302</field>
+            <field name="description"><![CDATA[
+                <p>A cluster of islands on the Vembanad Lake, offering serene backwater experiences.</p>
+                <p>Home to diverse bird species and luxury resorts.</p>
+            ]]></field>
+            <field name="highlights">Vembanad Lake, Bird Sanctuary, Ayurvedic treatments, Village life</field>
+        </record>
+        
+        <record id="location_nileshwar" model="boat.location">
+            <field name="name">Nileshwar</field>
+            <field name="code">NLW</field>
+            <field name="city">Kasaragod</field>
+            <field name="state_id" ref="base.state_in_kl"/>
+            <field name="country_id" ref="base.in"/>
+            <field name="latitude">12.2594</field>
+            <field name="longitude">75.1350</field>
+            <field name="description"><![CDATA[
+                <p>Northern Kerala's hidden gem with pristine backwaters and beaches.</p>
+                <p>Less crowded alternative to Alleppey with authentic experiences.</p>
+            ]]></field>
+            <field name="highlights">Valiyaparamba backwaters, Bekal Fort nearby, Traditional fishing villages</field>
+        </record>
+    </data>
+</odoo>

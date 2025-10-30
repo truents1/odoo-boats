@@ -1,6 +1,0 @@
-<odoo>
-  <record id="group_boat_master_manager" model="res.groups">
-    <field name="name">Boat Master Manager</field>
-    <field name="category_id" ref="base.module_category_hidden"/>
-  </record>
-</odoo>

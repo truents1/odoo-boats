@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_boat_tax_cat_manager,access.boat.tax.cat.manager,model_boat_taxonomy_category,base.group_system,1,1,1,1
-access_boat_tax_manager,access.boat.tax.manager,model_boat_taxonomy,base.group_system,1,1,1,1
-access_boat_tax_user,access.boat.tax.user,model_boat_taxonomy,base.group_user,1,0,0,0

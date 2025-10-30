@@ -1,6 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_boat_internal,access.boat.internal,model_boat_boat,base.group_user,1,1,1,1
-access_boat_image_internal,access.boat.image.internal,model_boat_boat_image,base.group_user,1,1,1,1
-access_boat_location_internal,access.boat.location.internal,model_boat_location,base.group_user,1,1,1,1
-access_boat_type_internal,access.boat.type.internal,model_boat_type,base.group_user,1,1,1,1
-access_boat_amenity_internal,access.boat.amenity.internal,model_boat_amenity,base.group_user,1,1,1,1

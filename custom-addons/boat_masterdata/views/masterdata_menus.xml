@@ -1,9 +1,0 @@
-<odoo>
-  <menuitem id="menu_boat_master_root" name="Master Data" parent="boat_core.menu_boat_root" sequence="30"/>
-  <menuitem id="menu_boat_location" name="Locations" parent="menu_boat_master_root"
-            action="action_boat_locations"/>
-  <menuitem id="menu_boat_amenity" name="Amenities" parent="menu_boat_master_root"
-            action="action_boat_amenities"/>
-  <menuitem id="menu_boat_type" name="Boat Types" parent="menu_boat_master_root"
-            action="action_boat_types"/>
-</odoo>

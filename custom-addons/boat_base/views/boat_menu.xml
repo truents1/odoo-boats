@@ -1,0 +1,60 @@
+<!-- boat_base/views/boat_menu.xml -->
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main menu -->
+    <menuitem id="menu_boat_root"
+              name="Boat Management"
+              sequence="10"
+              web_icon="boat_base,static/description/icon.png"
+              groups="boat_base.group_boat_user"/>
+    
+    <!-- Boats menu -->
+    <menuitem id="menu_boat_boats"
+              name="Boats"
+              parent="menu_boat_root"
+              sequence="10"/>
+    
+    <menuitem id="menu_boat_boat_list"
+              name="All Boats"
+              parent="menu_boat_boats"
+              action="action_boat_boat"
+              sequence="10"/>
+    
+    <!-- Master Data menu -->
+    <menuitem id="menu_boat_master"
+              name="Master Data"
+              parent="menu_boat_root"
+              sequence="20"
+              groups="boat_base.group_boat_moderator"/>
+    
+    <menuitem id="menu_boat_location"
+              name="Locations"
+              parent="menu_boat_master"
+              action="action_boat_location"
+              sequence="10"/>
+    
+    <menuitem id="menu_boat_category"
+              name="Categories"
+              parent="menu_boat_master"
+              action="action_boat_category"
+              sequence="20"/>
+    
+    <menuitem id="menu_boat_amenity"
+              name="Amenities"
+              parent="menu_boat_master"
+              action="action_boat_amenity"
+              sequence="30"/>
+    
+    <!-- Configuration menu -->
+    <menuitem id="menu_boat_config"
+              name="Configuration"
+              parent="menu_boat_root"
+              sequence="100"
+              groups="boat_base.group_boat_manager"/>
+    
+    <menuitem id="menu_boat_settings"
+              name="Settings"
+              parent="menu_boat_config"
+              action="action_boat_config_settings"
+              sequence="10"/>
+</odoo>

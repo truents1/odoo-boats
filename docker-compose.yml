@@ -15,6 +15,7 @@ services:
       retries: 10
 
   odoo-boats-app:
+    user: "odoo:${ODOO_GID}"
     build: .
     image: odoo-boats:17-custom
     container_name: odoo-boats-app
@@ -29,13 +30,13 @@ services:
     volumes:
       - ./odoo.conf:/etc/odoo/odoo.conf:ro
       - ./scripts/entrypoint-perms-fix.sh:/entrypoint-perms-fix.sh:ro
-      - ./logs:/var/log/odoo
       - ./start-odoo.sh:/start-odoo.sh:ro
+      - ./scripts:/usr/src/app/scripts:ro
+      - ./logs:/var/log/odoo
       - ./odoo-local:/var/lib/odoo/.local
       - ./filestore:/var/lib/odoo/.local/share/Odoo/filestore
-      - ./custom-addons:/mnt/extra-addons/custom:ro
-      - ./third_party_addons:/mnt/extra-addons/third-party:ro
-      - ./scripts:/usr/src/app/scripts:ro
+      - ./custom-addons:/mnt/extra-addons/custom
+      - ./third_party_addons:/mnt/extra-addons/third-party
     command: ["/bin/bash", "/start-odoo.sh"]
     # command: ["odoo", "--config=/etc/odoo/odoo.conf"]
     restart: unless-stopped

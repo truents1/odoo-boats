@@ -1,0 +1,69 @@
+<!-- ============================================ -->
+<!-- boat_base/views/boat_amenity_views.xml -->
+<!-- ============================================ -->
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_boat_amenity_tree" model="ir.ui.view">
+        <field name="name">boat.amenity.tree</field>
+        <field name="model">boat.amenity</field>
+        <field name="arch" type="xml">
+            <tree string="Boat Amenities">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="category"/>
+                <field name="icon"/>
+                <field name="is_premium" widget="boolean_toggle"/>
+                <field name="active" widget="boolean_toggle"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- Form View -->
+    <record id="view_boat_amenity_form" model="ir.ui.view">
+        <field name="name">boat.amenity.form</field>
+        <field name="model">boat.amenity</field>
+        <field name="arch" type="xml">
+            <form string="Boat Amenity">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="Amenity Name"/>
+                        </h1>
+                        <field name="code" placeholder="Amenity Code"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="category"/>
+                            <field name="icon" placeholder="fa-wifi"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="is_premium"/>
+                            <field name="sequence"/>
+                        </group>
+                    </group>
+                    <separator string="Description"/>
+                    <field name="description"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Action -->
+    <record id="action_boat_amenity" model="ir.actions.act_window">
+        <field name="name">Amenities</field>
+        <field name="res_model">boat.amenity</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create boat amenities
+            </p>
+            <p>
+                Define amenities that boats can offer to guests.
+            </p>
+        </field>
+    </record>
+</odoo>
