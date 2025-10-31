@@ -122,7 +122,7 @@ class BoatBoat(models.Model):
     website_meta_title = fields.Char(string='Website Meta Title')
     website_meta_description = fields.Text(string='Website Meta Description')
     website_meta_keywords = fields.Char(string='Website Meta Keywords')
-    website_tag_ids = fields.Many2many('boat.tag', string='Website Tags')
+    # website_tag_ids = fields.Many2many('boat.tag', string='Website Tags')  # TODO: Implement tags later
     
     # Moderation fields
     moderation_notes = fields.Text(string='Moderation Notes', 
@@ -231,15 +231,16 @@ class BoatBoat(models.Model):
                 )
 
 
-class BoatTag(models.Model):
-    """Website tags for boats"""
-    _name = 'boat.tag'
-    _description = 'Boat Tag'
-    _order = 'name'
-
-    name = fields.Char(string='Tag Name', required=True, translate=True)
-    color = fields.Integer(string='Color Index')
-    
-    _sql_constraints = [
-        ('name_unique', 'unique(name)', 'Tag name must be unique!')
-    ]
+# TODO: Implement BoatTag model later for website categorization
+# class BoatTag(models.Model):
+#     """Website tags for boats"""
+#     _name = 'boat.tag'
+#     _description = 'Boat Tag'
+#     _order = 'name'
+# 
+#     name = fields.Char(string='Tag Name', required=True, translate=True)
+#     color = fields.Integer(string='Color Index')
+#     
+#     _sql_constraints = [
+#         ('name_unique', 'unique(name)', 'Tag name must be unique!')
+#     ]

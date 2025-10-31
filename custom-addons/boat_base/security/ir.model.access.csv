@@ -15,5 +15,3 @@ access_boat_amenity_user,access.boat.amenity.user,model_boat_amenity,group_boat_
 access_boat_amenity_manager,access.boat.amenity.manager,model_boat_amenity,group_boat_manager,1,1,1,1
 access_boat_amenity_portal,access.boat.amenity.portal,model_boat_amenity,base.group_portal,1,0,0,0
 access_boat_amenity_public,access.boat.amenity.public,model_boat_amenity,base.group_public,1,0,0,0
-access_boat_tag_user,access.boat.tag.user,model_boat_tag,group_boat_user,1,0,0,0
-access_boat_tag_manager,access.boat.tag.manager,model_boat_tag,group_boat_manager,1,1,1,1
