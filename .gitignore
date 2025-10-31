@@ -17,6 +17,7 @@ htmlcov/
 
 # ignore folders
 filestore/
+sessions/
 logs/
 backups/
 temp/

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Public Boats List Page -->
+    <template id="boats_list" name="Boats List">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="container mt-4">
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h1>Available Boats for Rent</h1>
+                        </div>
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <label for="category_filter">Category</label>
+                            <select class="form-control" id="category_filter" onchange="applyFilters()">
+                                <option value="">All Categories</option>
+                                <t t-foreach="categories" t-as="category">
+                                    <option t-att-value="category.id" 
+                                            t-att-selected="selected_category == category.id or None">
+                                        <t t-esc="category.complete_name"/>
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="location_filter">Location</label>
+                            <select class="form-control" id="location_filter" onchange="applyFilters()">
+                                <option value="">All Locations</option>
+                                <t t-foreach="locations" t-as="location">
+                                    <option t-att-value="location.id"
+                                            t-att-selected="selected_location == location.id or None">
+                                        <t t-esc="location.name"/>
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="search_input">Search</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="search_input" 
+                                       placeholder="Search boats..." t-att-value="search"/>
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button" onclick="applyFilters()">
+                                        <i class="fa fa-search"/>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Boats Grid -->
+                    <t t-if="not boats">
+                        <div class="alert alert-info">
+                            <p class="mb-0">No boats found matching your criteria.</p>
+                        </div>
+                    </t>
+
+                    <t t-if="boats">
+                        <div class="row">
+                            <t t-foreach="boats" t-as="boat">
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="card h-100 shadow-sm">
+                                        <a t-attf-href="/boats/#{boat.id}" class="text-decoration-none">
+                                            <t t-if="boat.image_512">
+                                                <img t-att-src="image_data_uri(boat.image_512)" 
+                                                     class="card-img-top" alt="Boat Image" 
+                                                     style="height: 250px; object-fit: cover;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
+                                                     style="height: 250px;">
+                                                    <i class="fa fa-ship fa-4x text-muted"/>
+                                                </div>
+                                            </t>
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <a t-attf-href="/boats/#{boat.id}" class="text-dark" t-esc="boat.name"/>
+                                            </h5>
+                                            <p class="card-text text-muted mb-2">
+                                                <i class="fa fa-map-marker"/> <span t-field="boat.location_id"/>
+                                            </p>
+                                            <p class="card-text mb-2">
+                                                <i class="fa fa-users"/> <span t-field="boat.guest_capacity"/> guests |
+                                                <i class="fa fa-bed"/> <span t-field="boat.sleeping_capacity"/> sleep
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <h5 class="text-primary mb-0">
+                                                    <span t-field="boat.base_price_per_day"/>
+                                                    <small class="text-muted">/ day</small>
+                                                </h5>
+                                                <a t-attf-href="/boats/#{boat.id}" class="btn btn-sm btn-outline-primary">
+                                                    View Details
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <t t-if="boat.feature_ids">
+                                            <div class="card-footer bg-white">
+                                                <small class="text-muted">
+                                                    <t t-foreach="boat.feature_ids[:3]" t-as="feature">
+                                                        <i class="fa fa-check-circle text-success"/> 
+                                                        <span t-esc="feature.name"/>
+                                                        <t t-if="not feature_last">, </t>
+                                                    </t>
+                                                    <t t-if="len(boat.feature_ids) > 3">
+                                                        + <t t-esc="len(boat.feature_ids) - 3"/> more
+                                                    </t>
+                                                </small>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+
+                        <!-- Pager -->
+                        <div t-if="pager" class="mt-4">
+                            <t t-call="website.pager"/>
+                        </div>
+                    </t>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                function applyFilters() {
+                    var category = document.getElementById('category_filter').value;
+                    var location = document.getElementById('location_filter').value;
+                    var search = document.getElementById('search_input').value;
+                    
+                    var url = '/boats?';
+                    if (category) url += 'category=' + category + '&amp;';
+                    if (location) url += 'location=' + location + '&amp;';
+                    if (search) url += 'search=' + encodeURIComponent(search);
+                    
+                    window.location.href = url;
+                }
+            </script>
+        </t>
+    </template>
+
+    <!-- Public Boat Detail Page -->
+    <template id="boat_detail" name="Boat Detail">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <a href="/boats" class="btn btn-sm btn-outline-secondary">
+                                <i class="fa fa-arrow-left"/> Back to Boats
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <!-- Main Image -->
+                            <t t-if="boat.image_1920">
+                                <img t-att-src="image_data_uri(boat.image_1920)" 
+                                     class="img-fluid rounded mb-4" alt="Boat Image"/>
+                            </t>
+                            <t t-else="">
+                                <div class="bg-light d-flex align-items-center justify-content-center rounded mb-4" 
+                                     style="height: 400px;">
+                                    <i class="fa fa-ship fa-5x text-muted"/>
+                                </div>
+                            </t>
+
+                            <!-- Boat Title & Location -->
+                            <h1 t-field="boat.name"/>
+                            <p class="lead text-muted">
+                                <i class="fa fa-map-marker"/> <span t-field="boat.location_id.name"/>
+                            </p>
+
+                            <!-- Description -->
+                            <div class="mb-4">
+                                <h4>Description</h4>
+                                <div t-field="boat.description"/>
+                            </div>
+
+                            <!-- Specifications -->
+                            <div class="mb-4">
+                                <h4>Specifications</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li><strong>Category:</strong> <span t-field="boat.category_id"/></li>
+                                            <li><strong>Guest Capacity:</strong> <span t-field="boat.guest_capacity"/> guests</li>
+                                            <li><strong>Sleeping Capacity:</strong> <span t-field="boat.sleeping_capacity"/> persons</li>
+                                            <li><strong>Bedrooms:</strong> <span t-field="boat.num_bedrooms"/></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-unstyled">
+                                            <li><strong>Bathrooms:</strong> <span t-field="boat.num_bathrooms"/></li>
+                                            <li t-if="boat.length"><strong>Length:</strong> <span t-field="boat.length"/> m</li>
+                                            <li t-if="boat.year_built"><strong>Year Built:</strong> <span t-field="boat.year_built"/></li>
+                                            <li t-if="boat.max_speed"><strong>Max Speed:</strong> <span t-field="boat.max_speed"/> knots</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Amenities -->
+                            <t t-if="boat.feature_ids">
+                                <div class="mb-4">
+                                    <h4>Amenities &amp; Features</h4>
+                                    <div class="row">
+                                        <t t-foreach="boat.feature_ids" t-as="feature">
+                                            <div class="col-md-6 mb-2">
+                                                <i class="fa fa-check-circle text-success"/> 
+                                                <span t-field="feature.name"/>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+
+                        <!-- Booking Sidebar -->
+                        <div class="col-lg-4">
+                            <div class="card sticky-top" style="top: 20px;">
+                                <div class="card-body">
+                                    <h3 class="text-primary mb-3">
+                                        <span t-field="boat.base_price_per_day"/>
+                                        <small class="text-muted">/ day</small>
+                                    </h3>
+                                    
+                                    <div class="mb-3">
+                                        <p class="mb-1"><i class="fa fa-users"/> Capacity: <strong><span t-field="boat.guest_capacity"/> guests</strong></p>
+                                        <p class="mb-1"><i class="fa fa-bed"/> Sleeps: <strong><span t-field="boat.sleeping_capacity"/> persons</strong></p>
+                                    </div>
+
+                                    <button class="btn btn-primary btn-block btn-lg" onclick="alert('Booking functionality will be implemented soon!')">
+                                        <i class="fa fa-calendar"/> Book Now
+                                    </button>
+
+                                    <div class="text-center mt-3">
+                                        <small class="text-muted">
+                                            <i class="fa fa-shield"/> Safe and Secure Booking
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Add Menu Item to Website -->
+    <template id="website_menu_boats" name="Boats Menu" inherit_id="website.layout">
+        <xpath expr="//header//ul[@id='top_menu']" position="inside">
+            <li class="nav-item">
+                <a href="/boats" class="nav-link">
+                    <i class="fa fa-ship"/> Boats
+                </a>
+            </li>
+        </xpath>
+    </template>
+
+</odoo>

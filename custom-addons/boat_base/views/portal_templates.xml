@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Add Boats to Portal Menu -->
+    <template id="portal_my_home_boats" name="Portal My Home: Boats" inherit_id="portal.portal_my_home" priority="40">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Boats</t>
+                <t t-set="url" t-value="'/my/boats'"/>
+                <t t-set="placeholder_count" t-value="'boat_count'"/>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- My Boats List -->
+    <template id="portal_my_boats" name="My Boats">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">My Boats</t>
+            </t>
+
+            <div class="container mt-3">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <a href="/my/boats/new" class="btn btn-primary">
+                            <i class="fa fa-plus"/> Add New Boat
+                        </a>
+                    </div>
+                </div>
+
+                <t t-if="not boats">
+                    <div class="alert alert-info" role="alert">
+                        <p class="mb-0">You haven't registered any boats yet.</p>
+                    </div>
+                </t>
+
+                <t t-if="boats">
+                    <div class="row">
+                        <t t-foreach="boats" t-as="boat">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card h-100">
+                                    <t t-if="boat.image_512">
+                                        <img t-att-src="image_data_uri(boat.image_512)" class="card-img-top" alt="Boat Image"/>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                                            <i class="fa fa-ship fa-3x text-muted"/>
+                                        </div>
+                                    </t>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <a t-attf-href="/my/boats/#{boat.id}" t-esc="boat.name"/>
+                                        </h5>
+                                        <p class="card-text">
+                                            <small class="text-muted">
+                                                <i class="fa fa-map-marker"/> <span t-field="boat.location_id"/>
+                                            </small>
+                                        </p>
+                                        <p class="card-text">
+                                            <span class="badge" t-attf-class="badge-#{boat.state == 'published' and 'success' or boat.state == 'approved' and 'info' or boat.state == 'submitted' and 'warning' or boat.state == 'rejected' and 'danger' or 'secondary'}">
+                                                <t t-esc="dict(boat._fields['state'].selection).get(boat.state)"/>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a t-attf-href="/my/boats/#{boat.id}" class="btn btn-sm btn-secondary">
+                                            <i class="fa fa-eye"/> View
+                                        </a>
+                                        <a t-if="boat.state in ['draft', 'rejected']" t-attf-href="/my/boats/#{boat.id}/edit" class="btn btn-sm btn-primary">
+                                            <i class="fa fa-edit"/> Edit
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+
+                <div t-if="pager" class="o_portal_pager text-center">
+                    <t t-call="portal.pager"/>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Single Boat View -->
+    <template id="portal_my_boat" name="My Boat">
+        <t t-call="portal.portal_layout">
+            <t t-set="additional_title" t-value="boat.name"/>
+            
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/my/boats">My Boats</a></li>
+                            <li class="breadcrumb-item active" t-esc="boat.name"/>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="mb-0" t-field="boat.name"/>
+                                <span class="badge float-right" t-attf-class="badge-#{boat.state == 'published' and 'success' or boat.state == 'approved' and 'info' or boat.state == 'submitted' and 'warning' or boat.state == 'rejected' and 'danger' or 'secondary'}">
+                                    <t t-esc="dict(boat._fields['state'].selection).get(boat.state)"/>
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <t t-if="boat.image_1920">
+                                    <img t-att-src="image_data_uri(boat.image_1920)" class="img-fluid mb-3" alt="Boat Image"/>
+                                </t>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <p><strong>Category:</strong> <span t-field="boat.category_id"/></p>
+                                        <p><strong>Location:</strong> <span t-field="boat.location_id"/></p>
+                                        <p><strong>Guest Capacity:</strong> <span t-field="boat.guest_capacity"/> guests</p>
+                                        <p><strong>Sleeping Capacity:</strong> <span t-field="boat.sleeping_capacity"/> persons</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><strong>Bedrooms:</strong> <span t-field="boat.num_bedrooms"/></p>
+                                        <p><strong>Bathrooms:</strong> <span t-field="boat.num_bathrooms"/></p>
+                                        <p><strong>Length:</strong> <span t-field="boat.length"/> m</p>
+                                        <p><strong>Year Built:</strong> <span t-field="boat.year_built"/></p>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <h5>Price</h5>
+                                    <p class="h4 text-primary">
+                                        <span t-field="boat.base_price_per_day"/> / day
+                                    </p>
+                                </div>
+
+                                <t t-if="boat.description">
+                                    <h5>Description</h5>
+                                    <div t-field="boat.description"/>
+                                </t>
+
+                                <t t-if="boat.feature_ids">
+                                    <h5 class="mt-3">Amenities</h5>
+                                    <ul class="list-unstyled">
+                                        <t t-foreach="boat.feature_ids" t-as="feature">
+                                            <li><i class="fa fa-check text-success"/> <span t-field="feature.name"/></li>
+                                        </t>
+                                    </ul>
+                                </t>
+
+                                <t t-if="boat.state == 'rejected' and boat.rejected_reason">
+                                    <div class="alert alert-danger mt-3">
+                                        <h5>Rejection Reason</h5>
+                                        <p t-field="boat.rejected_reason"/>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Actions</h5>
+                            </div>
+                            <div class="card-body">
+                                <t t-if="boat.state in ['draft', 'rejected']">
+                                    <a t-attf-href="/my/boats/#{boat.id}/edit" class="btn btn-primary btn-block mb-2">
+                                        <i class="fa fa-edit"/> Edit Boat
+                                    </a>
+                                    <form method="post" t-attf-action="/my/boats/#{boat.id}/submit" class="d-inline-block w-100">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <button type="submit" class="btn btn-success btn-block">
+                                            <i class="fa fa-paper-plane"/> Submit for Review
+                                        </button>
+                                    </form>
+                                </t>
+                                <t t-if="boat.state == 'submitted'">
+                                    <div class="alert alert-info">
+                                        Your boat is submitted and waiting for review.
+                                    </div>
+                                </t>
+                                <t t-if="boat.state in ['approved', 'published']">
+                                    <div class="alert alert-success">
+                                        Your boat has been approved!
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Boat Form (Create/Edit) -->
+    <template id="portal_boat_form" name="Boat Form">
+        <t t-call="portal.portal_layout">
+            <t t-set="additional_title" t-value="boat and 'Edit Boat' or 'Add New Boat'"/>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/my/boats">My Boats</a></li>
+                            <li class="breadcrumb-item active">
+                                <t t-if="boat">Edit Boat</t>
+                                <t t-else="">Add New Boat</t>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="mb-0">
+                                    <t t-if="boat">Edit Boat</t>
+                                    <t t-else="">Add New Boat</t>
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <form method="post" action="/my/boats/save" enctype="multipart/form-data">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <input type="hidden" name="boat_id" t-if="boat" t-att-value="boat.id"/>
+
+                                    <div class="form-group">
+                                        <label for="name">Boat Name *</label>
+                                        <input type="text" class="form-control" id="name" name="name" 
+                                               t-att-value="boat and boat.name or ''" required="required"/>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="category_id">Category *</label>
+                                                <select class="form-control" id="category_id" name="category_id" required="required">
+                                                    <option value="">-- Select Category --</option>
+                                                    <t t-foreach="categories" t-as="category">
+                                                        <option t-att-value="category.id" 
+                                                                t-att-selected="boat and boat.category_id.id == category.id or None">
+                                                            <t t-esc="category.complete_name"/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="location_id">Location *</label>
+                                                <select class="form-control" id="location_id" name="location_id" required="required">
+                                                    <option value="">-- Select Location --</option>
+                                                    <t t-foreach="locations" t-as="location">
+                                                        <option t-att-value="location.id"
+                                                                t-att-selected="boat and boat.location_id.id == location.id or None">
+                                                            <t t-esc="location.name"/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="guest_capacity">Guest Capacity *</label>
+                                                <input type="number" class="form-control" id="guest_capacity" name="guest_capacity"
+                                                       t-att-value="boat and boat.guest_capacity or 1" min="1" required="required"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="sleeping_capacity">Sleeping Capacity *</label>
+                                                <input type="number" class="form-control" id="sleeping_capacity" name="sleeping_capacity"
+                                                       t-att-value="boat and boat.sleeping_capacity or 1" min="1" required="required"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="num_bedrooms">Bedrooms</label>
+                                                <input type="number" class="form-control" id="num_bedrooms" name="num_bedrooms"
+                                                       t-att-value="boat and boat.num_bedrooms or 0" min="0"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="num_bathrooms">Bathrooms</label>
+                                                <input type="number" class="form-control" id="num_bathrooms" name="num_bathrooms"
+                                                       t-att-value="boat and boat.num_bathrooms or 0" min="0"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="length">Length (meters)</label>
+                                                <input type="number" step="0.01" class="form-control" id="length" name="length"
+                                                       t-att-value="boat and boat.length or ''"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="year_built">Year Built</label>
+                                                <input type="number" class="form-control" id="year_built" name="year_built"
+                                                       t-att-value="boat and boat.year_built or ''" min="1900"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="base_price_per_day">Price per Day *</label>
+                                                <input type="number" step="0.01" class="form-control" id="base_price_per_day" 
+                                                       name="base_price_per_day"
+                                                       t-att-value="boat and boat.base_price_per_day or '0'" 
+                                                       min="0" required="required"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <textarea class="form-control" id="description" name="description" rows="5">
+                                            <t t-if="boat" t-esc="boat.description"/>
+                                        </textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Amenities</label>
+                                        <div class="row">
+                                            <t t-foreach="amenities" t-as="amenity">
+                                                <div class="col-md-4">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" 
+                                                               t-att-id="'amenity_%s' % amenity.id"
+                                                               name="feature_ids" t-att-value="amenity.id"
+                                                               t-att-checked="boat and amenity in boat.feature_ids or None"/>
+                                                        <label class="custom-control-label" t-att-for="'amenity_%s' % amenity.id">
+                                                            <t t-esc="amenity.name"/>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="image_1920">Boat Image</label>
+                                        <input type="file" class="form-control-file" id="image_1920" name="image_1920" accept="image/*"/>
+                                        <t t-if="boat and boat.image_256">
+                                            <img t-att-src="image_data_uri(boat.image_256)" class="mt-2" style="max-width: 200px;"/>
+                                        </t>
+                                    </div>
+
+                                    <div class="form-group text-right">
+                                        <a href="/my/boats" class="btn btn-secondary">Cancel</a>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-save"/> Save Boat
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
