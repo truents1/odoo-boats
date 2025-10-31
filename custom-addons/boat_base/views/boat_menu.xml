@@ -18,6 +18,13 @@
               action="action_boat_boat" 
               sequence="10"/>
 
+    <menuitem id="menu_boat_boat_review" 
+              name="Pending Review" 
+              parent="menu_boat_boats" 
+              action="action_boat_boat_review" 
+              sequence="15"
+              groups="boat_base.group_boat_manager"/>
+
     <menuitem id="menu_boat_category" 
               name="Categories" 
               parent="menu_boat_boats" 
