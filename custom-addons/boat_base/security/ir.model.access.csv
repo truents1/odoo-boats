@@ -1,23 +1,9 @@
-<!-- ============================================ -->
-<!-- boat_base/security/ir.model.access.csv -->
-<!-- ============================================ -->
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_boat_location_user,boat.location.user,model_boat_location,group_boat_user,1,0,0,0
-access_boat_location_owner,boat.location.owner,model_boat_location,group_boat_owner,1,0,0,0
-access_boat_location_moderator,boat.location.moderator,model_boat_location,group_boat_moderator,1,1,1,0
-access_boat_location_manager,boat.location.manager,model_boat_location,group_boat_manager,1,1,1,1
-
-access_boat_category_user,boat.category.user,model_boat_category,group_boat_user,1,0,0,0
-access_boat_category_owner,boat.category.owner,model_boat_category,group_boat_owner,1,0,0,0
-access_boat_category_moderator,boat.category.moderator,model_boat_category,group_boat_moderator,1,1,1,0
-access_boat_category_manager,boat.category.manager,model_boat_category,group_boat_manager,1,1,1,1
-
-access_boat_amenity_user,boat.amenity.user,model_boat_amenity,group_boat_user,1,0,0,0
-access_boat_amenity_owner,boat.amenity.owner,model_boat_amenity,group_boat_owner,1,0,0,0
-access_boat_amenity_moderator,boat.amenity.moderator,model_boat_amenity,group_boat_moderator,1,1,1,0
-access_boat_amenity_manager,boat.amenity.manager,model_boat_amenity,group_boat_manager,1,1,1,1
-
-access_boat_boat_user,boat.boat.user,model_boat_boat,group_boat_user,1,0,0,0
-access_boat_boat_owner,boat.boat.owner,model_boat_boat,group_boat_owner,1,1,1,0
-access_boat_boat_moderator,boat.boat.moderator,model_boat_boat,group_boat_moderator,1,1,0,0
-access_boat_boat_manager,boat.boat.manager,model_boat_boat,group_boat_manager,1,1,1,1
+access_boat_boat_user,access.boat.boat.user,model_boat_boat,group_boat_user,1,0,0,0
+access_boat_boat_manager,access.boat.boat.manager,model_boat_boat,group_boat_manager,1,1,1,1
+access_boat_category_user,access.boat.category.user,model_boat_category,group_boat_user,1,0,0,0
+access_boat_category_manager,access.boat.category.manager,model_boat_category,group_boat_manager,1,1,1,1
+access_boat_location_user,access.boat.location.user,model_boat_location,group_boat_user,1,0,0,0
+access_boat_location_manager,access.boat.location.manager,model_boat_location,group_boat_manager,1,1,1,1
+access_boat_amenity_user,access.boat.amenity.user,model_boat_amenity,group_boat_user,1,0,0,0
+access_boat_amenity_manager,access.boat.amenity.manager,model_boat_amenity,group_boat_manager,1,1,1,1
