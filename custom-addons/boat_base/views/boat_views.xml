@@ -6,6 +6,7 @@
         <field name="model">boat.boat</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="image_128" widget="image" optional="show"/>
                 <field name="name"/>
                 <field name="category_id"/>
                 <field name="location_id"/>
@@ -60,6 +61,17 @@
                            statusbar_visible="draft,submitted,under_review,approved,published"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <!-- Featured Image Display (Top Right) -->
+                        <div class="oe_avatar" style="margin-right: 10px;">
+                            <field name="image_1920" widget="image" class="oe_avatar" 
+                                   options="{'preview_image': 'image_512', 'size': [150, 150]}" 
+                                   readonly="1"/>
+                            <div class="badge badge-warning text-center mt-1" style="font-size: 10px;">
+                                <i class="fa fa-star"/> Featured Image
+                            </div>
+                        </div>
+                    </div>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Boat Name"/>
@@ -95,6 +107,61 @@
                     <notebook>
                         <page string="Description">
                             <field name="description" placeholder="Enter boat description..."/>
+                        </page>
+                        <page string="Images">
+                            <field name="image_ids" mode="kanban">
+                                <kanban>
+                                    <field name="id"/>
+                                    <field name="name"/>
+                                    <field name="image_128"/>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="is_featured"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click" style="position: relative;">
+                                                <!-- Featured Badge - Only show if IS featured -->
+                                                <div t-if="record.is_featured.raw_value" 
+                                                     class="badge badge-warning position-absolute" 
+                                                     style="top: 5px; right: 5px; z-index: 10;">
+                                                    <i class="fa fa-star"/> Featured
+                                                </div>
+                                                
+                                                <div class="o_kanban_image">
+                                                    <img t-att-src="kanban_image('boat.image', 'image_128', record.id.raw_value)" 
+                                                         alt="Boat Image" 
+                                                         style="max-width: 100%; max-height: 150px; object-fit: cover;"/>
+                                                </div>
+                                                
+                                                <div class="oe_kanban_details mt-2">
+                                                    <div class="text-center">
+                                                        <button name="action_set_featured" 
+                                                                type="object" 
+                                                                class="btn btn-sm btn-primary" 
+                                                                title="Set as Featured Image"
+                                                                t-if="!record.is_featured.raw_value">
+                                                            <i class="fa fa-star-o"/> Set Featured
+                                                        </button>
+                                                        <span t-if="record.is_featured.raw_value" 
+                                                              class="badge badge-success">
+                                                            <i class="fa fa-check"/> Currently Featured
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                                <form>
+                                    <sheet>
+                                        <field name="image_1920" widget="image" class="oe_avatar" options="{'size': [1920, 1920]}"/>
+                                        <group>
+                                            <field name="name" placeholder="Image title (auto-generated if empty)"/>
+                                            <field name="sequence"/>
+                                            <field name="is_featured"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
                         </page>
                         <page string="Features &amp; Amenities">
                             <field name="feature_ids" widget="many2many_tags"/>
@@ -167,6 +234,7 @@
             <kanban>
                 <field name="id"/>
                 <field name="name"/>
+                <field name="image_128"/>
                 <field name="category_id"/>
                 <field name="location_id"/>
                 <field name="guest_capacity"/>
@@ -175,6 +243,9 @@
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('boat.boat', 'image_128', record.id.raw_value)" alt="Boat" class="o_image_64_contain"/>
+                            </div>
                             <div class="oe_kanban_details">
                                 <strong class="o_kanban_record_title">
                                     <field name="name"/>

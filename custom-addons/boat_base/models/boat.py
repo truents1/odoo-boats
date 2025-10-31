@@ -101,11 +101,20 @@ class BoatBoat(models.Model):
     description = fields.Html(string='Description', translate=True)
     feature_ids = fields.Many2many('boat.amenity', string='Features & Amenities')
 
-    # Images
-    image_1920 = fields.Image(string='Main Image', max_width=1920, max_height=1920)
-    image_512 = fields.Image(string='Image 512', related='image_1920', max_width=512, max_height=512, store=True)
-    image_256 = fields.Image(string='Image 256', related='image_1920', max_width=256, max_height=256, store=True)
-    image_128 = fields.Image(string='Image 128', related='image_1920', max_width=128, max_height=128, store=True)
+    # Images - Multiple Images Support
+    image_ids = fields.One2many('boat.image', 'boat_id', string='Images')
+    featured_image_id = fields.Many2one('boat.image', string='Featured Image', 
+                                        compute='_compute_featured_image', store=True)
+    
+    # Main image fields (for backward compatibility and quick access)
+    image_1920 = fields.Image(string='Main Image', compute='_compute_main_image', 
+                              inverse='_inverse_main_image', store=True)
+    image_512 = fields.Image(string='Image 512', related='image_1920', 
+                            max_width=512, max_height=512, store=True)
+    image_256 = fields.Image(string='Image 256', related='image_1920', 
+                            max_width=256, max_height=256, store=True)
+    image_128 = fields.Image(string='Image 128', related='image_1920', 
+                            max_width=128, max_height=128, store=True)
 
     # Workflow State
     state = fields.Selection([
@@ -122,7 +131,6 @@ class BoatBoat(models.Model):
     website_meta_title = fields.Char(string='Website Meta Title')
     website_meta_description = fields.Text(string='Website Meta Description')
     website_meta_keywords = fields.Char(string='Website Meta Keywords')
-    # website_tag_ids = fields.Many2many('boat.tag', string='Website Tags')  # TODO: Implement tags later
     
     # Moderation fields
     moderation_notes = fields.Text(string='Moderation Notes', 
@@ -133,6 +141,39 @@ class BoatBoat(models.Model):
 
     # Computed fields
     is_owner = fields.Boolean(string='Is Owner', compute='_compute_is_owner')
+
+    @api.depends('image_ids.is_featured')
+    def _compute_featured_image(self):
+        """Get the featured image"""
+        for boat in self:
+            featured = boat.image_ids.filtered('is_featured')
+            boat.featured_image_id = featured[0] if featured else False
+
+    @api.depends('featured_image_id', 'featured_image_id.image_1920')
+    def _compute_main_image(self):
+        """Set main image from featured image"""
+        for boat in self:
+            if boat.featured_image_id:
+                boat.image_1920 = boat.featured_image_id.image_1920
+            elif boat.image_ids:
+                boat.image_1920 = boat.image_ids[0].image_1920
+            else:
+                boat.image_1920 = False
+
+    def _inverse_main_image(self):
+        """When main image is set directly, create/update featured image"""
+        for boat in self:
+            if boat.image_1920:
+                if boat.featured_image_id:
+                    boat.featured_image_id.image_1920 = boat.image_1920
+                else:
+                    # Create new image as featured
+                    self.env['boat.image'].create({
+                        'name': f'{boat.name} - Main Image',
+                        'boat_id': boat.id,
+                        'image_1920': boat.image_1920,
+                        'is_featured': True,
+                    })
 
     @api.depends('owner_id')
     def _compute_is_owner(self):
@@ -230,17 +271,53 @@ class BoatBoat(models.Model):
                     _('Year built must be between 1900 and %s') % (current_year + 1)
                 )
 
+class BoatImage(models.Model):
+    _name = 'boat.image'
+    _description = 'Boat Image'
+    _order = 'id desc'  # Latest images first
 
-# TODO: Implement BoatTag model later for website categorization
-# class BoatTag(models.Model):
-#     """Website tags for boats"""
-#     _name = 'boat.tag'
-#     _description = 'Boat Tag'
-#     _order = 'name'
-# 
-#     name = fields.Char(string='Tag Name', required=True, translate=True)
-#     color = fields.Integer(string='Color Index')
-#     
-#     _sql_constraints = [
-#         ('name_unique', 'unique(name)', 'Tag name must be unique!')
-#     ]
+    name = fields.Char('Image Title', default='Boat Image')
+    boat_id = fields.Many2one('boat.boat', 'Boat', required=True, ondelete='cascade')
+    image_1920 = fields.Image('Image', required=True, max_width=1920, max_height=1920)
+    image_512 = fields.Image('Image 512', related='image_1920', max_width=512, max_height=512, store=True)
+    image_256 = fields.Image('Image 256', related='image_1920', max_width=256, max_height=256, store=True)
+    image_128 = fields.Image('Image 128', related='image_1920', max_width=128, max_height=128, store=True)
+    is_featured = fields.Boolean('Featured Image', default=False)
+    
+    @api.model_create_multi
+    def create(self, vals_list):
+        """Auto-generate proper names and set featured image"""
+        records = super().create(vals_list)
+        
+        for record in records:
+            # Generate proper name after creation
+            boat_name = record.boat_id.name or 'Boat'
+            image_count = self.search_count([
+                ('boat_id', '=', record.boat_id.id),
+                ('id', '<=', record.id)
+            ])
+            record.name = f'{boat_name} - Image {image_count}'
+            
+            # Set as featured if no other featured image exists
+            if record.boat_id and not record.boat_id.image_ids.filtered(lambda x: x.is_featured and x.id != record.id):
+                record.is_featured = True
+        
+        return records
+    
+    def write(self, vals):
+        """Ensure only one featured image per boat"""
+        if vals.get('is_featured'):
+            for record in self:
+                # Unset other featured images for the same boat
+                other_featured = record.boat_id.image_ids.filtered(
+                    lambda img: img.is_featured and img.id != record.id
+                )
+                if other_featured:
+                    other_featured.write({'is_featured': False})
+        return super().write(vals)
+    
+    def action_set_featured(self):
+        """Button action to set as featured image"""
+        self.ensure_one()
+        self.write({'is_featured': True})
+        return True

@@ -12,6 +12,7 @@
         * Boat categories and classifications
         * Location management
         * Amenities and features tracking
+        * Multi-image gallery with featured image
         * Portal access for boat owners
         * Public website listing for customers
         * Moderation workflow for admins
@@ -33,6 +34,7 @@
         
         # Views (actions must come before menus that reference them)
         'views/boat_views.xml',
+        'views/boat_image_upload_views.xml',
         
         # Menus (comes last, after all actions are defined)
         'views/boat_menu.xml',

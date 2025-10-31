@@ -142,7 +142,7 @@
         </t>
     </template>
 
-    <!-- Public Boat Detail Page -->
+    <!-- Public Boat Detail Page with Scrollable Gallery -->
     <template id="boat_detail" name="Boat Detail">
         <t t-call="website.layout">
             <div id="wrap" class="oe_structure">
@@ -157,17 +157,55 @@
 
                     <div class="row">
                         <div class="col-lg-8">
-                            <!-- Main Image -->
-                            <t t-if="boat.image_1920">
-                                <img t-att-src="image_data_uri(boat.image_1920)" 
-                                     class="img-fluid rounded mb-4" alt="Boat Image"/>
-                            </t>
-                            <t t-else="">
-                                <div class="bg-light d-flex align-items-center justify-content-center rounded mb-4" 
-                                     style="height: 400px;">
-                                    <i class="fa fa-ship fa-5x text-muted"/>
+                            <!-- Image Gallery with Scrollable Thumbnails -->
+                            <div class="boat-gallery mb-4">
+                                <!-- Main Image Display -->
+                                <div class="main-image-container mb-3" style="position: relative; overflow: hidden; border-radius: 8px;">
+                                    <t t-if="boat.image_ids">
+                                        <img id="mainImage" 
+                                             t-att-src="image_data_uri(boat.image_ids[0].image_1920)" 
+                                             class="img-fluid w-100" 
+                                             alt="Boat Image"
+                                             style="max-height: 500px; object-fit: cover;"/>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="bg-light d-flex align-items-center justify-content-center" 
+                                             style="height: 400px;">
+                                            <i class="fa fa-ship fa-5x text-muted"/>
+                                        </div>
+                                    </t>
                                 </div>
-                            </t>
+
+                                <!-- Scrollable Thumbnail Gallery -->
+                                <t t-if="boat.image_ids and len(boat.image_ids) > 1">
+                                    <div class="thumbnail-gallery">
+                                        <div class="d-flex align-items-center">
+                                            <button class="btn btn-sm btn-outline-secondary me-2" 
+                                                    onclick="scrollThumbnails('left')" 
+                                                    id="scrollLeft">
+                                                <i class="fa fa-chevron-left"/>
+                                            </button>
+                                            <div class="thumbnail-container flex-grow-1" 
+                                                 id="thumbnailContainer"
+                                                 style="overflow-x: auto; scroll-behavior: smooth; white-space: nowrap;">
+                                                <t t-foreach="boat.image_ids" t-as="image">
+                                                    <img t-att-src="image_data_uri(image.image_256)" 
+                                                         t-att-data-full="image_data_uri(image.image_1920)"
+                                                         class="thumbnail-image d-inline-block me-2" 
+                                                         alt="Thumbnail"
+                                                         onclick="changeMainImage(this)"
+                                                         style="width: 100px; height: 80px; object-fit: cover; cursor: pointer; border: 2px solid transparent; border-radius: 4px;"/>
+                                                </t>
+                                            </div>
+                                            <button class="btn btn-sm btn-outline-secondary ms-2" 
+                                                    onclick="scrollThumbnails('right')" 
+                                                    id="scrollRight">
+                                                <i class="fa fa-chevron-right"/>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
 
                             <!-- Boat Title & Location -->
                             <h1 t-field="boat.name"/>
@@ -249,18 +287,74 @@
                     </div>
                 </div>
             </div>
-        </t>
-    </template>
 
-    <!-- Add Menu Item to Website -->
-    <template id="website_menu_boats" name="Boats Menu" inherit_id="website.layout">
-        <xpath expr="//header//ul[@id='top_menu']" position="inside">
-            <li class="nav-item">
-                <a href="/boats" class="nav-link">
-                    <i class="fa fa-ship"/> Boats
-                </a>
-            </li>
-        </xpath>
+            <!-- JavaScript for Image Gallery -->
+            <script type="text/javascript">
+                function changeMainImage(thumbnail) {
+                    // Remove active state from all thumbnails
+                    document.querySelectorAll('.thumbnail-image').forEach(function(img) {
+                        img.style.border = '2px solid transparent';
+                    });
+                    
+                    // Set active state on clicked thumbnail
+                    thumbnail.style.border = '2px solid #007bff';
+                    
+                    // Change main image
+                    var fullImageSrc = thumbnail.getAttribute('data-full');
+                    document.getElementById('mainImage').src = fullImageSrc;
+                }
+                
+                function scrollThumbnails(direction) {
+                    var container = document.getElementById('thumbnailContainer');
+                    var scrollAmount = 220; // Scroll by approximately 2 thumbnails
+                    
+                    if (direction === 'left') {
+                        container.scrollLeft -= scrollAmount;
+                    } else {
+                        container.scrollLeft += scrollAmount;
+                    }
+                }
+                
+                // Set first thumbnail as active on page load
+                document.addEventListener('DOMContentLoaded', function() {
+                    var firstThumbnail = document.querySelector('.thumbnail-image');
+                    if (firstThumbnail) {
+                        firstThumbnail.style.border = '2px solid #007bff';
+                    }
+                });
+            </script>
+
+            <!-- Custom CSS for Gallery -->
+            <style>
+                .thumbnail-container {
+                    scrollbar-width: thin;
+                    scrollbar-color: #007bff #f1f1f1;
+                }
+                
+                .thumbnail-container::-webkit-scrollbar {
+                    height: 8px;
+                }
+                
+                .thumbnail-container::-webkit-scrollbar-track {
+                    background: #f1f1f1;
+                    border-radius: 4px;
+                }
+                
+                .thumbnail-container::-webkit-scrollbar-thumb {
+                    background: #007bff;
+                    border-radius: 4px;
+                }
+                
+                .thumbnail-container::-webkit-scrollbar-thumb:hover {
+                    background: #0056b3;
+                }
+                
+                .thumbnail-image:hover {
+                    opacity: 0.8;
+                    transition: opacity 0.3s ease;
+                }
+            </style>
+        </t>
     </template>
 
 </odoo>
