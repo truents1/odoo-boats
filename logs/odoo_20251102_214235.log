@@ -1,0 +1,16 @@
+2025-11-02 16:12:35,962 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-02 16:12:35,962 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-02 16:12:35,962 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-02 16:12:35,962 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-02 16:12:36,089 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-02 16:12:36,297 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on 49199c3176c4:8069 
+2025-11-02 16:12:36,341 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:12:36,345 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:12:36,387 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:12:37,226 1 INFO odoo-boats-db odoo.modules.loading: 62 modules loaded in 0.84s, 0 queries (+0 extra) 
+2025-11-02 16:12:37,332 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-02 16:12:37,341 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 1.044s 
+2025-11-02 16:12:41,674 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-02 16:12:41,765 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 16:12:41] "GET /websocket?version=17.0-1 HTTP/1.1" 101 - 11 0.074 0.047
+2025-11-02 16:12:42,128 1 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-11-02 16:12:45,159 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:12:45] "GET /web HTTP/1.1" 303 - 3 0.001 0.003
