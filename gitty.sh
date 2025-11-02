@@ -6,5 +6,5 @@ git push origin main -v
 
 git -C odoo-boats pull
 docker compose build --no-cache odoo-boats-app
-docker compose up -d --force-recreate odoo-boats-app
+docker compose up --force-recreate odoo-boats-app
 
