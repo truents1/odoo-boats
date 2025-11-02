@@ -1,0 +1,83 @@
+2025-11-02 18:42:33,773 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-02 18:42:33,773 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-02 18:42:33,773 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-02 18:42:33,774 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-02 18:42:33,844 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-02 18:42:33,947 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on e025b1baa497:8069 
+2025-11-02 18:42:33,963 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 18:42:33,966 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 18:42:33,983 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 18:42:34,328 1 INFO odoo-boats-db odoo.modules.loading: 62 modules loaded in 0.34s, 0 queries (+0 extra) 
+2025-11-02 18:42:34,409 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-02 18:42:34,412 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 0.465s 
+2025-11-02 18:42:40,846 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-02 18:42:40,897 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:42:40] "GET /websocket?version=17.0-1 HTTP/1.1" 101 - 11 0.010 0.046
+2025-11-02 18:42:41,237 1 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-11-02 18:42:41,630 1 WARNING odoo-boats-db py.warnings: /usr/lib/python3/dist-packages/odoo/fields.py:803: UserWarning: Field boat.category.complete_name should be declared with recursive=True
+  File "/usr/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.10/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 127, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 342, in handle
+    BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python3.10/http/server.py", line 433, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 374, in handle_one_request
+    self.run_wsgi()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 316, in execute
+    application_iter.close()  # type: ignore
+  File "/usr/lib/python3/dist-packages/werkzeug/wsgi.py", line 466, in close
+    callback()
+  File "/usr/lib/python3/dist-packages/werkzeug/wrappers/response.py", line 439, in close
+    func()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 906, in <lambda>
+    response.call_on_close(lambda: cls._serve_forever(
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 1015, in _serve_forever
+    req.serve_websocket_message(message)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 832, in serve_websocket_message
+    service_model.retrying(
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 848, in _serve_ir_websocket
+    self.env['ir.websocket']._update_bus_presence(**data)
+  File "/usr/lib/python3/dist-packages/odoo/addons/mail/models/discuss/mail_guest.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/mail/models/discuss/ir_websocket.py", line 98, in _update_bus_presence
+    super()._update_bus_presence(inactivity_period, im_status_ids_by_model)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/ir_websocket.py", line 128, in _update_bus_presence
+    self.env['bus.presence'].update_presence(
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 66, in update_presence
+    self._update_presence(inactivity_period=inactivity_period, identity_field=identity_field, identity_value=identity_value)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 99, in _update_presence
+    presence.write(values)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 45, in write
+    result = super().write(values)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4400, in write
+    if self.pool.is_modifying_relations(field):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 501, in is_modifying_relations
+    result = field in self._field_triggers and (
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 482, in _field_triggers
+    dependencies = list(field.resolve_depends(self))
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 803, in resolve_depends
+    warnings.warn(f"Field {self} should be declared with recursive=True")
+ 
+2025-11-02 18:42:43,445 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:42:43] "GET /web HTTP/1.1" 303 - 3 0.001 0.003
+2025-11-02 18:42:53,530 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:42:53] "GET /web HTTP/1.1" 303 - 1 0.001 0.002
+2025-11-02 18:43:03,599 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:43:03] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 18:43:12,589 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-02 18:43:12,590 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-02 18:43:12,697 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 3 connections  
