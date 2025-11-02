@@ -159,7 +159,7 @@ if post.get('image_1920'):
     except Exception as e:
         _logger.error(f"Image upload failed: {str(e)}")
 
-        return request.redirect(f'/my/boats/{boat_id}')
+    return request.redirect(f'/my/boats/{boat_id}')
 
     @http.route(['/my/boats/<int:boat_id>/submit'], type='http', auth="user", website=True, methods=['POST'])
     def portal_boat_submit(self, boat_id=None, **kw):

@@ -1,15 +1,6 @@
-2025-11-02 15:31:29,013 1 INFO ? odoo: Odoo version 17.0-20251008 
-2025-11-02 15:31:29,013 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
-2025-11-02 15:31:29,013 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
-2025-11-02 15:31:29,013 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
-2025-11-02 15:31:29,089 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
-2025-11-02 15:31:29,198 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on ec3e19435b7b:8069 
-2025-11-02 15:31:29,216 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
-2025-11-02 15:31:29,220 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
-2025-11-02 15:31:29,239 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
-2025-11-02 15:31:29,571 1 CRITICAL odoo-boats-db odoo.modules.module: Couldn't load module boat_base 
-2025-11-02 15:31:29,574 1 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
-2025-11-02 15:31:29,574 1 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+2025-11-02 15:59:18,331 1 CRITICAL odoo-boats-db odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:59:18,336 1 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:59:18,337 1 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
 Traceback (most recent call last):
   File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
     odoo.modules.load_modules(registry, force_demo, status, update_module)
@@ -29,7 +20,7 @@ Traceback (most recent call last):
     return request.redirect(f'/my/boats/{boat_id}')
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 SyntaxError: 'return' outside function
-2025-11-02 15:31:29,575 1 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
+2025-11-02 15:59:18,338 1 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
 Traceback (most recent call last):
   File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 1369, in preload_registries
     registry = Registry.new(dbname, update_module=update_module)
@@ -54,6 +45,6 @@ Traceback (most recent call last):
     return request.redirect(f'/my/boats/{boat_id}')
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 SyntaxError: 'return' outside function
-2025-11-02 15:31:37,447 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
-2025-11-02 15:31:37,447 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
-2025-11-02 15:31:37,713 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 3 connections  
+2025-11-02 15:59:22,259 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-02 15:59:22,260 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-02 15:59:22,531 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 3 connections  
