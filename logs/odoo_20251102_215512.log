@@ -121,3 +121,1392 @@ Traceback (most recent call last):
     from . import category
 ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
 2025-11-02 16:25:22,462 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:25:22] "GET /web HTTP/1.1" 500 - 12 0.006 0.041
+2025-11-02 16:25:29,525 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:25:29,530 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:25:29,534 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:25:29,556 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:25:29,559 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:25:29,560 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:25:29,560 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:25:29,560 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 16:25:29] "GET /websocket?version=17.0-1 HTTP/1.1" 500 - 12 0.008 0.037
+2025-11-02 16:25:32,530 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:25:32,541 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:25:32,545 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:25:32,568 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:25:32,572 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:25:32,573 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:25:32,573 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:25:32,573 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:25:32] "GET /web HTTP/1.1" 500 - 12 0.005 0.042
+2025-11-02 16:25:42,649 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:25:42,655 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-02 16:25:42,660 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:25:42,684 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:25:42,687 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:25:42,688 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:25:42,688 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:25:42,689 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:25:42] "GET /web HTTP/1.1" 500 - 12 0.006 0.039
+2025-11-02 16:25:52,791 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:25:52,796 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-02 16:25:52,806 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:25:52,843 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:25:52,846 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:25:52,846 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:25:52,847 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:25:52,847 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:25:52] "GET /web HTTP/1.1" 500 - 12 0.009 0.057
+2025-11-02 16:26:02,928 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:26:02,932 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:26:02,937 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:26:03,020 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:26:03,021 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:26:03,022 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:03,022 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:03,022 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:26:03] "GET /web HTTP/1.1" 500 - 12 0.005 0.094
+2025-11-02 16:26:10,163 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:26:10,167 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:26:10,171 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:26:10,191 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:26:10,194 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:26:10,194 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:10,195 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:10,195 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 16:26:10] "GET /websocket?version=17.0-1 HTTP/1.1" 500 - 12 0.007 0.034
+2025-11-02 16:26:13,160 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:26:13,165 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:26:13,171 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:26:13,203 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:26:13,205 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:26:13,205 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:13,206 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:13,206 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:26:13] "GET /web HTTP/1.1" 500 - 12 0.006 0.045
+2025-11-02 16:26:23,285 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:26:23,289 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:26:23,293 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:26:23,315 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:26:23,318 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:26:23,319 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:23,319 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:23,319 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:26:23] "GET /web HTTP/1.1" 500 - 12 0.005 0.033
+2025-11-02 16:26:33,367 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:26:33,370 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:26:33,374 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:26:33,399 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:26:33,402 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:26:33,402 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:33,403 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:33,403 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:26:33] "GET /web HTTP/1.1" 500 - 12 0.004 0.036
+2025-11-02 16:26:43,479 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:26:43,483 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:26:43,487 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:26:43,512 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:26:43,515 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:26:43,515 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:43,516 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:43,516 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:26:43] "GET /web HTTP/1.1" 500 - 12 0.008 0.037
+2025-11-02 16:26:53,591 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:26:53,595 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:26:53,599 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:26:53,622 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:26:53,625 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:26:53,626 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:53,626 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 2, in <module>
+    from . import category
+ImportError: cannot import name 'category' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:26:53,627 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:26:53] "GET /web HTTP/1.1" 500 - 12 0.005 0.035
+2025-11-02 16:27:03,700 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:27:03,705 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:27:03,709 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:27:03,731 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:27:03,734 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:27:03,734 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 3, in <module>
+    from . import image
+ImportError: cannot import name 'image' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:03,735 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 3, in <module>
+    from . import image
+ImportError: cannot import name 'image' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:03,735 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:27:03] "GET /web HTTP/1.1" 500 - 12 0.007 0.037
+2025-11-02 16:27:10,693 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:27:10,698 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:27:10,703 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:27:10,725 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:27:10,728 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:27:10,728 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 3, in <module>
+    from . import image
+ImportError: cannot import name 'image' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:10,728 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 3, in <module>
+    from . import image
+ImportError: cannot import name 'image' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:10,729 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 16:27:10] "GET /websocket?version=17.0-1 HTTP/1.1" 500 - 12 0.008 0.051
+2025-11-02 16:27:13,828 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:27:13,832 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:27:13,837 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:27:13,863 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:27:13,865 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:27:13,865 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 3, in <module>
+    from . import boat_im
+ImportError: cannot import name 'boat_im' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:13,866 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 3, in <module>
+    from . import boat_im
+ImportError: cannot import name 'boat_im' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:13,866 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:27:13] "GET /web HTTP/1.1" 500 - 12 0.005 0.038
+2025-11-02 16:27:23,983 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:27:23,987 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:27:23,991 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:27:24,034 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:27:24,036 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:27:24,037 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 5, in <module>
+    from . import amenity
+ImportError: cannot import name 'amenity' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:24,038 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 5, in <module>
+    from . import amenity
+ImportError: cannot import name 'amenity' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:24,038 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:27:24] "GET /web HTTP/1.1" 500 - 12 0.005 0.054
+2025-11-02 16:27:34,113 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:27:34,117 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:27:34,121 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:27:34,161 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:27:34,164 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:27:34,165 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 6, in <module>
+    from . import book
+ImportError: cannot import name 'book' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:34,166 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 6, in <module>
+    from . import book
+ImportError: cannot import name 'book' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:34,167 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:27:34] "GET /web HTTP/1.1" 500 - 12 0.006 0.053
+2025-11-02 16:27:44,266 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:27:44,271 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:27:44,276 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:27:44,360 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:27:44,362 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:27:44,363 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 6, in <module>
+    from . import book
+ImportError: cannot import name 'book' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:44,363 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 6, in <module>
+    from . import book
+ImportError: cannot import name 'book' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:44,364 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:27:44] "GET /web HTTP/1.1" 500 - 12 0.005 0.096
+2025-11-02 16:27:54,460 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:27:54,464 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:27:54,467 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:27:54,492 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 16:27:54,494 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:27:54,495 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 6, in <module>
+    from . import book
+ImportError: cannot import name 'book' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:54,495 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 1, in <module>
+    from . import models
+  File "/mnt/extra-addons/custom/boat_base/models/__init__.py", line 6, in <module>
+    from . import book
+ImportError: cannot import name 'book' from partially initialized module 'odoo.addons.boat_base.models' (most likely due to a circular import) (/mnt/extra-addons/custom/boat_base/models/__init__.py)
+2025-11-02 16:27:54,495 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 16:27:54] "GET /web HTTP/1.1" 500 - 12 0.006 0.037
+2025-11-02 16:28:04,599 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:28:04,603 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:28:04,608 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:28:04,760 1 INFO ? odoo.modules.loading: 62 modules loaded in 0.15s, 0 queries (+0 extra) 
+2025-11-02 16:28:04,904 1 INFO ? odoo.modules.loading: Modules loaded. 
+2025-11-02 16:28:04,916 1 INFO ? odoo.modules.registry: Registry loaded in 0.325s 
+2025-11-02 16:28:04,933 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-02 16:28:04,992 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:28:04] "GET /web HTTP/1.1" 303 - 22 0.079 0.322
+2025-11-02 16:28:11,006 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 16:28:11] "GET /websocket?version=17.0-1 HTTP/1.1" 101 - 4 0.037 0.009
+2025-11-02 16:28:11,422 1 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-11-02 16:28:11,798 1 WARNING odoo-boats-db py.warnings: /usr/lib/python3/dist-packages/odoo/fields.py:803: UserWarning: Field boat.category.complete_name should be declared with recursive=True
+  File "/usr/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.10/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 127, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 342, in handle
+    BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python3.10/http/server.py", line 433, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 374, in handle_one_request
+    self.run_wsgi()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 316, in execute
+    application_iter.close()  # type: ignore
+  File "/usr/lib/python3/dist-packages/werkzeug/wsgi.py", line 466, in close
+    callback()
+  File "/usr/lib/python3/dist-packages/werkzeug/wrappers/response.py", line 439, in close
+    func()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 906, in <lambda>
+    response.call_on_close(lambda: cls._serve_forever(
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 1015, in _serve_forever
+    req.serve_websocket_message(message)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 832, in serve_websocket_message
+    service_model.retrying(
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 848, in _serve_ir_websocket
+    self.env['ir.websocket']._update_bus_presence(**data)
+  File "/usr/lib/python3/dist-packages/odoo/addons/mail/models/discuss/mail_guest.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/mail/models/discuss/ir_websocket.py", line 98, in _update_bus_presence
+    super()._update_bus_presence(inactivity_period, im_status_ids_by_model)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/ir_websocket.py", line 128, in _update_bus_presence
+    self.env['bus.presence'].update_presence(
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 66, in update_presence
+    self._update_presence(inactivity_period=inactivity_period, identity_field=identity_field, identity_value=identity_value)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 99, in _update_presence
+    presence.write(values)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 45, in write
+    result = super().write(values)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4400, in write
+    if self.pool.is_modifying_relations(field):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 501, in is_modifying_relations
+    result = field in self._field_triggers and (
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 482, in _field_triggers
+    dependencies = list(field.resolve_depends(self))
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 803, in resolve_depends
+    warnings.warn(f"Field {self} should be declared with recursive=True")
+ 
+2025-11-02 16:28:14,235 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-02 16:28:14,235 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-02 16:28:14,567 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 3 connections  
