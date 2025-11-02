@@ -18,7 +18,7 @@ htmlcov/
 # ignore folders
 filestore/
 sessions/
-# logs/
+logs/
 backups/
 temp/
 
@@ -44,3 +44,8 @@ node_modules/
 **/.DS_Store
 # Linux/vim swap files
 *~
+
+
+
+!logs/
+!logs/**/*
