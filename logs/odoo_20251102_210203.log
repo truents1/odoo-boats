@@ -1,0 +1,1560 @@
+2025-11-02 15:32:04,094 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-02 15:32:04,094 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-02 15:32:04,094 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-02 15:32:04,094 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-02 15:32:04,176 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-02 15:32:04,288 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on ec3e19435b7b:8069 
+2025-11-02 15:32:04,303 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:32:04,307 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:32:04,326 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:32:04,682 1 CRITICAL odoo-boats-db odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:32:04,686 1 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:32:04,687 1 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:04,688 1 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 1369, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:13,764 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:32:13,768 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:32:13,772 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:32:13,800 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:32:13,803 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:32:13,803 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:13,805 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:13,807 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 15:32:13] "GET /web HTTP/1.1" 500 - 12 0.004 0.044
+2025-11-02 15:32:23,878 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:32:23,882 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:32:23,887 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:32:23,915 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:32:23,918 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:32:23,918 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:23,918 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:23,919 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 15:32:23] "GET /web HTTP/1.1" 500 - 12 0.005 0.040
+2025-11-02 15:32:34,000 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:32:34,003 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:32:34,008 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:32:34,036 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:32:34,037 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:32:34,038 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:34,038 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:34,038 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 15:32:34] "GET /web HTTP/1.1" 500 - 12 0.006 0.038
+2025-11-02 15:32:44,129 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:32:44,134 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:32:44,138 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:32:44,162 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:32:44,165 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:32:44,166 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:44,166 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:44,167 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 15:32:44] "GET /web HTTP/1.1" 500 - 12 0.005 0.037
+2025-11-02 15:32:54,249 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:32:54,255 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:32:54,261 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:32:54,289 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:32:54,293 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:32:54,293 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:54,294 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:32:54,294 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 15:32:54] "GET /web HTTP/1.1" 500 - 12 0.007 0.044
+2025-11-02 15:33:04,372 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:04,376 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:04,382 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:04,467 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:04,469 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:04,469 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:04,470 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:04,470 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 15:33:04] "GET /web HTTP/1.1" 500 - 12 0.005 0.097
+2025-11-02 15:33:04,477 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:04,481 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:04,485 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:04,510 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:04,512 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:04,513 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:04,513 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:04,513 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:04] "GET / HTTP/1.1" 500 - 12 0.006 0.050
+2025-11-02 15:33:04,545 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:04,549 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:04,554 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:04,582 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:04,584 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:04,584 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:04,584 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:04,585 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:04] "GET /favicon.ico HTTP/1.1" 500 - 12 0.005 0.039
+2025-11-02 15:33:05,590 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:05,594 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:05,600 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:05,627 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:05,630 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:05,630 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:05,631 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:05,631 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:05] "GET / HTTP/1.1" 500 - 12 0.011 0.042
+2025-11-02 15:33:05,655 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:05,658 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:05,663 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:05,688 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:05,690 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:05,690 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:05,691 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:05,691 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:05] "GET /favicon.ico HTTP/1.1" 500 - 12 0.005 0.037
+2025-11-02 15:33:05,960 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:05,972 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-02 15:33:05,978 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:06,003 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:06,005 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:06,006 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,006 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,007 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:06] "GET / HTTP/1.1" 500 - 12 0.008 0.046
+2025-11-02 15:33:06,032 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:06,036 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:06,042 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:06,068 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:06,070 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:06,071 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,071 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,071 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:06] "GET /favicon.ico HTTP/1.1" 500 - 12 0.005 0.039
+2025-11-02 15:33:06,209 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:06,215 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-02 15:33:06,221 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:06,242 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:06,245 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:06,246 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,246 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,246 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:06] "GET / HTTP/1.1" 500 - 12 0.012 0.040
+2025-11-02 15:33:06,272 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:06,276 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:06,281 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:06,306 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:06,309 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:06,309 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,309 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,310 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:06] "GET /favicon.ico HTTP/1.1" 500 - 12 0.006 0.038
+2025-11-02 15:33:06,492 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:06,496 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:06,502 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:06,526 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:06,529 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:06,530 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,530 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,531 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:06] "GET / HTTP/1.1" 500 - 12 0.009 0.041
+2025-11-02 15:33:06,555 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:06,558 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:06,563 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:06,588 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:06,590 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:06,591 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,591 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,592 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:06] "GET /favicon.ico HTTP/1.1" 500 - 12 0.005 0.036
+2025-11-02 15:33:06,766 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:06,770 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:06,774 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:06,797 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:06,800 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:06,800 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,801 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,801 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:06] "GET / HTTP/1.1" 500 - 12 0.007 0.035
+2025-11-02 15:33:06,823 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:06,827 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:06,834 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:06,924 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:06,926 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:06,926 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,927 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:06,927 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 15:33:06] "GET /favicon.ico HTTP/1.1" 500 - 12 0.005 0.103
+2025-11-02 15:33:14,546 1 INFO ? odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:33:14,550 1 INFO ? odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:33:14,554 1 INFO ? odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:33:14,593 1 CRITICAL ? odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:33:14,596 1 WARNING ? odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:33:14,597 1 ERROR ? odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:14,597 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 87, in __new__
+    return cls.registries[db_name]
+  File "<decorator-gen-5>", line 2, in __getitem__
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'odoo-boats-db'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1949, in _serve_db
+    self.registry = Registry(self.db).check_signaling()
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 89, in __new__
+    return cls.new(db_name)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:33:14,598 1 INFO ? werkzeug: 127.0.0.1 - - [02/Nov/2025 15:33:14] "GET /web HTTP/1.1" 500 - 12 0.004 0.051
+2025-11-02 15:33:24,244 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-02 15:33:24,244 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-02 15:33:24,559 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 3 connections  

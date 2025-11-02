@@ -174,3 +174,195 @@ Traceback (most recent call last):
     return request.redirect(f'/my/boats/{boat_id}')
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 SyntaxError: 'return' outside function
+2025-11-02 15:30:26,679 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-02 15:30:26,681 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-02 15:30:26,681 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-02 15:30:26,681 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-02 15:30:26,796 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-02 15:30:27,026 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:30:27,029 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:30:27,061 1 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-02 15:30:27,078 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-02 15:30:27,924 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Management Base'] to user __system__ #1 via n/a 
+2025-11-02 15:30:27,924 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Management Base'] to user __system__ #1 via n/a 
+2025-11-02 15:30:28,370 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-02 15:30:28,440 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:30:29,135 1 INFO odoo-boats-db odoo.modules.loading: Loading module boat_base (47/62) 
+2025-11-02 15:30:29,251 1 CRITICAL odoo-boats-db odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:30:29,254 1 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:30:29,254 1 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:30:29,256 1 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 1369, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:30:29,257 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-02 15:30:29,258 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-02 15:30:29,258 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-02 15:31:10,586 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-02 15:31:10,586 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-02 15:31:10,586 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-02 15:31:10,586 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-02 15:31:10,656 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-02 15:31:10,784 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:31:10,788 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:31:10,803 1 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-02 15:31:10,808 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-02 15:31:11,400 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Management Base'] to user __system__ #1 via n/a 
+2025-11-02 15:31:11,401 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Management Base'] to user __system__ #1 via n/a 
+2025-11-02 15:31:11,826 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-02 15:31:11,861 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:31:12,169 1 INFO odoo-boats-db odoo.modules.loading: Loading module boat_base (47/62) 
+2025-11-02 15:31:12,273 1 CRITICAL odoo-boats-db odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:31:12,276 1 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:31:12,277 1 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:31:12,277 1 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 1369, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:31:12,278 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-02 15:31:12,278 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-02 15:31:12,278 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-02 15:31:42,728 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-02 15:31:42,728 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-02 15:31:42,728 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-02 15:31:42,728 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-02 15:31:42,795 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-02 15:31:42,912 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 15:31:42,917 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 15:31:42,931 1 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-02 15:31:42,933 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-02 15:31:43,567 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Management Base'] to user __system__ #1 via n/a 
+2025-11-02 15:31:43,567 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Management Base'] to user __system__ #1 via n/a 
+2025-11-02 15:31:43,957 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-02 15:31:43,974 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 15:31:44,263 1 INFO odoo-boats-db odoo.modules.loading: Loading module boat_base (47/62) 
+2025-11-02 15:31:44,366 1 CRITICAL odoo-boats-db odoo.modules.module: Couldn't load module boat_base 
+2025-11-02 15:31:44,370 1 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-02 15:31:44,370 1 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:31:44,371 1 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 1369, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 187, in load_module_graph
+    load_openerp_module(package.name)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 395, in load_openerp_module
+    __import__(qualname)
+  File "/mnt/extra-addons/custom/boat_base/__init__.py", line 2, in <module>
+    from . import controllers
+  File "/mnt/extra-addons/custom/boat_base/controllers/__init__.py", line 1, in <module>
+    from . import portal
+  File "/mnt/extra-addons/custom/boat_base/controllers/portal.py", line 162
+    return request.redirect(f'/my/boats/{boat_id}')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: 'return' outside function
+2025-11-02 15:31:44,371 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-02 15:31:44,371 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-02 15:31:44,372 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
