@@ -75,8 +75,12 @@ class BoatBoat(models.Model):
     # Basic Information
     name = fields.Char(string='Boat Name', required=True, tracking=True)
     category_id = fields.Many2one('boat.category', string='Category', tracking=True)
+    category_id = fields.Many2one('boat.category', string='Category', 
+                                tracking=True, index=True)
     owner_id = fields.Many2one('res.partner', string='Owner', tracking=True)
     location_id = fields.Many2one('boat.location', string='Location', tracking=True)
+    location_id = fields.Many2one('boat.location', string='Location', 
+                                tracking=True, index=True) 
     active = fields.Boolean(string='Active', default=True)
 
     # Specifications
@@ -125,7 +129,8 @@ class BoatBoat(models.Model):
         ('rejected', 'Rejected'),
         ('published', 'Published'),
     ], string='State', default='draft', required=True, tracking=True)
-
+    state = fields.Selection([...], index=True) 
+    
     # SEO & Website Fields (for admin moderation)
     website_published = fields.Boolean(string='Visible on Website', default=False, tracking=True)
     website_meta_title = fields.Char(string='Website Meta Title')
@@ -270,6 +275,15 @@ class BoatBoat(models.Model):
                 raise ValidationError(
                     _('Year built must be between 1900 and %s') % (current_year + 1)
                 )
+                
+    @api.constrains('base_price_per_day')
+    def _check_price(self):
+        """Ensure price is reasonable"""
+        for boat in self:
+            if boat.base_price_per_day < 0:
+                raise ValidationError(_('Price cannot be negative!'))
+            if boat.base_price_per_day > 100000:
+                raise ValidationError(_('Price seems unreasonably high. Please verify.'))
 
 class BoatImage(models.Model):
     _name = 'boat.image'

@@ -153,8 +153,11 @@ class BoatPortal(CustomerPortal):
             boat_id = boat.id
 
         # Handle image upload
-        if post.get('image_1920'):
-            boat.image_1920 = post.get('image_1920')
+if post.get('image_1920'):
+    try:
+        boat.image_1920 = post.get('image_1920')
+    except Exception as e:
+        _logger.error(f"Image upload failed: {str(e)}")
 
         return request.redirect(f'/my/boats/{boat_id}')
 
