@@ -19,6 +19,4 @@ access_boat_image_user,access.boat.image.user,model_boat_image,group_boat_user,1
 access_boat_image_manager,access.boat.image.manager,model_boat_image,group_boat_manager,1,1,1,1
 access_boat_image_portal,access.boat.image.portal,model_boat_image,base.group_portal,1,1,1,1
 access_boat_image_public,access.boat.image.public,model_boat_image,base.group_public,1,0,0,0
-access_boat_image_upload_wizard_user,access.boat.image.upload.wizard.user,model_boat_image_upload_wizard,group_boat_user,1,1,1,1
-access_boat_image_upload_wizard_manager,access.boat.image.upload.wizard.manager,model_boat_image_upload_wizard,group_boat_manager,1,1,1,1
 access_boat_image_upload_wizard_portal,access.boat.image.upload.wizard.portal,model_boat_image_upload_wizard,base.group_portal,1,1,1,1

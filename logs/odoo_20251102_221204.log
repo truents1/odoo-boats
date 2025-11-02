@@ -307,3 +307,23 @@ Missing required value for the field 'Model' (model_id)
 2025-11-02 16:42:25,140 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:42:25] "GET /web HTTP/1.1" 303 - 8 0.009 0.137
 2025-11-02 16:42:25,293 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 16:42:25] "GET /web/assets/debug/web.assets_web.js HTTP/1.1" 304 - 24 0.062 0.081
 2025-11-02 16:42:35,218 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:42:35] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 16:42:45,294 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:42:45] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-02 16:42:55,373 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:42:55] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 16:43:05,465 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:43:05] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-02 16:43:05,986 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Mail: Fetchmail Service`. 
+2025-11-02 16:43:05,998 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: start checking for new emails on imap server mail.yayboat.com 
+2025-11-02 16:43:06,565 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: Fetched 0 email(s) on imap server mail.yayboat.com; 0 succeeded, 0 failed. 
+2025-11-02 16:43:06,631 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Mail: Fetchmail Service` (0.645s). 
+2025-11-02 16:43:15,564 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:43:15] "GET /web HTTP/1.1" 303 - 1 0.001 0.005
+2025-11-02 16:43:25,658 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:43:25] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-02 16:43:35,739 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:43:35] "GET /web HTTP/1.1" 303 - 1 0.001 0.005
+2025-11-02 16:43:45,815 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:43:45] "GET /web HTTP/1.1" 303 - 1 0.001 0.002
+2025-11-02 16:43:55,878 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:43:55] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 16:44:05,960 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:44:05] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-02 16:44:16,029 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:44:16] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 16:44:26,116 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:44:26] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 16:44:36,190 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:44:36] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 16:44:46,290 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:44:46] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-02 16:44:51,854 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-02 16:44:51,854 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-02 16:44:52,401 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 7 connections  
