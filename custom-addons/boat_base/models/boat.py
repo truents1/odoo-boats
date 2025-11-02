@@ -129,7 +129,6 @@ class BoatBoat(models.Model):
         ('rejected', 'Rejected'),
         ('published', 'Published'),
     ], string='State', default='draft', required=True, tracking=True)
-    state = fields.Selection([...], index=True) 
     
     # SEO & Website Fields (for admin moderation)
     website_published = fields.Boolean(string='Visible on Website', default=False, tracking=True)
