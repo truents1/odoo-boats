@@ -1,0 +1,212 @@
+2025-11-02 16:41:16,069 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-02 16:41:16,069 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-02 16:41:16,069 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-02 16:41:16,069 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-02 16:41:16,188 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-02 16:41:16,428 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on 8409bbec2e04:8069 
+2025-11-02 16:41:16,480 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:41:16,484 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:41:16,527 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:41:17,320 1 INFO odoo-boats-db odoo.modules.loading: 62 modules loaded in 0.79s, 0 queries (+0 extra) 
+2025-11-02 16:41:17,447 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-02 16:41:17,458 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 1.030s 
+2025-11-02 16:41:18,397 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-02 16:41:18,508 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 16:41:18] "GET /websocket?version=17.0-1 HTTP/1.1" 101 - 11 0.067 0.078
+2025-11-02 16:41:18,876 1 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-11-02 16:41:19,284 1 WARNING odoo-boats-db py.warnings: /usr/lib/python3/dist-packages/odoo/fields.py:803: UserWarning: Field boat.category.complete_name should be declared with recursive=True
+  File "/usr/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.10/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 127, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 342, in handle
+    BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python3.10/http/server.py", line 433, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 374, in handle_one_request
+    self.run_wsgi()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 316, in execute
+    application_iter.close()  # type: ignore
+  File "/usr/lib/python3/dist-packages/werkzeug/wsgi.py", line 466, in close
+    callback()
+  File "/usr/lib/python3/dist-packages/werkzeug/wrappers/response.py", line 439, in close
+    func()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 906, in <lambda>
+    response.call_on_close(lambda: cls._serve_forever(
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 1015, in _serve_forever
+    req.serve_websocket_message(message)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 832, in serve_websocket_message
+    service_model.retrying(
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 848, in _serve_ir_websocket
+    self.env['ir.websocket']._update_bus_presence(**data)
+  File "/usr/lib/python3/dist-packages/odoo/addons/mail/models/discuss/mail_guest.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/mail/models/discuss/ir_websocket.py", line 98, in _update_bus_presence
+    super()._update_bus_presence(inactivity_period, im_status_ids_by_model)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/ir_websocket.py", line 128, in _update_bus_presence
+    self.env['bus.presence'].update_presence(
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 66, in update_presence
+    self._update_presence(inactivity_period=inactivity_period, identity_field=identity_field, identity_value=identity_value)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 99, in _update_presence
+    presence.write(values)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 45, in write
+    result = super().write(values)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4400, in write
+    if self.pool.is_modifying_relations(field):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 501, in is_modifying_relations
+    result = field in self._field_triggers and (
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 482, in _field_triggers
+    dependencies = list(field.resolve_depends(self))
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 803, in resolve_depends
+    warnings.warn(f"Field {self} should be declared with recursive=True")
+ 
+2025-11-02 16:41:25,195 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:41:25] "GET /web HTTP/1.1" 303 - 3 0.001 0.003
+2025-11-02 16:41:28,722 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 16:41:28] "POST /web/action/load HTTP/1.1" 200 - 11 0.021 0.393
+2025-11-02 16:41:28,771 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 16:41:28] "POST /web/dataset/call_kw/base.module.update/get_views HTTP/1.1" 200 - 11 0.023 0.011
+2025-11-02 16:41:28,791 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 16:41:28] "POST /web/dataset/call_kw/base.module.update/onchange HTTP/1.1" 200 - 2 0.002 0.004
+2025-11-02 16:41:30,610 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 16:41:30] "POST /web/dataset/call_kw/base.module.update/web_save HTTP/1.1" 200 - 5 0.010 0.007
+2025-11-02 16:41:30,622 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user admin #2 via 172.19.0.1 
+2025-11-02 16:41:31,257 1 INFO odoo-boats-db odoo.modules.registry: Caches invalidated, signaling through the database: ['templates'] 
+2025-11-02 16:41:31,268 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 16:41:31] "POST /web/dataset/call_button HTTP/1.1" 200 - 1713 0.381 0.268
+2025-11-02 16:41:35,048 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_immediate_upgrade on ['Boat Management Base'] to user admin #2 via 172.19.0.1 
+2025-11-02 16:41:35,052 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Management Base'] to user admin #2 via 172.19.0.1 
+2025-11-02 16:41:35,052 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Management Base'] to user admin #2 via 172.19.0.1 
+2025-11-02 16:41:35,284 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:41:35] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-02 16:41:35,681 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user admin #2 via 172.19.0.1 
+2025-11-02 16:41:35,720 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:41:35,724 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:41:35,736 1 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-02 16:41:35,738 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via 172.19.0.1 
+2025-11-02 16:41:36,224 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:41:36,249 1 INFO odoo-boats-db odoo.modules.loading: Loading module boat_base (47/62) 
+2025-11-02 16:41:36,375 1 INFO odoo-boats-db odoo.modules.registry: module boat_base: creating or updating database tables 
+2025-11-02 16:41:36,391 1 WARNING odoo-boats-db odoo.models: parent_path field on model 'boat.category' should have unaccent disabled. Add `unaccent=False` to the field definition. 
+2025-11-02 16:41:36,496 1 INFO odoo-boats-db odoo.schema: Table 'boat_category': unable to set NOT NULL on column 'code' 
+2025-11-02 16:41:36,499 1 INFO odoo-boats-db odoo.schema: Table 'boat_location': unable to set NOT NULL on column 'code' 
+2025-11-02 16:41:36,506 1 INFO odoo-boats-db odoo.schema: Table 'boat_amenity': unable to set NOT NULL on column 'code' 
+2025-11-02 16:41:36,657 1 INFO odoo-boats-db odoo.modules.loading: loading boat_base/security/boat_security.xml 
+2025-11-02 16:41:36,665 1 INFO odoo-boats-db odoo.modules.loading: loading boat_base/security/ir.model.access.csv 
+2025-11-02 16:41:36,686 1 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_access" ("active", "create_date", "create_uid", "group_id", "name", "perm_create", "perm_read", "perm_unlink", "perm_write", "write_date", "write_uid") VALUES (true, '2025-11-02 16:41:35.709148', 1, 91, 'access.boat.image.upload.wizard.user', true, true, true, true, '2025-11-02 16:41:35.709148', 1), (true, '2025-11-02 16:41:35.709148', 1, 92, 'access.boat.image.upload.wizard.manager', true, true, true, true, '2025-11-02 16:41:35.709148', 1), (true, '2025-11-02 16:41:35.709148', 1, 10, 'access.boat.image.upload.wizard.portal', true, true, true, true, '2025-11-02 16:41:35.709148', 1) RETURNING "id"
+ERROR: null value in column "model_id" of relation "ir_model_access" violates not-null constraint
+DETAIL:  Failing row contains (1017, null, 91, 1, 1, access.boat.image.upload.wizard.user, t, t, t, t, t, 2025-11-02 16:41:35.709148, 2025-11-02 16:41:35.709148).
+ 
+2025-11-02 16:41:36,716 1 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_access" ("active", "create_date", "create_uid", "group_id", "name", "perm_create", "perm_read", "perm_unlink", "perm_write", "write_date", "write_uid") VALUES (true, '2025-11-02 16:41:35.709148', 1, 91, 'access.boat.image.upload.wizard.user', true, true, true, true, '2025-11-02 16:41:35.709148', 1) RETURNING "id"
+ERROR: null value in column "model_id" of relation "ir_model_access" violates not-null constraint
+DETAIL:  Failing row contains (1018, null, 91, 1, 1, access.boat.image.upload.wizard.user, t, t, t, t, t, 2025-11-02 16:41:35.709148, 2025-11-02 16:41:35.709148).
+ 
+2025-11-02 16:41:36,720 1 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_access" ("active", "create_date", "create_uid", "group_id", "name", "perm_create", "perm_read", "perm_unlink", "perm_write", "write_date", "write_uid") VALUES (true, '2025-11-02 16:41:35.709148', 1, 92, 'access.boat.image.upload.wizard.manager', true, true, true, true, '2025-11-02 16:41:35.709148', 1) RETURNING "id"
+ERROR: null value in column "model_id" of relation "ir_model_access" violates not-null constraint
+DETAIL:  Failing row contains (1019, null, 92, 1, 1, access.boat.image.upload.wizard.manager, t, t, t, t, t, 2025-11-02 16:41:35.709148, 2025-11-02 16:41:35.709148).
+ 
+2025-11-02 16:41:36,723 1 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_access" ("active", "create_date", "create_uid", "group_id", "name", "perm_create", "perm_read", "perm_unlink", "perm_write", "write_date", "write_uid") VALUES (true, '2025-11-02 16:41:35.709148', 1, 10, 'access.boat.image.upload.wizard.portal', true, true, true, true, '2025-11-02 16:41:35.709148', 1) RETURNING "id"
+ERROR: null value in column "model_id" of relation "ir_model_access" violates not-null constraint
+DETAIL:  Failing row contains (1020, null, 10, 1, 1, access.boat.image.upload.wizard.portal, t, t, t, t, t, 2025-11-02 16:41:35.709148, 2025-11-02 16:41:35.709148).
+ 
+2025-11-02 16:41:36,798 1 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-02 16:41:36,799 1 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 631, in convert_file
+    convert_csv_import(env, module, pathname, fp.read(), idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 677, in convert_csv_import
+    raise Exception(_('Module loading %s failed: file %s could not be processed:\n %s') % (module, fname, warning_msg))
+Exception: Module loading boat_base failed: file boat_base/security/ir.model.access.csv could not be processed:
+ No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+Missing required value for the field 'Model' (model_id)
+Missing required value for the field 'Model' (model_id)
+Missing required value for the field 'Model' (model_id)
+2025-11-02 16:41:36,804 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 16:41:36,807 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 16:41:36,812 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 16:41:36,836 1 INFO odoo-boats-db odoo.modules.loading: 62 modules loaded in 0.02s, 0 queries (+0 extra) 
+2025-11-02 16:41:36,919 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-02 16:41:36,922 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 0.121s 
+2025-11-02 16:41:36,928 1 ERROR odoo-boats-db odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1971, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1999, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2203, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 221, in _dispatch
+    result = endpoint(**request.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 786, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 29, in call_button
+    action = self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 21, in _call_kw
+    return call_kw(Model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 484, in call_kw
+    result = _call_kw_multi(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 469, in _call_kw_multi
+    result = method(recs, *args, **kwargs)
+  File "<decorator-gen-83>", line 2, in button_immediate_upgrade
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 75, in check_and_log
+    return method(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 667, in button_immediate_upgrade
+    return self._button_immediate_function(self.env.registry[self._name].button_upgrade)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 600, in _button_immediate_function
+    registry = modules.registry.Registry.new(self._cr.dbname, update_module=True)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 631, in convert_file
+    convert_csv_import(env, module, pathname, fp.read(), idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 677, in convert_csv_import
+    raise Exception(_('Module loading %s failed: file %s could not be processed:\n %s') % (module, fname, warning_msg))
+Exception: Module loading boat_base failed: file boat_base/security/ir.model.access.csv could not be processed:
+ No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+Missing required value for the field 'Model' (model_id)
+Missing required value for the field 'Model' (model_id)
+Missing required value for the field 'Model' (model_id)
+2025-11-02 16:41:36,929 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 16:41:36] "POST /web/dataset/call_button HTTP/1.1" 200 - 3454 0.906 0.985
+2025-11-02 16:41:45,344 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-02 16:41:45,363 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 16:41:45] "GET /web HTTP/1.1" 303 - 8 0.003 0.018
+2025-11-02 16:41:52,688 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-02 16:41:52,688 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-02 16:41:52,957 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 5 connections  
