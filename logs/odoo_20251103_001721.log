@@ -1,0 +1,522 @@
+2025-11-02 18:47:21,717 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-02 18:47:21,717 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-02 18:47:21,717 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-02 18:47:21,717 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-02 18:47:21,806 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-02 18:47:21,918 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on aada1759d52c:8069 
+2025-11-02 18:47:21,968 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 18:47:21,973 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 18:47:22,001 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 18:47:22,442 1 INFO odoo-boats-db odoo.modules.loading: 62 modules loaded in 0.44s, 0 queries (+0 extra) 
+2025-11-02 18:47:22,551 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-02 18:47:22,561 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 0.644s 
+2025-11-02 18:47:22,591 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-02 18:47:22,673 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:22] "GET /websocket?version=17.0-1 HTTP/1.1" 101 - 11 0.047 0.645
+2025-11-02 18:47:23,080 1 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-11-02 18:47:23,440 1 WARNING odoo-boats-db py.warnings: /usr/lib/python3/dist-packages/odoo/fields.py:803: UserWarning: Field boat.category.complete_name should be declared with recursive=True
+  File "/usr/lib/python3.10/threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.10/socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 127, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 342, in handle
+    BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python3.10/http/server.py", line 433, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 374, in handle_one_request
+    self.run_wsgi()
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 319, in run_wsgi
+    execute(self.server.app)
+  File "/usr/lib/python3/dist-packages/werkzeug/serving.py", line 316, in execute
+    application_iter.close()  # type: ignore
+  File "/usr/lib/python3/dist-packages/werkzeug/wsgi.py", line 466, in close
+    callback()
+  File "/usr/lib/python3/dist-packages/werkzeug/wrappers/response.py", line 439, in close
+    func()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 906, in <lambda>
+    response.call_on_close(lambda: cls._serve_forever(
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 1015, in _serve_forever
+    req.serve_websocket_message(message)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 832, in serve_websocket_message
+    service_model.retrying(
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/websocket.py", line 848, in _serve_ir_websocket
+    self.env['ir.websocket']._update_bus_presence(**data)
+  File "/usr/lib/python3/dist-packages/odoo/addons/mail/models/discuss/mail_guest.py", line 39, in wrapper
+    return func(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/mail/models/discuss/ir_websocket.py", line 98, in _update_bus_presence
+    super()._update_bus_presence(inactivity_period, im_status_ids_by_model)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/ir_websocket.py", line 128, in _update_bus_presence
+    self.env['bus.presence'].update_presence(
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 66, in update_presence
+    self._update_presence(inactivity_period=inactivity_period, identity_field=identity_field, identity_value=identity_value)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 99, in _update_presence
+    presence.write(values)
+  File "/usr/lib/python3/dist-packages/odoo/addons/bus/models/bus_presence.py", line 45, in write
+    result = super().write(values)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4400, in write
+    if self.pool.is_modifying_relations(field):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 501, in is_modifying_relations
+    result = field in self._field_triggers and (
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 482, in _field_triggers
+    dependencies = list(field.resolve_depends(self))
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 803, in resolve_depends
+    warnings.warn(f"Field {self} should be declared with recursive=True")
+ 
+2025-11-02 18:47:31,403 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:47:31] "GET /web HTTP/1.1" 303 - 3 0.001 0.003
+2025-11-02 18:47:41,496 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:47:41] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-02 18:47:44,434 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:44] "POST /web/dataset/call_kw/base.module.update/onchange HTTP/1.1" 200 - 5 0.020 0.105
+2025-11-02 18:47:46,108 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:46] "POST /web/dataset/call_kw/base.module.update/web_save HTTP/1.1" 200 - 6 0.012 0.011
+2025-11-02 18:47:46,126 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user admin #2 via 172.19.0.1 
+2025-11-02 18:47:46,784 1 INFO odoo-boats-db odoo.modules.registry: Caches invalidated, signaling through the database: ['templates'] 
+2025-11-02 18:47:46,792 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:46] "POST /web/dataset/call_button HTTP/1.1" 200 - 1713 0.395 0.276
+2025-11-02 18:47:49,529 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.taxonomy.category 
+2025-11-02 18:47:49,529 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.taxonomy 
+2025-11-02 18:47:49,862 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:49] "GET /web?debug=assets HTTP/1.1" 200 - 72 0.075 0.282
+2025-11-02 18:47:50,320 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /web/assets/debug/web.assets_web.css HTTP/1.1" 304 - 20 0.025 0.388
+2025-11-02 18:47:50,406 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /web/assets/debug/web.assets_web.js HTTP/1.1" 304 - 20 0.093 0.404
+2025-11-02 18:47:50,555 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /web/manifest.webmanifest HTTP/1.1" 200 - 9 0.015 0.015
+2025-11-02 18:47:50,558 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /bus/websocket_worker_bundle?v=17.0-1 HTTP/1.1" 304 - 5 0.011 0.019
+2025-11-02 18:47:50,561 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "POST /web/action/load HTTP/1.1" 200 - 9 0.024 0.014
+2025-11-02 18:47:50,602 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /web/static/img/favicon.ico HTTP/1.1" 304 - 0 0.000 0.010
+2025-11-02 18:47:50,612 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2 HTTP/1.1" 304 - 0 0.000 0.013
+2025-11-02 18:47:50,617 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 304 - 0 0.000 0.012
+2025-11-02 18:47:50,645 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /web/static/img/odoo-icon-192x192.png HTTP/1.1" 304 - 0 0.000 0.015
+2025-11-02 18:47:50,653 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 8 0.028 0.035
+2025-11-02 18:47:50,669 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "POST /web/dataset/call_kw/res.users/systray_get_activities HTTP/1.1" 200 - 20 0.076 0.025
+2025-11-02 18:47:50,671 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /websocket?version=17.0-1 HTTP/1.1" 101 - 1 0.004 0.041
+2025-11-02 18:47:50,718 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "POST /mail/init_messaging HTTP/1.1" 200 - 56 0.123 0.060
+2025-11-02 18:47:50,744 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "POST /web/dataset/call_kw/ir.module.module/get_views HTTP/1.1" 200 - 46 0.058 0.069
+2025-11-02 18:47:50,746 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "POST /mail/load_message_failures HTTP/1.1" 200 - 10 0.010 0.010
+2025-11-02 18:47:50,767 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 1 0.003 0.009
+2025-11-02 18:47:50,807 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 38 0.026 0.025
+2025-11-02 18:47:50,825 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 3 0.004 0.062
+2025-11-02 18:47:50,938 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /sale_management/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.002
+2025-11-02 18:47:50,943 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /pos_restaurant/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.002
+2025-11-02 18:47:50,952 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /crm/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.004
+2025-11-02 18:47:50,955 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /account/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.008
+2025-11-02 18:47:50,960 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /base/static/img/icons/mrp_workorder.png HTTP/1.1" 304 - 0 0.000 0.006
+2025-11-02 18:47:50,966 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /base/static/img/icons/account_accountant.png HTTP/1.1" 304 - 0 0.000 0.006
+2025-11-02 18:47:50,970 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /website/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.012
+2025-11-02 18:47:50,973 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /stock/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.011
+2025-11-02 18:47:50,976 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /base/static/img/icons/knowledge.png HTTP/1.1" 304 - 0 0.000 0.008
+2025-11-02 18:47:50,988 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /purchase/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.011
+2025-11-02 18:47:50,989 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /point_of_sale/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.015
+2025-11-02 18:47:50,992 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /mrp/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.009
+2025-11-02 18:47:50,993 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /project/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.015
+2025-11-02 18:47:50,994 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /website_sale/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.004
+2025-11-02 18:47:50,996 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:50] "GET /hr_expense/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.015
+2025-11-02 18:47:51,002 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/timesheet_grid.png HTTP/1.1" 304 - 0 0.000 0.004
+2025-11-02 18:47:51,005 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/web_studio.png HTTP/1.1" 304 - 0 0.000 0.002
+2025-11-02 18:47:51,008 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /mass_mailing/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.003
+2025-11-02 18:47:51,017 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /hr_holidays/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.008
+2025-11-02 18:47:51,019 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /hr_recruitment/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.007
+2025-11-02 18:47:51,023 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/industry_fsm.png HTTP/1.1" 304 - 0 0.000 0.007
+2025-11-02 18:47:51,032 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /data_recycle/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.004
+2025-11-02 18:47:51,037 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /boat_base/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.012
+2025-11-02 18:47:51,038 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /maintenance/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.005
+2025-11-02 18:47:51,039 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /hr/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.018
+2025-11-02 18:47:51,040 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/sign.png HTTP/1.1" 304 - 0 0.000 0.007
+2025-11-02 18:47:51,048 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/helpdesk.png HTTP/1.1" 304 - 0 0.000 0.007
+2025-11-02 18:47:51,051 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/sale_subscription.png HTTP/1.1" 304 - 0 0.000 0.007
+2025-11-02 18:47:51,057 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/quality_control.png HTTP/1.1" 304 - 0 0.000 0.005
+2025-11-02 18:47:51,058 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /website_slides/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.003
+2025-11-02 18:47:51,062 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/planning.png HTTP/1.1" 304 - 0 0.000 0.002
+2025-11-02 18:47:51,069 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /mail/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.003
+2025-11-02 18:47:51,073 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /website_event/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.009
+2025-11-02 18:47:51,076 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /contacts/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.006
+2025-11-02 18:47:51,086 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /calendar/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.007
+2025-11-02 18:47:51,087 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/mrp_plm.png HTTP/1.1" 304 - 0 0.000 0.011
+2025-11-02 18:47:51,092 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/social.png HTTP/1.1" 304 - 0 0.000 0.008
+2025-11-02 18:47:51,094 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/hr_appraisal.png HTTP/1.1" 304 - 0 0.000 0.005
+2025-11-02 18:47:51,109 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /fleet/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.014
+2025-11-02 18:47:51,111 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /im_livechat/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.006
+2025-11-02 18:47:51,112 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/appointment.png HTTP/1.1" 304 - 0 0.000 0.005
+2025-11-02 18:47:51,118 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/marketing_automation.png HTTP/1.1" 304 - 0 0.000 0.017
+2025-11-02 18:47:51,121 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /survey/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.008
+2025-11-02 18:47:51,128 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/web_mobile.png HTTP/1.1" 304 - 0 0.000 0.007
+2025-11-02 18:47:51,129 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /repair/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.006
+2025-11-02 18:47:51,132 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /hr_attendance/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.007
+2025-11-02 18:47:51,143 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/stock_barcode.png HTTP/1.1" 304 - 0 0.000 0.006
+2025-11-02 18:47:51,145 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /mass_mailing_sms/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.011
+2025-11-02 18:47:51,150 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /project_todo/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.006
+2025-11-02 18:47:51,157 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/voip.png HTTP/1.1" 304 - 0 0.000 0.003
+2025-11-02 18:47:51,160 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /hr_skills/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.010
+2025-11-02 18:47:51,171 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /lunch/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.010
+2025-11-02 18:47:51,173 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /website_hr_recruitment/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.008
+2025-11-02 18:47:51,182 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/sale_amazon.png HTTP/1.1" 304 - 0 0.000 0.010
+2025-11-02 18:47:51,184 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /base/static/img/icons/sale_ebay.png HTTP/1.1" 304 - 0 0.000 0.008
+2025-11-02 18:47:51,188 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:51] "GET /hr_contract/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.008
+2025-11-02 18:47:51,560 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:47:51] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 18:47:52,744 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:52] "GET /web/service-worker.js HTTP/1.1" 200 - 1 0.001 0.006
+2025-11-02 18:47:53,597 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:53] "POST /web/action/load HTTP/1.1" 200 - 8 0.003 0.007
+2025-11-02 18:47:53,625 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:53] "POST /web/dataset/call_kw/base.module.update/get_views HTTP/1.1" 200 - 9 0.006 0.008
+2025-11-02 18:47:53,638 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:53] "POST /web/dataset/call_kw/base.module.update/onchange HTTP/1.1" 200 - 1 0.000 0.002
+2025-11-02 18:47:54,825 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:54] "POST /web/dataset/call_kw/base.module.update/web_save HTTP/1.1" 200 - 3 0.002 0.005
+2025-11-02 18:47:54,843 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user admin #2 via 172.19.0.1 
+2025-11-02 18:47:55,429 1 INFO odoo-boats-db odoo.modules.registry: Caches invalidated, signaling through the database: ['templates'] 
+2025-11-02 18:47:55,430 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:55] "POST /web/dataset/call_button HTTP/1.1" 200 - 1596 0.334 0.261
+2025-11-02 18:47:58,009 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:58] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 38 0.026 0.025
+2025-11-02 18:47:58,036 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:58] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 4 0.005 0.016
+2025-11-02 18:47:58,155 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:47:58] "GET /base/static/description/icon.png HTTP/1.1" 304 - 0 0.000 0.001
+2025-11-02 18:48:00,612 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:48:00] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 38 0.032 0.024
+2025-11-02 18:48:00,629 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:48:00] "POST /web/dataset/call_kw/ir.module.module/web_search_read HTTP/1.1" 200 - 3 0.002 0.004
+2025-11-02 18:48:01,639 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:48:01] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-02 18:48:03,886 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_immediate_upgrade on ['Boat Management Base'] to user admin #2 via 172.19.0.1 
+2025-11-02 18:48:03,887 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Management Base'] to user admin #2 via 172.19.0.1 
+2025-11-02 18:48:03,888 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Management Base'] to user admin #2 via 172.19.0.1 
+2025-11-02 18:48:04,524 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user admin #2 via 172.19.0.1 
+2025-11-02 18:48:04,545 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 18:48:04,549 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 18:48:04,561 1 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-02 18:48:04,562 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via 172.19.0.1 
+2025-11-02 18:48:04,993 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 18:48:05,016 1 INFO odoo-boats-db odoo.modules.loading: Loading module boat_base (47/62) 
+2025-11-02 18:48:05,190 1 INFO odoo-boats-db odoo.modules.registry: module boat_base: creating or updating database tables 
+2025-11-02 18:48:05,195 1 WARNING odoo-boats-db odoo.models: parent_path field on model 'boat.category' should have unaccent disabled. Add `unaccent=False` to the field definition. 
+2025-11-02 18:48:05,277 1 INFO odoo-boats-db odoo.schema: Table 'boat_category': unable to set NOT NULL on column 'code' 
+2025-11-02 18:48:05,279 1 INFO odoo-boats-db odoo.schema: Table 'boat_location': unable to set NOT NULL on column 'code' 
+2025-11-02 18:48:05,282 1 INFO odoo-boats-db odoo.schema: Table 'boat_amenity': unable to set NOT NULL on column 'code' 
+2025-11-02 18:48:05,355 1 INFO odoo-boats-db odoo.modules.loading: loading boat_base/security/boat_security.xml 
+2025-11-02 18:48:05,361 1 INFO odoo-boats-db odoo.modules.loading: loading boat_base/security/ir.model.access.csv 
+2025-11-02 18:48:05,389 1 WARNING odoo-boats-db odoo.addons.base.models.ir_model: Rule access.boat.image.upload.wizard has no group, this is a deprecated feature. Every access-granting rule should specify a group. 
+2025-11-02 18:48:05,392 1 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_access" ("active", "create_date", "create_uid", "group_id", "name", "perm_create", "perm_read", "perm_unlink", "perm_write", "write_date", "write_uid") VALUES (true, '2025-11-02 18:48:04.541165', 1, NULL, 'access.boat.image.upload.wizard', true, true, false, true, '2025-11-02 18:48:04.541165', 1) RETURNING "id"
+ERROR: null value in column "model_id" of relation "ir_model_access" violates not-null constraint
+DETAIL:  Failing row contains (1037, null, null, 1, 1, access.boat.image.upload.wizard, t, t, t, t, f, 2025-11-02 18:48:04.541165, 2025-11-02 18:48:04.541165).
+ 
+2025-11-02 18:48:05,426 1 WARNING odoo-boats-db odoo.addons.base.models.ir_model: Rule access.boat.image.upload.wizard has no group, this is a deprecated feature. Every access-granting rule should specify a group. 
+2025-11-02 18:48:05,428 1 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_access" ("active", "create_date", "create_uid", "group_id", "name", "perm_create", "perm_read", "perm_unlink", "perm_write", "write_date", "write_uid") VALUES (true, '2025-11-02 18:48:04.541165', 1, NULL, 'access.boat.image.upload.wizard', true, true, false, true, '2025-11-02 18:48:04.541165', 1) RETURNING "id"
+ERROR: null value in column "model_id" of relation "ir_model_access" violates not-null constraint
+DETAIL:  Failing row contains (1038, null, null, 1, 1, access.boat.image.upload.wizard, t, t, t, t, f, 2025-11-02 18:48:04.541165, 2025-11-02 18:48:04.541165).
+ 
+2025-11-02 18:48:05,484 1 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-02 18:48:05,486 1 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 631, in convert_file
+    convert_csv_import(env, module, pathname, fp.read(), idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 677, in convert_csv_import
+    raise Exception(_('Module loading %s failed: file %s could not be processed:\n %s') % (module, fname, warning_msg))
+Exception: Module loading boat_base failed: file boat_base/security/ir.model.access.csv could not be processed:
+ No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+Missing required value for the field 'Model' (model_id)
+2025-11-02 18:48:05,492 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-02 18:48:05,496 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-02 18:48:05,501 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-02 18:48:05,525 1 INFO odoo-boats-db odoo.modules.loading: 62 modules loaded in 0.02s, 0 queries (+0 extra) 
+2025-11-02 18:48:05,599 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-02 18:48:05,602 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 0.115s 
+2025-11-02 18:48:05,609 1 ERROR odoo-boats-db odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1971, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1999, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2203, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 221, in _dispatch
+    result = endpoint(**request.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 786, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 29, in call_button
+    action = self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 21, in _call_kw
+    return call_kw(Model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 484, in call_kw
+    result = _call_kw_multi(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 469, in _call_kw_multi
+    result = method(recs, *args, **kwargs)
+  File "<decorator-gen-83>", line 2, in button_immediate_upgrade
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 75, in check_and_log
+    return method(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 667, in button_immediate_upgrade
+    return self._button_immediate_function(self.env.registry[self._name].button_upgrade)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 600, in _button_immediate_function
+    registry = modules.registry.Registry.new(self._cr.dbname, update_module=True)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 631, in convert_file
+    convert_csv_import(env, module, pathname, fp.read(), idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 677, in convert_csv_import
+    raise Exception(_('Module loading %s failed: file %s could not be processed:\n %s') % (module, fname, warning_msg))
+Exception: Module loading boat_base failed: file boat_base/security/ir.model.access.csv could not be processed:
+ No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+Missing required value for the field 'Model' (model_id)
+2025-11-02 18:48:05,610 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:48:05] "POST /web/dataset/call_button HTTP/1.1" 200 - 3442 0.815 0.915
+2025-11-02 18:48:05,625 1 INFO ? werkzeug: 172.19.0.1 - - [02/Nov/2025 18:48:05] "GET /web/static/lib/stacktracejs/stacktrace.js HTTP/1.1" 304 - 0 0.000 0.001
+2025-11-02 18:48:05,638 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-02 18:48:05,797 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [02/Nov/2025 18:48:05] "GET /web/assets/debug/web.assets_web.js HTTP/1.1" 304 - 31 0.066 0.096
+2025-11-02 18:48:11,699 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:48:11] "GET /web HTTP/1.1" 303 - 3 0.002 0.004
+2025-11-02 18:48:21,786 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:48:21] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-02 18:48:31,863 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:48:31] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-02 18:48:41,928 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:48:41] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-02 18:48:51,991 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:48:51] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-02 18:49:02,077 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:49:02] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-02 18:49:12,156 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:49:12] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-02 18:49:22,238 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:49:22] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 18:49:32,324 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:49:32] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 18:49:42,396 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:49:42] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-02 18:49:52,480 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:49:52] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 18:50:02,562 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:50:02] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-02 18:50:12,626 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:50:12] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-02 18:50:22,716 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:50:22] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 18:50:32,794 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:50:32] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-02 18:50:42,864 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:50:42] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-02 18:50:52,960 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:50:52] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 18:51:03,036 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:51:03] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 18:51:13,208 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:51:13] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-02 18:51:22,856 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Mail: Fetchmail Service`. 
+2025-11-02 18:51:22,876 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: start checking for new emails on imap server mail.yayboat.com 
+2025-11-02 18:51:23,211 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: Fetched 0 email(s) on imap server mail.yayboat.com; 0 succeeded, 0 failed. 
+2025-11-02 18:51:23,270 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Mail: Fetchmail Service` (0.414s). 
+2025-11-02 18:51:23,284 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:51:23] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 18:51:33,353 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:51:33] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-02 18:51:43,423 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [02/Nov/2025 18:51:43] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:43:02,932 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [03/Nov/2025 02:43:02] "GET /websocket?version=17.0-1 HTTP/1.1" 101 - 1 0.001 1.097
+2025-11-03 02:44:09,398 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:44:09] "GET /web HTTP/1.1" 303 - 1 0.001 0.005
+2025-11-03 02:44:19,471 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:44:19] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:44:29,568 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:44:29] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:44:39,205 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Account: Post draft entries with auto_post enabled and accounting date up to today`. 
+2025-11-03 02:44:39,215 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Account: Post draft entries with auto_post enabled and accounting date up to today` (0.010s). 
+2025-11-03 02:44:39,223 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Mail: Email Queue Manager`. 
+2025-11-03 02:44:39,233 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Mail: Email Queue Manager` (0.010s). 
+2025-11-03 02:44:39,240 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Snailmail: process letters queue`. 
+2025-11-03 02:44:39,245 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Snailmail: process letters queue` (0.005s). 
+2025-11-03 02:44:39,252 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Notification: Send scheduled message notifications`. 
+2025-11-03 02:44:39,256 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Notification: Send scheduled message notifications` (0.004s). 
+2025-11-03 02:44:39,264 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `SMS: SMS Queue Manager`. 
+2025-11-03 02:44:39,269 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `SMS: SMS Queue Manager` (0.005s). 
+2025-11-03 02:44:39,275 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Partner Autocomplete: Sync with remote DB`. 
+2025-11-03 02:44:39,278 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Partner Autocomplete: Sync with remote DB` (0.002s). 
+2025-11-03 02:44:39,284 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Mail: Fetchmail Service`. 
+2025-11-03 02:44:39,375 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: start checking for new emails on imap server mail.yayboat.com 
+2025-11-03 02:44:39,656 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:44:39] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:44:39,910 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: Fetched 0 email(s) on imap server mail.yayboat.com; 0 succeeded, 0 failed. 
+2025-11-03 02:44:39,956 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Mail: Fetchmail Service` (0.672s). 
+2025-11-03 02:44:39,974 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Digest Emails`. 
+2025-11-03 02:44:39,981 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Digest Emails` (0.006s). 
+2025-11-03 02:44:49,735 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:44:49] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:44:59,840 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:44:59] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:45:09,930 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:45:09] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:45:20,012 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:45:20] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:45:30,077 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:45:30] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:45:40,171 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:45:40] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:45:50,252 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:45:50] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:46:00,318 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:46:00] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:46:10,374 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:46:10] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:46:20,468 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:46:20] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:46:30,540 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:46:30] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:46:32,324 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [03/Nov/2025 02:46:32] "POST /web/dataset/call_kw/base.module.update/onchange HTTP/1.1" 200 - 5 0.005 0.006
+2025-11-03 02:46:33,691 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [03/Nov/2025 02:46:33] "POST /web/dataset/call_kw/base.module.update/web_save HTTP/1.1" 200 - 6 0.003 0.014
+2025-11-03 02:46:33,707 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user admin #2 via 172.19.0.1 
+2025-11-03 02:46:34,345 1 INFO odoo-boats-db odoo.modules.registry: Caches invalidated, signaling through the database: ['templates'] 
+2025-11-03 02:46:34,346 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [03/Nov/2025 02:46:34] "POST /web/dataset/call_button HTTP/1.1" 200 - 1713 0.364 0.283
+2025-11-03 02:46:38,376 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_immediate_upgrade on ['Boat Management Base'] to user admin #2 via 172.19.0.1 
+2025-11-03 02:46:38,376 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Management Base'] to user admin #2 via 172.19.0.1 
+2025-11-03 02:46:38,376 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Management Base'] to user admin #2 via 172.19.0.1 
+2025-11-03 02:46:39,065 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user admin #2 via 172.19.0.1 
+2025-11-03 02:46:39,085 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-03 02:46:39,089 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-03 02:46:39,102 1 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-03 02:46:39,103 1 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via 172.19.0.1 
+2025-11-03 02:46:39,512 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-03 02:46:39,536 1 INFO odoo-boats-db odoo.modules.loading: Loading module boat_base (47/62) 
+2025-11-03 02:46:39,657 1 INFO odoo-boats-db odoo.modules.registry: module boat_base: creating or updating database tables 
+2025-11-03 02:46:39,661 1 WARNING odoo-boats-db odoo.models: parent_path field on model 'boat.category' should have unaccent disabled. Add `unaccent=False` to the field definition. 
+2025-11-03 02:46:39,749 1 INFO odoo-boats-db odoo.schema: Table 'boat_category': unable to set NOT NULL on column 'code' 
+2025-11-03 02:46:39,751 1 INFO odoo-boats-db odoo.schema: Table 'boat_location': unable to set NOT NULL on column 'code' 
+2025-11-03 02:46:39,754 1 INFO odoo-boats-db odoo.schema: Table 'boat_amenity': unable to set NOT NULL on column 'code' 
+2025-11-03 02:46:39,809 1 INFO odoo-boats-db odoo.modules.loading: loading boat_base/security/boat_security.xml 
+2025-11-03 02:46:39,814 1 INFO odoo-boats-db odoo.modules.loading: loading boat_base/security/ir.model.access.csv 
+2025-11-03 02:46:39,832 1 WARNING odoo-boats-db odoo.addons.base.models.ir_model: Rule access.boat.image.upload.wizard has no group, this is a deprecated feature. Every access-granting rule should specify a group. 
+2025-11-03 02:46:39,834 1 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_access" ("active", "create_date", "create_uid", "group_id", "name", "perm_create", "perm_read", "perm_unlink", "perm_write", "write_date", "write_uid") VALUES (true, '2025-11-03 02:46:39.082425', 1, NULL, 'access.boat.image.upload.wizard', true, true, false, true, '2025-11-03 02:46:39.082425', 1) RETURNING "id"
+ERROR: null value in column "model_id" of relation "ir_model_access" violates not-null constraint
+DETAIL:  Failing row contains (1039, null, null, 1, 1, access.boat.image.upload.wizard, t, t, t, t, f, 2025-11-03 02:46:39.082425, 2025-11-03 02:46:39.082425).
+ 
+2025-11-03 02:46:39,858 1 WARNING odoo-boats-db odoo.addons.base.models.ir_model: Rule access.boat.image.upload.wizard has no group, this is a deprecated feature. Every access-granting rule should specify a group. 
+2025-11-03 02:46:39,859 1 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_access" ("active", "create_date", "create_uid", "group_id", "name", "perm_create", "perm_read", "perm_unlink", "perm_write", "write_date", "write_uid") VALUES (true, '2025-11-03 02:46:39.082425', 1, NULL, 'access.boat.image.upload.wizard', true, true, false, true, '2025-11-03 02:46:39.082425', 1) RETURNING "id"
+ERROR: null value in column "model_id" of relation "ir_model_access" violates not-null constraint
+DETAIL:  Failing row contains (1040, null, null, 1, 1, access.boat.image.upload.wizard, t, t, t, t, f, 2025-11-03 02:46:39.082425, 2025-11-03 02:46:39.082425).
+ 
+2025-11-03 02:46:39,924 1 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-03 02:46:39,926 1 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 631, in convert_file
+    convert_csv_import(env, module, pathname, fp.read(), idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 677, in convert_csv_import
+    raise Exception(_('Module loading %s failed: file %s could not be processed:\n %s') % (module, fname, warning_msg))
+Exception: Module loading boat_base failed: file boat_base/security/ir.model.access.csv could not be processed:
+ No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+Missing required value for the field 'Model' (model_id)
+2025-11-03 02:46:39,929 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-03 02:46:39,932 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-03 02:46:39,937 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-03 02:46:40,024 1 INFO odoo-boats-db odoo.modules.loading: 62 modules loaded in 0.09s, 0 queries (+0 extra) 
+2025-11-03 02:46:40,102 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-03 02:46:40,105 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 0.179s 
+2025-11-03 02:46:40,105 1 ERROR odoo-boats-db odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1971, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1999, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2203, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 221, in _dispatch
+    result = endpoint(**request.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 786, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 29, in call_button
+    action = self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 21, in _call_kw
+    return call_kw(Model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 484, in call_kw
+    result = _call_kw_multi(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 469, in _call_kw_multi
+    result = method(recs, *args, **kwargs)
+  File "<decorator-gen-83>", line 2, in button_immediate_upgrade
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 75, in check_and_log
+    return method(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 667, in button_immediate_upgrade
+    return self._button_immediate_function(self.env.registry[self._name].button_upgrade)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 600, in _button_immediate_function
+    registry = modules.registry.Registry.new(self._cr.dbname, update_module=True)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 631, in convert_file
+    convert_csv_import(env, module, pathname, fp.read(), idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 677, in convert_csv_import
+    raise Exception(_('Module loading %s failed: file %s could not be processed:\n %s') % (module, fname, warning_msg))
+Exception: Module loading boat_base failed: file boat_base/security/ir.model.access.csv could not be processed:
+ No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+Missing required value for the field 'Model' (model_id)
+2025-11-03 02:46:40,106 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [03/Nov/2025 02:46:40] "POST /web/dataset/call_button HTTP/1.1" 200 - 3442 0.807 0.930
+2025-11-03 02:46:40,617 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-03 02:46:40,634 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:46:40] "GET /web HTTP/1.1" 303 - 8 0.008 0.017
+2025-11-03 02:46:45,818 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Mail: Fetchmail Service`. 
+2025-11-03 02:46:45,822 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: start checking for new emails on imap server mail.yayboat.com 
+2025-11-03 02:46:46,151 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: Fetched 0 email(s) on imap server mail.yayboat.com; 0 succeeded, 0 failed. 
+2025-11-03 02:46:46,214 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Mail: Fetchmail Service` (0.396s). 
+2025-11-03 02:46:50,693 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:46:50] "GET /web HTTP/1.1" 303 - 1 0.001 0.002
+2025-11-03 02:47:00,773 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:47:00] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:47:10,864 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:47:10] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-03 02:47:20,949 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:47:20] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-03 02:47:31,069 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:47:31] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:47:41,153 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:47:41] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:47:51,231 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:47:51] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:48:01,303 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:48:01] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:48:11,386 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:48:11] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:48:21,469 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:48:21] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:48:31,532 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:48:31] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:48:41,594 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:48:41] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:48:51,671 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:48:51] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:49:01,732 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:49:01] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-03 02:49:11,808 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:49:11] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-03 02:49:21,895 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:49:21] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:49:31,985 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:49:31] "GET /web HTTP/1.1" 303 - 1 0.000 0.004
+2025-11-03 02:49:42,041 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:49:42] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:49:52,124 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:49:52] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:50:02,227 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:50:02] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:50:12,297 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:50:12] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:50:22,390 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:50:22] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:50:32,450 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:50:32] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:50:42,520 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:50:42] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:50:52,596 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:50:52] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:51:02,670 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:51:02] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:51:12,733 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:51:12] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:51:22,800 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:51:22] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:51:32,889 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:51:32] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:51:40,422 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Mail: Fetchmail Service`. 
+2025-11-03 02:51:40,427 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: start checking for new emails on imap server mail.yayboat.com 
+2025-11-03 02:51:40,783 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: Fetched 0 email(s) on imap server mail.yayboat.com; 0 succeeded, 0 failed. 
+2025-11-03 02:51:40,826 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Mail: Fetchmail Service` (0.404s). 
+2025-11-03 02:51:42,965 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:51:42] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:51:53,041 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:51:53] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:52:03,128 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:52:03] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:52:13,188 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:52:13] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:52:23,281 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:52:23] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:52:33,359 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:52:33] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:52:43,446 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:52:43] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-03 02:52:53,547 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:52:53] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:53:03,633 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:53:03] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:53:13,719 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:53:13] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:53:23,801 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:53:23] "GET /web HTTP/1.1" 303 - 1 0.001 0.002
+2025-11-03 02:53:33,866 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:53:33] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:53:43,923 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:53:43] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:53:53,985 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:53:53] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:54:04,072 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:54:04] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:54:14,143 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:54:14] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-03 02:54:24,225 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:54:24] "GET /web HTTP/1.1" 303 - 1 0.001 0.002
+2025-11-03 02:54:34,306 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:54:34] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:54:44,405 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:54:44] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:54:54,473 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:54:54] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:55:04,537 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:55:04] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-03 02:55:14,609 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [03/Nov/2025 02:55:14] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-03 02:55:20,565 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-03 02:55:20,565 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-03 02:55:20,711 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 5 connections  
