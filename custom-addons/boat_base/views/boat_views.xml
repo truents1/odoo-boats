@@ -13,186 +13,280 @@
                 <field name="owner_id"/>
                 <field name="guest_capacity"/>
                 <field name="base_price_per_day"/>
-                <field name="state" decoration-info="state == 'submitted'" 
-                       decoration-warning="state == 'under_review'" 
-                       decoration-success="state == 'published'"
+                <field name="state" 
+                       decoration-info="state == 'submitted'" 
+                       decoration-warning="state == 'under_review'"
+                       decoration-success="state == 'approved' or state == 'published'"
                        decoration-danger="state == 'rejected'"
                        widget="badge"/>
-                <field name="website_published" widget="boolean_toggle" optional="hide"/>
+                <field name="image_count" optional="hide"/>
             </tree>
         </field>
     </record>
 
-    <!-- Boat Form View -->
+    <!-- Boat Form View with Image Gallery -->
     <record id="view_boat_boat_form" model="ir.ui.view">
         <field name="name">boat.boat.form</field>
         <field name="model">boat.boat</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="Boat">
                 <header>
-                    <button name="action_submit" string="Submit for Review" 
-                            type="object" class="oe_highlight"
+                    <button name="action_submit" 
+                            string="Submit for Review" 
+                            type="object" 
+                            class="btn-primary"
                             invisible="state != 'draft'"/>
-                    <button name="action_start_review" string="Start Review" 
-                            type="object" class="oe_highlight"
-                            invisible="state != 'submitted'"
+                    <button name="action_approve" 
+                            string="Approve" 
+                            type="object" 
+                            class="btn-success"
+                            invisible="state != 'submitted' and state != 'under_review'"
                             groups="boat_base.group_boat_manager"/>
-                    <button name="action_approve" string="Approve" 
-                            type="object" class="oe_highlight"
-                            invisible="state not in ['submitted', 'under_review']"
+                    <button name="action_reject" 
+                            string="Reject" 
+                            type="object" 
+                            class="btn-danger"
+                            invisible="state != 'submitted' and state != 'under_review'"
                             groups="boat_base.group_boat_manager"/>
-                    <button name="action_publish" string="Publish to Website" 
-                            type="object" class="oe_highlight"
+                    <button name="action_publish" 
+                            string="Publish" 
+                            type="object" 
+                            class="btn-primary"
                             invisible="state != 'approved'"
                             groups="boat_base.group_boat_manager"/>
-                    <button name="action_reject" string="Reject" 
-                            type="object"
-                            invisible="state not in ['submitted', 'under_review']"
-                            groups="boat_base.group_boat_manager"/>
-                    <button name="action_unpublish" string="Unpublish" 
+                    <button name="action_set_unavailable" 
+                            string="Set Unavailable" 
                             type="object"
                             invisible="state != 'published'"
                             groups="boat_base.group_boat_manager"/>
-                    <button name="action_set_draft" string="Reset to Draft" 
-                            type="object"
-                            invisible="state == 'draft'"
-                            groups="boat_base.group_boat_manager"/>
                     <field name="state" widget="statusbar" 
-                           statusbar_visible="draft,submitted,under_review,approved,published"/>
+                           statusbar_visible="draft,submitted,approved,published"/>
                 </header>
                 <sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <!-- Featured Image Display (Top Right) -->
-                        <div class="oe_avatar" style="margin-right: 10px;">
-                            <field name="image_1920" widget="image" class="oe_avatar" 
-                                   options="{'preview_image': 'image_512', 'size': [150, 150]}" 
-                                   readonly="1"/>
-                            <div class="badge badge-warning text-center mt-1" style="font-size: 10px;">
-                                <i class="fa fa-star"/> Featured Image
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Remove the default image field from top-right corner -->
+                    <!-- Image Gallery Section -->
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Boat Name"/>
                         </h1>
                     </div>
+                    
                     <group>
-                        <group string="Basic Information">
+                        <group>
                             <field name="category_id"/>
-                            <field name="owner_id"/>
                             <field name="location_id"/>
-                            <field name="active"/>
+                            <field name="owner_id" options="{'no_create': True}"/>
                         </group>
-                        <group string="Specifications">
+                        <group>
                             <field name="guest_capacity"/>
-                            <field name="sleeping_capacity"/>
-                            <field name="num_bedrooms"/>
-                            <field name="num_bathrooms"/>
-                            <field name="length"/>
-                            <field name="year_built"/>
+                            <field name="cabins"/>
+                            <field name="is_available" widget="boolean_toggle"/>
                         </group>
                     </group>
-                    <group>
-                        <group string="Pricing">
-                            <field name="base_price_per_day"/>
-                            <field name="currency_id" invisible="1"/>
-                        </group>
-                        <group string="Status" groups="boat_base.group_boat_manager">
-                            <field name="website_published"/>
-                            <field name="approved_by" readonly="1"/>
-                            <field name="approved_date" readonly="1"/>
-                        </group>
-                    </group>
+
+                    <!-- Images Section with Gallery -->
                     <notebook>
-                        <page string="Description">
-                            <field name="description" placeholder="Enter boat description..."/>
-                        </page>
-                        <page string="Images">
-                            <field name="image_ids" mode="kanban">
-                                <kanban>
+                        <page string="Images" name="images">
+                            <group>
+                                <group>
+                                    <field name="image_count" readonly="1"/>
+                                    <field name="featured_image_id" readonly="1"/>
+                                </group>
+                            </group>
+                            
+                            <div class="alert alert-info" role="alert">
+                                <strong>Image Gallery:</strong> Upload multiple images below. 
+                                Use the "Set Featured" button on an image to make it the main display image for this boat.
+                                The first image uploaded will automatically be set as featured.
+                            </div>
+
+                            <field name="image_ids" 
+                                   widget="one2many" 
+                                   mode="kanban"
+                                   context="{'default_boat_id': active_id}">
+                                <kanban class="o_boat_image_kanban">
                                     <field name="id"/>
                                     <field name="name"/>
-                                    <field name="image_128"/>
-                                    <field name="sequence" widget="handle"/>
+                                    <field name="image_256"/>
                                     <field name="is_featured"/>
+                                    <field name="sequence"/>
                                     <templates>
                                         <t t-name="kanban-box">
-                                            <div class="oe_kanban_global_click" style="position: relative;">
-                                                <!-- Featured Badge - Only show if IS featured -->
-                                                <div t-if="record.is_featured.raw_value" 
-                                                     class="badge badge-warning position-absolute" 
-                                                     style="top: 5px; right: 5px; z-index: 10;">
-                                                    <i class="fa fa-star"/> Featured
-                                                </div>
-                                                
+                                            <div class="oe_kanban_global_click o_kanban_image_card">
                                                 <div class="o_kanban_image">
-                                                    <img t-att-src="kanban_image('boat.image', 'image_128', record.id.raw_value)" 
+                                                    <img t-att-src="kanban_image('boat.image', 'image_256', record.id.raw_value)" 
                                                          alt="Boat Image" 
-                                                         style="max-width: 100%; max-height: 150px; object-fit: cover;"/>
-                                                </div>
-                                                
-                                                <div class="oe_kanban_details mt-2">
-                                                    <div class="text-center">
-                                                        <button name="action_set_featured" 
-                                                                type="object" 
-                                                                class="btn btn-sm btn-primary" 
-                                                                title="Set as Featured Image"
-                                                                t-if="!record.is_featured.raw_value">
-                                                            <i class="fa fa-star-o"/> Set Featured
-                                                        </button>
-                                                        <span t-if="record.is_featured.raw_value" 
-                                                              class="badge badge-success">
-                                                            <i class="fa fa-check"/> Currently Featured
+                                                         class="o_image_64_max"/>
+                                                    
+                                                    <!-- Featured Badge -->
+                                                    <div class="ribbon ribbon-top-right" t-if="record.is_featured.raw_value">
+                                                        <span class="bg-warning text-white">
+                                                            <i class="fa fa-star"/> Featured
                                                         </span>
                                                     </div>
+                                                    
+                                                    <!-- Action Buttons -->
+                                                    <div class="o_kanban_image_actions">
+                                                        <button type="object" 
+                                                                name="action_set_featured" 
+                                                                class="btn btn-sm btn-primary"
+                                                                t-if="!record.is_featured.raw_value"
+                                                                title="Set as Featured">
+                                                            <i class="fa fa-star-o"/>
+                                                        </button>
+                                                        
+                                                        <button type="object" 
+                                                                name="action_remove_featured" 
+                                                                class="btn btn-sm btn-warning"
+                                                                t-if="record.is_featured.raw_value"
+                                                                title="Remove Featured">
+                                                            <i class="fa fa-star"/>
+                                                        </button>
+                                                        
+                                                        <button type="delete" 
+                                                                class="btn btn-sm btn-danger"
+                                                                title="Delete">
+                                                            <i class="fa fa-trash-o"/>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="o_kanban_details">
+                                                    <field name="sequence" widget="handle"/>
+                                                    <span t-if="record.is_featured.raw_value" class="badge badge-warning">
+                                                        <i class="fa fa-star"/> Main Image
+                                                    </span>
                                                 </div>
                                             </div>
                                         </t>
                                     </templates>
                                 </kanban>
+                                
+                                <!-- Tree view fallback -->
+                                <tree editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="image_128" widget="image"/>
+                                    <field name="name"/>
+                                    <field name="is_featured" widget="boolean_toggle"/>
+                                </tree>
+                                
+                                <!-- Form view for creating/editing images -->
                                 <form>
-                                    <sheet>
-                                        <field name="image_1920" widget="image" class="oe_avatar" options="{'size': [1920, 1920]}"/>
-                                        <group>
-                                            <field name="name" placeholder="Image title (auto-generated if empty)"/>
-                                            <field name="sequence"/>
-                                            <field name="is_featured"/>
-                                        </group>
-                                    </sheet>
+                                    <group>
+                                        <field name="image_1920" widget="image" class="oe_avatar"/>
+                                        <field name="sequence"/>
+                                        <field name="is_featured"/>
+                                    </group>
                                 </form>
                             </field>
                         </page>
-                        <page string="Features &amp; Amenities">
-                            <field name="feature_ids" widget="many2many_tags"/>
-                        </page>
-                        <page string="Technical Details">
+
+                        <page string="Details" name="details">
                             <group>
-                                <field name="engine_type"/>
-                                <field name="fuel_capacity"/>
-                                <field name="max_speed"/>
+                                <group string="Boat Information">
+                                    <field name="length"/>
+                                    <field name="year_built"/>
+                                </group>
+                                <group string="Pricing">
+                                    <field name="base_price_per_day"/>
+                                    <field name="weekend_price_per_day"/>
+                                    <field name="peak_season_price_per_day"/>
+                                </group>
+                            </group>
+                            
+                            <group string="Features">
+                                <group>
+                                    <field name="has_wifi"/>
+                                    <field name="has_kitchen"/>
+                                </group>
+                                <group>
+                                    <field name="has_air_conditioning"/>
+                                </group>
+                            </group>
+                            
+                            <group string="Description">
+                                <field name="description" nolabel="1"/>
                             </group>
                         </page>
-                        <page string="Website &amp; SEO" groups="boat_base.group_boat_manager">
+
+                        <page string="Availability" name="availability">
                             <group>
-                                <field name="website_meta_title"/>
-                                <field name="website_meta_description"/>
-                                <field name="website_meta_keywords"/>
-                            </group>
-                        </page>
-                        <page string="Moderation" groups="boat_base.group_boat_manager">
-                            <group>
-                                <field name="moderation_notes" placeholder="Internal notes for moderation team..."/>
-                                <field name="rejected_reason" invisible="state != 'rejected'"/>
+                                <group>
+                                    <field name="available_from"/>
+                                    <field name="available_to"/>
+                                </group>
+                                <group>
+                                    <field name="is_available"/>
+                                </group>
                             </group>
                         </page>
                     </notebook>
                 </sheet>
+                
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
                     <field name="message_ids"/>
                 </div>
             </form>
+        </field>
+    </record>
+
+    <!-- Boat Kanban View -->
+    <record id="view_boat_boat_kanban" model="ir.ui.view">
+        <field name="name">boat.boat.kanban</field>
+        <field name="model">boat.boat</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="image_256"/>
+                <field name="category_id"/>
+                <field name="location_id"/>
+                <field name="base_price_per_day"/>
+                <field name="state"/>
+                <field name="image_count"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('boat.boat', 'image_256', record.id.raw_value)" 
+                                     alt="Boat" 
+                                     class="o_image_64_max"/>
+                                <div class="ribbon ribbon-top-right" t-if="record.image_count.raw_value gt 1">
+                                    <span class="bg-info">
+                                        <i class="fa fa-images"/> <t t-esc="record.image_count.value"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                    <field name="state" widget="label_selection" 
+                                           options="{'classes': {'draft': 'secondary', 'submitted': 'info', 
+                                                    'approved': 'success', 'published': 'success', 
+                                                    'rejected': 'danger'}}"/>
+                                </div>
+                                <div class="o_kanban_record_body">
+                                    <field name="category_id"/>
+                                    <field name="location_id"/>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <span class="badge badge-pill badge-primary">
+                                            $<field name="base_price_per_day"/>/day
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 
@@ -206,72 +300,15 @@
                 <field name="category_id"/>
                 <field name="location_id"/>
                 <field name="owner_id"/>
-                <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]"/>
-                <filter string="Submitted" name="submitted" domain="[('state', '=', 'submitted')]"/>
-                <filter string="Under Review" name="under_review" domain="[('state', '=', 'under_review')]"/>
-                <filter string="Approved" name="approved" domain="[('state', '=', 'approved')]"/>
+                <filter string="Available" name="available" domain="[('is_available', '=', True)]"/>
                 <filter string="Published" name="published" domain="[('state', '=', 'published')]"/>
-                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
-                <separator/>
-                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
-                <separator/>
-                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
                 <group expand="0" string="Group By">
                     <filter string="Category" name="category" context="{'group_by': 'category_id'}"/>
                     <filter string="Location" name="location" context="{'group_by': 'location_id'}"/>
                     <filter string="Owner" name="owner" context="{'group_by': 'owner_id'}"/>
-                    <filter string="State" name="state" context="{'group_by': 'state'}"/>
+                    <filter string="Status" name="state" context="{'group_by': 'state'}"/>
                 </group>
             </search>
-        </field>
-    </record>
-
-    <!-- Boat Kanban View -->
-    <record id="view_boat_boat_kanban" model="ir.ui.view">
-        <field name="name">boat.boat.kanban</field>
-        <field name="model">boat.boat</field>
-        <field name="arch" type="xml">
-            <kanban>
-                <field name="id"/>
-                <field name="name"/>
-                <field name="image_128"/>
-                <field name="category_id"/>
-                <field name="location_id"/>
-                <field name="guest_capacity"/>
-                <field name="base_price_per_day"/>
-                <field name="state"/>
-                <templates>
-                    <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click">
-                            <div class="o_kanban_image">
-                                <img t-att-src="kanban_image('boat.boat', 'image_128', record.id.raw_value)" alt="Boat" class="o_image_64_contain"/>
-                            </div>
-                            <div class="oe_kanban_details">
-                                <strong class="o_kanban_record_title">
-                                    <field name="name"/>
-                                </strong>
-                                <div>
-                                    <span>Category: <field name="category_id"/></span>
-                                </div>
-                                <div>
-                                    <span>Location: <field name="location_id"/></span>
-                                </div>
-                                <div>
-                                    <span>Capacity: <field name="guest_capacity"/> guests</span>
-                                </div>
-                                <div>
-                                    <span>Price: <field name="base_price_per_day"/> / day</span>
-                                </div>
-                                <div>
-                                    <span class="badge badge-pill">
-                                        <field name="state"/>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </t>
-                </templates>
-            </kanban>
         </field>
     </record>
 
@@ -279,173 +316,30 @@
     <record id="action_boat_boat" model="ir.actions.act_window">
         <field name="name">Boats</field>
         <field name="res_model">boat.boat</field>
-        <field name="view_mode">tree,form,kanban</field>
-        <field name="search_view_id" ref="view_boat_boat_search"/>
-        <field name="context">{}</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_available': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create your first boat!
+                Create your first boat listing
             </p>
             <p>
-                Click the create button to register a new boat in the system.
+                Add boats to your platform with detailed information and multiple images.
             </p>
         </field>
     </record>
 
-    <!-- Boat Action - Pending Review (for managers) -->
-    <record id="action_boat_boat_review" model="ir.actions.act_window">
-        <field name="name">Boats Pending Review</field>
-        <field name="res_model">boat.boat</field>
-        <field name="view_mode">tree,form,kanban</field>
-        <field name="domain">[('state', 'in', ['submitted', 'under_review'])]</field>
-        <field name="context">{'search_default_submitted': 1}</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                No boats pending review
-            </p>
-            <p>
-                Boats submitted by owners will appear here for moderation.
-            </p>
-        </field>
-    </record>
-
-    <!-- Boat Category Tree View -->
-    <record id="view_boat_category_tree" model="ir.ui.view">
-        <field name="name">boat.category.tree</field>
-        <field name="model">boat.category</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="parent_id"/>
-                <field name="description"/>
-            </tree>
-        </field>
-    </record>
-
-    <!-- Boat Category Form View -->
-    <record id="view_boat_category_form" model="ir.ui.view">
-        <field name="name">boat.category.form</field>
-        <field name="model">boat.category</field>
-        <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="parent_id"/>
-                        <field name="description"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <!-- Boat Category Action -->
-    <record id="action_boat_category" model="ir.actions.act_window">
-        <field name="name">Boat Categories</field>
-        <field name="res_model">boat.category</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                Create your first boat category!
-            </p>
-        </field>
-    </record>
-
-    <!-- Boat Location Tree View -->
-    <record id="view_boat_location_tree" model="ir.ui.view">
-        <field name="name">boat.location.tree</field>
-        <field name="model">boat.location</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="code"/>
-                <field name="country_id"/>
-                <field name="city"/>
-                <field name="active"/>
-            </tree>
-        </field>
-    </record>
-
-    <!-- Boat Location Form View -->
-    <record id="view_boat_location_form" model="ir.ui.view">
-        <field name="name">boat.location.form</field>
-        <field name="model">boat.location</field>
-        <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <group>
-                        <group>
-                            <field name="name"/>
-                            <field name="code"/>
-                            <field name="active"/>
-                        </group>
-                        <group>
-                            <field name="country_id"/>
-                            <field name="city"/>
-                            <field name="latitude"/>
-                            <field name="longitude"/>
-                        </group>
-                    </group>
-                    <group>
-                        <field name="address" placeholder="Full address..."/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <!-- Boat Location Action -->
-    <record id="action_boat_location" model="ir.actions.act_window">
-        <field name="name">Boat Locations</field>
-        <field name="res_model">boat.location</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                Create your first boat location!
-            </p>
-        </field>
-    </record>
-
-    <!-- Boat Amenity Tree View -->
-    <record id="view_boat_amenity_tree" model="ir.ui.view">
-        <field name="name">boat.amenity.tree</field>
-        <field name="model">boat.amenity</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="code"/>
-                <field name="description"/>
-            </tree>
-        </field>
-    </record>
-
-    <!-- Boat Amenity Form View -->
-    <record id="view_boat_amenity_form" model="ir.ui.view">
-        <field name="name">boat.amenity.form</field>
-        <field name="model">boat.amenity</field>
-        <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="code"/>
-                        <field name="description"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <!-- Boat Amenity Action -->
-    <record id="action_boat_amenity" model="ir.actions.act_window">
-        <field name="name">Boat Amenities</field>
-        <field name="res_model">boat.amenity</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                Create your first boat amenity!
-            </p>
-        </field>
-    </record>
-
+    <!-- Menu Items -->
+    <menuitem id="menu_boat_root" name="Boats" sequence="10"/>
+    
+    <menuitem id="menu_boat_boats" 
+              name="Boats" 
+              parent="menu_boat_root" 
+              action="action_boat_boat" 
+              sequence="10"/>
+              
+    <menuitem id="menu_boat_images" 
+              name="Images" 
+              parent="menu_boat_root" 
+              action="action_boat_image" 
+              sequence="20"/>
 </odoo>

@@ -1,51 +1,49 @@
-# -*- coding: utf-8 -*-
 {
-    'name': 'Boat Management Base',
-    'version': '17.0.1.0.0',
+    'name': 'Boat Base',
+    'version': '1.0',
     'category': 'Services',
-    'summary': 'Boat rental and management system with portal and website',
+    'summary': 'Boat rental management system with multi-image gallery support',
     'description': """
-        Boat Management Base Module
-        ============================
-        This module provides comprehensive boat rental management:
-        * Boat registration and details
-        * Boat categories and classifications
-        * Location management
-        * Amenities and features tracking
-        * Multi-image gallery with featured image
-        * Portal access for boat owners
-        * Public website listing for customers
-        * Moderation workflow for admins
+        Boat Base Module
+        =================
+        Core module for boat rental platform featuring:
+        - Boat management with multiple images
+        - Featured image selection
+        - Image gallery with drag-and-drop ordering
+        - Boat categories and locations
+        - Owner and guest management
+        - Booking workflow
+        - State management (draft, submitted, approved, published)
     """,
     'author': 'Your Company',
     'website': 'https://www.yourcompany.com',
-    'license': 'LGPL-3',
     'depends': [
         'base',
         'mail',
-        'contacts',
-        'portal',
-        'website',
+        'web',
     ],
     'data': [
         # Security
-        'security/boat_security.xml',
         'security/ir.model.access.csv',
         
-        # Views (actions must come before menus that reference them)
+        # Data
+        'data/boat_category_data.xml',
+        'data/boat_location_data.xml',
+        
+        # Views
         'views/boat_views.xml',
-        'views/boat_image_upload_views.xml',
-        
-        # Menus (comes last, after all actions are defined)
-        'views/boat_menu.xml',
-        
-        # Portal & Website Templates
-        'views/portal_templates.xml',
-        'views/website_templates.xml',
+        'views/boat_image_views.xml',
+        'views/boat_category_views.xml',
+        'views/boat_location_views.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'boat_base/static/src/css/boat_image.css',
+        ],
+    },
     'demo': [],
-    'images': ['static/description/icon.png'],
     'installable': True,
     'application': True,
     'auto_install': False,
+    'license': 'LGPL-3',
 }

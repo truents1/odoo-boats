@@ -1,126 +1,48 @@
-# -*- coding: utf-8 -*-
-
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
 
-class BoatCategory(models.Model):
-    _name = 'boat.category'
-    _description = 'Boat Category'
-    _parent_name = 'parent_id'
-    _parent_store = True
-    _order = 'complete_name'
-
-    name = fields.Char(string='Name', required=True, translate=True)
-    complete_name = fields.Char(
-        string='Complete Name',
-        compute='_compute_complete_name',
-        recursive=True,
-        store=True
-    )
-    parent_id = fields.Many2one('boat.category', string='Parent Category', ondelete='cascade')
-    parent_path = fields.Char(index=True, unaccent=False)
-    child_ids = fields.One2many('boat.category', 'parent_id', string='Child Categories')
-    description = fields.Text(string='Description')
-
-    @api.depends('name', 'parent_id.complete_name')
-    def _compute_complete_name(self):
-        for category in self:
-            if category.parent_id:
-                category.complete_name = f'{category.parent_id.complete_name} / {category.name}'
-            else:
-                category.complete_name = category.name
-
-
-class BoatLocation(models.Model):
-    _name = 'boat.location'
-    _description = 'Boat Location'
-    _order = 'name'
-
-    name = fields.Char(string='Location Name', required=True)
-    code = fields.Char(string='Location Code', size=10)
-    address = fields.Text(string='Address')
-    city = fields.Char(string='City')
-    country_id = fields.Many2one('res.country', string='Country')
-    latitude = fields.Float(string='Latitude', digits=(10, 7))
-    longitude = fields.Float(string='Longitude', digits=(10, 7))
-    active = fields.Boolean(string='Active', default=True)
-
-    _sql_constraints = [
-        ('code_unique', 'unique(code)', 'Location code must be unique!')
-    ]
-
-
-class BoatAmenity(models.Model):
-    _name = 'boat.amenity'
-    _description = 'Boat Amenity'
-    _order = 'name'
-
-    name = fields.Char(string='Amenity Name', required=True, translate=True)
-    code = fields.Char(string='Code', size=20)
-    description = fields.Text(string='Description', translate=True)
-    icon = fields.Char(string='Icon Class', help='CSS icon class (e.g., fa-wifi)')
-
-    _sql_constraints = [
-        ('code_unique', 'unique(code)', 'Amenity code must be unique!')
-    ]
-
-
-class BoatBoat(models.Model):
+class Boat(models.Model):
     _name = 'boat.boat'
     _description = 'Boat'
-    _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = 'name'
 
-    # Basic Information
-    name = fields.Char(string='Boat Name', required=True, tracking=True)
-    category_id = fields.Many2one('boat.category', string='Category', tracking=True)
-    category_id = fields.Many2one('boat.category', string='Category', 
-                                tracking=True, index=True)
-    owner_id = fields.Many2one('res.partner', string='Owner', tracking=True)
-    location_id = fields.Many2one('boat.location', string='Location', tracking=True)
-    location_id = fields.Many2one('boat.location', string='Location', 
-                                tracking=True, index=True) 
-    active = fields.Boolean(string='Active', default=True)
-
-    # Specifications
-    guest_capacity = fields.Integer(string='Guest Capacity', default=1)
-    sleeping_capacity = fields.Integer(string='Sleeping Capacity', default=1)
-    num_bedrooms = fields.Integer(string='Number of Bedrooms', default=0)
-    num_bathrooms = fields.Integer(string='Number of Bathrooms', default=0)
-    length = fields.Float(string='Length (m)', digits=(10, 2))
-    year_built = fields.Integer(string='Year Built')
-
-    # Technical Details
-    engine_type = fields.Char(string='Engine Type')
-    fuel_capacity = fields.Float(string='Fuel Capacity (L)', digits=(10, 2))
-    max_speed = fields.Float(string='Max Speed (knots)', digits=(10, 2))
-
-    # Pricing
-    base_price_per_day = fields.Monetary(string='Base Price per Day', currency_field='currency_id')
-    currency_id = fields.Many2one('res.currency', string='Currency', 
-                                   default=lambda self: self.env.company.currency_id)
-
-    # Description & Features
-    description = fields.Html(string='Description', translate=True)
-    feature_ids = fields.Many2many('boat.amenity', string='Features & Amenities')
-
-    # Images - Multiple Images Support
-    image_ids = fields.One2many('boat.image', 'boat_id', string='Images')
-    featured_image_id = fields.Many2one('boat.image', string='Featured Image', 
-                                        compute='_compute_featured_image', store=True)
+    name = fields.Char('Boat Name', required=True, tracking=True)
     
-    # Main image fields (for backward compatibility and quick access)
-    image_1920 = fields.Image(string='Main Image', compute='_compute_main_image', 
-                              inverse='_inverse_main_image', store=True)
-    image_512 = fields.Image(string='Image 512', related='image_1920', 
-                            max_width=512, max_height=512, store=True)
-    image_256 = fields.Image(string='Image 256', related='image_1920', 
-                            max_width=256, max_height=256, store=True)
-    image_128 = fields.Image(string='Image 128', related='image_1920', 
-                            max_width=128, max_height=128, store=True)
-
-    # Workflow State
+    # Image fields - Main image synced from featured image
+    image_1920 = fields.Image('Main Image', max_width=1920, max_height=1920, compute='_compute_main_image', store=True)
+    image_512 = fields.Image('Medium Image', related='image_1920', max_width=512, max_height=512, store=True)
+    image_256 = fields.Image('Small Image', related='image_1920', max_width=256, max_height=256, store=True)
+    image_128 = fields.Image('Thumbnail', related='image_1920', max_width=128, max_height=128, store=True)
+    
+    # Multiple images support
+    image_ids = fields.One2many('boat.image', 'boat_id', 'Images', help="Upload multiple images for this boat")
+    image_count = fields.Integer('Image Count', compute='_compute_image_count')
+    featured_image_id = fields.Many2one('boat.image', 'Featured Image', compute='_compute_featured_image', store=True)
+    
+    # Boat details
+    category_id = fields.Many2one('boat.category', 'Category', required=True, tracking=True)
+    location_id = fields.Many2one('boat.location', 'Location', required=True, tracking=True)
+    owner_id = fields.Many2one('res.partner', 'Owner', required=True, tracking=True, domain=[('is_boat_owner', '=', True)])
+    
+    description = fields.Html('Description')
+    guest_capacity = fields.Integer('Guest Capacity', required=True, tracking=True)
+    cabins = fields.Integer('Number of Cabins')
+    length = fields.Float('Length (meters)')
+    year_built = fields.Integer('Year Built')
+    
+    # Pricing
+    base_price_per_day = fields.Float('Base Price Per Day', required=True, tracking=True)
+    weekend_price_per_day = fields.Float('Weekend Price Per Day')
+    peak_season_price_per_day = fields.Float('Peak Season Price Per Day')
+    
+    # Features
+    has_wifi = fields.Boolean('Has WiFi')
+    has_kitchen = fields.Boolean('Has Kitchen')
+    has_air_conditioning = fields.Boolean('Has Air Conditioning')
+    
+    # State management
     state = fields.Selection([
         ('draft', 'Draft'),
         ('submitted', 'Submitted'),
@@ -128,209 +50,83 @@ class BoatBoat(models.Model):
         ('approved', 'Approved'),
         ('rejected', 'Rejected'),
         ('published', 'Published'),
-    ], string='State', default='draft', required=True, tracking=True)
+        ('unavailable', 'Unavailable')
+    ], 'Status', default='draft', required=True, tracking=True)
     
-    # SEO & Website Fields (for admin moderation)
-    website_published = fields.Boolean(string='Visible on Website', default=False, tracking=True)
-    website_meta_title = fields.Char(string='Website Meta Title')
-    website_meta_description = fields.Text(string='Website Meta Description')
-    website_meta_keywords = fields.Char(string='Website Meta Keywords')
-    
-    # Moderation fields
-    moderation_notes = fields.Text(string='Moderation Notes', 
-                                   help='Internal notes for moderation team')
-    approved_by = fields.Many2one('res.users', string='Approved By', readonly=True)
-    approved_date = fields.Datetime(string='Approval Date', readonly=True)
-    rejected_reason = fields.Text(string='Rejection Reason')
-
-    # Computed fields
-    is_owner = fields.Boolean(string='Is Owner', compute='_compute_is_owner')
+    # Availability
+    available_from = fields.Date('Available From', tracking=True)
+    available_to = fields.Date('Available To', tracking=True)
+    is_available = fields.Boolean('Currently Available', default=True, tracking=True)
 
     @api.depends('image_ids.is_featured')
     def _compute_featured_image(self):
-        """Get the featured image"""
+        """Get the featured image for the boat"""
         for boat in self:
-            featured = boat.image_ids.filtered('is_featured')
-            boat.featured_image_id = featured[0] if featured else False
+            featured = boat.image_ids.filtered(lambda img: img.is_featured)
+            boat.featured_image_id = featured[:1] if featured else False
 
-    @api.depends('featured_image_id', 'featured_image_id.image_1920')
+    @api.depends('featured_image_id.image_1920')
     def _compute_main_image(self):
-        """Set main image from featured image"""
+        """Sync main image from featured image"""
         for boat in self:
             if boat.featured_image_id:
                 boat.image_1920 = boat.featured_image_id.image_1920
             elif boat.image_ids:
+                # If no featured image, use the first image
                 boat.image_1920 = boat.image_ids[0].image_1920
             else:
                 boat.image_1920 = False
 
-    def _inverse_main_image(self):
-        """When main image is set directly, create/update featured image"""
+    @api.depends('image_ids')
+    def _compute_image_count(self):
+        """Count total images for the boat"""
         for boat in self:
-            if boat.image_1920:
-                if boat.featured_image_id:
-                    boat.featured_image_id.image_1920 = boat.image_1920
-                else:
-                    # Create new image as featured
-                    self.env['boat.image'].create({
-                        'name': f'{boat.name} - Main Image',
-                        'boat_id': boat.id,
-                        'image_1920': boat.image_1920,
-                        'is_featured': True,
-                    })
+            boat.image_count = len(boat.image_ids)
 
-    @api.depends('owner_id')
-    def _compute_is_owner(self):
-        """Check if current user is the owner"""
+    @api.constrains('guest_capacity')
+    def _check_guest_capacity(self):
+        """Validate guest capacity is positive"""
         for boat in self:
-            boat.is_owner = boat.owner_id.id == self.env.user.partner_id.id
+            if boat.guest_capacity <= 0:
+                raise ValidationError("Guest capacity must be greater than 0")
 
-    # State transition methods
+    @api.constrains('base_price_per_day')
+    def _check_base_price(self):
+        """Validate base price is positive"""
+        for boat in self:
+            if boat.base_price_per_day <= 0:
+                raise ValidationError("Base price must be greater than 0")
+
     def action_submit(self):
-        """Submit boat for review (used by portal users)"""
-        for boat in self:
-            if not boat.owner_id:
-                boat.owner_id = self.env.user.partner_id.id
-            boat.write({'state': 'submitted'})
-        return True
-
-    def action_start_review(self):
-        """Start reviewing the boat (used by admin)"""
-        self.write({'state': 'under_review'})
-        return True
+        """Submit boat for review"""
+        self.write({'state': 'submitted'})
 
     def action_approve(self):
-        """Approve the boat (used by admin)"""
-        self.write({
-            'state': 'approved',
-            'approved_by': self.env.user.id,
-            'approved_date': fields.Datetime.now(),
-        })
-        # Notify owner
-        self._send_approval_notification()
-        return True
-
-    def action_publish(self):
-        """Publish boat to website (used by admin)"""
-        self.write({
-            'state': 'published',
-            'website_published': True,
-        })
-        return True
-
-    def action_unpublish(self):
-        """Unpublish boat from website"""
-        self.write({'website_published': False})
-        return True
+        """Approve boat"""
+        self.write({'state': 'approved'})
 
     def action_reject(self):
-        """Reject the boat (used by admin)"""
-        return {
-            'name': _('Reject Boat'),
-            'type': 'ir.actions.act_window',
-            'res_model': 'boat.reject.wizard',
-            'view_mode': 'form',
-            'target': 'new',
-            'context': {'default_boat_id': self.id}
-        }
+        """Reject boat"""
+        self.write({'state': 'rejected'})
 
-    def action_set_draft(self):
-        """Reset to draft"""
-        self.write({'state': 'draft'})
-        return True
+    def action_publish(self):
+        """Publish boat"""
+        self.write({'state': 'published'})
 
-    def _send_approval_notification(self):
-        """Send email notification to owner when boat is approved"""
-        for boat in self:
-            if boat.owner_id and boat.owner_id.email:
-                template = self.env.ref('boat_base.email_template_boat_approved', raise_if_not_found=False)
-                if template:
-                    template.send_mail(boat.id, force_send=True)
+    def action_set_unavailable(self):
+        """Set boat as unavailable"""
+        self.write({'state': 'unavailable', 'is_available': False})
 
-    def _compute_access_url(self):
-        """Compute portal access URL"""
-        super()._compute_access_url()
-        for boat in self:
-            boat.access_url = f'/my/boats/{boat.id}'
-
-    # Constraints
-    @api.constrains('guest_capacity', 'sleeping_capacity')
-    def _check_capacities(self):
-        """Ensure sleeping capacity doesn't exceed guest capacity"""
-        for boat in self:
-            if boat.sleeping_capacity and boat.guest_capacity:
-                if boat.sleeping_capacity > boat.guest_capacity:
-                    raise ValidationError(
-                        _('Sleeping capacity cannot exceed guest capacity!')
-                    )
-
-    @api.constrains('year_built')
-    def _check_year_built(self):
-        """Validate year built"""
-        import datetime
-        current_year = datetime.datetime.now().year
-        for boat in self:
-            if boat.year_built and (boat.year_built < 1900 or boat.year_built > current_year + 1):
-                raise ValidationError(
-                    _('Year built must be between 1900 and %s') % (current_year + 1)
-                )
-                
-    @api.constrains('base_price_per_day')
-    def _check_price(self):
-        """Ensure price is reasonable"""
-        for boat in self:
-            if boat.base_price_per_day < 0:
-                raise ValidationError(_('Price cannot be negative!'))
-            if boat.base_price_per_day > 100000:
-                raise ValidationError(_('Price seems unreasonably high. Please verify.'))
-
-class BoatImage(models.Model):
-    _name = 'boat.image'
-    _description = 'Boat Image'
-    _order = 'id desc'  # Latest images first
-
-    name = fields.Char('Image Title', default='Boat Image')
-    boat_id = fields.Many2one('boat.boat', 'Boat', required=True, ondelete='cascade')
-    image_1920 = fields.Image('Image', required=True, max_width=1920, max_height=1920)
-    image_512 = fields.Image('Image 512', related='image_1920', max_width=512, max_height=512, store=True)
-    image_256 = fields.Image('Image 256', related='image_1920', max_width=256, max_height=256, store=True)
-    image_128 = fields.Image('Image 128', related='image_1920', max_width=128, max_height=128, store=True)
-    is_featured = fields.Boolean('Featured Image', default=False)
-    
-    @api.model_create_multi
-    def create(self, vals_list):
-        """Auto-generate proper names and set featured image"""
-        records = super().create(vals_list)
-        
-        for record in records:
-            # Generate proper name after creation
-            boat_name = record.boat_id.name or 'Boat'
-            image_count = self.search_count([
-                ('boat_id', '=', record.boat_id.id),
-                ('id', '<=', record.id)
-            ])
-            record.name = f'{boat_name} - Image {image_count}'
-            
-            # Set as featured if no other featured image exists
-            if record.boat_id and not record.boat_id.image_ids.filtered(lambda x: x.is_featured and x.id != record.id):
-                record.is_featured = True
-        
-        return records
-    
-    def write(self, vals):
-        """Ensure only one featured image per boat"""
-        if vals.get('is_featured'):
-            for record in self:
-                # Unset other featured images for the same boat
-                other_featured = record.boat_id.image_ids.filtered(
-                    lambda img: img.is_featured and img.id != record.id
-                )
-                if other_featured:
-                    other_featured.write({'is_featured': False})
-        return super().write(vals)
-    
-    def action_set_featured(self):
-        """Button action to set as featured image"""
+    def action_view_images(self):
+        """Open images gallery view"""
         self.ensure_one()
-        self.write({'is_featured': True})
-        return True
+        return {
+            'name': f'{self.name} - Images',
+            'type': 'ir.actions.act_window',
+            'res_model': 'boat.image',
+            'view_mode': 'kanban,tree,form',
+            'domain': [('boat_id', '=', self.id)],
+            'context': {
+                'default_boat_id': self.id,
+            },
+        }

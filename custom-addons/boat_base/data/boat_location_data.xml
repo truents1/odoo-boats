@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Boat Locations -->
+        <record id="boat_location_marina_bay" model="boat.location">
+            <field name="name">Marina Bay</field>
+            <field name="city">Miami</field>
+            <field name="description">Premier marina in the heart of Miami with full amenities.</field>
+        </record>
+
+        <record id="boat_location_harbor_point" model="boat.location">
+            <field name="name">Harbor Point Marina</field>
+            <field name="city">San Diego</field>
+            <field name="description">Beautiful harbor location with easy access to the Pacific.</field>
+        </record>
+
+        <record id="boat_location_lakeside" model="boat.location">
+            <field name="name">Lakeside Dock</field>
+            <field name="city">Seattle</field>
+            <field name="description">Peaceful lakeside location perfect for family outings.</field>
+        </record>
+
+        <record id="boat_location_coastal_marina" model="boat.location">
+            <field name="name">Coastal Marina</field>
+            <field name="city">Charleston</field>
+            <field name="description">Historic coastal marina with Southern charm.</field>
+        </record>
+
+        <record id="boat_location_bay_harbor" model="boat.location">
+            <field name="name">Bay Harbor</field>
+            <field name="city">San Francisco</field>
+            <field name="description">Iconic bay location with stunning Golden Gate views.</field>
+        </record>
+    </data>
+</odoo>

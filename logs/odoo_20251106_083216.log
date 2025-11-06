@@ -1,0 +1,334 @@
+2025-11-06 03:02:17,440 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-06 03:02:17,441 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-06 03:02:17,441 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-06 03:02:17,441 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-06 03:02:17,565 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-06 03:02:17,791 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on bcf7ab46d862:8069 
+2025-11-06 03:02:17,846 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-06 03:02:17,851 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-06 03:02:17,896 1 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-06 03:02:18,713 1 INFO odoo-boats-db odoo.modules.loading: 62 modules loaded in 0.82s, 0 queries (+0 extra) 
+2025-11-06 03:02:18,816 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-06 03:02:18,825 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 1.035s 
+2025-11-06 03:02:18,856 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-06 03:02:18,936 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:18] "GET /websocket?version=17.0-1 HTTP/1.1" 101 - 11 0.043 1.012
+2025-11-06 03:02:19,310 1 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-11-06 03:02:26,607 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [06/Nov/2025 03:02:26] "GET /web HTTP/1.1" 303 - 3 0.001 0.003
+2025-11-06 03:02:33,391 1 ERROR odoo-boats-db odoo.sql_db: bad query: SELECT "res_partner"."id", "res_partner"."website_meta_og_img", "res_partner"."seo_name"->>'en_US', "res_partner"."website_id", "res_partner"."is_published", "res_partner"."email_normalized", "res_partner"."message_bounce", "res_partner"."name", "res_partner"."complete_name", "res_partner"."date", "res_partner"."title", "res_partner"."parent_id", "res_partner"."ref", "res_partner"."lang", "res_partner"."tz", "res_partner"."user_id", "res_partner"."vat", "res_partner"."company_registry", "res_partner"."website", "res_partner"."comment", "res_partner"."active", "res_partner"."employee", "res_partner"."function", "res_partner"."type", "res_partner"."street", "res_partner"."street2", "res_partner"."zip", "res_partner"."city", "res_partner"."state_id", "res_partner"."country_id", "res_partner"."partner_latitude", "res_partner"."partner_longitude", "res_partner"."email", "res_partner"."phone", "res_partner"."mobile", "res_partner"."is_company", "res_partner"."industry_id", "res_partner"."company_id", "res_partner"."color", "res_partner"."partner_share", "res_partner"."commercial_partner_id", "res_partner"."commercial_company_name", "res_partner"."company_name", "res_partner"."create_uid", "res_partner"."create_date", "res_partner"."write_uid", "res_partner"."write_date", "res_partner"."signup_type", "res_partner"."signup_expiration", "res_partner"."is_boat_owner", "res_partner"."is_boat_guest", "res_partner"."boat_count", "res_partner"."owner_commission_rate", "res_partner"."total_bookings", "res_partner"."total_revenue", "res_partner"."team_id", "res_partner"."partner_gid", "res_partner"."additional_info", "res_partner"."phone_sanitized", "res_partner"."debit_limit", "res_partner"."last_time_entries_checked", "res_partner"."invoice_warn", "res_partner"."invoice_warn_msg", "res_partner"."supplier_rank", "res_partner"."customer_rank", "res_partner"."ubl_cii_format", "res_partner"."peppol_endpoint", "res_partner"."peppol_eas", "res_partner"."website_description"->>'en_US', "res_partner"."website_short_description"->>'en_US', "res_partner"."sale_warn", "res_partner"."sale_warn_msg" FROM "res_partner" WHERE ("res_partner"."id" IN (2))
+ERROR: column res_partner.is_boat_owner does not exist
+LINE 1: ..."signup_type", "res_partner"."signup_expiration", "res_partn...
+                                                             ^
+ 
+2025-11-06 03:02:33,401 1 ERROR odoo-boats-db odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1971, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1999, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2203, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 221, in _dispatch
+    result = endpoint(**request.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 786, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/action.py", line 36, in load
+    action = request.env[action_type].sudo().browse([action_id]).read()
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_actions.py", line 299, in read
+    result = super(IrActionsActWindow, self).read(fields, load=load)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3584, in read
+    return self._read_format(fnames=fields, load=load)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3798, in _read_format
+    vals[name] = convert(record[name], record, use_display_name)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 3131, in convert_to_read
+    return (value.id, value.sudo().display_name)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1219, in __get__
+    self.compute_value(recs)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1401, in compute_value
+    records._compute_field_value(self)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4923, in _compute_field_value
+    fields.determine(field.compute, self)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 102, in determine
+    return needle(*args)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 1672, in _compute_display_name
+    record.display_name = convert(record[self._rec_name], record)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 6695, in __getitem__
+    return self._fields[key].__get__(self, self.env.registry[self._name])
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1219, in __get__
+    self.compute_value(recs)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1401, in compute_value
+    records._compute_field_value(self)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4923, in _compute_field_value
+    fields.determine(field.compute, self)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 105, in determine
+    return needle(records, *args)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 707, in _compute_related
+    record[self.name] = self._process_related(value[self.related_field.name], record.env)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 6695, in __getitem__
+    return self._fields[key].__get__(self, self.env.registry[self._name])
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1182, in __get__
+    recs._fetch_field(self)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3824, in _fetch_field
+    self.fetch(fnames)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3874, in fetch
+    fetched = self._fetch_query(query, fields_to_fetch)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3966, in _fetch_query
+    self.env.cr.execute(query.select(*sql_terms))
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 335, in execute
+    res = self._obj.execute(query, params)
+psycopg2.errors.UndefinedColumn: column res_partner.is_boat_owner does not exist
+LINE 1: ..."signup_type", "res_partner"."signup_expiration", "res_partn...
+                                                             ^
+
+2025-11-06 03:02:33,402 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:33] "POST /web/action/load HTTP/1.1" 200 - 11 0.020 0.433
+2025-11-06 03:02:36,694 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [06/Nov/2025 03:02:36] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-06 03:02:38,477 1 ERROR odoo-boats-db odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1971, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1999, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2203, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 221, in _dispatch
+    result = endpoint(**request.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 786, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 25, in call_kw
+    return self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 21, in _call_kw
+    return call_kw(Model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 480, in call_kw
+    result = _call_kw_model(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 451, in _call_kw_model
+    result = method(recs, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/models/models.py", line 46, in web_search_read
+    records = self.search_fetch(domain, specification.keys(), offset=offset, limit=limit, order=order)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 1652, in search_fetch
+    fields_to_fetch = self._determine_fields_to_fetch(field_names)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3908, in _determine_fields_to_fetch
+    raise ValueError(f"Invalid field {field_name!r} on model {self._name!r}")
+ValueError: Invalid field 'website_published' on model 'boat.boat'
+2025-11-06 03:02:38,478 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:38] "POST /web/dataset/call_kw/boat.boat/web_search_read HTTP/1.1" 200 - 5 0.003 0.022
+2025-11-06 03:02:38,507 1 ERROR odoo-boats-db odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1971, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1999, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2203, in dispatch
+    result = self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 221, in _dispatch
+    result = endpoint(**request.params)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 786, in route_wrapper
+    result = endpoint(self, *args, **params_ok)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 25, in call_kw
+    return self._call_kw(model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/controllers/dataset.py", line 21, in _call_kw
+    return call_kw(Model, method, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 484, in call_kw
+    result = _call_kw_multi(method, model, args, kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 469, in _call_kw_multi
+    result = method(recs, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/web/models/models.py", line 951, in onchange
+    field = self._fields[field_name]
+KeyError: 'active'
+2025-11-06 03:02:38,508 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:38] "POST /web/dataset/call_kw/boat.boat/onchange HTTP/1.1" 200 - 2 0.006 0.005
+2025-11-06 03:02:46,772 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [06/Nov/2025 03:02:46] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-06 03:02:47,524 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.taxonomy.category 
+2025-11-06 03:02:47,525 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.taxonomy 
+2025-11-06 03:02:47,525 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.amenity 
+2025-11-06 03:02:47,696 1 ERROR odoo-boats-db odoo.sql_db: bad query: SELECT "res_partner"."id", "res_partner"."website_meta_og_img", "res_partner"."seo_name"->>'en_US', "res_partner"."website_id", "res_partner"."is_published", "res_partner"."email_normalized", "res_partner"."message_bounce", "res_partner"."name", "res_partner"."complete_name", "res_partner"."date", "res_partner"."title", "res_partner"."parent_id", "res_partner"."ref", "res_partner"."lang", "res_partner"."tz", "res_partner"."user_id", "res_partner"."vat", "res_partner"."company_registry", "res_partner"."website", "res_partner"."comment", "res_partner"."active", "res_partner"."employee", "res_partner"."function", "res_partner"."type", "res_partner"."street", "res_partner"."street2", "res_partner"."zip", "res_partner"."city", "res_partner"."state_id", "res_partner"."country_id", "res_partner"."partner_latitude", "res_partner"."partner_longitude", "res_partner"."email", "res_partner"."phone", "res_partner"."mobile", "res_partner"."is_company", "res_partner"."industry_id", "res_partner"."company_id", "res_partner"."color", "res_partner"."partner_share", "res_partner"."commercial_partner_id", "res_partner"."commercial_company_name", "res_partner"."company_name", "res_partner"."create_uid", "res_partner"."create_date", "res_partner"."write_uid", "res_partner"."write_date", "res_partner"."signup_type", "res_partner"."signup_expiration", "res_partner"."is_boat_owner", "res_partner"."is_boat_guest", "res_partner"."boat_count", "res_partner"."owner_commission_rate", "res_partner"."total_bookings", "res_partner"."total_revenue", "res_partner"."team_id", "res_partner"."partner_gid", "res_partner"."additional_info", "res_partner"."phone_sanitized", "res_partner"."debit_limit", "res_partner"."last_time_entries_checked", "res_partner"."invoice_warn", "res_partner"."invoice_warn_msg", "res_partner"."supplier_rank", "res_partner"."customer_rank", "res_partner"."ubl_cii_format", "res_partner"."peppol_endpoint", "res_partner"."peppol_eas", "res_partner"."website_description"->>'en_US', "res_partner"."website_short_description"->>'en_US', "res_partner"."sale_warn", "res_partner"."sale_warn_msg" FROM "res_partner" WHERE ("res_partner"."id" IN (3))
+ERROR: column res_partner.is_boat_owner does not exist
+LINE 1: ..."signup_type", "res_partner"."signup_expiration", "res_partn...
+                                                             ^
+ 
+2025-11-06 03:02:47,729 1 ERROR odoo-boats-db odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "<432>", line 120, in template_432_t_nocache_0
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1219, in __get__
+    self.compute_value(recs)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1401, in compute_value
+    records._compute_field_value(self)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4923, in _compute_field_value
+    fields.determine(field.compute, self)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 105, in determine
+    return needle(records, *args)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 707, in _compute_related
+    record[self.name] = self._process_related(value[self.related_field.name], record.env)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 6695, in __getitem__
+    return self._fields[key].__get__(self, self.env.registry[self._name])
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1182, in __get__
+    recs._fetch_field(self)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3824, in _fetch_field
+    self.fetch(fnames)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3874, in fetch
+    fetched = self._fetch_query(query, fields_to_fetch)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3966, in _fetch_query
+    self.env.cr.execute(query.select(*sql_terms))
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 335, in execute
+    res = self._obj.execute(query, params)
+psycopg2.errors.UndefinedColumn: column res_partner.is_boat_owner does not exist
+LINE 1: ..."signup_type", "res_partner"."signup_expiration", "res_partn...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2396, in __call__
+    response = request._serve_db()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1971, in _serve_db
+    return service_model.retrying(self._serve_ir_http, self.env)
+  File "/usr/lib/python3/dist-packages/odoo/service/model.py", line 152, in retrying
+    result = func()
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1999, in _serve_ir_http
+    response = self.dispatcher.dispatch(rule.endpoint, args)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2116, in dispatch
+    return self.request.registry['ir.http']._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_http.py", line 235, in _dispatch
+    response = super()._dispatch(endpoint)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_http.py", line 223, in _dispatch
+    result.flatten()
+  File "/usr/lib/python3/dist-packages/odoo/tools/facade.py", line 83, in wrap_func
+    func(self._wrapped__, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1360, in flatten
+    self.response.append(self.render())
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 1352, in render
+    return request.env["ir.ui.view"]._render_template(self.template, self.qcontext)
+  File "/usr/lib/python3/dist-packages/odoo/addons/website/models/ir_ui_view.py", line 446, in _render_template
+    return super()._render_template(template, values=values)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_ui_view.py", line 2072, in _render_template
+    return self.env['ir.qweb']._render(template, values)
+  File "/usr/lib/python3/dist-packages/odoo/tools/profiler.py", line 301, in _tracked_method_render
+    return method_render(self, template, values, **options)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_qweb.py", line 606, in _render
+    result = ''.join(rendering)
+  File "<1916>", line 39, in template_1916
+  File "<1916>", line 28, in template_1916_content
+  File "<1918>", line 1654, in template_1918
+  File "<1918>", line 1492, in template_1918_content
+  File "<432>", line 189, in template_432_t_nocache_0
+odoo.addons.base.models.ir_qweb.QWebException: Error while render the template
+UndefinedColumn: column res_partner.is_boat_owner does not exist
+LINE 1: ..."signup_type", "res_partner"."signup_expiration", "res_partn...
+                                                             ^
+
+Template: portal.user_dropdown
+Path: /t/t/li/a/span
+Node: <span t-if="_user_name" t-attf-class="#{_user_name_class}" t-esc="user_id.name[:23] + \'...\' if user_id.name and len(user_id.name) &gt; 25 else user_id.name"/>
+2025-11-06 03:02:47,730 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:47] "GET / HTTP/1.1" 500 - 186 0.206 0.380
+2025-11-06 03:02:47,787 1 INFO ? werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:47] "GET /web/static/lib/bootstrap/dist/css/bootstrap.css HTTP/1.1" 304 - 0 0.000 0.007
+2025-11-06 03:02:47,792 1 INFO ? werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:47] "GET /web/static/lib/bootstrap/js/dist/dom/selector-engine.js HTTP/1.1" 304 - 0 0.000 0.006
+2025-11-06 03:02:47,793 1 INFO ? werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:47] "GET /web/static/lib/bootstrap/js/dist/dom/event-handler.js HTTP/1.1" 304 - 0 0.000 0.010
+2025-11-06 03:02:47,794 1 INFO ? werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:47] "GET /web/static/lib/jquery/jquery.js HTTP/1.1" 304 - 0 0.000 0.013
+2025-11-06 03:02:47,801 1 INFO ? werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:47] "GET /web/static/lib/bootstrap/js/dist/dom/manipulator.js HTTP/1.1" 304 - 0 0.000 0.007
+2025-11-06 03:02:47,804 1 INFO ? werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:47] "GET /web/static/lib/bootstrap/js/dist/dom/data.js HTTP/1.1" 304 - 0 0.000 0.022
+2025-11-06 03:02:47,805 1 INFO ? werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:47] "GET /web/static/lib/bootstrap/js/dist/base-component.js HTTP/1.1" 304 - 0 0.000 0.009
+2025-11-06 03:02:47,810 1 INFO ? werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:47] "GET /web/static/lib/bootstrap/js/dist/collapse.js HTTP/1.1" 304 - 0 0.000 0.003
+2025-11-06 03:02:47,812 1 INFO ? werkzeug: 172.19.0.1 - - [06/Nov/2025 03:02:47] "GET /web/static/lib/bootstrap/js/dist/modal.js HTTP/1.1" 304 - 0 0.000 0.006
+2025-11-06 03:02:56,854 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [06/Nov/2025 03:02:56] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-06 03:03:07,000 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [06/Nov/2025 03:03:07] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-06 03:03:17,074 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [06/Nov/2025 03:03:17] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-06 03:03:18,946 1 ERROR odoo-boats-db odoo.sql_db: bad query: SELECT "res_partner"."id", "res_partner"."website_meta_og_img", "res_partner"."seo_name"->>'en_US', "res_partner"."website_id", "res_partner"."is_published", "res_partner"."email_normalized", "res_partner"."message_bounce", "res_partner"."name", "res_partner"."complete_name", "res_partner"."date", "res_partner"."title", "res_partner"."parent_id", "res_partner"."ref", "res_partner"."lang", "res_partner"."tz", "res_partner"."user_id", "res_partner"."vat", "res_partner"."company_registry", "res_partner"."website", "res_partner"."comment", "res_partner"."active", "res_partner"."employee", "res_partner"."function", "res_partner"."type", "res_partner"."street", "res_partner"."street2", "res_partner"."zip", "res_partner"."city", "res_partner"."state_id", "res_partner"."country_id", "res_partner"."partner_latitude", "res_partner"."partner_longitude", "res_partner"."email", "res_partner"."phone", "res_partner"."mobile", "res_partner"."is_company", "res_partner"."industry_id", "res_partner"."company_id", "res_partner"."color", "res_partner"."partner_share", "res_partner"."commercial_partner_id", "res_partner"."commercial_company_name", "res_partner"."company_name", "res_partner"."create_uid", "res_partner"."create_date", "res_partner"."write_uid", "res_partner"."write_date", "res_partner"."signup_type", "res_partner"."signup_expiration", "res_partner"."is_boat_owner", "res_partner"."is_boat_guest", "res_partner"."boat_count", "res_partner"."owner_commission_rate", "res_partner"."total_bookings", "res_partner"."total_revenue", "res_partner"."team_id", "res_partner"."partner_gid", "res_partner"."additional_info", "res_partner"."phone_sanitized", "res_partner"."debit_limit", "res_partner"."last_time_entries_checked", "res_partner"."invoice_warn", "res_partner"."invoice_warn_msg", "res_partner"."supplier_rank", "res_partner"."customer_rank", "res_partner"."ubl_cii_format", "res_partner"."peppol_endpoint", "res_partner"."peppol_eas", "res_partner"."website_description"->>'en_US', "res_partner"."website_short_description"->>'en_US', "res_partner"."sale_warn", "res_partner"."sale_warn_msg" FROM "res_partner" WHERE ("res_partner"."id" IN (2))
+ERROR: column res_partner.is_boat_owner does not exist
+LINE 1: ..."signup_type", "res_partner"."signup_expiration", "res_partn...
+                                                             ^
+ 
+2025-11-06 03:03:18,947 1 WARNING ? odoo.service.server: cron0 encountered an Exception: 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 528, in _run_cron
+    ir_cron._process_jobs(db_name)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_cron.py", line 139, in _process_jobs
+    registry[cls._name]._process_job(db, cron_cr, job)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_cron.py", line 331, in _process_job
+    now = fields.Datetime.context_timestamp(ir_cron, datetime.utcnow())
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 2270, in context_timestamp
+    tz_name = record._context.get('tz') or record.env.user.tz
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1219, in __get__
+    self.compute_value(recs)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1401, in compute_value
+    records._compute_field_value(self)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4923, in _compute_field_value
+    fields.determine(field.compute, self)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 105, in determine
+    return needle(records, *args)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 707, in _compute_related
+    record[self.name] = self._process_related(value[self.related_field.name], record.env)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 6695, in __getitem__
+    return self._fields[key].__get__(self, self.env.registry[self._name])
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1182, in __get__
+    recs._fetch_field(self)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3824, in _fetch_field
+    self.fetch(fnames)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3874, in fetch
+    fetched = self._fetch_query(query, fields_to_fetch)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3966, in _fetch_query
+    self.env.cr.execute(query.select(*sql_terms))
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 335, in execute
+    res = self._obj.execute(query, params)
+psycopg2.errors.UndefinedColumn: column res_partner.is_boat_owner does not exist
+LINE 1: ..."signup_type", "res_partner"."signup_expiration", "res_partn...
+                                                             ^
+
+2025-11-06 03:03:19,934 1 ERROR odoo-boats-db odoo.sql_db: bad query: SELECT "res_partner"."id", "res_partner"."website_meta_og_img", "res_partner"."seo_name"->>'en_US', "res_partner"."website_id", "res_partner"."is_published", "res_partner"."email_normalized", "res_partner"."message_bounce", "res_partner"."name", "res_partner"."complete_name", "res_partner"."date", "res_partner"."title", "res_partner"."parent_id", "res_partner"."ref", "res_partner"."lang", "res_partner"."tz", "res_partner"."user_id", "res_partner"."vat", "res_partner"."company_registry", "res_partner"."website", "res_partner"."comment", "res_partner"."active", "res_partner"."employee", "res_partner"."function", "res_partner"."type", "res_partner"."street", "res_partner"."street2", "res_partner"."zip", "res_partner"."city", "res_partner"."state_id", "res_partner"."country_id", "res_partner"."partner_latitude", "res_partner"."partner_longitude", "res_partner"."email", "res_partner"."phone", "res_partner"."mobile", "res_partner"."is_company", "res_partner"."industry_id", "res_partner"."company_id", "res_partner"."color", "res_partner"."partner_share", "res_partner"."commercial_partner_id", "res_partner"."commercial_company_name", "res_partner"."company_name", "res_partner"."create_uid", "res_partner"."create_date", "res_partner"."write_uid", "res_partner"."write_date", "res_partner"."signup_type", "res_partner"."signup_expiration", "res_partner"."is_boat_owner", "res_partner"."is_boat_guest", "res_partner"."boat_count", "res_partner"."owner_commission_rate", "res_partner"."total_bookings", "res_partner"."total_revenue", "res_partner"."team_id", "res_partner"."partner_gid", "res_partner"."additional_info", "res_partner"."phone_sanitized", "res_partner"."debit_limit", "res_partner"."last_time_entries_checked", "res_partner"."invoice_warn", "res_partner"."invoice_warn_msg", "res_partner"."supplier_rank", "res_partner"."customer_rank", "res_partner"."ubl_cii_format", "res_partner"."peppol_endpoint", "res_partner"."peppol_eas", "res_partner"."website_description"->>'en_US', "res_partner"."website_short_description"->>'en_US', "res_partner"."sale_warn", "res_partner"."sale_warn_msg" FROM "res_partner" WHERE ("res_partner"."id" IN (2))
+ERROR: column res_partner.is_boat_owner does not exist
+LINE 1: ..."signup_type", "res_partner"."signup_expiration", "res_partn...
+                                                             ^
+ 
+2025-11-06 03:03:19,935 1 WARNING ? odoo.service.server: cron1 encountered an Exception: 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 528, in _run_cron
+    ir_cron._process_jobs(db_name)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_cron.py", line 139, in _process_jobs
+    registry[cls._name]._process_job(db, cron_cr, job)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_cron.py", line 331, in _process_job
+    now = fields.Datetime.context_timestamp(ir_cron, datetime.utcnow())
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 2270, in context_timestamp
+    tz_name = record._context.get('tz') or record.env.user.tz
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1219, in __get__
+    self.compute_value(recs)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1401, in compute_value
+    records._compute_field_value(self)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4923, in _compute_field_value
+    fields.determine(field.compute, self)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 105, in determine
+    return needle(records, *args)
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 707, in _compute_related
+    record[self.name] = self._process_related(value[self.related_field.name], record.env)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 6695, in __getitem__
+    return self._fields[key].__get__(self, self.env.registry[self._name])
+  File "/usr/lib/python3/dist-packages/odoo/fields.py", line 1182, in __get__
+    recs._fetch_field(self)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3824, in _fetch_field
+    self.fetch(fnames)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3874, in fetch
+    fetched = self._fetch_query(query, fields_to_fetch)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 3966, in _fetch_query
+    self.env.cr.execute(query.select(*sql_terms))
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 335, in execute
+    res = self._obj.execute(query, params)
+psycopg2.errors.UndefinedColumn: column res_partner.is_boat_owner does not exist
+LINE 1: ..."signup_type", "res_partner"."signup_expiration", "res_partn...
+                                                             ^
+
+2025-11-06 03:03:25,578 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-06 03:03:25,578 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-06 03:03:25,585 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 5 connections  

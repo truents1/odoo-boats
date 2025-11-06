@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Boat Categories -->
+        <record id="boat_category_houseboat" model="boat.category">
+            <field name="name">Houseboat</field>
+            <field name="sequence">10</field>
+            <field name="description">Spacious houseboats perfect for family vacations and extended stays on the water.</field>
+        </record>
+
+        <record id="boat_category_yacht" model="boat.category">
+            <field name="name">Yacht</field>
+            <field name="sequence">20</field>
+            <field name="description">Luxury yachts for elegant cruising and special events.</field>
+        </record>
+
+        <record id="boat_category_sailboat" model="boat.category">
+            <field name="name">Sailboat</field>
+            <field name="sequence">30</field>
+            <field name="description">Traditional sailboats for adventurous sailors.</field>
+        </record>
+
+        <record id="boat_category_speedboat" model="boat.category">
+            <field name="name">Speedboat</field>
+            <field name="sequence">40</field>
+            <field name="description">Fast speedboats for water sports and quick trips.</field>
+        </record>
+
+        <record id="boat_category_catamaran" model="boat.category">
+            <field name="name">Catamaran</field>
+            <field name="sequence">50</field>
+            <field name="description">Stable catamarans ideal for comfortable cruising.</field>
+        </record>
+
+        <record id="boat_category_pontoon" model="boat.category">
+            <field name="name">Pontoon Boat</field>
+            <field name="sequence">60</field>
+            <field name="description">Stable pontoon boats perfect for leisurely lake trips.</field>
+        </record>
+    </data>
+</odoo>

@@ -1,54 +1,67 @@
-from odoo import models, fields, api, _
+from odoo import models, fields, api
+
 
 class BoatLocation(models.Model):
+    """Boat Locations - Where boats are stationed"""
     _name = 'boat.location'
     _description = 'Boat Location'
-    _order = 'sequence, name'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _order = 'name'
 
-    name = fields.Char('Location Name', required=True, tracking=True)
-    code = fields.Char('Location Code', required=True, copy=False)
-    sequence = fields.Integer('Sequence', default=10)
-    active = fields.Boolean('Active', default=True, tracking=True)
+    name = fields.Char('Location Name', required=True, translate=True)
+    description = fields.Text('Description', translate=True)
+    active = fields.Boolean('Active', default=True, help="Uncheck to archive the location")
     
-    # Geographic data
+    # Address details
     street = fields.Char('Street')
     street2 = fields.Char('Street2')
     city = fields.Char('City')
     state_id = fields.Many2one('res.country.state', 'State')
-    country_id = fields.Many2one('res.country', 'Country', required=True)
-    zip = fields.Char('ZIP')
-    latitude = fields.Float('Latitude', digits=(16, 8))
-    longitude = fields.Float('Longitude', digits=(16, 8))
+    zip = fields.Char('ZIP Code')
+    country_id = fields.Many2one('res.country', 'Country')
     
-    # Media
-    image = fields.Image('Location Image', max_width=1920, max_height=1080)
-    description = fields.Html('Description', sanitize=True)
-    highlights = fields.Text('Highlights')
+    # Coordinates
+    latitude = fields.Float('Latitude', digits=(10, 7))
+    longitude = fields.Float('Longitude', digits=(10, 7))
     
-    # Related
-    boat_ids = fields.One2many('boat.boat', 'location_id', 'Boats')
+    # Contact
+    phone = fields.Char('Phone')
+    email = fields.Char('Email')
+    website = fields.Char('Website')
+    
+    # Image
+    image = fields.Image('Location Image', max_width=512, max_height=512)
+    
+    # Related boats
+    boat_ids = fields.One2many('boat.boat', 'location_id', 'Boats at this Location')
     boat_count = fields.Integer('Number of Boats', compute='_compute_boat_count')
-    
-    # SEO
-    website_meta_title = fields.Char('Website Meta Title')
-    website_meta_description = fields.Text('Website Meta Description')
-    website_meta_keywords = fields.Char('Website Meta Keywords')
-    
+
     @api.depends('boat_ids')
     def _compute_boat_count(self):
+        """Count boats at this location"""
         for location in self:
             location.boat_count = len(location.boat_ids)
-    
-    _sql_constraints = [
-        ('code_unique', 'UNIQUE(code)', 'Location code must be unique!')
-    ]
-    
+
+    def action_view_boats(self):
+        """View boats at this location"""
+        self.ensure_one()
+        return {
+            'name': f'{self.name} - Boats',
+            'type': 'ir.actions.act_window',
+            'res_model': 'boat.boat',
+            'view_mode': 'kanban,tree,form',
+            'domain': [('location_id', '=', self.id)],
+            'context': {
+                'default_location_id': self.id,
+            },
+        }
+
     def name_get(self):
+        """Display name with city if available"""
         result = []
         for location in self:
-            name = location.name
             if location.city:
-                name = f"{name} ({location.city})"
+                name = f"{location.name} ({location.city})"
+            else:
+                name = location.name
             result.append((location.id, name))
         return result
