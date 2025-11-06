@@ -378,3 +378,79 @@ Missing required value for the field 'Model' (model_id)
 2025-11-06 03:00:10,976 56 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
 2025-11-06 03:00:10,976 56 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
 2025-11-06 03:00:10,977 56 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 2 connections  
+2025-11-06 03:26:40,572 112 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-06 03:26:40,573 112 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-06 03:26:40,573 112 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-06 03:26:40,573 112 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-06 03:26:40,695 112 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-06 03:26:40,942 112 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-06 03:26:40,946 112 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-06 03:26:40,958 112 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-06 03:26:40,959 112 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-06 03:26:42,128 112 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Base'] to user __system__ #1 via n/a 
+2025-11-06 03:26:42,129 112 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Base'] to user __system__ #1 via n/a 
+2025-11-06 03:26:42,544 112 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-06 03:26:42,587 112 INFO odoo-boats-db odoo.modules.loading: loading 62 modules... 
+2025-11-06 03:26:42,858 112 INFO odoo-boats-db odoo.modules.loading: Loading module boat_base (23/62) 
+2025-11-06 03:26:42,931 112 INFO odoo-boats-db odoo.modules.registry: module boat_base: creating or updating database tables 
+2025-11-06 03:26:43,055 112 INFO odoo-boats-db odoo.models: Prepare computation of res.partner.boat_count 
+2025-11-06 03:26:43,055 112 INFO odoo-boats-db odoo.models: Prepare computation of res.partner.total_bookings 
+2025-11-06 03:26:43,056 112 INFO odoo-boats-db odoo.models: Prepare computation of res.partner.total_revenue 
+2025-11-06 03:26:43,243 112 INFO odoo-boats-db odoo.modules.loading: loading boat_base/security/ir.model.access.csv 
+2025-11-06 03:26:43,264 112 WARNING odoo-boats-db odoo.addons.base.models.ir_model: Rule access.boat.image.upload.wizard has no group, this is a deprecated feature. Every access-granting rule should specify a group. 
+2025-11-06 03:26:43,267 112 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_access" ("active", "create_date", "create_uid", "group_id", "name", "perm_create", "perm_read", "perm_unlink", "perm_write", "write_date", "write_uid") VALUES (true, '2025-11-06 03:26:40.931087', 1, NULL, 'access.boat.image.upload.wizard', true, true, false, true, '2025-11-06 03:26:40.931087', 1) RETURNING "id"
+ERROR: null value in column "model_id" of relation "ir_model_access" violates not-null constraint
+DETAIL:  Failing row contains (1045, null, null, 1, 1, access.boat.image.upload.wizard, t, t, t, t, f, 2025-11-06 03:26:40.931087, 2025-11-06 03:26:40.931087).
+ 
+2025-11-06 03:26:43,304 112 WARNING odoo-boats-db odoo.addons.base.models.ir_model: Rule access.boat.image.upload.wizard has no group, this is a deprecated feature. Every access-granting rule should specify a group. 
+2025-11-06 03:26:43,305 112 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_access" ("active", "create_date", "create_uid", "group_id", "name", "perm_create", "perm_read", "perm_unlink", "perm_write", "write_date", "write_uid") VALUES (true, '2025-11-06 03:26:40.931087', 1, NULL, 'access.boat.image.upload.wizard', true, true, false, true, '2025-11-06 03:26:40.931087', 1) RETURNING "id"
+ERROR: null value in column "model_id" of relation "ir_model_access" violates not-null constraint
+DETAIL:  Failing row contains (1046, null, null, 1, 1, access.boat.image.upload.wizard, t, t, t, t, f, 2025-11-06 03:26:40.931087, 2025-11-06 03:26:40.931087).
+ 
+2025-11-06 03:26:43,343 112 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-06 03:26:43,343 112 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 631, in convert_file
+    convert_csv_import(env, module, pathname, fp.read(), idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 677, in convert_csv_import
+    raise Exception(_('Module loading %s failed: file %s could not be processed:\n %s') % (module, fname, warning_msg))
+Exception: Module loading boat_base failed: file boat_base/security/ir.model.access.csv could not be processed:
+ No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+Missing required value for the field 'Model' (model_id)
+2025-11-06 03:26:43,345 112 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 1369, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 631, in convert_file
+    convert_csv_import(env, module, pathname, fp.read(), idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 677, in convert_csv_import
+    raise Exception(_('Module loading %s failed: file %s could not be processed:\n %s') % (module, fname, warning_msg))
+Exception: Module loading boat_base failed: file boat_base/security/ir.model.access.csv could not be processed:
+ No matching record found for external id 'model_boat_image_upload_wizard' in field 'Model'
+Missing required value for the field 'Model' (model_id)
+2025-11-06 03:26:43,346 112 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-06 03:26:43,346 112 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-06 03:26:43,346 112 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 2 connections  
