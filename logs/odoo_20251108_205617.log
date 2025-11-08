@@ -24,3 +24,36 @@
 2025-11-08 15:27:28,540 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:27:28] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
 2025-11-08 15:27:38,612 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:27:38] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
 2025-11-08 15:27:48,687 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:27:48] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 15:27:58,764 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:27:58] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:28:08,856 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:28:08] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 15:28:18,916 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:28:18] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:28:28,988 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:28:28] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 15:28:39,078 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:28:39] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 15:28:49,156 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:28:49] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:28:59,244 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:28:59] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 15:29:09,332 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:29:09] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:29:19,411 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:29:19] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 15:29:29,511 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:29:29] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:29:39,589 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:29:39] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:29:49,684 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:29:49] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 15:29:59,768 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:29:59] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 15:30:09,863 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:30:09] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 15:30:19,955 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:30:19] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 15:30:30,023 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:30:30] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 15:30:40,102 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:30:40] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 15:30:50,177 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:30:50] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:31:00,281 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:31:00] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:31:10,372 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:31:10] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 15:31:19,932 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Mail: Fetchmail Service`. 
+2025-11-08 15:31:19,938 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: start checking for new emails on imap server mail.yayboat.com 
+2025-11-08 15:31:20,295 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: Fetched 0 email(s) on imap server mail.yayboat.com; 0 succeeded, 0 failed. 
+2025-11-08 15:31:20,333 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Mail: Fetchmail Service` (0.401s). 
+2025-11-08 15:31:20,433 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:31:20] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 15:31:30,541 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:31:30] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-08 15:31:40,614 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:31:40] "GET /web HTTP/1.1" 303 - 1 0.001 0.002
+2025-11-08 15:31:50,709 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:31:50] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:32:00,782 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:32:00] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:32:10,862 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:32:10] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:32:20,938 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:32:20] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 15:32:31,072 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:32:31] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 15:32:41,167 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:32:41] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
