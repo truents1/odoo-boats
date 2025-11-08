@@ -1,0 +1,1248 @@
+2025-11-08 15:15:49,844 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-08 15:15:49,844 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-08 15:15:49,844 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-08 15:15:49,844 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-08 15:15:49,938 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-08 15:15:50,051 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on 3d8a01822498:8069 
+2025-11-08 15:15:50,111 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-08 15:15:50,115 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-08 15:15:50,141 1 INFO odoo-boats-db odoo.modules.loading: loading 61 modules... 
+2025-11-08 15:15:50,163 1 INFO odoo-boats-db odoo.modules.loading: Loading module bus (9/61) 
+2025-11-08 15:15:50,227 1 INFO odoo-boats-db odoo.modules.registry: module bus: creating or updating database tables 
+2025-11-08 15:15:50,328 1 INFO odoo-boats-db odoo.modules.loading: loading bus/security/ir.model.access.csv 
+2025-11-08 15:15:50,382 1 INFO odoo-boats-db odoo.modules.loading: Module bus loaded in 0.22s, 104 queries (+104 other) 
+2025-11-08 15:15:50,382 1 INFO odoo-boats-db odoo.modules.loading: Loading module http_routing (10/61) 
+2025-11-08 15:15:50,406 1 INFO odoo-boats-db odoo.modules.registry: module http_routing: creating or updating database tables 
+2025-11-08 15:15:50,412 1 INFO odoo-boats-db odoo.modules.loading: loading http_routing/views/http_routing_template.xml 
+2025-11-08 15:15:50,468 1 INFO odoo-boats-db odoo.modules.loading: loading http_routing/views/res_lang_views.xml 
+2025-11-08 15:15:50,503 1 INFO odoo-boats-db odoo.modules.loading: Module http_routing loaded in 0.12s, 128 queries (+128 other) 
+2025-11-08 15:15:50,503 1 INFO odoo-boats-db odoo.modules.loading: Loading module onboarding (11/61) 
+2025-11-08 15:15:50,530 1 INFO odoo-boats-db odoo.modules.registry: module onboarding: creating or updating database tables 
+2025-11-08 15:15:50,578 1 INFO odoo-boats-db odoo.modules.loading: loading onboarding/views/onboarding_templates.xml 
+2025-11-08 15:15:50,601 1 INFO odoo-boats-db odoo.modules.loading: loading onboarding/views/onboarding_views.xml 
+2025-11-08 15:15:50,626 1 INFO odoo-boats-db odoo.modules.loading: loading onboarding/views/onboarding_menus.xml 
+2025-11-08 15:15:50,637 1 INFO odoo-boats-db odoo.modules.loading: loading onboarding/security/ir.model.access.csv 
+2025-11-08 15:15:50,672 1 INFO odoo-boats-db odoo.modules.loading: Module onboarding loaded in 0.17s, 205 queries (+205 other) 
+2025-11-08 15:15:50,673 1 INFO odoo-boats-db odoo.modules.loading: Loading module resource (12/61) 
+2025-11-08 15:15:50,702 1 INFO odoo-boats-db odoo.modules.registry: module resource: creating or updating database tables 
+2025-11-08 15:15:50,749 1 INFO odoo-boats-db odoo.modules.loading: loading resource/data/resource_data.xml 
+2025-11-08 15:15:50,755 1 INFO odoo-boats-db odoo.modules.loading: loading resource/security/ir.model.access.csv 
+2025-11-08 15:15:50,769 1 INFO odoo-boats-db odoo.modules.loading: loading resource/security/resource_security.xml 
+2025-11-08 15:15:50,775 1 INFO odoo-boats-db odoo.modules.loading: loading resource/views/resource_resource_views.xml 
+2025-11-08 15:15:50,796 1 INFO odoo-boats-db odoo.modules.loading: loading resource/views/resource_calendar_leaves_views.xml 
+2025-11-08 15:15:50,823 1 INFO odoo-boats-db odoo.modules.loading: loading resource/views/resource_calendar_attendance_views.xml 
+2025-11-08 15:15:50,836 1 INFO odoo-boats-db odoo.modules.loading: loading resource/views/resource_calendar_views.xml 
+2025-11-08 15:15:50,864 1 INFO odoo-boats-db odoo.modules.loading: loading resource/views/menuitems.xml 
+2025-11-08 15:15:50,905 1 INFO odoo-boats-db odoo.modules.loading: Module resource loaded in 0.23s, 315 queries (+315 other) 
+2025-11-08 15:15:50,906 1 INFO odoo-boats-db odoo.modules.loading: Loading module utm (13/61) 
+2025-11-08 15:15:50,938 1 INFO odoo-boats-db odoo.modules.registry: module utm: creating or updating database tables 
+2025-11-08 15:15:50,967 1 INFO odoo-boats-db odoo.modules.loading: loading utm/data/utm_medium_data.xml 
+2025-11-08 15:15:50,977 1 INFO odoo-boats-db odoo.modules.loading: loading utm/data/utm_source_data.xml 
+2025-11-08 15:15:50,991 1 INFO odoo-boats-db odoo.modules.loading: loading utm/data/utm_stage_data.xml 
+2025-11-08 15:15:50,996 1 INFO odoo-boats-db odoo.modules.loading: loading utm/data/utm_tag_data.xml 
+2025-11-08 15:15:51,001 1 INFO odoo-boats-db odoo.modules.loading: loading utm/views/utm_campaign_views.xml 
+2025-11-08 15:15:51,039 1 INFO odoo-boats-db odoo.modules.loading: loading utm/views/utm_medium_views.xml 
+2025-11-08 15:15:51,058 1 INFO odoo-boats-db odoo.modules.loading: loading utm/views/utm_source_views.xml 
+2025-11-08 15:15:51,070 1 INFO odoo-boats-db odoo.modules.loading: loading utm/views/utm_stage_views.xml 
+2025-11-08 15:15:51,086 1 INFO odoo-boats-db odoo.modules.loading: loading utm/views/utm_tag_views.xml 
+2025-11-08 15:15:51,095 1 INFO odoo-boats-db odoo.modules.loading: loading utm/views/utm_menus.xml 
+2025-11-08 15:15:51,123 1 INFO odoo-boats-db odoo.modules.loading: loading utm/security/ir.model.access.csv 
+2025-11-08 15:15:51,191 1 INFO odoo-boats-db odoo.modules.loading: Module utm loaded in 0.29s, 380 queries (+380 other) 
+2025-11-08 15:15:51,191 1 INFO odoo-boats-db odoo.modules.loading: Loading module web_tour (14/61) 
+2025-11-08 15:15:51,217 1 INFO odoo-boats-db odoo.modules.registry: module web_tour: creating or updating database tables 
+2025-11-08 15:15:51,227 1 INFO odoo-boats-db odoo.modules.loading: loading web_tour/security/ir.model.access.csv 
+2025-11-08 15:15:51,237 1 INFO odoo-boats-db odoo.modules.loading: loading web_tour/security/ir.rule.csv 
+2025-11-08 15:15:51,248 1 INFO odoo-boats-db odoo.modules.loading: loading web_tour/views/tour_views.xml 
+2025-11-08 15:15:51,285 1 INFO odoo-boats-db odoo.modules.loading: Module web_tour loaded in 0.09s, 110 queries (+110 other) 
+2025-11-08 15:15:51,286 1 INFO odoo-boats-db odoo.modules.loading: Loading module google_recaptcha (15/61) 
+2025-11-08 15:15:51,310 1 INFO odoo-boats-db odoo.modules.registry: module google_recaptcha: creating or updating database tables 
+2025-11-08 15:15:51,326 1 INFO odoo-boats-db odoo.modules.loading: loading google_recaptcha/views/res_config_settings_view.xml 
+2025-11-08 15:15:51,355 1 INFO odoo-boats-db odoo.modules.loading: Module google_recaptcha loaded in 0.07s, 63 queries (+63 other) 
+2025-11-08 15:15:51,355 1 INFO odoo-boats-db odoo.modules.loading: Loading module iap (16/61) 
+2025-11-08 15:15:51,383 1 INFO odoo-boats-db odoo.modules.registry: module iap: creating or updating database tables 
+2025-11-08 15:15:51,399 1 INFO odoo-boats-db odoo.modules.loading: loading iap/security/ir.model.access.csv 
+2025-11-08 15:15:51,411 1 INFO odoo-boats-db odoo.modules.loading: loading iap/security/ir_rule.xml 
+2025-11-08 15:15:51,413 1 INFO odoo-boats-db odoo.modules.loading: loading iap/views/iap_views.xml 
+2025-11-08 15:15:51,431 1 INFO odoo-boats-db odoo.modules.loading: loading iap/views/res_config_settings.xml 
+2025-11-08 15:15:51,464 1 INFO odoo-boats-db odoo.modules.loading: Module iap loaded in 0.11s, 137 queries (+137 other) 
+2025-11-08 15:15:51,464 1 INFO odoo-boats-db odoo.modules.loading: Loading module mail (17/61) 
+2025-11-08 15:15:51,546 1 INFO odoo-boats-db odoo.modules.registry: module mail: creating or updating database tables 
+2025-11-08 15:15:52,142 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/mail_groups.xml 
+2025-11-08 15:15:52,147 1 INFO odoo-boats-db odoo.modules.loading: loading mail/wizard/mail_activity_schedule_views.xml 
+2025-11-08 15:15:52,156 1 INFO odoo-boats-db odoo.modules.loading: loading mail/wizard/mail_blacklist_remove_views.xml 
+2025-11-08 15:15:52,165 1 INFO odoo-boats-db odoo.modules.loading: loading mail/wizard/mail_compose_message_views.xml 
+2025-11-08 15:15:52,184 1 INFO odoo-boats-db odoo.modules.loading: loading mail/wizard/mail_resend_message_views.xml 
+2025-11-08 15:15:52,196 1 INFO odoo-boats-db odoo.modules.loading: loading mail/wizard/mail_resend_partner_views.xml 
+2025-11-08 15:15:52,207 1 INFO odoo-boats-db odoo.modules.loading: loading mail/wizard/mail_template_preview_views.xml 
+2025-11-08 15:15:52,218 1 INFO odoo-boats-db odoo.modules.loading: loading mail/wizard/mail_wizard_invite_views.xml 
+2025-11-08 15:15:52,225 1 INFO odoo-boats-db odoo.modules.loading: loading mail/wizard/mail_template_reset_views.xml 
+2025-11-08 15:15:52,234 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/fetchmail_views.xml 
+2025-11-08 15:15:52,259 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_message_subtype_views.xml 
+2025-11-08 15:15:52,273 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_tracking_value_views.xml 
+2025-11-08 15:15:52,286 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_notification_views.xml 
+2025-11-08 15:15:52,299 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_message_views.xml 
+2025-11-08 15:15:52,327 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_message_schedule_views.xml 
+2025-11-08 15:15:52,347 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_mail_views.xml 
+2025-11-08 15:15:52,377 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_followers_views.xml 
+2025-11-08 15:15:52,390 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_ice_server_views.xml 
+2025-11-08 15:15:52,400 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/discuss_channel_member_views.xml 
+2025-11-08 15:15:52,411 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/discuss_channel_rtc_session_views.xml 
+2025-11-08 15:15:52,426 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_link_preview_views.xml 
+2025-11-08 15:15:52,438 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/discuss/discuss_gif_favorite_views.xml 
+2025-11-08 15:15:52,451 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/discuss_channel_views.xml 
+2025-11-08 15:15:52,478 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_shortcode_views.xml 
+2025-11-08 15:15:52,497 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_activity_views.xml 
+2025-11-08 15:15:52,576 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_activity_plan_views.xml 
+2025-11-08 15:15:52,605 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_activity_plan_template_views.xml 
+2025-11-08 15:15:52,618 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/res_config_settings_views.xml 
+2025-11-08 15:15:52,638 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/ir_config_parameter_data.xml 
+2025-11-08 15:15:52,640 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/res_partner_data.xml 
+2025-11-08 15:15:52,643 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/mail_message_subtype_data.xml 
+2025-11-08 15:15:52,647 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/mail_templates_chatter.xml 
+2025-11-08 15:15:52,673 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/mail_templates_email_layouts.xml 
+2025-11-08 15:15:52,712 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/mail_templates_mailgateway.xml 
+2025-11-08 15:15:52,744 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/discuss_channel_data.xml 
+2025-11-08 15:15:52,752 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/mail_activity_data.xml 
+2025-11-08 15:15:52,758 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/security_notifications_templates.xml 
+2025-11-08 15:15:52,769 1 INFO odoo-boats-db odoo.modules.loading: loading mail/data/ir_cron_data.xml 
+2025-11-08 15:15:52,776 1 INFO odoo-boats-db odoo.modules.loading: loading mail/security/mail_security.xml 
+2025-11-08 15:15:52,792 1 INFO odoo-boats-db odoo.modules.loading: loading mail/security/ir.model.access.csv 
+2025-11-08 15:15:52,888 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/discuss_public_templates.xml 
+2025-11-08 15:15:52,900 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_alias_domain_views.xml 
+2025-11-08 15:15:52,929 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_alias_views.xml 
+2025-11-08 15:15:52,971 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_gateway_allowed_views.xml 
+2025-11-08 15:15:52,996 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_guest_views.xml 
+2025-11-08 15:15:53,025 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_message_reaction_views.xml 
+2025-11-08 15:15:53,054 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_templates_public.xml 
+2025-11-08 15:15:53,081 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/res_users_views.xml 
+2025-11-08 15:15:53,114 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/res_users_settings_views.xml 
+2025-11-08 15:15:53,137 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_template_views.xml 
+2025-11-08 15:15:53,175 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/ir_actions_server_views.xml 
+2025-11-08 15:15:53,197 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/ir_model_views.xml 
+2025-11-08 15:15:53,233 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/res_partner_views.xml 
+2025-11-08 15:15:53,315 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_blacklist_views.xml 
+2025-11-08 15:15:53,349 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/mail_menus.xml 
+2025-11-08 15:15:53,539 1 INFO odoo-boats-db odoo.modules.loading: loading mail/views/res_company_views.xml 
+2025-11-08 15:15:53,591 1 INFO odoo-boats-db odoo.modules.loading: Module mail loaded in 2.13s, 3180 queries (+3180 other) 
+2025-11-08 15:15:53,591 1 INFO odoo-boats-db odoo.modules.loading: Loading module web_editor (18/61) 
+2025-11-08 15:15:53,708 1 INFO odoo-boats-db odoo.modules.registry: module web_editor: creating or updating database tables 
+2025-11-08 15:15:54,350 1 INFO odoo-boats-db odoo.modules.loading: loading web_editor/security/ir.model.access.csv 
+2025-11-08 15:15:54,389 1 INFO odoo-boats-db odoo.modules.loading: loading web_editor/data/editor_assets.xml 
+2025-11-08 15:15:54,395 1 INFO odoo-boats-db odoo.modules.loading: loading web_editor/views/editor.xml 
+2025-11-08 15:15:54,415 1 INFO odoo-boats-db odoo.modules.loading: loading web_editor/views/snippets.xml 
+2025-11-08 15:15:54,477 1 INFO odoo-boats-db odoo.modules.loading: Module web_editor loaded in 0.89s, 1419 queries (+1419 other) 
+2025-11-08 15:15:54,477 1 INFO odoo-boats-db odoo.modules.loading: Loading module analytic (19/61) 
+2025-11-08 15:15:54,528 1 INFO odoo-boats-db odoo.modules.registry: module analytic: creating or updating database tables 
+2025-11-08 15:15:54,580 1 INFO odoo-boats-db odoo.modules.loading: loading analytic/security/analytic_security.xml 
+2025-11-08 15:15:54,587 1 INFO odoo-boats-db odoo.modules.loading: loading analytic/security/ir.model.access.csv 
+2025-11-08 15:15:54,607 1 INFO odoo-boats-db odoo.modules.loading: loading analytic/views/analytic_line_views.xml 
+2025-11-08 15:15:54,655 1 INFO odoo-boats-db odoo.modules.loading: loading analytic/views/analytic_account_views.xml 
+2025-11-08 15:15:54,691 1 INFO odoo-boats-db odoo.modules.loading: loading analytic/views/analytic_plan_views.xml 
+2025-11-08 15:15:54,713 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [1371, 1372] 
+2025-11-08 15:15:54,719 1 INFO odoo-boats-db odoo.modules.loading: loading analytic/views/analytic_distribution_model_views.xml 
+2025-11-08 15:15:54,732 1 INFO odoo-boats-db odoo.modules.loading: loading analytic/data/analytic_data.xml 
+2025-11-08 15:15:54,755 1 INFO odoo-boats-db odoo.modules.loading: Module analytic loaded in 0.28s, 298 queries (+298 other) 
+2025-11-08 15:15:54,755 1 INFO odoo-boats-db odoo.modules.loading: Loading module auth_signup (20/61) 
+2025-11-08 15:15:54,804 1 INFO odoo-boats-db odoo.modules.registry: module auth_signup: creating or updating database tables 
+2025-11-08 15:15:54,851 1 INFO odoo-boats-db odoo.modules.loading: loading auth_signup/data/ir_config_parameter_data.xml 
+2025-11-08 15:15:54,853 1 INFO odoo-boats-db odoo.modules.loading: loading auth_signup/data/ir_cron_data.xml 
+2025-11-08 15:15:54,864 1 INFO odoo-boats-db odoo.modules.loading: loading auth_signup/data/mail_template_data.xml 
+2025-11-08 15:15:54,873 1 INFO odoo-boats-db odoo.modules.loading: loading auth_signup/views/res_config_settings_views.xml 
+2025-11-08 15:15:54,891 1 INFO odoo-boats-db odoo.modules.loading: loading auth_signup/views/res_users_views.xml 
+2025-11-08 15:15:54,917 1 INFO odoo-boats-db odoo.modules.loading: loading auth_signup/views/auth_signup_login_templates.xml 
+2025-11-08 15:15:54,946 1 INFO odoo-boats-db odoo.modules.loading: loading auth_signup/views/auth_signup_templates_email.xml 
+2025-11-08 15:15:54,963 1 INFO odoo-boats-db odoo.modules.loading: loading auth_signup/views/webclient_templates.xml 
+2025-11-08 15:15:54,993 1 INFO odoo-boats-db odoo.modules.loading: Module auth_signup loaded in 0.24s, 264 queries (+264 other) 
+2025-11-08 15:15:54,993 1 INFO odoo-boats-db odoo.modules.loading: Loading module auth_totp_mail (21/61) 
+2025-11-08 15:15:55,040 1 INFO odoo-boats-db odoo.modules.registry: module auth_totp_mail: creating or updating database tables 
+2025-11-08 15:15:55,071 1 INFO odoo-boats-db odoo.modules.loading: loading auth_totp_mail/data/ir_action_data.xml 
+2025-11-08 15:15:55,080 1 INFO odoo-boats-db odoo.modules.loading: loading auth_totp_mail/data/mail_template_data.xml 
+2025-11-08 15:15:55,082 1 INFO odoo-boats-db odoo.modules.loading: loading auth_totp_mail/data/security_notifications_template.xml 
+2025-11-08 15:15:55,097 1 INFO odoo-boats-db odoo.modules.loading: loading auth_totp_mail/views/res_users_views.xml 
+2025-11-08 15:15:55,138 1 INFO odoo-boats-db odoo.modules.loading: Module auth_totp_mail loaded in 0.14s, 130 queries (+130 other) 
+2025-11-08 15:15:55,138 1 INFO odoo-boats-db odoo.modules.loading: Loading module base_install_request (22/61) 
+2025-11-08 15:15:55,185 1 INFO odoo-boats-db odoo.modules.registry: module base_install_request: creating or updating database tables 
+2025-11-08 15:15:55,213 1 INFO odoo-boats-db odoo.modules.loading: loading base_install_request/security/ir.model.access.csv 
+2025-11-08 15:15:55,234 1 INFO odoo-boats-db odoo.modules.loading: loading base_install_request/wizard/base_module_install_request_views.xml 
+2025-11-08 15:15:55,252 1 INFO odoo-boats-db odoo.modules.loading: loading base_install_request/data/mail_template_data.xml 
+2025-11-08 15:15:55,255 1 INFO odoo-boats-db odoo.modules.loading: loading base_install_request/data/mail_templates_module_install.xml 
+2025-11-08 15:15:55,265 1 INFO odoo-boats-db odoo.modules.loading: loading base_install_request/views/ir_module_module_views.xml 
+2025-11-08 15:15:55,305 1 INFO odoo-boats-db odoo.modules.loading: Module base_install_request loaded in 0.17s, 131 queries (+131 other) 
+2025-11-08 15:15:55,305 1 INFO odoo-boats-db odoo.modules.loading: Loading module contacts (23/61) 
+2025-11-08 15:15:55,365 1 INFO odoo-boats-db odoo.modules.registry: module contacts: creating or updating database tables 
+2025-11-08 15:15:55,396 1 INFO odoo-boats-db odoo.modules.loading: loading contacts/views/contact_views.xml 
+2025-11-08 15:15:55,496 1 INFO odoo-boats-db odoo.modules.loading: Module contacts loaded in 0.19s, 218 queries (+218 other) 
+2025-11-08 15:15:55,496 1 INFO odoo-boats-db odoo.modules.loading: Loading module iap_mail (24/61) 
+2025-11-08 15:15:55,545 1 INFO odoo-boats-db odoo.modules.registry: module iap_mail: creating or updating database tables 
+2025-11-08 15:15:55,562 1 INFO odoo-boats-db odoo.modules.loading: loading iap_mail/data/mail_templates.xml 
+2025-11-08 15:15:55,631 1 INFO odoo-boats-db odoo.modules.loading: Module iap_mail loaded in 0.14s, 45 queries (+45 other) 
+2025-11-08 15:15:55,631 1 INFO odoo-boats-db odoo.modules.loading: Loading module mail_bot (25/61) 
+2025-11-08 15:15:55,681 1 INFO odoo-boats-db odoo.modules.registry: module mail_bot: creating or updating database tables 
+2025-11-08 15:15:55,747 1 INFO odoo-boats-db odoo.modules.loading: loading mail_bot/views/res_users_views.xml 
+2025-11-08 15:15:55,778 1 INFO odoo-boats-db odoo.modules.loading: loading mail_bot/data/mailbot_data.xml 
+2025-11-08 15:15:55,796 1 INFO odoo-boats-db odoo.modules.loading: Module mail_bot loaded in 0.16s, 164 queries (+164 other) 
+2025-11-08 15:15:55,796 1 INFO odoo-boats-db odoo.modules.loading: Loading module phone_validation (26/61) 
+2025-11-08 15:15:55,873 1 INFO odoo-boats-db odoo.modules.registry: module phone_validation: creating or updating database tables 
+2025-11-08 15:15:56,634 1 INFO odoo-boats-db odoo.modules.loading: loading phone_validation/security/ir.model.access.csv 
+2025-11-08 15:15:56,652 1 INFO odoo-boats-db odoo.modules.loading: loading phone_validation/views/phone_blacklist_views.xml 
+2025-11-08 15:15:56,680 1 INFO odoo-boats-db odoo.modules.loading: loading phone_validation/wizard/phone_blacklist_remove_view.xml 
+2025-11-08 15:15:56,705 1 INFO odoo-boats-db odoo.modules.loading: Module phone_validation loaded in 0.91s, 1462 queries (+1462 other) 
+2025-11-08 15:15:56,705 1 INFO odoo-boats-db odoo.modules.loading: Loading module privacy_lookup (27/61) 
+2025-11-08 15:15:56,755 1 INFO odoo-boats-db odoo.modules.registry: module privacy_lookup: creating or updating database tables 
+2025-11-08 15:15:56,804 1 INFO odoo-boats-db odoo.modules.loading: loading privacy_lookup/wizard/privacy_lookup_wizard_views.xml 
+2025-11-08 15:15:56,838 1 INFO odoo-boats-db odoo.modules.loading: loading privacy_lookup/views/privacy_log_views.xml 
+2025-11-08 15:15:56,860 1 INFO odoo-boats-db odoo.modules.loading: loading privacy_lookup/security/ir.model.access.csv 
+2025-11-08 15:15:56,878 1 INFO odoo-boats-db odoo.modules.loading: loading privacy_lookup/data/ir_actions_server_data.xml 
+2025-11-08 15:15:56,903 1 INFO odoo-boats-db odoo.modules.loading: Module privacy_lookup loaded in 0.20s, 223 queries (+223 other) 
+2025-11-08 15:15:56,903 1 INFO odoo-boats-db odoo.modules.loading: Loading module product (28/61) 
+2025-11-08 15:15:56,998 1 INFO odoo-boats-db odoo.modules.registry: module product: creating or updating database tables 
+2025-11-08 15:15:57,173 1 INFO odoo-boats-db odoo.modules.loading: loading product/data/product_data.xml 
+2025-11-08 15:15:57,182 1 INFO odoo-boats-db odoo.modules.loading: loading product/security/product_security.xml 
+2025-11-08 15:15:57,244 1 INFO odoo-boats-db odoo.modules.loading: loading product/security/ir.model.access.csv 
+2025-11-08 15:15:57,277 1 INFO odoo-boats-db odoo.modules.loading: loading product/wizard/product_label_layout_views.xml 
+2025-11-08 15:15:57,331 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [1373] 
+2025-11-08 15:15:57,336 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_tag_views.xml 
+2025-11-08 15:15:57,353 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_views.xml 
+2025-11-08 15:15:57,413 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [1374, 1375, 1376] 
+2025-11-08 15:15:57,477 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/res_config_settings_views.xml 
+2025-11-08 15:15:57,496 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_attribute_views.xml 
+2025-11-08 15:15:57,528 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_attribute_value_views.xml 
+2025-11-08 15:15:57,534 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_category_views.xml 
+2025-11-08 15:15:57,555 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_document_views.xml 
+2025-11-08 15:15:57,577 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_packaging_views.xml 
+2025-11-08 15:15:57,613 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [1377, 1378] 
+2025-11-08 15:15:57,615 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_pricelist_item_views.xml 
+2025-11-08 15:15:57,640 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_pricelist_views.xml 
+2025-11-08 15:15:57,669 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_supplierinfo_views.xml 
+2025-11-08 15:15:57,695 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/product_template_views.xml 
+2025-11-08 15:15:57,732 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/res_country_group_views.xml 
+2025-11-08 15:15:57,741 1 INFO odoo-boats-db odoo.modules.loading: loading product/views/res_partner_views.xml 
+2025-11-08 15:15:57,756 1 INFO odoo-boats-db odoo.modules.loading: loading product/report/product_reports.xml 
+2025-11-08 15:15:57,769 1 INFO odoo-boats-db odoo.modules.loading: loading product/report/product_product_templates.xml 
+2025-11-08 15:15:57,804 1 INFO odoo-boats-db odoo.modules.loading: loading product/report/product_template_templates.xml 
+2025-11-08 15:15:57,827 1 INFO odoo-boats-db odoo.modules.loading: loading product/report/product_packaging.xml 
+2025-11-08 15:15:57,836 1 INFO odoo-boats-db odoo.modules.loading: loading product/report/product_pricelist_report_templates.xml 
+2025-11-08 15:15:57,877 1 INFO odoo-boats-db odoo.modules.loading: Module product loaded in 0.97s, 1265 queries (+1265 other) 
+2025-11-08 15:15:57,877 1 INFO odoo-boats-db odoo.modules.loading: Loading module sales_team (29/61) 
+2025-11-08 15:15:57,934 1 INFO odoo-boats-db odoo.modules.registry: module sales_team: creating or updating database tables 
+2025-11-08 15:15:57,987 1 INFO odoo-boats-db odoo.modules.loading: loading sales_team/security/sales_team_security.xml 
+2025-11-08 15:15:58,049 1 INFO odoo-boats-db odoo.modules.loading: loading sales_team/security/ir.model.access.csv 
+2025-11-08 15:15:58,075 1 INFO odoo-boats-db odoo.modules.loading: loading sales_team/data/crm_team_data.xml 
+2025-11-08 15:15:58,087 1 INFO odoo-boats-db odoo.modules.loading: loading sales_team/views/crm_tag_views.xml 
+2025-11-08 15:15:58,106 1 INFO odoo-boats-db odoo.modules.loading: loading sales_team/views/crm_team_views.xml 
+2025-11-08 15:15:58,151 1 INFO odoo-boats-db odoo.modules.loading: loading sales_team/views/crm_team_member_views.xml 
+2025-11-08 15:15:58,191 1 INFO odoo-boats-db odoo.modules.loading: loading sales_team/views/mail_activity_views.xml 
+2025-11-08 15:15:58,197 1 INFO odoo-boats-db odoo.modules.loading: loading sales_team/views/res_partner_views.xml 
+2025-11-08 15:15:58,228 1 INFO odoo-boats-db odoo.modules.loading: Module sales_team loaded in 0.35s, 380 queries (+380 other) 
+2025-11-08 15:15:58,228 1 INFO odoo-boats-db odoo.modules.loading: Loading module web_unsplash (30/61) 
+2025-11-08 15:15:58,291 1 INFO odoo-boats-db odoo.modules.registry: module web_unsplash: creating or updating database tables 
+2025-11-08 15:15:58,331 1 INFO odoo-boats-db odoo.modules.loading: loading web_unsplash/views/res_config_settings_view.xml 
+2025-11-08 15:15:58,371 1 INFO odoo-boats-db odoo.modules.loading: Module web_unsplash loaded in 0.14s, 112 queries (+112 other) 
+2025-11-08 15:15:58,371 1 INFO odoo-boats-db odoo.modules.loading: Loading module auth_signup_verify_email (31/61) 
+2025-11-08 15:15:58,447 1 INFO odoo-boats-db odoo.modules.loading: loading auth_signup_verify_email/views/signup.xml 
+2025-11-08 15:15:58,473 1 INFO odoo-boats-db odoo.modules.loading: Module auth_signup_verify_email loaded in 0.10s, 33 queries (+33 other) 
+2025-11-08 15:15:58,473 1 INFO odoo-boats-db odoo.modules.loading: Loading module partner_autocomplete (32/61) 
+2025-11-08 15:15:58,534 1 INFO odoo-boats-db odoo.modules.registry: module partner_autocomplete: creating or updating database tables 
+2025-11-08 15:15:58,598 1 INFO odoo-boats-db odoo.modules.loading: loading partner_autocomplete/security/ir.model.access.csv 
+2025-11-08 15:15:58,614 1 INFO odoo-boats-db odoo.modules.loading: loading partner_autocomplete/views/res_partner_views.xml 
+2025-11-08 15:15:58,639 1 INFO odoo-boats-db odoo.modules.loading: loading partner_autocomplete/views/res_company_views.xml 
+2025-11-08 15:15:58,650 1 INFO odoo-boats-db odoo.modules.loading: loading partner_autocomplete/views/res_config_settings_views.xml 
+2025-11-08 15:15:58,674 1 INFO odoo-boats-db odoo.modules.loading: loading partner_autocomplete/data/cron.xml 
+2025-11-08 15:15:58,699 1 INFO odoo-boats-db odoo.modules.loading: Module partner_autocomplete loaded in 0.23s, 216 queries (+216 other) 
+2025-11-08 15:15:58,699 1 INFO odoo-boats-db odoo.modules.loading: Loading module portal (33/61) 
+2025-11-08 15:15:58,762 1 INFO odoo-boats-db odoo.modules.registry: module portal: creating or updating database tables 
+2025-11-08 15:15:58,901 1 INFO odoo-boats-db odoo.modules.loading: loading portal/security/ir.model.access.csv 
+2025-11-08 15:15:58,932 1 INFO odoo-boats-db odoo.modules.loading: loading portal/data/mail_template_data.xml 
+2025-11-08 15:15:58,938 1 INFO odoo-boats-db odoo.modules.loading: loading portal/data/mail_templates.xml 
+2025-11-08 15:15:58,943 1 INFO odoo-boats-db odoo.modules.loading: loading portal/views/mail_templates_public.xml 
+2025-11-08 15:15:58,961 1 INFO odoo-boats-db odoo.modules.loading: loading portal/views/portal_templates.xml 
+2025-11-08 15:15:59,214 1 INFO odoo-boats-db odoo.modules.loading: loading portal/views/res_config_settings_views.xml 
+2025-11-08 15:15:59,240 1 INFO odoo-boats-db odoo.modules.loading: loading portal/wizard/portal_share_views.xml 
+2025-11-08 15:15:59,251 1 INFO odoo-boats-db odoo.modules.loading: loading portal/wizard/portal_wizard_views.xml 
+2025-11-08 15:15:59,282 1 INFO odoo-boats-db odoo.modules.loading: Module portal loaded in 0.58s, 646 queries (+646 other) 
+2025-11-08 15:15:59,282 1 INFO odoo-boats-db odoo.modules.loading: Loading module sms (34/61) 
+2025-11-08 15:15:59,364 1 INFO odoo-boats-db odoo.modules.registry: module sms: creating or updating database tables 
+2025-11-08 15:16:00,151 1 INFO odoo-boats-db odoo.modules.loading: loading sms/data/ir_cron_data.xml 
+2025-11-08 15:16:00,156 1 INFO odoo-boats-db odoo.modules.loading: loading sms/wizard/sms_composer_views.xml 
+2025-11-08 15:16:00,175 1 INFO odoo-boats-db odoo.modules.loading: loading sms/wizard/sms_template_preview_views.xml 
+2025-11-08 15:16:00,187 1 INFO odoo-boats-db odoo.modules.loading: loading sms/wizard/sms_resend_views.xml 
+2025-11-08 15:16:00,204 1 INFO odoo-boats-db odoo.modules.loading: loading sms/wizard/sms_template_reset_views.xml 
+2025-11-08 15:16:00,218 1 INFO odoo-boats-db odoo.modules.loading: loading sms/views/ir_actions_server_views.xml 
+2025-11-08 15:16:00,240 1 INFO odoo-boats-db odoo.modules.loading: loading sms/views/mail_notification_views.xml 
+2025-11-08 15:16:00,261 1 INFO odoo-boats-db odoo.modules.loading: loading sms/views/res_config_settings_views.xml 
+2025-11-08 15:16:00,283 1 INFO odoo-boats-db odoo.modules.loading: loading sms/views/res_partner_views.xml 
+2025-11-08 15:16:00,316 1 INFO odoo-boats-db odoo.modules.loading: loading sms/views/sms_sms_views.xml 
+2025-11-08 15:16:00,345 1 INFO odoo-boats-db odoo.modules.loading: loading sms/views/sms_template_views.xml 
+2025-11-08 15:16:00,366 1 INFO odoo-boats-db odoo.modules.loading: loading sms/security/ir.model.access.csv 
+2025-11-08 15:16:00,413 1 INFO odoo-boats-db odoo.modules.loading: loading sms/security/sms_security.xml 
+2025-11-08 15:16:00,460 1 INFO odoo-boats-db odoo.modules.loading: Module sms loaded in 1.18s, 1976 queries (+1976 other) 
+2025-11-08 15:16:00,460 1 INFO odoo-boats-db odoo.modules.loading: Loading module snailmail (35/61) 
+2025-11-08 15:16:00,549 1 INFO odoo-boats-db odoo.modules.registry: module snailmail: creating or updating database tables 
+2025-11-08 15:16:00,738 1 INFO odoo-boats-db odoo.modules.loading: loading snailmail/data/snailmail_data.xml 
+2025-11-08 15:16:00,761 1 INFO odoo-boats-db odoo.modules.loading: loading snailmail/views/report_assets.xml 
+2025-11-08 15:16:00,787 1 INFO odoo-boats-db odoo.modules.loading: loading snailmail/views/snailmail_views.xml 
+2025-11-08 15:16:00,813 1 INFO odoo-boats-db odoo.modules.loading: loading snailmail/wizard/snailmail_letter_format_error_views.xml 
+2025-11-08 15:16:00,826 1 INFO odoo-boats-db odoo.modules.loading: loading snailmail/wizard/snailmail_letter_missing_required_fields_views.xml 
+2025-11-08 15:16:00,839 1 INFO odoo-boats-db odoo.modules.loading: loading snailmail/security/ir.model.access.csv 
+2025-11-08 15:16:00,883 1 INFO odoo-boats-db odoo.modules.loading: Module snailmail loaded in 0.42s, 377 queries (+377 other) 
+2025-11-08 15:16:00,884 1 INFO odoo-boats-db odoo.modules.loading: Loading module auth_totp_portal (36/61) 
+2025-11-08 15:16:00,956 1 INFO odoo-boats-db odoo.modules.registry: module auth_totp_portal: creating or updating database tables 
+2025-11-08 15:16:00,990 1 INFO odoo-boats-db odoo.modules.loading: loading auth_totp_portal/security/security.xml 
+2025-11-08 15:16:00,998 1 INFO odoo-boats-db odoo.modules.loading: loading auth_totp_portal/views/templates.xml 
+2025-11-08 15:16:01,029 1 INFO odoo-boats-db odoo.modules.loading: Module auth_totp_portal loaded in 0.15s, 74 queries (+74 other) 
+2025-11-08 15:16:01,029 1 INFO odoo-boats-db odoo.modules.loading: Loading module digest (37/61) 
+2025-11-08 15:16:01,156 1 INFO odoo-boats-db odoo.modules.registry: module digest: creating or updating database tables 
+2025-11-08 15:16:01,209 1 INFO odoo-boats-db odoo.modules.loading: loading digest/security/ir.model.access.csv 
+2025-11-08 15:16:01,225 1 INFO odoo-boats-db odoo.modules.loading: loading digest/data/digest_data.xml 
+2025-11-08 15:16:01,231 1 INFO odoo-boats-db odoo.modules.loading: loading digest/data/digest_tips_data.xml 
+2025-11-08 15:16:01,255 1 INFO odoo-boats-db odoo.modules.loading: loading digest/data/ir_cron_data.xml 
+2025-11-08 15:16:01,276 1 INFO odoo-boats-db odoo.modules.loading: loading digest/data/res_config_settings_data.xml 
+2025-11-08 15:16:01,281 1 INFO odoo-boats-db odoo.modules.loading: loading digest/views/digest_views.xml 
+2025-11-08 15:16:01,338 1 INFO odoo-boats-db odoo.modules.loading: loading digest/views/digest_templates.xml 
+2025-11-08 15:16:01,347 1 INFO odoo-boats-db odoo.modules.loading: loading digest/views/res_config_settings_views.xml 
+2025-11-08 15:16:01,418 1 INFO odoo-boats-db odoo.modules.loading: Module digest loaded in 0.39s, 292 queries (+292 other) 
+2025-11-08 15:16:01,418 1 INFO odoo-boats-db odoo.modules.loading: Loading module payment (38/61) 
+2025-11-08 15:16:01,495 1 INFO odoo-boats-db odoo.modules.registry: module payment: creating or updating database tables 
+2025-11-08 15:16:01,609 1 INFO odoo-boats-db odoo.modules.loading: loading payment/data/onboarding_data.xml 
+2025-11-08 15:16:01,614 1 INFO odoo-boats-db odoo.modules.loading: loading payment/data/payment_method_data.xml 
+2025-11-08 15:16:01,710 1 INFO odoo-boats-db odoo.modules.loading: loading payment/data/payment_provider_data.xml 
+2025-11-08 15:16:01,726 1 INFO odoo-boats-db odoo.modules.loading: loading payment/data/payment_cron.xml 
+2025-11-08 15:16:01,746 1 INFO odoo-boats-db odoo.modules.loading: loading payment/views/express_checkout_templates.xml 
+2025-11-08 15:16:01,755 1 INFO odoo-boats-db odoo.modules.loading: loading payment/views/payment_form_templates.xml 
+2025-11-08 15:16:01,804 1 INFO odoo-boats-db odoo.modules.loading: loading payment/views/portal_templates.xml 
+2025-11-08 15:16:01,866 1 INFO odoo-boats-db odoo.modules.loading: loading payment/views/payment_provider_views.xml 
+2025-11-08 15:16:01,894 1 INFO odoo-boats-db odoo.modules.loading: loading payment/views/payment_method_views.xml 
+2025-11-08 15:16:01,920 1 INFO odoo-boats-db odoo.modules.loading: loading payment/views/payment_transaction_views.xml 
+2025-11-08 15:16:01,949 1 INFO odoo-boats-db odoo.modules.loading: loading payment/views/payment_token_views.xml 
+2025-11-08 15:16:01,970 1 INFO odoo-boats-db odoo.modules.loading: loading payment/views/res_partner_views.xml 
+2025-11-08 15:16:01,987 1 INFO odoo-boats-db odoo.modules.loading: loading payment/security/ir.model.access.csv 
+2025-11-08 15:16:02,008 1 INFO odoo-boats-db odoo.modules.loading: loading payment/security/payment_security.xml 
+2025-11-08 15:16:02,012 1 INFO odoo-boats-db odoo.modules.loading: loading payment/wizards/payment_capture_wizard_views.xml 
+2025-11-08 15:16:02,019 1 INFO odoo-boats-db odoo.modules.loading: loading payment/wizards/payment_link_wizard_views.xml 
+2025-11-08 15:16:02,026 1 INFO odoo-boats-db odoo.modules.loading: loading payment/wizards/payment_onboarding_views.xml 
+2025-11-08 15:16:02,047 1 INFO odoo-boats-db odoo.modules.loading: Module payment loaded in 0.63s, 1034 queries (+1034 other) 
+2025-11-08 15:16:02,047 1 INFO odoo-boats-db odoo.modules.loading: Loading module spreadsheet (39/61) 
+2025-11-08 15:16:02,115 1 INFO odoo-boats-db odoo.modules.registry: module spreadsheet: creating or updating database tables 
+2025-11-08 15:16:02,150 1 INFO odoo-boats-db odoo.modules.loading: loading spreadsheet/views/public_readonly_spreadsheet_templates.xml 
+2025-11-08 15:16:02,177 1 INFO odoo-boats-db odoo.modules.loading: Module spreadsheet loaded in 0.13s, 89 queries (+89 other) 
+2025-11-08 15:16:02,177 1 INFO odoo-boats-db odoo.modules.loading: Loading module account (40/61) 
+2025-11-08 15:16:02,303 1 INFO odoo-boats-db odoo.modules.registry: module account: creating or updating database tables 
+2025-11-08 15:16:03,311 1 INFO odoo-boats-db odoo.schema: Keep unexpected index account_payment__payment_method_line_id_index on table account_payment 
+2025-11-08 15:16:03,332 1 INFO odoo-boats-db odoo.modules.loading: loading account/security/account_security.xml 
+2025-11-08 15:16:03,678 1 INFO odoo-boats-db odoo.modules.loading: loading account/security/ir.model.access.csv 
+2025-11-08 15:16:03,866 1 INFO odoo-boats-db odoo.modules.loading: loading account/data/account_data.xml 
+2025-11-08 15:16:03,890 1 INFO odoo-boats-db odoo.modules.loading: loading account/data/digest_data.xml 
+2025-11-08 15:16:03,900 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_report.xml 
+2025-11-08 15:16:03,923 1 INFO odoo-boats-db odoo.modules.loading: loading account/data/mail_template_data.xml 
+2025-11-08 15:16:03,928 1 INFO odoo-boats-db odoo.modules.loading: loading account/data/onboarding_data.xml 
+2025-11-08 15:16:03,938 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_payment_view.xml 
+2025-11-08 15:16:04,031 1 INFO odoo-boats-db odoo.modules.loading: loading account/wizard/account_automatic_entry_wizard_views.xml 
+2025-11-08 15:16:04,054 1 INFO odoo-boats-db odoo.modules.loading: loading account/wizard/account_unreconcile_view.xml 
+2025-11-08 15:16:04,073 1 INFO odoo-boats-db odoo.modules.loading: loading account/wizard/account_move_reversal_view.xml 
+2025-11-08 15:16:04,083 1 INFO odoo-boats-db odoo.modules.loading: loading account/wizard/account_resequence_views.xml 
+2025-11-08 15:16:04,093 1 INFO odoo-boats-db odoo.modules.loading: loading account/wizard/account_payment_register_views.xml 
+2025-11-08 15:16:04,105 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_move_views.xml 
+2025-11-08 15:16:04,537 1 INFO odoo-boats-db odoo.modules.loading: loading account/wizard/setup_wizards_view.xml 
+2025-11-08 15:16:04,556 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_account_views.xml 
+2025-11-08 15:16:04,591 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_group_views.xml 
+2025-11-08 15:16:04,611 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_journal_views.xml 
+2025-11-08 15:16:04,665 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [1379, 1380, 1381] 
+2025-11-08 15:16:04,683 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_account_tag_views.xml 
+2025-11-08 15:16:04,703 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_bank_statement_views.xml 
+2025-11-08 15:16:04,744 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_reconcile_model_views.xml 
+2025-11-08 15:16:04,776 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_tax_views.xml 
+2025-11-08 15:16:04,859 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_full_reconcile_views.xml 
+2025-11-08 15:16:04,867 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_payment_term_views.xml 
+2025-11-08 15:16:04,896 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_payment_method.xml 
+2025-11-08 15:16:04,910 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/res_partner_bank_views.xml 
+2025-11-08 15:16:04,940 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/report_statement.xml 
+2025-11-08 15:16:04,960 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/terms_template.xml 
+2025-11-08 15:16:04,988 1 INFO odoo-boats-db odoo.modules.loading: loading account/wizard/account_validate_move_view.xml 
+2025-11-08 15:16:05,000 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/res_company_views.xml 
+2025-11-08 15:16:05,030 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/product_view.xml 
+2025-11-08 15:16:05,071 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_analytic_plan_views.xml 
+2025-11-08 15:16:05,081 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_analytic_account_views.xml 
+2025-11-08 15:16:05,097 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_analytic_distribution_model_views.xml 
+2025-11-08 15:16:05,111 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_analytic_line_views.xml 
+2025-11-08 15:16:05,150 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/report_invoice.xml 
+2025-11-08 15:16:05,208 1 INFO odoo-boats-db odoo.modules.loading: loading account/report/account_invoice_report_view.xml 
+2025-11-08 15:16:05,245 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_cash_rounding_view.xml 
+2025-11-08 15:16:05,268 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/ir_module_views.xml 
+2025-11-08 15:16:05,279 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/res_config_settings_views.xml 
+2025-11-08 15:16:05,323 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/partner_view.xml 
+2025-11-08 15:16:05,430 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_journal_dashboard_view.xml 
+2025-11-08 15:16:05,453 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_portal_templates.xml 
+2025-11-08 15:16:05,508 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/report_payment_receipt_templates.xml 
+2025-11-08 15:16:05,523 1 INFO odoo-boats-db odoo.modules.loading: loading account/data/service_cron.xml 
+2025-11-08 15:16:05,541 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_incoterms_view.xml 
+2025-11-08 15:16:05,563 1 INFO odoo-boats-db odoo.modules.loading: loading account/data/account_incoterms_data.xml 
+2025-11-08 15:16:05,578 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/digest_views.xml 
+2025-11-08 15:16:05,588 1 INFO odoo-boats-db odoo.modules.loading: loading account/wizard/account_move_send_views.xml 
+2025-11-08 15:16:05,601 1 INFO odoo-boats-db odoo.modules.loading: loading account/report/account_hash_integrity_templates.xml 
+2025-11-08 15:16:05,611 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/res_currency.xml 
+2025-11-08 15:16:05,622 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/account_menuitem.xml 
+2025-11-08 15:16:06,056 1 INFO odoo-boats-db odoo.modules.loading: loading account/wizard/account_tour_upload_bill.xml 
+2025-11-08 15:16:06,073 1 INFO odoo-boats-db odoo.modules.loading: loading account/wizard/accrued_orders.xml 
+2025-11-08 15:16:06,083 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/bill_preview_template.xml 
+2025-11-08 15:16:06,102 1 INFO odoo-boats-db odoo.modules.loading: loading account/data/account_reports_data.xml 
+2025-11-08 15:16:06,125 1 INFO odoo-boats-db odoo.modules.loading: loading account/views/uom_uom_views.xml 
+2025-11-08 15:16:06,265 1 INFO odoo-boats-db odoo.modules.loading: Module account loaded in 4.09s, 3932 queries (+3932 other) 
+2025-11-08 15:16:06,265 1 INFO odoo-boats-db odoo.modules.loading: Loading module spreadsheet_dashboard (41/61) 
+2025-11-08 15:16:06,382 1 INFO odoo-boats-db odoo.modules.registry: module spreadsheet_dashboard: creating or updating database tables 
+2025-11-08 15:16:06,430 1 INFO odoo-boats-db odoo.modules.loading: loading spreadsheet_dashboard/security/security.xml 
+2025-11-08 15:16:06,520 1 INFO odoo-boats-db odoo.modules.loading: loading spreadsheet_dashboard/security/ir.model.access.csv 
+2025-11-08 15:16:06,535 1 INFO odoo-boats-db odoo.modules.loading: loading spreadsheet_dashboard/views/spreadsheet_dashboard_views.xml 
+2025-11-08 15:16:06,562 1 INFO odoo-boats-db odoo.modules.loading: loading spreadsheet_dashboard/views/menu_views.xml 
+2025-11-08 15:16:06,598 1 INFO odoo-boats-db odoo.modules.loading: loading spreadsheet_dashboard/data/dashboard.xml 
+2025-11-08 15:16:06,625 1 INFO odoo-boats-db odoo.modules.loading: Module spreadsheet_dashboard loaded in 0.36s, 236 queries (+236 other) 
+2025-11-08 15:16:06,625 1 INFO odoo-boats-db odoo.modules.loading: Loading module website (42/61) 
+2025-11-08 15:16:06,828 1 INFO odoo-boats-db odoo.modules.registry: module website: creating or updating database tables 
+2025-11-08 15:16:08,035 1 INFO odoo-boats-db odoo.schema: Keep unexpected index account_payment__payment_method_line_id_index on table account_payment 
+2025-11-08 15:16:08,056 1 INFO odoo-boats-db odoo.modules.loading: loading website/security/website_security.xml 
+2025-11-08 15:16:08,149 1 INFO odoo-boats-db odoo.modules.loading: loading website/security/ir.model.access.csv 
+2025-11-08 15:16:08,190 1 INFO odoo-boats-db odoo.modules.loading: loading website/data/image_library.xml 
+2025-11-08 15:16:08,300 1 INFO odoo-boats-db odoo.modules.loading: loading website/data/ir_asset.xml 
+2025-11-08 15:16:08,306 1 INFO odoo-boats-db odoo.modules.loading: loading website/data/ir_cron_data.xml 
+2025-11-08 15:16:08,318 1 INFO odoo-boats-db odoo.modules.loading: loading website/data/mail_mail_data.xml 
+2025-11-08 15:16:08,384 1 INFO odoo-boats-db odoo.modules.loading: loading website/data/website_data.xml 
+2025-11-08 15:16:08,539 1 INFO odoo-boats-db odoo.modules.loading: loading website/data/website_visitor_cron.xml 
+2025-11-08 15:16:08,551 1 INFO odoo-boats-db odoo.modules.loading: loading website/data/digest_data.xml 
+2025-11-08 15:16:08,566 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/website_templates.xml 
+2025-11-08 15:16:10,108 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/snippets.xml 
+2025-11-08 15:16:10,242 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_title.xml 
+2025-11-08 15:16:10,253 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_cover.xml 
+2025-11-08 15:16:10,261 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_text_cover.xml 
+2025-11-08 15:16:10,274 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_text_image.xml 
+2025-11-08 15:16:10,285 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_image_text.xml 
+2025-11-08 15:16:10,294 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_instagram_page.xml 
+2025-11-08 15:16:10,319 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_banner.xml 
+2025-11-08 15:16:10,331 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_text_block.xml 
+2025-11-08 15:16:10,345 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_features.xml 
+2025-11-08 15:16:10,354 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_three_columns.xml 
+2025-11-08 15:16:10,366 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_picture.xml 
+2025-11-08 15:16:10,382 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_carousel.xml 
+2025-11-08 15:16:10,400 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_alert.xml 
+2025-11-08 15:16:10,427 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_card.xml 
+2025-11-08 15:16:10,438 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_share.xml 
+2025-11-08 15:16:10,447 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_social_media.xml 
+2025-11-08 15:16:10,476 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_rating.xml 
+2025-11-08 15:16:10,508 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_hr.xml 
+2025-11-08 15:16:10,533 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_facebook_page.xml 
+2025-11-08 15:16:10,558 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_image_gallery.xml 
+2025-11-08 15:16:10,591 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_countdown.xml 
+2025-11-08 15:16:10,623 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_product_catalog.xml 
+2025-11-08 15:16:10,656 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_comparisons.xml 
+2025-11-08 15:16:10,667 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_company_team.xml 
+2025-11-08 15:16:10,679 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_call_to_action.xml 
+2025-11-08 15:16:10,690 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_references.xml 
+2025-11-08 15:16:10,698 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_popup.xml 
+2025-11-08 15:16:10,726 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_faq_collapse.xml 
+2025-11-08 15:16:10,753 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_features_grid.xml 
+2025-11-08 15:16:10,764 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_tabs.xml 
+2025-11-08 15:16:10,793 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_table_of_content.xml 
+2025-11-08 15:16:10,827 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_chart.xml 
+2025-11-08 15:16:10,858 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_parallax.xml 
+2025-11-08 15:16:10,869 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_quotes_carousel.xml 
+2025-11-08 15:16:10,881 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_numbers.xml 
+2025-11-08 15:16:10,891 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_masonry_block.xml 
+2025-11-08 15:16:10,987 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_media_list.xml 
+2025-11-08 15:16:11,026 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_showcase.xml 
+2025-11-08 15:16:11,061 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_timeline.xml 
+2025-11-08 15:16:11,099 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_process_steps.xml 
+2025-11-08 15:16:11,139 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_text_highlight.xml 
+2025-11-08 15:16:11,151 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_progress_bar.xml 
+2025-11-08 15:16:11,174 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_blockquote.xml 
+2025-11-08 15:16:11,203 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_badge.xml 
+2025-11-08 15:16:11,227 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_color_blocks_2.xml 
+2025-11-08 15:16:11,236 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_product_list.xml 
+2025-11-08 15:16:11,245 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_mega_menu_multi_menus.xml 
+2025-11-08 15:16:11,257 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_mega_menu_menu_image_menu.xml 
+2025-11-08 15:16:11,265 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_mega_menu_thumbnails.xml 
+2025-11-08 15:16:11,286 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_mega_menu_little_icons.xml 
+2025-11-08 15:16:11,298 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_mega_menu_images_subtitles.xml 
+2025-11-08 15:16:11,318 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_mega_menu_menus_logos.xml 
+2025-11-08 15:16:11,342 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_mega_menu_odoo_menu.xml 
+2025-11-08 15:16:11,360 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_mega_menu_big_icons_subtitles.xml 
+2025-11-08 15:16:11,388 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_mega_menu_cards.xml 
+2025-11-08 15:16:11,427 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_google_map.xml 
+2025-11-08 15:16:11,494 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_map.xml 
+2025-11-08 15:16:11,538 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_dynamic_snippet.xml 
+2025-11-08 15:16:11,595 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_dynamic_snippet_carousel.xml 
+2025-11-08 15:16:11,642 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_embed_code.xml 
+2025-11-08 15:16:11,680 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_website_controller_page_listing_layout.xml 
+2025-11-08 15:16:11,701 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_website_form.xml 
+2025-11-08 15:16:11,744 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_searchbar.xml 
+2025-11-08 15:16:11,783 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_button.xml 
+2025-11-08 15:16:11,798 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_image.xml 
+2025-11-08 15:16:11,810 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/snippets/s_video.xml 
+2025-11-08 15:16:11,821 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/new_page_template_templates.xml 
+2025-11-08 15:16:13,375 1 INFO odoo-boats-db odoo.addons.website.models.ir_module_module: Updated 39 primary page templates for 'website' 
+2025-11-08 15:16:13,376 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/website_views.xml 
+2025-11-08 15:16:13,515 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [1382, 1383] 
+2025-11-08 15:16:13,574 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/website_pages_views.xml 
+2025-11-08 15:16:13,618 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [1384, 1385] 
+2025-11-08 15:16:13,644 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/website_controller_pages_views.xml 
+2025-11-08 15:16:13,667 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/website_visitor_views.xml 
+2025-11-08 15:16:13,703 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [1386, 1387] 
+2025-11-08 15:16:13,768 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [1388, 1389] 
+2025-11-08 15:16:13,776 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/res_config_settings_views.xml 
+2025-11-08 15:16:13,881 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/website_rewrite.xml 
+2025-11-08 15:16:13,917 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/ir_actions_server_views.xml 
+2025-11-08 15:16:13,959 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/ir_asset_views.xml 
+2025-11-08 15:16:13,980 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/ir_attachment_views.xml 
+2025-11-08 15:16:14,011 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/ir_model_views.xml 
+2025-11-08 15:16:14,039 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/res_partner_views.xml 
+2025-11-08 15:16:14,062 1 INFO odoo-boats-db odoo.modules.loading: loading website/views/neutralize_views.xml 
+2025-11-08 15:16:14,084 1 INFO odoo-boats-db odoo.modules.loading: loading website/wizard/base_language_install_views.xml 
+2025-11-08 15:16:14,096 1 INFO odoo-boats-db odoo.modules.loading: loading website/wizard/website_robots.xml 
+2025-11-08 15:16:14,108 1 INFO odoo-boats-db odoo.modules.loading: loading website/data/update_theme_images.xml 
+2025-11-08 15:16:14,322 1 INFO odoo-boats-db odoo.modules.loading: Module website loaded in 7.70s, 10335 queries (+10335 other) 
+2025-11-08 15:16:14,323 1 INFO odoo-boats-db odoo.modules.loading: Loading module account_check_printing (43/61) 
+2025-11-08 15:16:14,495 1 INFO odoo-boats-db odoo.modules.registry: module account_check_printing: creating or updating database tables 
+2025-11-08 15:16:14,646 1 INFO odoo-boats-db odoo.modules.loading: loading account_check_printing/security/ir.model.access.csv 
+2025-11-08 15:16:14,658 1 INFO odoo-boats-db odoo.modules.loading: loading account_check_printing/data/account_check_printing_data.xml 
+2025-11-08 15:16:14,661 1 INFO odoo-boats-db odoo.modules.loading: loading account_check_printing/views/account_journal_views.xml 
+2025-11-08 15:16:14,694 1 INFO odoo-boats-db odoo.modules.loading: loading account_check_printing/views/account_move_views.xml 
+2025-11-08 15:16:14,704 1 INFO odoo-boats-db odoo.modules.loading: loading account_check_printing/views/account_payment_views.xml 
+2025-11-08 15:16:14,727 1 INFO odoo-boats-db odoo.modules.loading: loading account_check_printing/views/res_config_settings_views.xml 
+2025-11-08 15:16:14,758 1 INFO odoo-boats-db odoo.modules.loading: loading account_check_printing/views/res_partner_views.xml 
+2025-11-08 15:16:14,777 1 INFO odoo-boats-db odoo.modules.loading: loading account_check_printing/wizard/print_prenumbered_checks_views.xml 
+2025-11-08 15:16:14,800 1 INFO odoo-boats-db odoo.modules.loading: Module account_check_printing loaded in 0.48s, 347 queries (+347 other) 
+2025-11-08 15:16:14,800 1 INFO odoo-boats-db odoo.modules.loading: Loading module account_edi_ubl_cii (44/61) 
+2025-11-08 15:16:14,941 1 INFO odoo-boats-db odoo.modules.registry: module account_edi_ubl_cii: creating or updating database tables 
+2025-11-08 15:16:15,077 1 INFO odoo-boats-db odoo.modules.loading: loading account_edi_ubl_cii/data/cii_22_templates.xml 
+2025-11-08 15:16:15,116 1 INFO odoo-boats-db odoo.modules.loading: loading account_edi_ubl_cii/data/ubl_20_templates.xml 
+2025-11-08 15:16:15,264 1 INFO odoo-boats-db odoo.modules.loading: loading account_edi_ubl_cii/data/ubl_21_templates.xml 
+2025-11-08 15:16:15,316 1 INFO odoo-boats-db odoo.modules.loading: loading account_edi_ubl_cii/views/res_config_settings_views.xml 
+2025-11-08 15:16:15,353 1 INFO odoo-boats-db odoo.modules.loading: loading account_edi_ubl_cii/views/res_partner_views.xml 
+2025-11-08 15:16:15,409 1 INFO odoo-boats-db odoo.modules.loading: loading account_edi_ubl_cii/wizard/account_move_send_views.xml 
+2025-11-08 15:16:15,443 1 INFO odoo-boats-db odoo.modules.loading: Module account_edi_ubl_cii loaded in 0.64s, 671 queries (+671 other) 
+2025-11-08 15:16:15,444 1 INFO odoo-boats-db odoo.modules.loading: Loading module account_payment (45/61) 
+2025-11-08 15:16:15,638 1 INFO odoo-boats-db odoo.modules.registry: module account_payment: creating or updating database tables 
+2025-11-08 15:16:15,761 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/data/ir_config_parameter.xml 
+2025-11-08 15:16:15,765 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/data/onboarding_data.xml 
+2025-11-08 15:16:15,770 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/security/ir.model.access.csv 
+2025-11-08 15:16:15,787 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/security/ir_rules.xml 
+2025-11-08 15:16:15,790 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/views/account_payment_menus.xml 
+2025-11-08 15:16:15,813 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/views/account_portal_templates.xml 
+2025-11-08 15:16:15,872 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/views/account_move_views.xml 
+2025-11-08 15:16:15,899 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/views/account_journal_views.xml 
+2025-11-08 15:16:15,918 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/views/account_payment_views.xml 
+2025-11-08 15:16:15,940 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/views/payment_provider_views.xml 
+2025-11-08 15:16:15,958 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/views/payment_transaction_views.xml 
+2025-11-08 15:16:15,970 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/wizards/account_payment_register_views.xml 
+2025-11-08 15:16:15,981 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/wizards/payment_link_wizard_views.xml 
+2025-11-08 15:16:15,988 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/wizards/payment_refund_wizard_views.xml 
+2025-11-08 15:16:15,997 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment/wizards/res_config_settings_views.xml 
+2025-11-08 15:16:16,046 1 INFO odoo-boats-db odoo.modules.loading: Module account_payment loaded in 0.60s, 476 queries (+476 other) 
+2025-11-08 15:16:16,046 1 INFO odoo-boats-db odoo.modules.loading: Loading module account_payment_term (46/61) 
+2025-11-08 15:16:16,173 1 INFO odoo-boats-db odoo.modules.registry: module account_payment_term: creating or updating database tables 
+2025-11-08 15:16:16,195 1 INFO odoo-boats-db odoo.modules.loading: loading account_payment_term/views/account_payment_term_views.xml 
+2025-11-08 15:16:16,232 1 INFO odoo-boats-db odoo.modules.loading: Module account_payment_term loaded in 0.19s, 52 queries (+52 other) 
+2025-11-08 15:16:16,232 1 INFO odoo-boats-db odoo.modules.loading: Loading module snailmail_account (47/61) 
+2025-11-08 15:16:16,362 1 INFO odoo-boats-db odoo.modules.registry: module snailmail_account: creating or updating database tables 
+2025-11-08 15:16:16,458 1 INFO odoo-boats-db odoo.modules.loading: loading snailmail_account/views/res_config_settings_views.xml 
+2025-11-08 15:16:16,575 1 INFO odoo-boats-db odoo.modules.loading: loading snailmail_account/wizard/account_move_send_views.xml 
+2025-11-08 15:16:16,604 1 INFO odoo-boats-db odoo.modules.loading: Module snailmail_account loaded in 0.37s, 164 queries (+164 other) 
+2025-11-08 15:16:16,604 1 INFO odoo-boats-db odoo.modules.loading: Loading module spreadsheet_account (48/61) 
+2025-11-08 15:16:16,745 1 INFO odoo-boats-db odoo.modules.registry: module spreadsheet_account: creating or updating database tables 
+2025-11-08 15:16:16,826 1 INFO odoo-boats-db odoo.modules.loading: Module spreadsheet_account loaded in 0.22s, 56 queries (+56 other) 
+2025-11-08 15:16:16,826 1 INFO odoo-boats-db odoo.modules.loading: Loading module spreadsheet_dashboard_account (49/61) 
+2025-11-08 15:16:16,975 1 INFO odoo-boats-db odoo.modules.loading: loading spreadsheet_dashboard_account/data/dashboards.xml 
+2025-11-08 15:16:17,024 1 INFO odoo-boats-db odoo.modules.loading: Module spreadsheet_dashboard_account loaded in 0.20s, 30 queries (+30 other) 
+2025-11-08 15:16:17,024 1 INFO odoo-boats-db odoo.modules.loading: Loading module website_mail (50/61) 
+2025-11-08 15:16:17,187 1 INFO odoo-boats-db odoo.modules.registry: module website_mail: creating or updating database tables 
+2025-11-08 15:16:17,209 1 INFO odoo-boats-db odoo.modules.loading: loading website_mail/views/website_mail_templates.xml 
+2025-11-08 15:16:17,239 1 INFO odoo-boats-db odoo.modules.loading: Module website_mail loaded in 0.21s, 38 queries (+38 other) 
+2025-11-08 15:16:17,239 1 INFO odoo-boats-db odoo.modules.loading: Loading module website_partner (51/61) 
+2025-11-08 15:16:17,438 1 INFO odoo-boats-db odoo.modules.registry: module website_partner: creating or updating database tables 
+2025-11-08 15:16:17,505 1 INFO odoo-boats-db odoo.modules.loading: loading website_partner/views/res_partner_views.xml 
+2025-11-08 15:16:17,532 1 INFO odoo-boats-db odoo.modules.loading: loading website_partner/views/website_partner_templates.xml 
+2025-11-08 15:16:17,543 1 INFO odoo-boats-db odoo.modules.loading: loading website_partner/data/website_partner_data.xml 
+2025-11-08 15:16:17,562 1 INFO odoo-boats-db odoo.modules.loading: Module website_partner loaded in 0.32s, 134 queries (+134 other) 
+2025-11-08 15:16:17,562 1 INFO odoo-boats-db odoo.modules.loading: Loading module website_sms (52/61) 
+2025-11-08 15:16:17,694 1 INFO odoo-boats-db odoo.modules.registry: module website_sms: creating or updating database tables 
+2025-11-08 15:16:17,726 1 INFO odoo-boats-db odoo.modules.loading: loading website_sms/views/website_visitor_views.xml 
+2025-11-08 15:16:17,787 1 INFO odoo-boats-db odoo.modules.loading: Module website_sms loaded in 0.22s, 83 queries (+83 other) 
+2025-11-08 15:16:17,787 1 INFO odoo-boats-db odoo.modules.loading: Loading module sale (53/61) 
+2025-11-08 15:16:17,945 1 INFO odoo-boats-db odoo.modules.registry: module sale: creating or updating database tables 
+2025-11-08 15:16:18,297 1 INFO odoo-boats-db odoo.modules.loading: loading sale/security/ir.model.access.csv 
+2025-11-08 15:16:18,358 1 INFO odoo-boats-db odoo.modules.loading: loading sale/security/res_groups.xml 
+2025-11-08 15:16:18,366 1 INFO odoo-boats-db odoo.modules.loading: loading sale/security/ir_rules.xml 
+2025-11-08 15:16:18,379 1 INFO odoo-boats-db odoo.modules.loading: loading sale/report/account_invoice_report_views.xml 
+2025-11-08 15:16:18,419 1 INFO odoo-boats-db odoo.modules.loading: loading sale/report/ir_actions_report_templates.xml 
+2025-11-08 15:16:18,468 1 INFO odoo-boats-db odoo.modules.loading: loading sale/report/ir_actions_report.xml 
+2025-11-08 15:16:18,474 1 INFO odoo-boats-db odoo.modules.loading: loading sale/report/sale_report_views.xml 
+2025-11-08 15:16:18,549 1 INFO odoo-boats-db odoo.modules.loading: loading sale/data/ir_cron.xml 
+2025-11-08 15:16:18,553 1 INFO odoo-boats-db odoo.modules.loading: loading sale/data/ir_sequence_data.xml 
+2025-11-08 15:16:18,557 1 INFO odoo-boats-db odoo.modules.loading: loading sale/data/mail_activity_type_data.xml 
+2025-11-08 15:16:18,560 1 INFO odoo-boats-db odoo.modules.loading: loading sale/data/mail_message_subtype_data.xml 
+2025-11-08 15:16:18,564 1 INFO odoo-boats-db odoo.modules.loading: loading sale/data/mail_template_data.xml 
+2025-11-08 15:16:18,573 1 INFO odoo-boats-db odoo.modules.loading: loading sale/data/ir_config_parameter.xml 
+2025-11-08 15:16:18,576 1 INFO odoo-boats-db odoo.modules.loading: loading sale/data/onboarding_data.xml 
+2025-11-08 15:16:18,580 1 INFO odoo-boats-db odoo.modules.loading: loading sale/wizard/account_accrued_orders_wizard_views.xml 
+2025-11-08 15:16:18,585 1 INFO odoo-boats-db odoo.modules.loading: loading sale/wizard/mass_cancel_orders_views.xml 
+2025-11-08 15:16:18,597 1 INFO odoo-boats-db odoo.modules.loading: loading sale/wizard/payment_link_wizard_views.xml 
+2025-11-08 15:16:18,613 1 INFO odoo-boats-db odoo.modules.loading: loading sale/wizard/res_config_settings_views.xml 
+2025-11-08 15:16:18,666 1 INFO odoo-boats-db odoo.modules.loading: loading sale/wizard/sale_make_invoice_advance_views.xml 
+2025-11-08 15:16:18,688 1 INFO odoo-boats-db odoo.modules.loading: loading sale/wizard/sale_order_cancel_views.xml 
+2025-11-08 15:16:18,706 1 INFO odoo-boats-db odoo.modules.loading: loading sale/wizard/sale_order_discount_views.xml 
+2025-11-08 15:16:18,716 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/sale_order_views.xml 
+2025-11-08 15:16:18,910 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/account_views.xml 
+2025-11-08 15:16:18,988 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/crm_team_views.xml 
+2025-11-08 15:16:19,042 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/mail_activity_views.xml 
+2025-11-08 15:16:19,045 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/mail_activity_plan_views.xml 
+2025-11-08 15:16:19,050 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/payment_views.xml 
+2025-11-08 15:16:19,078 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/product_document_views.xml 
+2025-11-08 15:16:19,129 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/product_packaging_views.xml 
+2025-11-08 15:16:19,156 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/product_views.xml 
+2025-11-08 15:16:19,238 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/res_partner_views.xml 
+2025-11-08 15:16:19,324 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/sale_order_line_views.xml 
+2025-11-08 15:16:19,366 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/sale_portal_templates.xml 
+2025-11-08 15:16:19,444 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/utm_campaign_views.xml 
+2025-11-08 15:16:19,465 1 INFO odoo-boats-db odoo.modules.loading: loading sale/views/sale_menus.xml 
+2025-11-08 15:16:19,693 1 INFO odoo-boats-db odoo.modules.loading: Module sale loaded in 1.91s, 2215 queries (+2215 other) 
+2025-11-08 15:16:19,693 1 INFO odoo-boats-db odoo.modules.loading: Loading module website_blog (54/61) 
+2025-11-08 15:16:19,853 1 INFO odoo-boats-db odoo.modules.registry: module website_blog: creating or updating database tables 
+2025-11-08 15:16:19,943 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/data/mail_message_subtype_data.xml 
+2025-11-08 15:16:19,948 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/data/mail_templates.xml 
+2025-11-08 15:16:19,952 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/data/website_blog_data.xml 
+2025-11-08 15:16:19,964 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/data/blog_snippet_template_data.xml 
+2025-11-08 15:16:19,979 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/views/website_blog_views.xml 
+2025-11-08 15:16:20,060 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/views/website_blog_components.xml 
+2025-11-08 15:16:20,179 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/views/website_blog_posts_loop.xml 
+2025-11-08 15:16:20,263 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/views/website_blog_templates.xml 
+2025-11-08 15:16:20,438 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/views/snippets/snippets.xml 
+2025-11-08 15:16:20,497 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/views/snippets/s_blog_posts.xml 
+2025-11-08 15:16:20,566 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/views/website_pages_views.xml 
+2025-11-08 15:16:20,608 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window.view records with IDs: [1390, 1391] 
+2025-11-08 15:16:20,623 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/views/blog_post_add.xml 
+2025-11-08 15:16:20,635 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/security/ir.model.access.csv 
+2025-11-08 15:16:20,656 1 INFO odoo-boats-db odoo.modules.loading: loading website_blog/security/website_blog_security.xml 
+2025-11-08 15:16:20,680 1 INFO odoo-boats-db odoo.modules.loading: Module website_blog loaded in 0.99s, 1124 queries (+1124 other) 
+2025-11-08 15:16:20,680 1 INFO odoo-boats-db odoo.modules.loading: Loading module website_payment (55/61) 
+2025-11-08 15:16:20,876 1 INFO odoo-boats-db odoo.modules.registry: module website_payment: creating or updating database tables 
+2025-11-08 15:16:20,953 1 INFO odoo-boats-db odoo.modules.loading: loading website_payment/data/mail_templates.xml 
+2025-11-08 15:16:20,957 1 INFO odoo-boats-db odoo.modules.loading: loading website_payment/data/mail_template_data.xml 
+2025-11-08 15:16:20,963 1 INFO odoo-boats-db odoo.modules.loading: loading website_payment/data/ir_actions_server_data.xml 
+2025-11-08 15:16:20,970 1 INFO odoo-boats-db odoo.modules.loading: loading website_payment/views/payment_form_templates.xml 
+2025-11-08 15:16:21,018 1 INFO odoo-boats-db odoo.modules.loading: loading website_payment/views/payment_provider.xml 
+2025-11-08 15:16:21,035 1 INFO odoo-boats-db odoo.modules.loading: loading website_payment/views/res_config_settings_views.xml 
+2025-11-08 15:16:21,076 1 INFO odoo-boats-db odoo.modules.loading: loading website_payment/views/snippets/snippets.xml 
+2025-11-08 15:16:21,106 1 INFO odoo-boats-db odoo.modules.loading: loading website_payment/views/snippets/s_donation.xml 
+2025-11-08 15:16:21,190 1 INFO odoo-boats-db odoo.modules.loading: Module website_payment loaded in 0.51s, 298 queries (+298 other) 
+2025-11-08 15:16:21,190 1 INFO odoo-boats-db odoo.modules.loading: Loading module sale_async_emails (56/61) 
+2025-11-08 15:16:21,342 1 INFO odoo-boats-db odoo.modules.registry: module sale_async_emails: creating or updating database tables 
+2025-11-08 15:16:21,381 1 INFO odoo-boats-db odoo.modules.loading: loading sale_async_emails/data/ir_config_parameter.xml 
+2025-11-08 15:16:21,384 1 INFO odoo-boats-db odoo.modules.loading: loading sale_async_emails/data/ir_cron.xml 
+2025-11-08 15:16:21,407 1 INFO odoo-boats-db odoo.modules.loading: Module sale_async_emails loaded in 0.22s, 55 queries (+55 other) 
+2025-11-08 15:16:21,407 1 INFO odoo-boats-db odoo.modules.loading: Loading module sale_management (57/61) 
+2025-11-08 15:16:21,566 1 INFO odoo-boats-db odoo.modules.registry: module sale_management: creating or updating database tables 
+2025-11-08 15:16:21,678 1 INFO odoo-boats-db odoo.modules.loading: loading sale_management/data/digest_data.xml 
+2025-11-08 15:16:21,689 1 INFO odoo-boats-db odoo.modules.loading: loading sale_management/security/ir.model.access.csv 
+2025-11-08 15:16:21,794 1 INFO odoo-boats-db odoo.modules.loading: loading sale_management/security/sale_management_security.xml 
+2025-11-08 15:16:21,801 1 INFO odoo-boats-db odoo.modules.loading: loading sale_management/report/sale_report_templates.xml 
+2025-11-08 15:16:21,821 1 INFO odoo-boats-db odoo.modules.loading: loading sale_management/views/sale_order_template_views.xml 
+2025-11-08 15:16:21,861 1 INFO odoo-boats-db odoo.modules.loading: loading sale_management/views/digest_views.xml 
+2025-11-08 15:16:21,881 1 INFO odoo-boats-db odoo.modules.loading: loading sale_management/views/res_config_settings_views.xml 
+2025-11-08 15:16:21,920 1 INFO odoo-boats-db odoo.modules.loading: loading sale_management/views/sale_order_views.xml 
+2025-11-08 15:16:21,948 1 INFO odoo-boats-db odoo.modules.loading: loading sale_management/views/sale_portal_templates.xml 
+2025-11-08 15:16:21,961 1 INFO odoo-boats-db odoo.modules.loading: loading sale_management/views/sale_management_menus.xml 
+2025-11-08 15:16:21,995 1 INFO odoo-boats-db odoo.modules.loading: Module sale_management loaded in 0.59s, 372 queries (+372 other) 
+2025-11-08 15:16:21,995 1 INFO odoo-boats-db odoo.modules.loading: Loading module sale_product_configurator (58/61) 
+2025-11-08 15:16:22,153 1 INFO odoo-boats-db odoo.modules.registry: module sale_product_configurator: creating or updating database tables 
+2025-11-08 15:16:22,227 1 INFO odoo-boats-db odoo.modules.loading: loading sale_product_configurator/views/product_template_views.xml 
+2025-11-08 15:16:22,256 1 INFO odoo-boats-db odoo.modules.loading: loading sale_product_configurator/views/sale_order_views.xml 
+2025-11-08 15:16:22,310 1 INFO odoo-boats-db odoo.modules.loading: Module sale_product_configurator loaded in 0.31s, 139 queries (+139 other) 
+2025-11-08 15:16:22,310 1 INFO odoo-boats-db odoo.modules.loading: Loading module sale_sms (59/61) 
+2025-11-08 15:16:22,470 1 INFO odoo-boats-db odoo.modules.loading: loading sale_sms/security/ir.model.access.csv 
+2025-11-08 15:16:22,488 1 INFO odoo-boats-db odoo.modules.loading: loading sale_sms/security/security.xml 
+2025-11-08 15:16:22,508 1 INFO odoo-boats-db odoo.modules.loading: Module sale_sms loaded in 0.20s, 42 queries (+42 other) 
+2025-11-08 15:16:22,508 1 INFO odoo-boats-db odoo.modules.loading: Loading module spreadsheet_dashboard_sale (60/61) 
+2025-11-08 15:16:22,740 1 INFO odoo-boats-db odoo.modules.loading: loading spreadsheet_dashboard_sale/data/dashboards.xml 
+2025-11-08 15:16:22,787 1 INFO odoo-boats-db odoo.modules.loading: Module spreadsheet_dashboard_sale loaded in 0.28s, 36 queries (+36 other) 
+2025-11-08 15:16:22,787 1 INFO odoo-boats-db odoo.modules.loading: Loading module sale_pdf_quote_builder (61/61) 
+2025-11-08 15:16:22,931 1 INFO odoo-boats-db odoo.modules.registry: module sale_pdf_quote_builder: creating or updating database tables 
+2025-11-08 15:16:23,027 1 INFO odoo-boats-db odoo.modules.loading: loading sale_pdf_quote_builder/report/ir_actions_report.xml 
+2025-11-08 15:16:23,033 1 INFO odoo-boats-db odoo.modules.loading: loading sale_pdf_quote_builder/views/sale_order_template_views.xml 
+2025-11-08 15:16:23,049 1 INFO odoo-boats-db odoo.modules.loading: loading sale_pdf_quote_builder/wizards/res_config_settings_views.xml 
+2025-11-08 15:16:23,108 1 INFO odoo-boats-db odoo.modules.loading: Module sale_pdf_quote_builder loaded in 0.32s, 177 queries (+177 other) 
+2025-11-08 15:16:23,109 1 INFO odoo-boats-db odoo.modules.loading: 61 modules loaded in 32.97s, 36482 queries (+36482 extra) 
+2025-11-08 15:16:23,342 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-08 15:16:24,122 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 34.071s 
+2025-11-08 15:16:24,174 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-08 15:16:24,183 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-08 15:16:24,207 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-08 15:16:24,216 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-08 15:16:24,281 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:16:24] "GET /web HTTP/1.1" 303 - 6 0.046 24.741
+2025-11-08 15:16:24,282 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:16:24] "GET /web HTTP/1.1" 303 - 7 0.060 9.645
+2025-11-08 15:16:24,893 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.taxonomy.category 
+2025-11-08 15:16:24,893 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.boat 
+2025-11-08 15:16:24,893 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.location 
+2025-11-08 15:16:24,895 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.taxonomy.category 
+2025-11-08 15:16:24,895 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.boat 
+2025-11-08 15:16:24,895 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.boat 
+2025-11-08 15:16:24,896 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.taxonomy 
+2025-11-08 15:16:24,896 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.location 
+2025-11-08 15:16:24,896 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.category 
+2025-11-08 15:16:24,896 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.boat 
+2025-11-08 15:16:24,896 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.amenity 
+2025-11-08 15:16:24,896 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.taxonomy 
+2025-11-08 15:16:24,898 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.category 
+2025-11-08 15:16:24,898 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.amenity 
+2025-11-08 15:16:25,199 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:25] "GET / HTTP/1.1" 200 - 175 0.289 17.754
+2025-11-08 15:16:25,200 1 ERROR odoo-boats-db odoo.sql_db: bad query: 
+                WITH visitor AS (
+                    
+            INSERT INTO website_visitor (
+                partner_id, access_token, last_connection_datetime, visit_count, lang_id,
+                website_id, timezone, write_uid, create_uid, write_date, create_date, country_id)
+            VALUES (
+                3, 3, now() at time zone 'UTC', 1, 1,
+                1, 'Asia/Calcutta', 2, 2,
+                now() at time zone 'UTC', now() at time zone 'UTC', (
+                    SELECT id FROM res_country WHERE code = NULL
+                )
+            )
+            ON CONFLICT (access_token)
+            DO UPDATE SET
+                last_connection_datetime=excluded.last_connection_datetime,
+                visit_count = CASE WHEN website_visitor.last_connection_datetime < NOW() AT TIME ZONE 'UTC' - INTERVAL '8 hours'
+                                    THEN website_visitor.visit_count + 1
+                                    ELSE website_visitor.visit_count
+                                END
+            RETURNING id, CASE WHEN create_date = now() at time zone 'UTC' THEN 'inserted' ELSE 'updated' END AS upsert
+        , 'http://127.0.0.1:8069/' AS url, 4 AS page_id
+                ), track AS (
+                    INSERT INTO website_track (visitor_id, url, page_id, visit_datetime)
+                    SELECT id, url, page_id::integer, now() at time zone 'UTC' FROM visitor
+                )
+                SELECT id, upsert from visitor;
+            
+ERROR: could not serialize access due to concurrent update
+ 
+2025-11-08 15:16:25,204 1 INFO odoo-boats-db odoo.service.model: SERIALIZATION_FAILURE, 4 tries left, try again in 0.4747 sec... 
+2025-11-08 15:16:25,722 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:25] "GET / HTTP/1.1" 200 - 188 0.265 34.425
+2025-11-08 15:16:25,810 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcb65660>
+2025-11-08 15:16:25,811 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcb66d10>
+2025-11-08 15:16:25,815 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:25] "GET /web/assets/1/debug/web.assets_frontend_minimal.js HTTP/1.1" 500 - 0 0.000 0.556
+2025-11-08 15:16:25,816 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:25] "GET /web/assets/1/debug/web.assets_frontend.css HTTP/1.1" 500 - 0 0.000 0.566
+2025-11-08 15:16:29,679 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:16:29] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-08 15:16:30,316 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:30] "GET / HTTP/1.1" 200 - 12 0.010 0.028
+2025-11-08 15:16:30,409 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012ded989a0>
+2025-11-08 15:16:30,410 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:30] "GET /web/assets/1/debug/web.assets_frontend_minimal.js HTTP/1.1" 500 - 0 0.000 0.067
+2025-11-08 15:16:30,411 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012ded9a8c0>
+2025-11-08 15:16:30,411 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:30] "GET /web/assets/1/debug/web.assets_frontend.css HTTP/1.1" 500 - 0 0.000 0.076
+2025-11-08 15:16:39,744 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:16:39] "GET /web HTTP/1.1" 303 - 1 0.001 0.007
+2025-11-08 15:16:49,812 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:16:49] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 15:16:55,750 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:55] "GET / HTTP/1.1" 200 - 109 0.066 0.183
+2025-11-08 15:16:55,860 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcba5ea0>
+2025-11-08 15:16:55,861 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcba7250>
+2025-11-08 15:16:55,861 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:55] "GET /web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 500 - 0 0.000 0.076
+2025-11-08 15:16:55,861 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:55] "GET /web/assets/1/c1a06c1/web.assets_frontend.min.css HTTP/1.1" 500 - 0 0.000 0.062
+2025-11-08 15:16:55,891 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcba49a0>
+2025-11-08 15:16:55,892 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:55] "GET /web/assets/1/9ee6232/web.assets_frontend_minimal.min.js HTTP/1.1" 500 - 0 0.000 0.023
+2025-11-08 15:16:56,004 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcba55a0>
+2025-11-08 15:16:56,016 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:56] "GET /web/image/website/1/logo/Yay%21%20Boat?unique=492153b HTTP/1.1" 500 - 0 0.000 0.103
+2025-11-08 15:16:56,042 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcba52d0>
+2025-11-08 15:16:56,043 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:56] "GET /web/image/website/1/favicon?unique=492153b HTTP/1.1" 500 - 0 0.000 0.122
+2025-11-08 15:16:56,043 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcba6860>
+2025-11-08 15:16:56,044 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:56] "GET /web/static/img/odoo_logo_tiny.png HTTP/1.1" 500 - 0 0.000 0.130
+2025-11-08 15:16:58,420 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:58] "GET / HTTP/1.1" 200 - 7 0.010 0.024
+2025-11-08 15:16:58,525 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcba6d10>
+2025-11-08 15:16:58,525 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcba7d60>
+2025-11-08 15:16:58,526 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:58] "GET /web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 500 - 0 0.000 0.083
+2025-11-08 15:16:58,526 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:58] "GET /web/assets/1/c1a06c1/web.assets_frontend.min.css HTTP/1.1" 500 - 0 0.000 0.086
+2025-11-08 15:16:58,667 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcba5060>
+2025-11-08 15:16:58,667 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcb356f0>
+2025-11-08 15:16:58,667 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcb35ed0>
+2025-11-08 15:16:58,668 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:58] "GET /web/static/img/odoo_logo_tiny.png HTTP/1.1" 500 - 0 0.000 0.122
+2025-11-08 15:16:58,668 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:58] "GET /web/image/website/1/logo/Yay%21%20Boat?unique=492153b HTTP/1.1" 500 - 0 0.000 0.124
+2025-11-08 15:16:58,669 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:58] "GET /web/assets/1/9ee6232/web.assets_frontend_minimal.min.js HTTP/1.1" 500 - 0 0.000 0.133
+2025-11-08 15:16:58,709 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x7012dcba7700>
+2025-11-08 15:16:58,709 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 15:16:58] "GET /web/image/website/1/favicon?unique=492153b HTTP/1.1" 500 - 0 0.000 0.029
+2025-11-08 15:16:59,908 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:16:59] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-08 15:17:10,030 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:17:10] "GET /web HTTP/1.1" 303 - 1 0.001 0.005
+2025-11-08 15:17:11,993 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 15:17:11,994 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 15:17:12,032 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 6 connections  
