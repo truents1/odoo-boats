@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 from odoo import models, fields, api, exceptions
 
 class BoatListing(models.Model):
-    """Core model for boat listings"""
+    """Core model for boat listings - MINIMAL VERSION"""
     _name = 'boat.listing'
     _description = 'Boat Listing'
     _order = 'create_date desc'
@@ -13,6 +12,7 @@ class BoatListing(models.Model):
         ('pending', 'Pending Approval'),
         ('approved', 'Approved'),
         ('rejected', 'Rejected'),
+        ('suspended', 'Suspended'),
     ]
     
     PRICING_PERIOD = [
@@ -27,7 +27,8 @@ class BoatListing(models.Model):
     business_name = fields.Char(string='Business/Brand Name')
     registration_number = fields.Char(string='Registration Number')
     owner_id = fields.Many2one('res.users', string='Owner', required=True, 
-                                default=lambda self: self.env.user)
+                                default=lambda self: self.env.user,
+                                domain="[('user_type', '=', 'boat_owner')]")
     
     # Classification
     category_id = fields.Many2one('boat.category', string='Category', required=True)
@@ -89,7 +90,7 @@ class BoatListing(models.Model):
     emergency_number = fields.Char(string='Emergency Contact Number', required=True)
     is_certified = fields.Boolean(string='Is Certified', default=False)
     
-    # Activities
+    # Activities - SIMPLIFIED WITHOUT RELATED FIELDS
     activity_ids = fields.Many2many('boat.generic.master', 'boat_activity_rel',
                                      domain="[('master_type', '=', 'activity')]",
                                      string='Included Activities')
@@ -120,15 +121,18 @@ class BoatListing(models.Model):
                 boat.review_count = 0
     
     def action_submit_for_approval(self):
+        """Boat owner submits listing for admin review"""
         self.ensure_one()
         if self.moderation_status == 'draft':
             self.moderation_status = 'pending'
     
     def action_approve(self):
+        """Admin approves the listing"""
         self.ensure_one()
         self.moderation_status = 'approved'
     
     def action_reject(self):
+        """Admin rejects the listing"""
         self.ensure_one()
         if not self.rejection_reason:
             raise exceptions.UserError('Please provide a rejection reason.')
