@@ -1,0 +1,12 @@
+2025-11-08 15:26:18,230 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-08 15:26:18,230 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-08 15:26:18,230 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-08 15:26:18,230 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-08 15:26:18,316 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-08 15:26:18,426 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on d3be32e10715:8069 
+2025-11-08 15:26:18,441 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-08 15:26:18,444 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-08 15:26:18,462 1 INFO odoo-boats-db odoo.modules.loading: loading 61 modules... 
+2025-11-08 15:26:18,798 1 INFO odoo-boats-db odoo.modules.loading: 61 modules loaded in 0.34s, 0 queries (+0 extra) 
+2025-11-08 15:26:18,879 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-08 15:26:18,882 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 0.457s 
