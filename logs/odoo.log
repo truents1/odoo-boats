@@ -1,0 +1,165 @@
+2025-11-08 14:51:41,104 96 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-08 14:51:41,105 96 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-08 14:51:41,105 96 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-08 14:51:41,105 96 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-08 14:51:41,210 96 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-08 14:51:41,488 96 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-08 14:51:41,488 96 INFO odoo-boats-db odoo.modules.loading: Loading module base (1/1) 
+2025-11-08 14:51:41,506 96 INFO odoo-boats-db odoo.modules.registry: module base: creating or updating database tables 
+2025-11-08 14:51:42,048 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_bank.xml 
+2025-11-08 14:51:42,056 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res.lang.csv 
+2025-11-08 14:51:42,259 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_lang_data.xml 
+2025-11-08 14:51:42,297 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_partner_data.xml 
+2025-11-08 14:51:42,314 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_currency_data.xml 
+2025-11-08 14:51:42,404 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_company_data.xml 
+2025-11-08 14:51:42,406 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_users_data.xml 
+2025-11-08 14:51:42,410 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/report_paperformat_data.xml 
+2025-11-08 14:51:42,414 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_country_data.xml 
+2025-11-08 14:51:42,536 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/ir_demo_data.xml 
+2025-11-08 14:51:42,564 96 INFO odoo-boats-db odoo.modules.loading: loading base/security/base_groups.xml 
+2025-11-08 14:51:42,999 96 INFO odoo-boats-db odoo.modules.loading: loading base/security/base_security.xml 
+2025-11-08 14:51:43,031 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/base_menus.xml 
+2025-11-08 14:51:43,109 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/decimal_precision_views.xml 
+2025-11-08 14:51:43,129 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_config_views.xml 
+2025-11-08 14:51:43,141 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res.country.state.csv 
+2025-11-08 14:51:43,834 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_actions_views.xml 
+2025-11-08 14:51:43,963 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_asset_views.xml 
+2025-11-08 14:51:43,982 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_config_parameter_views.xml 
+2025-11-08 14:51:44,001 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_cron_views.xml 
+2025-11-08 14:51:44,034 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_cron_trigger_views.xml 
+2025-11-08 14:51:44,052 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_filters_views.xml 
+2025-11-08 14:51:44,075 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_mail_server_views.xml 
+2025-11-08 14:51:44,095 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_model_views.xml 
+2025-11-08 14:51:44,341 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_attachment_views.xml 
+2025-11-08 14:51:44,365 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_rule_views.xml 
+2025-11-08 14:51:44,410 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_sequence_views.xml 
+2025-11-08 14:51:44,432 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_ui_menu_views.xml 
+2025-11-08 14:51:44,463 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_ui_view_views.xml 
+2025-11-08 14:51:44,515 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_default_views.xml 
+2025-11-08 14:51:44,534 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/ir_cron_data.xml 
+2025-11-08 14:51:44,547 96 INFO odoo-boats-db odoo.modules.loading: loading base/report/ir_model_report.xml 
+2025-11-08 14:51:44,550 96 INFO odoo-boats-db odoo.modules.loading: loading base/report/ir_model_templates.xml 
+2025-11-08 14:51:44,562 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_logging_views.xml 
+2025-11-08 14:51:44,582 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_qweb_widget_templates.xml 
+2025-11-08 14:51:44,606 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_module_views.xml 
+2025-11-08 14:51:44,669 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/ir_module_category_data.xml 
+2025-11-08 14:51:44,800 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/ir_module_module.xml 
+2025-11-08 14:51:44,827 96 INFO odoo-boats-db odoo.modules.loading: loading base/report/ir_module_reports.xml 
+2025-11-08 14:51:44,830 96 INFO odoo-boats-db odoo.modules.loading: loading base/report/ir_module_report_templates.xml 
+2025-11-08 14:51:44,840 96 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_module_update_views.xml 
+2025-11-08 14:51:44,857 96 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_language_install_views.xml 
+2025-11-08 14:51:44,872 96 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_import_language_views.xml 
+2025-11-08 14:51:44,885 96 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_module_upgrade_views.xml 
+2025-11-08 14:51:44,902 96 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_module_uninstall_views.xml 
+2025-11-08 14:51:44,911 96 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_export_language_views.xml 
+2025-11-08 14:51:44,923 96 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_partner_merge_views.xml 
+2025-11-08 14:51:44,936 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/ir_demo_failure_data.xml 
+2025-11-08 14:51:44,952 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_profile_views.xml 
+2025-11-08 14:51:44,977 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_company_views.xml 
+2025-11-08 14:51:45,004 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_lang_views.xml 
+2025-11-08 14:51:45,033 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_partner_views.xml 
+2025-11-08 14:51:45,151 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_bank_views.xml 
+2025-11-08 14:51:45,187 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_country_views.xml 
+2025-11-08 14:51:45,230 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_currency_views.xml 
+2025-11-08 14:51:45,284 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_users_views.xml 
+2025-11-08 14:51:45,400 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_users_identitycheck_views.xml 
+2025-11-08 14:51:45,412 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_property_views.xml 
+2025-11-08 14:51:45,431 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_config_settings_views.xml 
+2025-11-08 14:51:45,442 96 INFO odoo-boats-db odoo.modules.loading: loading base/views/report_paperformat_views.xml 
+2025-11-08 14:51:45,466 96 INFO odoo-boats-db odoo.modules.loading: loading base/security/ir.model.access.csv 
+2025-11-08 14:51:45,603 96 INFO odoo-boats-db odoo.modules.loading: Module base: loading demo 
+2025-11-08 14:51:45,603 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_users_demo.xml 
+2025-11-08 14:51:45,610 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_partner_bank_demo.xml 
+2025-11-08 14:51:45,613 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_currency_demo.xml 
+2025-11-08 14:51:45,615 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_currency_rate_demo.xml 
+2025-11-08 14:51:45,686 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_bank_demo.xml 
+2025-11-08 14:51:45,689 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_partner_demo.xml 
+2025-11-08 14:51:45,952 96 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_partner_image_demo.xml 
+2025-11-08 14:51:46,529 96 INFO odoo-boats-db odoo.modules.loading: Module base loaded in 5.04s, 8606 queries (+8606 other) 
+2025-11-08 14:51:46,529 96 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 5.04s, 8606 queries (+8606 extra) 
+2025-11-08 14:51:46,539 96 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-08 14:51:46,541 96 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-08 14:51:47,525 96 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Base'] to user __system__ #1 via n/a 
+2025-11-08 14:51:47,525 96 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Base'] to user __system__ #1 via n/a 
+2025-11-08 14:51:48,034 96 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-08 14:51:48,362 96 INFO odoo-boats-db odoo.modules.loading: loading 61 modules... 
+2025-11-08 14:51:48,362 96 INFO odoo-boats-db odoo.modules.loading: Loading module social_media (2/61) 
+2025-11-08 14:51:48,384 96 INFO odoo-boats-db odoo.modules.registry: module social_media: creating or updating database tables 
+2025-11-08 14:51:48,405 96 INFO odoo-boats-db odoo.modules.loading: loading social_media/views/res_company_views.xml 
+2025-11-08 14:51:48,431 96 INFO odoo-boats-db odoo.modules.loading: Module social_media loaded in 0.07s, 59 queries (+59 other) 
+2025-11-08 14:51:48,431 96 INFO odoo-boats-db odoo.modules.loading: Loading module uom (3/61) 
+2025-11-08 14:51:48,456 96 INFO odoo-boats-db odoo.modules.registry: module uom: creating or updating database tables 
+2025-11-08 14:51:48,488 96 INFO odoo-boats-db odoo.modules.loading: loading uom/data/uom_data.xml 
+2025-11-08 14:51:48,512 96 INFO odoo-boats-db odoo.modules.loading: loading uom/security/uom_security.xml 
+2025-11-08 14:51:48,520 96 INFO odoo-boats-db odoo.modules.loading: loading uom/security/ir.model.access.csv 
+2025-11-08 14:51:48,529 96 INFO odoo-boats-db odoo.modules.loading: loading uom/views/uom_uom_views.xml 
+2025-11-08 14:51:48,576 96 INFO odoo-boats-db odoo.modules.loading: Module uom loaded in 0.15s, 202 queries (+202 other) 
+2025-11-08 14:51:48,576 96 INFO odoo-boats-db odoo.modules.loading: Loading module web (4/61) 
+2025-11-08 14:51:48,600 96 INFO odoo-boats-db odoo.modules.registry: module web: creating or updating database tables 
+2025-11-08 14:51:48,936 96 INFO odoo-boats-db odoo.modules.loading: loading web/security/ir.model.access.csv 
+2025-11-08 14:51:48,948 96 INFO odoo-boats-db odoo.modules.loading: loading web/views/webclient_templates.xml 
+2025-11-08 14:51:49,032 96 INFO odoo-boats-db odoo.modules.loading: loading web/views/report_templates.xml 
+2025-11-08 14:51:49,138 96 INFO odoo-boats-db odoo.modules.loading: loading web/views/base_document_layout_views.xml 
+2025-11-08 14:51:49,150 96 INFO odoo-boats-db odoo.modules.loading: loading web/views/partner_view.xml 
+2025-11-08 14:51:49,154 96 INFO odoo-boats-db odoo.modules.loading: loading web/views/speedscope_template.xml 
+2025-11-08 14:51:49,161 96 INFO odoo-boats-db odoo.modules.loading: loading web/views/neutralize_views.xml 
+2025-11-08 14:51:49,170 96 INFO odoo-boats-db odoo.modules.loading: loading web/data/ir_attachment.xml 
+2025-11-08 14:51:49,174 96 INFO odoo-boats-db odoo.modules.loading: loading web/data/report_layout.xml 
+2025-11-08 14:51:49,219 96 INFO odoo-boats-db odoo.modules.loading: Module web loaded in 0.64s, 1189 queries (+1189 other) 
+2025-11-08 14:51:49,219 96 INFO odoo-boats-db odoo.modules.loading: Loading module auth_totp (5/61) 
+2025-11-08 14:51:49,251 96 INFO odoo-boats-db odoo.modules.registry: module auth_totp: creating or updating database tables 
+2025-11-08 14:51:49,280 96 INFO odoo-boats-db odoo.modules.loading: loading auth_totp/security/security.xml 
+2025-11-08 14:51:49,312 96 INFO odoo-boats-db odoo.modules.loading: loading auth_totp/security/ir.model.access.csv 
+2025-11-08 14:51:49,319 96 INFO odoo-boats-db odoo.modules.loading: loading auth_totp/data/ir_action_data.xml 
+2025-11-08 14:51:49,324 96 INFO odoo-boats-db odoo.modules.loading: loading auth_totp/views/res_users_views.xml 
+2025-11-08 14:51:49,384 96 INFO odoo-boats-db odoo.modules.loading: loading auth_totp/views/templates.xml 
+2025-11-08 14:51:49,395 96 INFO odoo-boats-db odoo.modules.loading: loading auth_totp/wizard/auth_totp_wizard_views.xml 
+2025-11-08 14:51:49,416 96 INFO odoo-boats-db odoo.modules.loading: Module auth_totp loaded in 0.20s, 191 queries (+191 other) 
+2025-11-08 14:51:49,416 96 INFO odoo-boats-db odoo.modules.loading: Loading module base_import (6/61) 
+2025-11-08 14:51:49,463 96 INFO odoo-boats-db odoo.modules.registry: module base_import: creating or updating database tables 
+2025-11-08 14:51:49,956 96 INFO odoo-boats-db odoo.modules.loading: loading base_import/security/ir.model.access.csv 
+2025-11-08 14:51:49,981 96 INFO odoo-boats-db odoo.modules.loading: Module base_import loaded in 0.56s, 807 queries (+807 other) 
+2025-11-08 14:51:49,981 96 INFO odoo-boats-db odoo.modules.loading: Loading module base_import_module (7/61) 
+2025-11-08 14:51:50,016 96 INFO odoo-boats-db odoo.modules.registry: module base_import_module: creating or updating database tables 
+2025-11-08 14:51:50,057 96 INFO odoo-boats-db odoo.modules.loading: loading base_import_module/security/ir.model.access.csv 
+2025-11-08 14:51:50,067 96 INFO odoo-boats-db odoo.modules.loading: loading base_import_module/views/base_import_module_view.xml 
+2025-11-08 14:51:50,085 96 INFO odoo-boats-db odoo.modules.loading: loading base_import_module/views/ir_module_views.xml 
+2025-11-08 14:51:50,152 96 INFO odoo-boats-db odoo.modules.loading: Module base_import_module loaded in 0.17s, 164 queries (+164 other) 
+2025-11-08 14:51:50,152 96 INFO odoo-boats-db odoo.modules.loading: Loading module base_setup (8/61) 
+2025-11-08 14:51:50,182 96 INFO odoo-boats-db odoo.modules.registry: module base_setup: creating or updating database tables 
+2025-11-08 14:51:50,226 96 INFO odoo-boats-db odoo.modules.loading: loading base_setup/data/base_setup_data.xml 
+2025-11-08 14:51:50,232 96 INFO odoo-boats-db odoo.modules.loading: loading base_setup/views/res_config_settings_views.xml 
+2025-11-08 14:51:50,295 96 INFO odoo-boats-db odoo.modules.loading: loading base_setup/views/res_partner_views.xml 
+2025-11-08 14:51:50,352 96 INFO odoo-boats-db odoo.modules.loading: Module base_setup loaded in 0.20s, 130 queries (+130 other) 
+2025-11-08 14:51:50,352 96 INFO odoo-boats-db odoo.modules.loading: Loading module bus (9/61) 
+2025-11-08 14:51:50,435 96 INFO odoo-boats-db odoo.modules.registry: module bus: creating or updating database tables 
+2025-11-08 14:51:50,526 96 INFO odoo-boats-db odoo.modules.loading: loading bus/security/ir.model.access.csv 
+2025-11-08 14:51:50,566 96 INFO odoo-boats-db odoo.modules.loading: Module bus loaded in 0.21s, 104 queries (+104 other) 
+2025-11-08 14:51:50,566 96 INFO odoo-boats-db odoo.modules.loading: Loading module http_routing (10/61) 
+2025-11-08 14:51:50,629 96 INFO odoo-boats-db odoo.modules.registry: module http_routing: creating or updating database tables 
+2025-11-08 14:51:50,654 96 INFO odoo-boats-db odoo.modules.loading: loading http_routing/views/http_routing_template.xml 
+2025-11-08 14:51:50,751 96 INFO odoo-boats-db odoo.modules.loading: loading http_routing/views/res_lang_views.xml 
+2025-11-08 14:51:50,787 96 INFO odoo-boats-db odoo.modules.loading: Module http_routing loaded in 0.22s, 128 queries (+128 other) 
+2025-11-08 14:51:50,788 96 INFO odoo-boats-db odoo.modules.loading: Loading module onboarding (11/61) 
+2025-11-08 14:51:50,821 96 INFO odoo-boats-db odoo.modules.registry: module onboarding: creating or updating database tables 
+2025-11-08 14:51:50,879 96 INFO odoo-boats-db odoo.modules.loading: loading onboarding/views/onboarding_templates.xml 
+2025-11-08 14:51:50,907 96 INFO odoo-boats-db odoo.modules.loading: loading onboarding/views/onboarding_views.xml 
+2025-11-08 14:51:50,932 96 INFO odoo-boats-db odoo.modules.loading: loading onboarding/views/onboarding_menus.xml 
+2025-11-08 14:51:50,940 96 INFO odoo-boats-db odoo.modules.loading: loading onboarding/security/ir.model.access.csv 
+2025-11-08 14:51:50,995 96 INFO odoo-boats-db odoo.modules.loading: Module onboarding loaded in 0.21s, 206 queries (+206 other) 
+2025-11-08 14:51:50,995 96 INFO odoo-boats-db odoo.modules.loading: Loading module resource (12/61) 
+2025-11-08 14:51:51,047 96 INFO odoo-boats-db odoo.modules.registry: module resource: creating or updating database tables 
+2025-11-08 14:51:51,117 96 INFO odoo-boats-db odoo.modules.loading: loading resource/data/resource_data.xml 
+2025-11-08 14:51:51,125 96 INFO odoo-boats-db odoo.modules.loading: loading resource/security/ir.model.access.csv 
+2025-11-08 14:51:51,143 96 INFO odoo-boats-db odoo.modules.loading: loading resource/security/resource_security.xml 
+2025-11-08 14:51:51,151 96 INFO odoo-boats-db odoo.modules.loading: loading resource/views/resource_resource_views.xml 
+2025-11-08 14:51:51,187 96 INFO odoo-boats-db odoo.modules.loading: loading resource/views/resource_calendar_leaves_views.xml 
+2025-11-08 14:51:51,237 96 INFO odoo-boats-db odoo.modules.loading: loading resource/views/resource_calendar_attendance_views.xml 
+2025-11-08 14:51:51,257 96 INFO odoo-boats-db odoo.modules.loading: loading resource/views/resource_calendar_views.xml 
+2025-11-08 14:51:51,313 96 INFO odoo-boats-db odoo.modules.loading: loading resource/views/menuitems.xml 
+2025-11-08 14:51:51,380 96 INFO odoo-boats-db odoo.modules.loading: Module resource loaded in 0.39s, 316 queries (+316 other) 
+2025-11-08 14:51:51,380 96 INFO odoo-boats-db odoo.modules.loading: Loading module utm (13/61) 
+2025-11-08 14:51:51,437 96 INFO odoo-boats-db odoo.modules.registry: module utm: creating or updating database tables 
+2025-11-08 14:51:51,520 96 INFO odoo-boats-db odoo.modules.loading: loading utm/data/utm_medium_data.xml 
+2025-11-08 14:51:51,540 96 INFO odoo-boats-db odoo.modules.loading: loading utm/data/utm_source_data.xml 
+2025-11-08 14:51:51,563 96 INFO odoo-boats-db odoo.modules.loading: loading utm/data/utm_stage_data.xml 
