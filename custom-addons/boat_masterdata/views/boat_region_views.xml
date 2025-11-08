@@ -1,4 +1,12 @@
 <odoo>
+  <!-- action FIRST -->
+  <record id="action_boat_region" model="ir.actions.act_window">
+    <field name="name">Regions</field>
+    <field name="res_model">boat.region</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- views -->
   <record id="view_boat_region_tree" model="ir.ui.view">
     <field name="name">boat.region.tree</field>
     <field name="model">boat.region</field>
@@ -35,11 +43,10 @@
     </field>
   </record>
 
-  <menuitem id="menu_boat_root" name="Boat Masterdata"/>
-  <menuitem id="menu_boat_region" name="Regions" parent="menu_boat_root" action="action_boat_region"/>
-  <record id="action_boat_region" model="ir.actions.act_window">
-    <field name="name">Regions</field>
-    <field name="res_model">boat.region</field>
-    <field name="view_mode">tree,form</field>
-  </record>
+  <!-- menus AFTER action exists -->
+  <menuitem id="menu_boat_root" name="Boat Masterdata" sequence="10"/>
+  <menuitem id="menu_boat_region" name="Regions"
+            parent="menu_boat_root"
+            action="action_boat_region"
+            sequence="20"/>
 </odoo>

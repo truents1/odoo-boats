@@ -1,4 +1,10 @@
 <odoo>
+  <record id="action_boat_category" model="ir.actions.act_window">
+    <field name="name">Categories</field>
+    <field name="res_model">boat.category</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
   <record id="view_boat_category_tree" model="ir.ui.view">
     <field name="name">boat.category.tree</field>
     <field name="model">boat.category</field>
@@ -22,15 +28,16 @@
             <field name="parent_id"/>
             <field name="active"/>
           </group>
+          <group>
+            <field name="description"/>
+          </group>
         </sheet>
       </form>
     </field>
   </record>
 
-  <menuitem id="menu_boat_category" name="Categories" parent="menu_boat_root" action="action_boat_category"/>
-  <record id="action_boat_category" model="ir.actions.act_window">
-    <field name="name">Categories</field>
-    <field name="res_model">boat.category</field>
-    <field name="view_mode">tree,form</field>
-  </record>
+  <menuitem id="menu_boat_category" name="Categories"
+            parent="menu_boat_root"
+            action="action_boat_category"
+            sequence="30"/>
 </odoo>

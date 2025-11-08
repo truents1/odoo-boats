@@ -6,4 +6,5 @@ class BoatCategory(models.Model):
 
     name = fields.Char(required=True)
     parent_id = fields.Many2one('boat.category', string="Parent")
+    description = fields.Text()            # <-- add this
     active = fields.Boolean(default=True)

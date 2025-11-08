@@ -1,4 +1,10 @@
 <odoo>
+  <record id="action_boat_option" model="ir.actions.act_window">
+    <field name="name">Options</field>
+    <field name="res_model">boat.option</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
   <record id="view_boat_option_tree" model="ir.ui.view">
     <field name="name">boat.option.tree</field>
     <field name="model">boat.option</field>
@@ -31,10 +37,8 @@
     </field>
   </record>
 
-  <menuitem id="menu_boat_option" name="Options" parent="menu_boat_root" action="action_boat_option"/>
-  <record id="action_boat_option" model="ir.actions.act_window">
-    <field name="name">Options</field>
-    <field name="res_model">boat.option</field>
-    <field name="view_mode">tree,form</field>
-  </record>
+  <menuitem id="menu_boat_option" name="Options"
+            parent="menu_boat_root"
+            action="action_boat_option"
+            sequence="40"/>
 </odoo>

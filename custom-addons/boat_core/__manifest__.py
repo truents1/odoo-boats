@@ -5,12 +5,12 @@
   "license": "LGPL-3",
   "author": "Your Company",
   "website": "https://example.com",
-  "depends": ["base", "boat_masterdata"],
+  'depends': ['base', 'web', 'boat_masterdata'],
   "data": ["security/ir.model.access.csv", "views/boat_boat_views.xml"],
   "assets": {
     "web.assets_frontend": [],
     "web.assets_backend": []
   },
-  "installable": true,
-  "application": false
+  "installable": True,
+  "application": False
 }

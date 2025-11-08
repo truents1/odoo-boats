@@ -1,4 +1,12 @@
 <odoo>
+  <!-- action FIRST -->
+  <record id="action_boat_items" model="ir.actions.act_window">
+    <field name="name">Boats</field>
+    <field name="res_model">boat.boat</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- views -->
   <record id="view_boat_boat_tree" model="ir.ui.view">
     <field name="name">boat.boat.tree</field>
     <field name="model">boat.boat</field>
@@ -48,11 +56,10 @@
     </field>
   </record>
 
-  <menuitem id="menu_boat_backend_root" name="Boats"/>
-  <menuitem id="menu_boat_items" name="Boats" parent="menu_boat_backend_root" action="action_boat_items"/>
-  <record id="action_boat_items" model="ir.actions.act_window">
-    <field name="name">Boats</field>
-    <field name="res_model">boat.boat</field>
-    <field name="view_mode">tree,form</field>
-  </record>
+  <!-- menus AFTER action exists -->
+  <menuitem id="menu_boat_backend_root" name="Boats" sequence="10"/>
+  <menuitem id="menu_boat_items" name="Boats"
+            parent="menu_boat_backend_root"
+            action="action_boat_items"
+            sequence="20"/>
 </odoo>

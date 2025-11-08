@@ -1,0 +1,35 @@
+2025-11-08 17:49:49,121 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-08 17:49:49,122 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-08 17:49:49,122 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-08 17:49:49,122 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-08 17:49:49,197 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-08 17:49:49,322 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on 88c421bfdfed:8069 
+2025-11-08 17:49:49,338 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-08 17:49:49,342 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-08 17:49:49,360 1 INFO odoo-boats-db odoo.modules.loading: loading 61 modules... 
+2025-11-08 17:49:49,780 1 INFO odoo-boats-db odoo.modules.loading: 61 modules loaded in 0.42s, 0 queries (+0 extra) 
+2025-11-08 17:49:49,870 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-08 17:49:49,874 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 0.552s 
+2025-11-08 17:49:49,897 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-08 17:49:49,997 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [08/Nov/2025 17:49:49] "GET /websocket?version=17.0-1 HTTP/1.1" 101 - 11 0.010 0.288
+2025-11-08 17:49:50,373 1 INFO ? odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres 
+2025-11-08 17:49:58,699 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:49:58] "GET /web HTTP/1.1" 303 - 3 0.002 0.004
+2025-11-08 17:50:08,817 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:50:08] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-08 17:50:18,914 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:50:18] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-08 17:50:28,992 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:50:28] "GET /web HTTP/1.1" 303 - 1 0.001 0.005
+2025-11-08 17:50:39,092 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:50:39] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 17:50:49,170 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:50:49] "GET /web HTTP/1.1" 303 - 1 0.000 0.004
+2025-11-08 17:50:59,263 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:50:59] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 17:51:09,347 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:51:09] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 17:51:19,424 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:51:19] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 17:51:29,501 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:51:29] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 17:51:39,569 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:51:39] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 17:51:49,646 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:51:49] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 17:51:50,024 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Mail: Fetchmail Service`. 
+2025-11-08 17:51:50,031 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: start checking for new emails on imap server mail.yayboat.com 
+2025-11-08 17:51:50,398 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: Fetched 0 email(s) on imap server mail.yayboat.com; 0 succeeded, 0 failed. 
+2025-11-08 17:51:50,446 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Mail: Fetchmail Service` (0.421s). 
+2025-11-08 17:51:59,735 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:51:59] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 17:52:07,831 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 17:52:07,831 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 17:52:08,348 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 5 connections  

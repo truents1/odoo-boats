@@ -6,6 +6,7 @@ class Boat(models.Model):
     _description = "Boat"
     _rec_name = "name"
     _order = "create_date desc"
+    _inherit = ['image.mixin'] 
 
     owner_id = fields.Many2one('res.users', required=True, index=True)
     name = fields.Char(required=True)
@@ -44,17 +45,39 @@ class Boat(models.Model):
     max_duration_hours = fields.Integer(default=240)
     advance_notice_hours = fields.Integer(default=12)
 
-    amenity_ids = fields.Many2many('boat.option', string="Amenities", domain=[('master_type','=','amenity')])
-    meal_type_ids = fields.Many2many('boat.option', domain=[('master_type','=','meal_type')])
-    cuisine_type_ids = fields.Many2many('boat.option', domain=[('master_type','=','cuisine_type')])
-    included_meal_ids = fields.Many2many('boat.option', domain=[('master_type','=','included_meal')])
+    amenity_ids = fields.Many2many(
+        'boat.option', 'boat_amenity_rel', 'boat_id', 'option_id',
+        string="Amenities", domain=[('master_type','=','amenity')]
+    )
+    meal_type_ids = fields.Many2many(
+        'boat.option', 'boat_meal_type_rel', 'boat_id', 'option_id',
+        domain=[('master_type','=','meal_type')]
+    )
+    cuisine_type_ids = fields.Many2many(
+        'boat.option', 'boat_cuisine_type_rel', 'boat_id', 'option_id',
+        domain=[('master_type','=','cuisine_type')]
+    )
+    included_meal_ids = fields.Many2many(
+        'boat.option', 'boat_included_meal_rel', 'boat_id', 'option_id',
+        domain=[('master_type','=','included_meal')]
+    )
+    safety_check_ids = fields.Many2many(
+        'boat.option', 'boat_safety_check_rel', 'boat_id', 'option_id',
+        domain=[('master_type','=','safety_check')]
+    )
+    included_activity_ids = fields.Many2many(
+        'boat.option', 'boat_included_activity_rel', 'boat_id', 'option_id',
+        domain=[('master_type','=','activity')]
+    )
+    paid_addon_ids = fields.Many2many(
+        'boat.option', 'boat_paid_addon_rel', 'boat_id', 'option_id',
+        domain=[('master_type','=','paid_addon')]
+    )
+
     safety_cert_text = fields.Text()
-    safety_check_ids = fields.Many2many('boat.option', domain=[('master_type','=','safety_check')])
     emergency_phone = fields.Char()
     is_certified = fields.Boolean()
 
-    included_activity_ids = fields.Many2many('boat.option', domain=[('master_type','=','activity')])
-    paid_addon_ids = fields.Many2many('boat.option', domain=[('master_type','=','paid_addon')])
 
     state = fields.Selection([
         ('draft','Draft'), ('submitted','Submitted'),
