@@ -6,6 +6,7 @@
     'depends': ['base', 'web', 'website', 'mail'],
     'data': [
         'security/ir.model.access.csv',
+        'views/boat_views.xml',
         'views/menu_views.xml',
     ],
     'installable': True,
