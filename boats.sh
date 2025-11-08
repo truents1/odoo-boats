@@ -1,4 +1,4 @@
-docker compose down
+docker compose down -v
 
 ./gitty.sh
 
