@@ -1,0 +1,58 @@
+<odoo>
+  <record id="view_boat_boat_tree" model="ir.ui.view">
+    <field name="name">boat.boat.tree</field>
+    <field name="model">boat.boat</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="owner_id"/>
+        <field name="category_id"/>
+        <field name="region_id"/>
+        <field name="state"/>
+        <field name="active_service"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_boat_boat_form" model="ir.ui.view">
+    <field name="name">boat.boat.form</field>
+    <field name="model">boat.boat</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group string="Basics">
+            <field name="name"/>
+            <field name="owner_id"/>
+            <field name="category_id"/>
+            <field name="region_id"/>
+            <field name="state" readonly="1"/>
+          </group>
+          <group string="Specs">
+            <field name="guest_capacity"/>
+            <field name="deck_count"/>
+            <field name="bedroom_count"/>
+            <field name="bathroom_count"/>
+            <field name="staff_count"/>
+          </group>
+          <group string="Pricing">
+            <field name="pricing_period"/>
+            <field name="price_rent"/>
+            <field name="price_extra_guest"/>
+            <field name="price_advance_percent"/>
+            <field name="min_duration_hours"/>
+            <field name="max_duration_hours"/>
+            <field name="advance_notice_hours"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <menuitem id="menu_boat_backend_root" name="Boats"/>
+  <menuitem id="menu_boat_items" name="Boats" parent="menu_boat_backend_root" action="action_boat_items"/>
+  <record id="action_boat_items" model="ir.actions.act_window">
+    <field name="name">Boats</field>
+    <field name="res_model">boat.boat</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>

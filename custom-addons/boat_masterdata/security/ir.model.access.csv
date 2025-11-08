@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_boat_region_admin,Region admin,model_boat_region,,1,1,1,1
+access_boat_category_admin,Category admin,model_boat_category,,1,1,1,1
+access_boat_option_admin,Option admin,model_boat_option,,1,1,1,1

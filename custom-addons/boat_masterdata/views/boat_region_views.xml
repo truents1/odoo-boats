@@ -1,0 +1,45 @@
+<odoo>
+  <record id="view_boat_region_tree" model="ir.ui.view">
+    <field name="name">boat.region.tree</field>
+    <field name="model">boat.region</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="state"/>
+        <field name="country"/>
+        <field name="latitude"/>
+        <field name="longitude"/>
+        <field name="active"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_boat_region_form" model="ir.ui.view">
+    <field name="name">boat.region.form</field>
+    <field name="model">boat.region</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="image_ids" widget="many2many_binary"/>
+            <field name="latitude"/>
+            <field name="longitude"/>
+            <field name="state"/>
+            <field name="country"/>
+            <field name="active"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <menuitem id="menu_boat_root" name="Boat Masterdata"/>
+  <menuitem id="menu_boat_region" name="Regions" parent="menu_boat_root" action="action_boat_region"/>
+  <record id="action_boat_region" model="ir.actions.act_window">
+    <field name="name">Regions</field>
+    <field name="res_model">boat.region</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>

@@ -1,0 +1,40 @@
+<odoo>
+  <record id="view_boat_option_tree" model="ir.ui.view">
+    <field name="name">boat.option.tree</field>
+    <field name="model">boat.option</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="master_type"/>
+        <field name="name"/>
+        <field name="value_code"/>
+        <field name="sequence"/>
+        <field name="active"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_boat_option_form" model="ir.ui.view">
+    <field name="name">boat.option.form</field>
+    <field name="model">boat.option</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="master_type"/>
+            <field name="name"/>
+            <field name="value_code"/>
+            <field name="sequence"/>
+            <field name="active"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <menuitem id="menu_boat_option" name="Options" parent="menu_boat_root" action="action_boat_option"/>
+  <record id="action_boat_option" model="ir.actions.act_window">
+    <field name="name">Options</field>
+    <field name="res_model">boat.option</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>
