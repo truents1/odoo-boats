@@ -57,3 +57,8 @@
 2025-11-08 15:32:20,938 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:32:20] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
 2025-11-08 15:32:31,072 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:32:31] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
 2025-11-08 15:32:41,167 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:32:41] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 15:32:51,266 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:32:51] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 15:33:01,387 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:33:01] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 15:33:05,767 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 15:33:05,767 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 15:33:05,893 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 5 connections  
