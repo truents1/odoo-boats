@@ -24,6 +24,7 @@ class Boat(models.Model):
     guest_capacity = fields.Integer(required=True, default=2)
     bedroom_count = fields.Integer()
     bathroom_count = fields.Integer()
+    sleeping_capacity = fields.Integer(string="Sleeping Capacity", default=0)
     staff_count = fields.Integer()
     description_html = fields.Html()
     image_ids = fields.Many2many("ir.attachment", string="Images")

@@ -93,3 +93,13 @@ action_start_review is not a valid action on boat.boat
 2025-11-08 20:04:57,748 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 20:04:57] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
 2025-11-08 20:05:07,850 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 20:05:07] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
 2025-11-08 20:05:17,952 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 20:05:17] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 20:05:28,043 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 20:05:28] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 20:05:28,826 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Base: Auto-vacuum internal data`. 
+2025-11-08 20:05:28,892 1 INFO odoo-boats-db odoo.addons.base.models.res_users: GC'd 0 user log entries 
+2025-11-08 20:05:28,918 1 INFO odoo-boats-db odoo.addons.auth_totp.models.auth_totp: GC'd 0 totp devices entries 
+2025-11-08 20:05:28,929 1 INFO odoo-boats-db odoo.models.unlink: User #1 deleted bus.bus records with IDs: [1068, 1069] 
+2025-11-08 20:05:29,004 1 INFO odoo-boats-db odoo.addons.sms.models.sms_sms: GC'd 0 sms marked for deletion 
+2025-11-08 20:05:29,079 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Base: Auto-vacuum internal data` (0.253s). 
+2025-11-08 20:05:33,027 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 20:05:33,027 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 20:05:33,128 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 7 connections  
