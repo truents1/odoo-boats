@@ -10,6 +10,7 @@
 2025-11-08 15:26:18,798 1 INFO odoo-boats-db odoo.modules.loading: 61 modules loaded in 0.34s, 0 queries (+0 extra) 
 2025-11-08 15:26:18,879 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
 2025-11-08 15:26:18,882 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 0.457s 
+<<<<<<< HEAD
 2025-11-08 15:26:27,955 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
 2025-11-08 15:26:27,996 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:26:27] "GET /web HTTP/1.1" 303 - 8 0.006 0.041
 2025-11-08 15:26:38,093 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 15:26:38] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
@@ -62,3 +63,5 @@
 2025-11-08 15:33:05,767 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
 2025-11-08 15:33:05,767 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
 2025-11-08 15:33:05,893 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 5 connections  
+=======
+>>>>>>> 7d78f9d (updated changes)
