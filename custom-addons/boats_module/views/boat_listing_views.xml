@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Boat Listing Tree View -->
+    <record id="boat_listing_tree_view" model="ir.ui.view">
+        <field name="name">boat.listing.tree</field>
+        <field name="model">boat.listing</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="moderation_status == 'approved'" 
+                  decoration-warning="moderation_status == 'pending'"
+                  decoration-danger="moderation_status == 'rejected'">
+                <field name="name"/>
+                <field name="region_id"/>
+                <field name="category_id"/>
+                <field name="owner_id"/>
+                <field name="guest_capacity"/>
+                <field name="rent_amount"/>
+                <field name="average_rating" widget="progressbar"/>
+                <field name="moderation_status" 
+                       decoration-success="moderation_status == 'approved'"
+                       decoration-warning="moderation_status == 'pending'"
+                       decoration-danger="moderation_status == 'rejected'"
+                       widget="badge"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!-- Boat Listing Form View -->
+    <record id="boat_listing_form_view" model="ir.ui.view">
+        <field name="name">boat.listing.form</field>
+        <field name="model">boat.listing</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_submit_for_approval" string="Submit for Approval" 
+                            type="object" class="oe_highlight"
+                            attrs="{'invisible': [('moderation_status', '!=', 'draft')]}"/>
+                    <button name="action_approve" string="Approve" 
+                            type="object" class="oe_highlight"
+                            attrs="{'invisible': [('moderation_status', '!=', 'pending')]}"
+                            groups="odoo_boats.group_boat_admin"/>
+                    <button name="action_reject" string="Reject" 
+                            type="object" 
+                            attrs="{'invisible': [('moderation_status', '!=', 'pending')]}"
+                            groups="odoo_boats.group_boat_admin"/>
+                    <field name="moderation_status" widget="statusbar" 
+                           statusbar_visible="draft,pending,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_bookings" icon="fa-calendar">
+                            <field string="Bookings" name="booking_ids" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <field name="featured_image_id" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Boat Name"/></h1>
+                        <h3><field name="business_name" placeholder="Business/Brand Name (Optional)"/></h3>
+                    </div>
+                    
+                    <group>
+                        <group string="Basic Information">
+                            <field name="owner_id"/>
+                            <field name="category_id"/>
+                            <field name="build_type_id"/>
+                            <field name="year_built"/>
+                            <field name="registration_number"/>
+                        </group>
+                        <group string="Capacity">
+                            <field name="guest_capacity"/>
+                            <field name="num_bedrooms"/>
+                            <field name="num_bathrooms"/>
+                            <field name="num_decks"/>
+                            <field name="onboat_staff"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Description">
+                            <field name="description" widget="html"/>
+                        </page>
+                        
+                        <page string="Location">
+                            <group>
+                                <group>
+                                    <field name="region_id"/>
+                                    <field name="boarding_point"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="service_area"/>
+                            </group>
+                        </page>
+                        
+                        <page string="Pricing">
+                            <group>
+                                <group>
+                                    <field name="currency_id"/>
+                                    <field name="pricing_period"/>
+                                    <field name="rent_amount"/>
+                                    <field name="advance_payment_percent"/>
+                                </group>
+                                <group>
+                                    <field name="extra_guest_charge"/>
+                                    <field name="min_booking_hours"/>
+                                    <field name="max_booking_hours"/>
+                                    <field name="advance_notice_hours"/>
+                                </group>
+                            </group>
+                        </page>
+                        
+                        <page string="Features &amp; Amenities">
+                            <group>
+                                <field name="amenity_ids" widget="many2many_tags"/>
+                                <field name="meal_type_ids" widget="many2many_tags"/>
+                                <field name="cuisine_ids" widget="many2many_tags"/>
+                            </group>
+                            <group>
+                                <field name="included_meals"/>
+                            </group>
+                        </page>
+                        
+                        <page string="Safety">
+                            <group>
+                                <group>
+                                    <field name="is_certified"/>
+                                    <field name="emergency_number"/>
+                                </group>
+                                <group>
+                                    <field name="safety_checklist_ids" widget="many2many_tags"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="safety_certification"/>
+                            </group>
+                        </page>
+                        
+                        <page string="Activities">
+                            <group>
+                                <field name="activity_ids" widget="many2many_tags"/>
+                                <field name="addon_ids" widget="many2many_tags"/>
+                            </group>
+                        </page>
+                        
+                        <page string="Media">
+                            <group>
+                                <field name="video_url"/>
+                                <field name="website_url" widget="url"/>
+                            </group>
+                            <field name="image_ids" widget="many2many_binary"/>
+                        </page>
+                        
+                        <page string="SEO" groups="odoo_boats.group_boat_admin">
+                            <group>
+                                <field name="website_meta_title"/>
+                                <field name="website_meta_description"/>
+                                <field name="website_meta_keywords"/>
+                            </group>
+                        </page>
+                        
+                        <page string="Reviews &amp; Ratings">
+                            <field name="review_ids">
+                                <tree>
+                                    <field name="guest_id"/>
+                                    <field name="rating" widget="priority"/>
+                                    <field name="title"/>
+                                    <field name="is_published"/>
+                                    <field name="create_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                        
+                        <page string="Moderation" groups="odoo_boats.group_boat_admin"
+                              attrs="{'invisible': [('moderation_status', 'in', ['draft', 'approved'])]}">
+                            <group>
+                                <field name="rejection_reason"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    
+                    <group>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Boat Listing Kanban View -->
+    <record id="boat_listing_kanban_view" model="ir.ui.view">
+        <field name="name">boat.listing.kanban</field>
+        <field name="model">boat.listing</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="featured_image_id"/>
+                <field name="region_id"/>
+                <field name="rent_amount"/>
+                <field name="moderation_status"/>
+                <field name="average_rating"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('boat.listing', 'featured_image_id', record.id.raw_value)" alt="Boat"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong><field name="name"/></strong>
+                                <div><field name="region_id"/></div>
+                                <div class="text-primary">₹<field name="rent_amount"/></div>
+                                <div>
+                                    <field name="moderation_status" widget="label_selection"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+    <!-- Boat Listing Search View -->
+    <record id="boat_listing_search_view" model="ir.ui.view">
+        <field name="name">boat.listing.search</field>
+        <field name="model">boat.listing</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="region_id"/>
+                <field name="category_id"/>
+                <field name="owner_id"/>
+                <filter string="Pending Approval" name="pending" 
+                        domain="[('moderation_status', '=', 'pending')]"/>
+                <filter string="Approved" name="approved" 
+                        domain="[('moderation_status', '=', 'approved')]"/>
+                <filter string="Active" name="active" 
+                        domain="[('active', '=', True)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Region" name="group_region" context="{'group_by': 'region_id'}"/>
+                    <filter string="Category" name="group_category" context="{'group_by': 'category_id'}"/>
+                    <filter string="Status" name="group_status" context="{'group_by': 'moderation_status'}"/>
+                    <filter string="Owner" name="group_owner" context="{'group_by': 'owner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    
+    <!-- Boat Listing Action -->
+    <record id="boat_listing_action" model="ir.actions.act_window">
+        <field name="name">Boat Listings</field>
+        <field name="res_model">boat.listing</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+    </record>
+    
+    <!-- Pending Approvals Action -->
+    <record id="boat_listing_pending_action" model="ir.actions.act_window">
+        <field name="name">Pending Approvals</field>
+        <field name="res_model">boat.listing</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('moderation_status', '=', 'pending')]</field>
+    </record>
+    
+</odoo>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="boat_search_page" name="Search Boats">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="container mt-4 mb-5">
+                    <!-- Search Header -->
+                    <div class="row mb-4">
+                        <div class="col-12 text-center">
+                            <h1 class="display-4">Find Your Perfect Houseboat</h1>
+                            <p class="lead text-muted">Discover unique waterborne experiences</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter and Results Section -->
+                    <div class="row">
+                        <!-- Filter Sidebar -->
+                        <div class="col-md-3 mb-4">
+                            <div class="card shadow-sm sticky-top" style="top: 20px;">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">Filter Results</h5>
+                                    
+                                    <form method="get" action="/boats" id="filterForm">
+                                        <!-- Region Filter -->
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Region</label>
+                                            <select name="region_id" class="form-select">
+                                                <option value="">All Regions</option>
+                                                <t t-foreach="regions" t-as="region">
+                                                    <option t-att-value="region.id"
+                                                            t-att-selected="'selected' if search_params.get('region_id') == str(region.id) else None">
+                                                        <t t-esc="region.name"/>
+                                                    </option>
+                                                </t>
+                                            </select>
+                                        </div>
+                                        
+                                        <!-- Guest Count -->
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Number of Guests</label>
+                                            <input type="number" name="guests" class="form-control"
+                                                   t-att-value="search_params.get('guests', '')"
+                                                   min="1" placeholder="Any number"/>
+                                        </div>
+                                        
+                                        <!-- Price Range -->
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Price Range (INR)</label>
+                                            <div class="row g-2">
+                                                <div class="col-6">
+                                                    <input type="number" name="price_min" class="form-control form-control-sm"
+                                                           placeholder="Min" t-att-value="search_params.get('price_min', '')"/>
+                                                </div>
+                                                <div class="col-6">
+                                                    <input type="number" name="price_max" class="form-control form-control-sm"
+                                                           placeholder="Max" t-att-value="search_params.get('price_max', '')"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Amenities -->
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Amenities</label>
+                                            <div style="max-height: 200px; overflow-y: auto;">
+                                                <t t-foreach="amenities" t-as="amenity">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox"
+                                                               name="amenity" t-att-value="amenity.id"
+                                                               t-att-id="'amenity_%s' % amenity.id"/>
+                                                        <label class="form-check-label small" t-att-for="'amenity_%s' % amenity.id">
+                                                            <t t-esc="amenity.name"/>
+                                                        </label>
+                                                    </div>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="d-grid gap-2">
+                                            <button type="submit" class="btn btn-primary">
+                                                <i class="fa fa-search"></i> Apply Filters
+                                            </button>
+                                            <a href="/boats" class="btn btn-outline-secondary btn-sm">
+                                                Clear All
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Boat Grid -->
+                        <div class="col-md-9">
+                            <!-- Results Count -->
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="mb-0">
+                                    <t t-if="boats">
+                                        <span class="text-muted">Found </span>
+                                        <span class="fw-bold"><t t-esc="len(boats)"/></span>
+                                        <span class="text-muted"> boats</span>
+                                    </t>
+                                    <t t-else="">
+                                        <span class="text-muted">No boats found</span>
+                                    </t>
+                                </h5>
+                            </div>
+                            
+                            <!-- Boat Cards Grid -->
+                            <div class="row">
+                                <t t-if="not boats">
+                                    <div class="col-12 text-center py-5">
+                                        <i class="fa fa-ship fa-4x text-muted mb-3"></i>
+                                        <p class="lead text-muted">No boats found matching your criteria.</p>
+                                        <a href="/boats" class="btn btn-primary">Clear Filters</a>
+                                    </div>
+                                </t>
+                                
+                                <t t-foreach="boats" t-as="boat">
+                                    <div class="col-lg-4 col-md-6 mb-4">
+                                        <div class="card h-100 shadow-sm boat-card">
+                                            <a t-attf-href="/boat/#{boat.id}" class="text-decoration-none text-dark">
+                                                <!-- Featured Image -->
+                                                <div class="position-relative">
+                                                    <t t-if="boat.featured_image_id">
+                                                        <img t-attf-src="/web/image/#{boat.featured_image_id.id}"
+                                                             class="card-img-top" alt="Boat Image"
+                                                             style="height: 220px; object-fit: cover;"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center"
+                                                             style="height: 220px;">
+                                                            <i class="fa fa-ship fa-3x text-white"></i>
+                                                        </div>
+                                                    </t>
+                                                    
+                                                    <!-- Badge for new listings -->
+                                                    <t t-if="(datetime.datetime.now() - boat.create_date).days &lt; 7">
+                                                        <span class="badge bg-success position-absolute top-0 end-0 m-2">
+                                                            New
+                                                        </span>
+                                                    </t>
+                                                </div>
+                                                
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <t t-esc="boat.name"/>
+                                                    </h5>
+                                                    
+                                                    <p class="text-muted small mb-2">
+                                                        <i class="fa fa-map-marker"></i>
+                                                        <t t-esc="boat.region_id.name"/>
+                                                    </p>
+                                                    
+                                                    <!-- Rating -->
+                                                    <div class="mb-2">
+                                                        <t t-if="boat.review_count > 0">
+                                                            <span class="badge bg-warning text-dark">
+                                                                <i class="fa fa-star"></i>
+                                                                <t t-esc="'%.1f' % boat.average_rating"/>
+                                                            </span>
+                                                            <span class="text-muted small">
+                                                                (<t t-esc="boat.review_count"/> reviews)
+                                                            </span>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <span class="text-muted small">No reviews yet</span>
+                                                        </t>
+                                                    </div>
+                                                    
+                                                    <!-- Capacity and Features -->
+                                                    <p class="small mb-2 text-muted">
+                                                        <i class="fa fa-users"></i>
+                                                        Up to <t t-esc="boat.guest_capacity"/> guests
+                                                        <t t-if="boat.num_bedrooms">
+                                                            · <i class="fa fa-bed"></i> <t t-esc="boat.num_bedrooms"/> BR
+                                                        </t>
+                                                    </p>
+                                                    
+                                                    <!-- Price -->
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="text-primary mb-0">
+                                                            ₹<t t-esc="'{:,.0f}'.format(boat.rent_amount)"/>
+                                                            <small class="text-muted fw-normal">
+                                                                / <t t-esc="boat.pricing_period.replace('_', ' ')"/>
+                                                            </small>
+                                                        </h6>
+                                                        <span class="btn btn-sm btn-outline-primary">
+                                                            View Details
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                            
+                            <!-- Pagination -->
+                            <t t-if="pager and boats">
+                                <div class="mt-4">
+                                    <t t-call="website.pager">
+                                        <t t-set="classname">pagination justify-content-center</t>
+                                    </t>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    
+</odoo>

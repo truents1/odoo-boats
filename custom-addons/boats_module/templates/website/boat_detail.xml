@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="boat_detail_page" name="Boat Detail">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <div class="container mt-4 mb-5">
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/boats">Boats</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <t t-esc="boat.name"/>
+                            </li>
+                        </ol>
+                    </nav>
+                    
+                    <!-- Boat Header -->
+                    <div class="row mb-4">
+                        <div class="col-md-8">
+                            <h1 class="display-5"><t t-esc="boat.name"/></h1>
+                            <p class="text-muted mb-2">
+                                <i class="fa fa-map-marker"></i>
+                                <t t-esc="boat.region_id.name"/> · <t t-esc="boat.boarding_point"/>
+                            </p>
+                            <div>
+                                <t t-if="boat.review_count > 0">
+                                    <span class="badge bg-warning text-dark me-2">
+                                        <i class="fa fa-star"></i>
+                                        <t t-esc="'%.1f' % boat.average_rating"/>
+                                    </span>
+                                    <span class="text-muted">
+                                        <t t-esc="boat.review_count"/> reviews
+                                    </span>
+                                </t>
+                                <t t-else="">
+                                    <span class="text-muted">No reviews yet</span>
+                                </t>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <h2 class="text-primary mb-0">
+                                ₹<t t-esc="'{:,.0f}'.format(boat.rent_amount)"/>
+                            </h2>
+                            <p class="text-muted">
+                                per <t t-esc="boat.pricing_period.replace('_', ' ')"/>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <!-- Main Content -->
+                        <div class="col-lg-8">
+                            <!-- Image Gallery -->
+                            <div class="mb-4">
+                                <t t-if="boat.featured_image_id">
+                                    <img t-attf-src="/web/image/#{boat.featured_image_id.id}"
+                                         class="img-fluid rounded shadow-sm mb-3"
+                                         alt="Boat Main Image"
+                                         style="width: 100%; max-height: 500px; object-fit: cover;"/>
+                                </t>
+                                
+                                <!-- Additional Images -->
+                                <t t-if="boat.image_ids">
+                                    <div class="row g-2">
+                                        <t t-foreach="boat.image_ids[:4]" t-as="image">
+                                            <div class="col-3">
+                                                <img t-attf-src="/web/image/#{image.id}"
+                                                     class="img-fluid rounded"
+                                                     alt="Boat Image"
+                                                     style="height: 120px; width: 100%; object-fit: cover;"/>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </t>
+                            </div>
+                            
+                            <!-- Description -->
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h4 class="card-title">About This Boat</h4>
+                                    <div t-field="boat.description" class="oe_no_empty"/>
+                                </div>
+                            </div>
+                            
+                            <!-- Features and Amenities -->
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-3">Features &amp; Amenities</h4>
+                                    
+                                    <!-- Boat Specs -->
+                                    <div class="row mb-3">
+                                        <div class="col-6 col-md-3 mb-2">
+                                            <i class="fa fa-users text-primary"></i>
+                                            <strong><t t-esc="boat.guest_capacity"/></strong> guests
+                                        </div>
+                                        <t t-if="boat.num_bedrooms">
+                                            <div class="col-6 col-md-3 mb-2">
+                                                <i class="fa fa-bed text-primary"></i>
+                                                <strong><t t-esc="boat.num_bedrooms"/></strong> bedrooms
+                                            </div>
+                                        </t>
+                                        <t t-if="boat.num_bathrooms">
+                                            <div class="col-6 col-md-3 mb-2">
+                                                <i class="fa fa-bath text-primary"></i>
+                                                <strong><t t-esc="boat.num_bathrooms"/></strong> bathrooms
+                                            </div>
+                                        </t>
+                                        <t t-if="boat.num_decks">
+                                            <div class="col-6 col-md-3 mb-2">
+                                                <i class="fa fa-layer-group text-primary"></i>
+                                                <strong><t t-esc="boat.num_decks"/></strong> decks
+                                            </div>
+                                        </t>
+                                    </div>
+                                    
+                                    <!-- Amenities List -->
+                                    <t t-if="boat.amenity_ids">
+                                        <h6 class="mb-2">Amenities:</h6>
+                                        <div class="row">
+                                            <t t-foreach="boat.amenity_ids" t-as="amenity">
+                                                <div class="col-6 col-md-4 mb-2">
+                                                    <i class="fa fa-check-circle text-success"></i>
+                                                    <t t-esc="amenity.name"/>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                            
+                            <!-- Activities -->
+                            <t t-if="boat.activity_ids or boat.addon_ids">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Activities</h4>
+                                        
+                                        <t t-if="boat.activity_ids">
+                                            <h6 class="text-success mb-2">Included Activities:</h6>
+                                            <ul class="list-unstyled mb-3">
+                                                <t t-foreach="boat.activity_ids" t-as="activity">
+                                                    <li><i class="fa fa-check text-success"></i> <t t-esc="activity.name"/></li>
+                                                </t>
+                                            </ul>
+                                        </t>
+                                        
+                                        <t t-if="boat.addon_ids">
+                                            <h6 class="text-primary mb-2">Available Add-ons (Extra Cost):</h6>
+                                            <ul class="list-unstyled">
+                                                <t t-foreach="boat.addon_ids" t-as="addon">
+                                                    <li><i class="fa fa-plus-circle text-primary"></i> <t t-esc="addon.name"/></li>
+                                                </t>
+                                            </ul>
+                                        </t>
+                                    </div>
+                                </div>
+                            </t>
+                            
+                            <!-- Reviews Section -->
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-3">Guest Reviews</h4>
+                                    
+                                    <t t-if="reviews">
+                                        <t t-foreach="reviews" t-as="review">
+                                            <div class="mb-3 pb-3 border-bottom">
+                                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                                    <div>
+                                                        <strong><t t-esc="review.guest_id.name"/></strong>
+                                                        <div class="text-warning">
+                                                            <t t-foreach="range(int(review.rating))" t-as="star">
+                                                                <i class="fa fa-star"></i>
+                                                            </t>
+                                                            <t t-foreach="range(5 - int(review.rating))" t-as="star">
+                                                                <i class="fa fa-star-o"></i>
+                                                            </t>
+                                                        </div>
+                                                    </div>
+                                                    <small class="text-muted">
+                                                        <t t-esc="review.create_date.strftime('%B %Y')"/>
+                                                    </small>
+                                                </div>
+                                                <t t-if="review.title">
+                                                    <h6><t t-esc="review.title"/></h6>
+                                                </t>
+                                                <p class="mb-0"><t t-esc="review.review_text"/></p>
+                                            </div>
+                                        </t>
+                                    </t>
+                                    <t t-else="">
+                                        <p class="text-muted">No reviews yet. Be the first to review this boat!</p>
+                                    </t>
+                                </div>
+                            </div>
+                            
+                            <!-- Related Boats -->
+                            <t t-if="related_boats">
+                                <div class="mb-4">
+                                    <h4 class="mb-3">Similar Boats You Might Like</h4>
+                                    <div class="row">
+                                        <t t-foreach="related_boats" t-as="related">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="card">
+                                                    <a t-attf-href="/boat/#{related.id}" class="text-decoration-none text-dark">
+                                                        <t t-if="related.featured_image_id">
+                                                            <img t-attf-src="/web/image/#{related.featured_image_id.id}"
+                                                                 class="card-img-top" style="height: 180px; object-fit: cover;"/>
+                                                        </t>
+                                                        <div class="card-body">
+                                                            <h6 class="card-title"><t t-esc="related.name"/></h6>
+                                                            <p class="text-muted small mb-1">
+                                                                <i class="fa fa-map-marker"></i> <t t-esc="related.region_id.name"/>
+                                                            </p>
+                                                            <p class="text-primary mb-0">
+                                                                ₹<t t-esc="'{:,.0f}'.format(related.rent_amount)"/>
+                                                                <small>/ <t t-esc="related.pricing_period.split('_')[0]"/></small>
+                                                            </p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                        
+                        <!-- Booking Sidebar -->
+                        <div class="col-lg-4">
+                            <div class="card shadow sticky-top" style="top: 20px;">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">Book This Boat</h5>
+                                    
+                                    <form method="post" t-attf-action="/boat/#{boat.id}/book">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">Check-in Date</label>
+                                            <input type="datetime-local" name="start_date" class="form-control" required="required"/>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">Check-out Date</label>
+                                            <input type="datetime-local" name="end_date" class="form-control" required="required"/>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label class="form-label">Number of Guests</label>
+                                            <input type="number" name="num_guests" class="form-control" 
+                                                   min="1" t-att-max="boat.guest_capacity" value="1" required="required"/>
+                                            <small class="text-muted">Max: <t t-esc="boat.guest_capacity"/> guests</small>
+                                        </div>
+                                        
+                                        <hr/>
+                                        
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Base Rate:</span>
+                                            <span>₹<t t-esc="'{:,.0f}'.format(boat.rent_amount)"/></span>
+                                        </div>
+                                        
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span>Advance (<t t-esc="boat.advance_payment_percent"/>%):</span>
+                                            <span id="advance-amount">To be calculated</span>
+                                        </div>
+                                        
+                                        <hr/>
+                                        
+                                        <div class="d-grid">
+                                            <t t-if="request.env.user._is_public()">
+                                                <a href="/web/login" class="btn btn-primary">
+                                                    Login to Book
+                                                </a>
+                                            </t>
+                                            <t t-else="">
+                                                <button type="submit" class="btn btn-primary btn-lg">
+                                                    Book Now
+                                                </button>
+                                            </t>
+                                        </div>
+                                    </form>
+                                    
+                                    <div class="mt-3 small text-muted">
+                                        <p class="mb-1">
+                                            <i class="fa fa-shield"></i> Secure Payment
+                                        </p>
+                                        <p class="mb-1">
+                                            <i class="fa fa-undo"></i> Free cancellation up to 2 days before
+                                        </p>
+                                        <p class="mb-0">
+                                            <i class="fa fa-headset"></i> 24/7 Customer Support
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

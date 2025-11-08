@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Boat Region Views -->
+    <record id="boat_region_tree_view" model="ir.ui.view">
+        <field name="name">boat.region.tree</field>
+        <field name="model">boat.region</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="country_id"/>
+                <field name="boat_count"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="boat_region_form_view" model="ir.ui.view">
+        <field name="name">boat.region.form</field>
+        <field name="model">boat.region</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="country_id"/>
+                            <field name="state"/>
+                        </group>
+                        <group>
+                            <field name="latitude"/>
+                            <field name="longitude"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                    <notebook>
+                        <page string="Images">
+                            <field name="image_ids" widget="many2many_binary"/>
+                        </page>
+                        <page string="Boats in Region">
+                            <field name="boat_listing_ids" readonly="1">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="moderation_status"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="boat_region_action" model="ir.actions.act_window">
+        <field name="name">Regions</field>
+        <field name="res_model">boat.region</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Boat Category Views -->
+    <record id="boat_category_tree_view" model="ir.ui.view">
+        <field name="name">boat.category.tree</field>
+        <field name="model">boat.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="boat_category_form_view" model="ir.ui.view">
+        <field name="name">boat.category.form</field>
+        <field name="model">boat.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="boat_category_action" model="ir.actions.act_window">
+        <field name="name">Categories</field>
+        <field name="res_model">boat.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <!-- Generic Master Views -->
+    <record id="boat_generic_master_tree_view" model="ir.ui.view">
+        <field name="name">boat.generic.master.tree</field>
+        <field name="model">boat.generic.master</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="master_type"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="boat_generic_master_form_view" model="ir.ui.view">
+        <field name="name">boat.generic.master.form</field>
+        <field name="model">boat.generic.master</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="master_type"/>
+                        </group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="icon"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="boat_generic_master_action" model="ir.actions.act_window">
+        <field name="name">Generic Masters</field>
+        <field name="res_model">boat.generic.master</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+</odoo>

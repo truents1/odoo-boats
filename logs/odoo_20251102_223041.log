@@ -1,5 +1,0 @@
-2025-11-02 17:00:41,782 1 INFO ? odoo: Odoo version 17.0-20251008 
-2025-11-02 17:00:41,782 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
-2025-11-02 17:00:41,782 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
-2025-11-02 17:00:41,782 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
-2025-11-02 17:00:51,804 1 INFO ? odoo.sql_db: Connection to the database failed 
