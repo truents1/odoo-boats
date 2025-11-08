@@ -1,3 +1,5 @@
+docker compose down
+
 ./gitty.sh
 
 docker compose build --no-cache odoo-boats-app
