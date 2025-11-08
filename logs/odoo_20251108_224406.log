@@ -1,0 +1,196 @@
+2025-11-08 17:14:07,704 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-08 17:14:07,704 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-08 17:14:07,704 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-08 17:14:07,704 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-08 17:14:07,814 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-08 17:14:08,095 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on b6ad55485bdc:8069 
+2025-11-08 17:14:08,107 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-08 17:14:08,111 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-08 17:14:08,154 1 INFO odoo-boats-db odoo.modules.loading: loading 61 modules... 
+2025-11-08 17:14:09,015 1 INFO odoo-boats-db odoo.modules.loading: 61 modules loaded in 0.86s, 0 queries (+0 extra) 
+2025-11-08 17:14:09,101 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-08 17:14:09,105 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 1.010s 
+2025-11-08 17:14:16,774 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-08 17:14:16,814 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:14:16] "GET /web HTTP/1.1" 303 - 8 0.008 0.041
+2025-11-08 17:14:26,896 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:14:26] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 17:14:36,961 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:14:36] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 17:14:45,964 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.taxonomy.category 
+2025-11-08 17:14:45,964 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.boat 
+2025-11-08 17:14:45,964 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.location 
+2025-11-08 17:14:45,964 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.boat 
+2025-11-08 17:14:45,964 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.taxonomy 
+2025-11-08 17:14:45,964 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.category 
+2025-11-08 17:14:45,964 1 ERROR odoo-boats-db odoo.addons.base.models.ir_model: Missing model boat.amenity 
+2025-11-08 17:14:46,310 1 INFO odoo-boats-db werkzeug: 172.19.0.1 - - [08/Nov/2025 17:14:46] "GET /web HTTP/1.1" 200 - 84 0.052 0.328
+2025-11-08 17:14:47,026 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:14:47] "GET /web HTTP/1.1" 303 - 1 0.001 0.005
+2025-11-08 17:14:48,149 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x78a1a902ef80>
+2025-11-08 17:14:48,149 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x78a1a902fb50>
+2025-11-08 17:14:48,150 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x78a1a8df19c0>
+2025-11-08 17:14:48,150 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x78a1a8dfe620>
+2025-11-08 17:14:48,154 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 17:14:48] "GET /web/webclient/translations/08145b962cd605fed30d2b6337ed1e7f088ce099?lang=en_US HTTP/1.1" 500 - 0 0.000 1.803
+2025-11-08 17:14:48,155 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 17:14:48] "GET /web/assets/cf6f4fd/web.assets_web.min.js HTTP/1.1" 500 - 0 0.000 1.813
+2025-11-08 17:14:48,155 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 17:14:48] "GET /web/assets/4f59e75/web.assets_web.min.css HTTP/1.1" 500 - 0 0.000 1.820
+2025-11-08 17:14:48,155 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 17:14:48] "GET /web/webclient/load_menus/128c2cd04210354f19a3f3ce672299e24c6f14927c7417bb51464886c7eb3822 HTTP/1.1" 500 - 0 0.000 1.808
+2025-11-08 17:14:48,193 1 ERROR ? odoo.http: Exception during request handling. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2392, in __call__
+    if self.get_static_file(httprequest.path):
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2292, in get_static_file
+    if (module not in self.statics or static != 'static' or not resource):
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 28, in __get__
+    value = self.fget(obj)
+  File "/usr/lib/python3/dist-packages/odoo/http.py", line 2262, in statics
+    manifest = get_manifest(module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 369, in get_manifest
+    return copy.deepcopy(_get_manifest_cached(module, mod_path))
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 373, in _get_manifest_cached
+    return load_manifest(module, mod_path)
+  File "/usr/lib/python3/dist-packages/odoo/modules/module.py", line 319, in load_manifest
+    manifest.update(ast.literal_eval(f.read()))
+  File "/usr/lib/python3/dist-packages/odoo/tools/_monkeypatches.py", line 88, in literal_eval
+    return orig_literal_eval(expr)
+  File "/usr/lib/python3.10/ast.py", line 110, in literal_eval
+    return _convert(node_or_string)
+  File "/usr/lib/python3.10/ast.py", line 99, in _convert
+    return dict(zip(map(_convert, node.keys),
+  File "/usr/lib/python3.10/ast.py", line 109, in _convert
+    return _convert_signed_num(node)
+  File "/usr/lib/python3.10/ast.py", line 83, in _convert_signed_num
+    return _convert_num(node)
+  File "/usr/lib/python3.10/ast.py", line 74, in _convert_num
+    _raise_malformed_node(node)
+  File "/usr/lib/python3.10/ast.py", line 71, in _raise_malformed_node
+    raise ValueError(msg + f': {node!r}')
+ValueError: malformed node or string on line 14: <ast.Name object at 0x78a1a902fa60>
+2025-11-08 17:14:48,193 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 17:14:48] "GET /web/static/img/favicon.ico HTTP/1.1" 500 - 0 0.000 0.021
+2025-11-08 17:14:57,126 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:14:57] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 17:15:07,200 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:15:07] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 17:15:17,283 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:15:17] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 17:15:27,387 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:15:27] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-08 17:15:37,477 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:15:37] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 17:15:47,543 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:15:47] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 17:15:57,612 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:15:57] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-08 17:16:07,699 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:16:07] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 17:16:08,668 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 17:16:08,669 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 17:16:08,700 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 3 connections  

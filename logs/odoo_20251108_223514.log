@@ -3263,3 +3263,6 @@ ValueError: malformed node or string on line 14: <ast.Name object at 0x764abc14a
 2025-11-08 17:10:22,242 1 INFO ? werkzeug: 172.19.0.1 - - [08/Nov/2025 17:10:22] "POST /web/webclient/version_info HTTP/1.1" 500 - 0 0.000 0.025
 2025-11-08 17:10:27,207 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:10:27] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
 2025-11-08 17:10:37,302 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 17:10:37] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 17:10:47,370 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 17:10:47,371 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 17:10:47,455 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 7 connections  
