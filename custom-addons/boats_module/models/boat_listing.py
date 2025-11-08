@@ -1,14 +1,11 @@
-# -*- coding: utf-8 -*-
-# Boat listing model will go here
 from odoo import models, fields, api, exceptions
-from datetime import datetime
 
 class BoatListing(models.Model):
-    """Core model for boat listings"""
+    """Core model for boat listings - MINIMAL VERSION"""
     _name = 'boat.listing'
     _description = 'Boat Listing'
     _order = 'create_date desc'
-    _inherit = ['mail.thread', 'mail.activity.mixin', 'website.seo.metadata', 'website.published.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     
     MODERATION_STATUS = [
         ('draft', 'Draft'),
@@ -47,7 +44,7 @@ class BoatListing(models.Model):
     onboat_staff = fields.Integer(string='Onboard Staff')
     
     # Description
-    description = fields.Html(string='Description', sanitize_attributes=False)
+    description = fields.Html(string='Description')
     
     # Media
     image_ids = fields.Many2many('ir.attachment', 'boat_listing_image_rel',
@@ -63,8 +60,7 @@ class BoatListing(models.Model):
     
     # Pricing
     currency_id = fields.Many2one('boat.generic.master', string='Currency',
-                                   domain="[('master_type', '=', 'currency')]",
-                                   default=lambda self: self._get_default_currency())
+                                   domain="[('master_type', '=', 'currency')]")
     pricing_period = fields.Selection(PRICING_PERIOD, string='Pricing Period', 
                                        required=True, default='daily_boat')
     rent_amount = fields.Float(string='Rent Amount', required=True)
@@ -94,7 +90,7 @@ class BoatListing(models.Model):
     emergency_number = fields.Char(string='Emergency Contact Number', required=True)
     is_certified = fields.Boolean(string='Is Certified', default=False)
     
-    # Activities
+    # Activities - SIMPLIFIED WITHOUT RELATED FIELDS
     activity_ids = fields.Many2many('boat.generic.master', 'boat_activity_rel',
                                      domain="[('master_type', '=', 'activity')]",
                                      string='Included Activities')
@@ -124,28 +120,16 @@ class BoatListing(models.Model):
                 boat.average_rating = 0.0
                 boat.review_count = 0
     
-    def _get_default_currency(self):
-        """Default to INR for Indian market"""
-        return self.env['boat.generic.master'].search([
-            ('master_type', '=', 'currency'),
-            ('name', '=', 'INR')
-        ], limit=1)
-    
     def action_submit_for_approval(self):
         """Boat owner submits listing for admin review"""
         self.ensure_one()
         if self.moderation_status == 'draft':
             self.moderation_status = 'pending'
-            # Send notification to admins
-            self._notify_admins_new_submission()
     
     def action_approve(self):
         """Admin approves the listing"""
         self.ensure_one()
         self.moderation_status = 'approved'
-        self.is_published = True
-        # Notify owner
-        self._notify_owner_approval()
     
     def action_reject(self):
         """Admin rejects the listing"""
@@ -153,20 +137,3 @@ class BoatListing(models.Model):
         if not self.rejection_reason:
             raise exceptions.UserError('Please provide a rejection reason.')
         self.moderation_status = 'rejected'
-        # Notify owner
-        self._notify_owner_rejection()
-    
-    def _notify_admins_new_submission(self):
-        """Send email to admins about new submission"""
-        template = self.env.ref('odoo_boats.email_template_new_submission')
-        admin_group = self.env.ref('odoo_boats.group_boat_admin')
-        for admin in admin_group.users:
-            template.send_mail(self.id, email_values={'email_to': admin.email})
-    
-    def _notify_owner_approval(self):
-        template = self.env.ref('odoo_boats.email_template_listing_approved')
-        template.send_mail(self.id, email_values={'email_to': self.owner_id.email})
-    
-    def _notify_owner_rejection(self):
-        template = self.env.ref('odoo_boats.email_template_listing_rejected')
-        template.send_mail(self.id, email_values={'email_to': self.owner_id.email})

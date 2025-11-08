@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-# Master data models will go here
 from odoo import models, fields, api
 
 class BoatRegion(models.Model):
@@ -17,13 +15,13 @@ class BoatRegion(models.Model):
     country_id = fields.Many2one('res.country', string='Country', required=True)
     active = fields.Boolean(default=True)
     boat_count = fields.Integer(compute='_compute_boat_count', string='Number of Boats')
+    boat_listing_ids = fields.One2many('boat.listing', 'region_id', string='Boats')
     
     @api.depends('boat_listing_ids')
     def _compute_boat_count(self):
         for region in self:
             region.boat_count = len(region.boat_listing_ids)
-    
-    boat_listing_ids = fields.One2many('boat.listing', 'region_id', string='Boats')
+
 
 class BoatCategory(models.Model):
     """Types of boats (Houseboat, Yacht, Cruise, etc.)"""
@@ -36,6 +34,7 @@ class BoatCategory(models.Model):
     sequence = fields.Integer(default=10)
     active = fields.Boolean(default=True)
     image = fields.Image(string='Category Icon')
+
 
 class GenericMaster(models.Model):
     """Flexible master data for all dropdowns and checkboxes"""
@@ -59,5 +58,4 @@ class GenericMaster(models.Model):
     description = fields.Text(string='Description')
     sequence = fields.Integer(default=10)
     active = fields.Boolean(default=True)
-    icon = fields.Char(string='Icon Class') 
-    
+    icon = fields.Char(string='Icon Class')

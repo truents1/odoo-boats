@@ -18,15 +18,4 @@ class ResUsers(models.Model):
     # Related records
     boat_listing_ids = fields.One2many('boat.listing', 'owner_id', string='My Boats')
     booking_ids = fields.One2many('boat.booking', 'guest_id', string='My Bookings')
-    
-    @api.model
-    def create(self, vals):
-        """Auto-assign to appropriate security group based on user type"""
-        user = super(ResUsers, self).create(vals)
-        if vals.get('user_type') == 'boat_owner':
-            group = self.env.ref('odoo_boats.group_boat_owner')
-            user.groups_id = [(4, group.id)]
-        elif vals.get('user_type') == 'guest':
-            group = self.env.ref('odoo_boats.group_guest')
-            user.groups_id = [(4, group.id)]
-        return user
+

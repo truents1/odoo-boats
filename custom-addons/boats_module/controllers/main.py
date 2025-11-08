@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
-# Main website controller
 from odoo import http
 from odoo.http import request
-import json
 
 class BoatWebsiteController(http.Controller):
     
-    @http.route(['/boats', '/boats/page/'], type='http', auth='public', website=True)
+    @http.route(['/boats', '/boats/page/<int:page>'], type='http', auth='public', website=True)
     def boat_search(self, page=1, **kwargs):
         """Public boat search and listing page"""
         
         # Build domain from filters
-        domain = [('moderation_status', '=', 'approved'), ('active', '=', True')]
+        domain = [('moderation_status', '=', 'approved'), ('active', '=', True)]
         
         # Region filter
         if kwargs.get('region_id'):
@@ -29,8 +27,9 @@ class BoatWebsiteController(http.Controller):
         
         # Amenity filters
         if kwargs.get('amenities'):
-            amenity_ids = [int(a) for a in kwargs.get('amenities').split(',')]
-            domain.append(('amenity_ids', 'in', amenity_ids))
+            amenity_ids = [int(a) for a in kwargs.get('amenities').split(',') if a]
+            if amenity_ids:
+                domain.append(('amenity_ids', 'in', amenity_ids))
         
         # Pagination
         boats_per_page = 12
@@ -65,9 +64,9 @@ class BoatWebsiteController(http.Controller):
             'search_params': kwargs,
         }
         
-        return request.render('odoo_boats.boat_search_page', values)
+        return request.render('boats_module.boat_search_page', values)
     
-    @http.route(['/boat/'], type='http', auth='public', website=True)
+    @http.route(['/boat/<model("boat.listing"):boat>'], type='http', auth='public', website=True)
     def boat_detail(self, boat, **kwargs):
         """Boat detail page with all information"""
         
@@ -97,9 +96,9 @@ class BoatWebsiteController(http.Controller):
             'main_object': boat,
         }
         
-        return request.render('odoo_boats.boat_detail_page', values)
+        return request.render('boats_module.boat_detail_page', values)
     
-    @http.route(['/boat//book'], type='http', auth='user', website=True)
+    @http.route(['/boat/<model("boat.listing"):boat>/book'], type='http', auth='user', website=True)
     def boat_booking_form(self, boat, **kwargs):
         """Booking checkout page"""
         
@@ -115,7 +114,7 @@ class BoatWebsiteController(http.Controller):
             'booking_data': kwargs,
         }
         
-        return request.render('odoo_boats.booking_checkout_page', values)
+        return request.render('boats_module.booking_checkout_page', values)
     
     @http.route(['/boat/booking/create'], type='json', auth='user', website=True)
     def create_booking(self, **kwargs):
@@ -146,7 +145,7 @@ class BoatWebsiteController(http.Controller):
                 'error': str(e)
             }
     
-    @http.route(['/boat/booking//payment'], type='http', auth='user', website=True)
+    @http.route(['/boat/booking/<int:booking_id>/payment'], type='http', auth='user', website=True)
     def booking_payment(self, booking_id, **kwargs):
         """Payment gateway integration page"""
         
@@ -165,4 +164,4 @@ class BoatWebsiteController(http.Controller):
             'payment_providers': payment_providers,
         }
         
-        return request.render('odoo_boats.payment_page', values)
+        return request.render('boats_module.payment_page', values)
