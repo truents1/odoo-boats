@@ -143,3 +143,6 @@ Field "location_id" does not exist in model "boat.boat"
 2025-11-08 18:28:00,239 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 18:28:00] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
 2025-11-08 18:28:10,322 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 18:28:10] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
 2025-11-08 18:28:20,393 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 18:28:20] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 18:28:27,124 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 18:28:27,124 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 18:28:27,497 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 7 connections  
