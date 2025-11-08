@@ -1,78 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <menuitem id="menu_boat_root" name="Boats" sequence="10"/>
     
-    <!-- Main Menu -->
-    <menuitem id="menu_boat_root" 
-              name="Boats" 
-              web_icon="odoo_boats,static/description/icon.png"
-              sequence="10"/>
-    
-    <!-- Boat Management -->
-    <menuitem id="menu_boat_management" 
-              name="Boats" 
-              parent="menu_boat_root" 
-              sequence="10"/>
+    <record id="boat_listing_action" model="ir.actions.act_window">
+        <field name="name">Boat Listings</field>
+        <field name="res_model">boat.listing</field>
+        <field name="view_mode">tree,form</field>
+    </record>
     
     <menuitem id="menu_boat_listing" 
-              name="All Boats" 
-              parent="menu_boat_management" 
-              action="boat_listing_action" 
-              sequence="10"/>
-    
-    <menuitem id="menu_boat_pending" 
-              name="Pending Approvals" 
-              parent="menu_boat_management" 
-              action="boat_listing_pending_action" 
-              sequence="20"
-              groups="odoo_boats.group_boat_admin"/>
-    
-    <!-- Bookings -->
-    <menuitem id="menu_boat_bookings" 
-              name="Bookings" 
+              name="Boats" 
               parent="menu_boat_root" 
-              sequence="20"/>
-    
-    <menuitem id="menu_boat_booking_all" 
-              name="All Bookings" 
-              parent="menu_boat_bookings" 
-              action="boat_booking_action" 
-              sequence="10"/>
-    
-    <!-- Reviews -->
-    <menuitem id="menu_boat_reviews" 
-              name="Reviews" 
-              parent="menu_boat_root" 
-              action="boat_review_action" 
-              sequence="30"/>
-    
-    <!-- Configuration -->
-    <menuitem id="menu_boat_configuration" 
-              name="Configuration" 
-              parent="menu_boat_root" 
-              sequence="100"
-              groups="odoo_boats.group_boat_admin"/>
-    
-    <menuitem id="menu_boat_master_data" 
-              name="Master Data" 
-              parent="menu_boat_configuration" 
-              sequence="10"/>
-    
-    <menuitem id="menu_boat_regions" 
-              name="Regions" 
-              parent="menu_boat_master_data" 
-              action="boat_region_action" 
-              sequence="10"/>
-    
-    <menuitem id="menu_boat_categories" 
-              name="Categories" 
-              parent="menu_boat_master_data" 
-              action="boat_category_action" 
-              sequence="20"/>
-    
-    <menuitem id="menu_boat_generic_masters" 
-              name="Generic Masters" 
-              parent="menu_boat_master_data" 
-              action="boat_generic_master_action" 
-              sequence="30"/>
-    
+              action="boat_listing_action"/>
 </odoo>
