@@ -1,0 +1,77 @@
+2025-11-08 16:16:05,512 1 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-08 16:16:05,512 1 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-08 16:16:05,512 1 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-08 16:16:05,512 1 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-08 16:16:05,667 1 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-08 16:16:05,921 1 INFO ? odoo.service.server: HTTP service (werkzeug) running on 6ea025509c7c:8069 
+2025-11-08 16:16:05,938 1 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-08 16:16:05,943 1 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-08 16:16:05,979 1 INFO odoo-boats-db odoo.modules.loading: loading 61 modules... 
+2025-11-08 16:16:06,886 1 INFO odoo-boats-db odoo.modules.loading: 61 modules loaded in 0.91s, 0 queries (+0 extra) 
+2025-11-08 16:16:06,970 1 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-08 16:16:06,974 1 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 1.053s 
+2025-11-08 16:16:14,392 1 INFO odoo-boats-db odoo.addons.base.models.ir_http: Generating routing map for key 1 
+2025-11-08 16:16:14,444 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:16:14] "GET /web HTTP/1.1" 303 - 8 0.007 0.053
+2025-11-08 16:16:24,524 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:16:24] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-08 16:16:34,604 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:16:34] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 16:16:44,679 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:16:44] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 16:16:54,768 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:16:54] "GET /web HTTP/1.1" 303 - 1 0.001 0.005
+2025-11-08 16:17:04,849 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:17:04] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 16:17:07,088 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Starting job `Mail: Fetchmail Service`. 
+2025-11-08 16:17:07,098 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: start checking for new emails on imap server mail.yayboat.com 
+2025-11-08 16:17:07,461 1 INFO odoo-boats-db odoo.addons.mail.models.fetchmail: Fetched 0 email(s) on imap server mail.yayboat.com; 0 succeeded, 0 failed. 
+2025-11-08 16:17:07,576 1 INFO odoo-boats-db odoo.addons.base.models.ir_cron: Job done: `Mail: Fetchmail Service` (0.488s). 
+2025-11-08 16:17:14,957 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:17:14] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
+2025-11-08 16:17:25,037 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:17:25] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 16:17:35,139 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:17:35] "GET /web HTTP/1.1" 303 - 1 0.000 0.004
+2025-11-08 16:17:45,236 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:17:45] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 16:17:55,363 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:17:55] "GET /web HTTP/1.1" 303 - 1 0.001 0.005
+2025-11-08 16:18:05,418 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:18:05] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 16:18:08,016 1 INFO odoo-boats-db odoo.sql_db: Connection to the database failed 
+2025-11-08 16:18:08,016 1 WARNING odoo-boats-db odoo.addons.base.models.ir_cron: Exception in cron: 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_cron.py", line 119, in _process_jobs
+    with db.cursor() as cron_cr:
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 767, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn)
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 267, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "<decorator-gen-13>", line 2, in borrow
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 695, in borrow
+    result = psycopg2.connect(
+  File "/usr/lib/python3/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "odoo-boats-db" (172.19.0.2), port 5432 failed: FATAL:  the database system is in recovery mode
+
+2025-11-08 16:18:08,069 1 INFO odoo-boats-db odoo.sql_db: Connection to the database failed 
+2025-11-08 16:18:08,069 1 WARNING odoo-boats-db odoo.addons.base.models.ir_cron: Exception in cron: 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_cron.py", line 119, in _process_jobs
+    with db.cursor() as cron_cr:
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 767, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn)
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 267, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "<decorator-gen-13>", line 2, in borrow
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 695, in borrow
+    result = psycopg2.connect(
+  File "/usr/lib/python3/dist-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "odoo-boats-db" (172.19.0.2), port 5432 failed: FATAL:  the database system is in recovery mode
+
+2025-11-08 16:18:15,516 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:18:15] "GET /web HTTP/1.1" 303 - 1 0.009 0.012
+2025-11-08 16:18:25,602 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:18:25] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 16:18:35,680 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:18:35] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 16:18:45,763 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:18:45] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 16:18:55,831 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:18:55] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 16:19:05,908 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:19:05] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 16:19:15,982 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:19:15] "GET /web HTTP/1.1" 303 - 1 0.000 0.002
+2025-11-08 16:19:26,054 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:19:26] "GET /web HTTP/1.1" 303 - 1 0.001 0.002
+2025-11-08 16:19:36,153 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 16:19:36] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-08 16:19:39,560 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 16:19:39,560 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 16:19:39,657 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
