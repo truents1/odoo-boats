@@ -744,3 +744,17 @@
 2025-11-08 15:59:09,843 57 INFO odoo-boats-db odoo.modules.loading: loading payment/views/payment_method_views.xml 
 2025-11-08 15:59:09,912 57 INFO odoo-boats-db odoo.modules.loading: loading payment/views/payment_transaction_views.xml 
 2025-11-08 15:59:09,999 57 INFO odoo-boats-db odoo.modules.loading: loading payment/views/payment_token_views.xml 
+2025-11-08 16:02:03,009 129 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-08 16:02:03,010 129 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-08 16:02:03,010 129 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-08 16:02:03,010 129 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-08 16:02:03,077 129 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-08 16:02:03,201 129 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-08 16:02:03,205 129 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-08 16:02:03,223 129 INFO odoo-boats-db odoo.modules.loading: loading 61 modules... 
+2025-11-08 16:02:03,544 129 INFO odoo-boats-db odoo.modules.loading: 61 modules loaded in 0.32s, 0 queries (+0 extra) 
+2025-11-08 16:02:03,625 129 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-08 16:02:03,628 129 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 0.444s 
+2025-11-08 16:02:29,863 129 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 16:02:29,864 129 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 16:02:29,864 129 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 3 connections  
