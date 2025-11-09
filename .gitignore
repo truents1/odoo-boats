@@ -47,5 +47,5 @@ node_modules/
 
 
 
-!logs/
-!logs/**/*
+# !logs/
+# !logs/**/*

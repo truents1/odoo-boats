@@ -428,3 +428,7 @@ Node: <t t-esc="boat.name"/>
 2025-11-09 02:29:15,678 1 INFO ? werkzeug: 172.19.0.1 - - [09/Nov/2025 02:29:15] "GET /web/static/lib/bootstrap/js/dist/modal.js HTTP/1.1" 304 - 0 0.000 0.006
 2025-11-09 02:29:15,681 1 INFO ? werkzeug: 172.19.0.1 - - [09/Nov/2025 02:29:15] "GET /web/static/lib/bootstrap/js/dist/collapse.js HTTP/1.1" 304 - 0 0.000 0.005
 2025-11-09 02:29:20,783 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [09/Nov/2025 02:29:20] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-09 02:29:30,874 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [09/Nov/2025 02:29:30] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-09 02:29:34,239 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 02:29:34,239 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 02:29:34,382 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 8 connections  
