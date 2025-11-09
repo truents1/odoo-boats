@@ -1,72 +1,29 @@
 <odoo>
-
-  <template id="boat_list" name="Boat List" inherit_id="website.layout">
-    <xpath expr="//main" position="inside">
-      <section class="container mt-4">
-        <h1>Boats</h1>
-        <div class="row">
-          <t t-foreach="boats" t-as="b">
-            <div class="col-md-4 mb-3">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a t-att-href="'/boats/%s' % b.id">
-                      <t t-esc="b.name" />
-                    </a>
-                  </h5>
-                  <p>
-                    <t t-esc="b.region_id.name" />
-                  </p>
-                  <p>From: <t t-esc="b.price_rent" /> <t t-esc="b.currency_id.name" /></p>
-                </div>
-              </div>
+  <template id="book_form" name="Book Boat">
+    <t t-call="website.layout">
+      <main id="wrap" class="oe_structure">
+        <section class="container mt-4">
+          <h2>Book: <t t-esc="boat.name"/></h2>
+          <form action="/book/create" method="post" class="row g-3">
+            <input type="hidden" name="boat_id" t-att-value="boat.id"/>
+            <div class="col-md-4">
+              <label class="form-label">Start</label>
+              <input class="form-control" type="datetime-local" name="date_from" required="1"/>
             </div>
-          </t>
-        </div>
-      </section>
-    </xpath>
+            <div class="col-md-4">
+              <label class="form-label">End</label>
+              <input class="form-control" type="datetime-local" name="date_to" required="1"/>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Guests</label>
+              <input class="form-control" type="number" name="guest_count" value="2" min="1"/>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary mt-2">Continue to Payment</button>
+            </div>
+          </form>
+        </section>
+      </main>
+    </t>
   </template>
-
-  <template id="boat_detail" name="Boat Detail" inherit_id="website.layout">
-    <xpath expr="//main" position="inside">
-      <section class="container mt-4">
-        <h1>
-          <t t-esc="boat.name" />
-        </h1>
-        <p>
-          <t t-raw="boat.description_html" />
-        </p>
-        <p>Region: <t t-esc="boat.region_id.name" /></p>
-        <p>Capacity: <t t-esc="boat.guest_capacity" /></p>
-        <a t-att-href="'/book/%s' % boat.id" class="btn btn-primary">Book</a>
-      </section>
-    </xpath>
-  </template>
-
-  <template id="book_form" name="Book Boat" inherit_id="website.layout">
-    <xpath expr="//main" position="inside">
-      <section class="container mt-4">
-        <h2>Book: <t t-esc="boat.name" /></h2>
-        <form action="/book/create" method="post" class="row g-3">
-          <input type="hidden" name="boat_id" t-att-value="boat.id" />
-          <div class="col-md-4">
-            <label class="form-label">Start</label>
-            <input class="form-control" type="datetime-local" name="date_from" required="1" />
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">End</label>
-            <input class="form-control" type="datetime-local" name="date_to" required="1" />
-          </div>
-          <div class="col-md-4">
-            <label class="form-label">Guests</label>
-            <input class="form-control" type="number" name="guest_count" value="2" min="1" />
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary mt-2">Continue to Payment</button>
-          </div>
-        </form>
-      </section>
-    </xpath>
-  </template>
-
 </odoo>
