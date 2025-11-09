@@ -11,6 +11,6 @@
     "web.assets_frontend": [],
     "web.assets_backend": []
   },
-  "installable": true,
-  "application": false
+  "installable": True,
+  "application": False
 }
