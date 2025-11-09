@@ -2229,3 +2229,179 @@ DETAIL:  Key (module, name)=(base, module_boat_moderation) already exists.
 2025-11-09 17:52:27,193 1035 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
 2025-11-09 17:52:27,193 1035 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
 2025-11-09 17:52:27,193 1035 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 18:00:49,198 324 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 18:00:49,201 324 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 18:00:49,201 324 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 18:00:49,201 324 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 18:00:49,428 324 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 18:00:50,629 324 INFO ? odoo.service.server: Initiating shutdown 
+2025-11-09 18:00:50,630 324 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 18:00:50,744 324 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 18:00:50,775 324 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.03s, 0 queries (+0 extra) 
+2025-11-09 18:00:51,075 324 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 18:00:57,231 324 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 6.15s, 0 queries (+0 extra) 
+2025-11-09 18:00:58,042 324 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 18:00:58,064 324 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 7.431s 
+2025-11-09 18:01:17,005 354 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 18:01:17,005 354 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 18:01:17,005 354 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 18:01:17,005 354 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 18:01:17,114 354 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 18:01:17,318 354 INFO ? odoo.service.server: Initiating shutdown 
+2025-11-09 18:01:17,318 354 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 18:01:17,343 354 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 18:01:17,351 354 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-09 18:01:17,384 354 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 18:01:18,113 354 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 0.73s, 0 queries (+0 extra) 
+2025-11-09 18:01:18,306 354 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 18:01:18,312 354 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 0.993s 
+2025-11-09 18:01:31,804 370 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 18:01:31,804 370 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 18:01:31,804 370 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 18:01:31,804 370 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 18:01:32,014 370 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 18:01:32,463 370 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 18:01:32,464 370 INFO odoo-boats-db odoo.modules.loading: Loading module base (1/1) 
+2025-11-09 18:01:32,515 370 INFO odoo-boats-db odoo.modules.registry: module base: creating or updating database tables 
+2025-11-09 18:01:34,543 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_bank.xml 
+2025-11-09 18:01:34,561 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res.lang.csv 
+2025-11-09 18:01:35,228 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_lang_data.xml 
+2025-11-09 18:01:35,317 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_partner_data.xml 
+2025-11-09 18:01:35,384 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_currency_data.xml 
+2025-11-09 18:01:35,666 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_company_data.xml 
+2025-11-09 18:01:35,672 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_users_data.xml 
+2025-11-09 18:01:35,682 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/report_paperformat_data.xml 
+2025-11-09 18:01:35,692 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_country_data.xml 
+2025-11-09 18:01:36,074 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/ir_demo_data.xml 
+2025-11-09 18:01:36,120 370 INFO odoo-boats-db odoo.modules.loading: loading base/security/base_groups.xml 
+2025-11-09 18:01:37,035 370 INFO odoo-boats-db odoo.modules.loading: loading base/security/base_security.xml 
+2025-11-09 18:01:37,092 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/base_menus.xml 
+2025-11-09 18:01:37,316 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/decimal_precision_views.xml 
+2025-11-09 18:01:37,398 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_config_views.xml 
+2025-11-09 18:01:37,463 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res.country.state.csv 
+2025-11-09 18:01:40,634 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_actions_views.xml 
+2025-11-09 18:01:41,144 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_asset_views.xml 
+2025-11-09 18:01:41,211 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_config_parameter_views.xml 
+2025-11-09 18:01:41,283 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_cron_views.xml 
+2025-11-09 18:01:41,372 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_cron_trigger_views.xml 
+2025-11-09 18:01:41,436 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_filters_views.xml 
+2025-11-09 18:01:41,523 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_mail_server_views.xml 
+2025-11-09 18:01:41,614 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_model_views.xml 
+2025-11-09 18:01:42,494 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_attachment_views.xml 
+2025-11-09 18:01:42,600 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_rule_views.xml 
+2025-11-09 18:01:42,727 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_sequence_views.xml 
+2025-11-09 18:01:42,793 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_ui_menu_views.xml 
+2025-11-09 18:01:42,869 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_ui_view_views.xml 
+2025-11-09 18:01:43,008 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_default_views.xml 
+2025-11-09 18:01:43,058 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/ir_cron_data.xml 
+2025-11-09 18:01:43,088 370 INFO odoo-boats-db odoo.modules.loading: loading base/report/ir_model_report.xml 
+2025-11-09 18:01:43,096 370 INFO odoo-boats-db odoo.modules.loading: loading base/report/ir_model_templates.xml 
+2025-11-09 18:01:43,122 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_logging_views.xml 
+2025-11-09 18:01:43,173 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_qweb_widget_templates.xml 
+2025-11-09 18:01:43,219 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_module_views.xml 
+2025-11-09 18:01:43,339 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/ir_module_category_data.xml 
+2025-11-09 18:01:43,588 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/ir_module_module.xml 
+2025-11-09 18:01:43,648 370 INFO odoo-boats-db odoo.modules.loading: loading base/report/ir_module_reports.xml 
+2025-11-09 18:01:43,655 370 INFO odoo-boats-db odoo.modules.loading: loading base/report/ir_module_report_templates.xml 
+2025-11-09 18:01:43,675 370 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_module_update_views.xml 
+2025-11-09 18:01:43,706 370 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_language_install_views.xml 
+2025-11-09 18:01:43,743 370 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_import_language_views.xml 
+2025-11-09 18:01:43,773 370 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_module_upgrade_views.xml 
+2025-11-09 18:01:43,812 370 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_module_uninstall_views.xml 
+2025-11-09 18:01:43,831 370 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_export_language_views.xml 
+2025-11-09 18:01:43,856 370 INFO odoo-boats-db odoo.modules.loading: loading base/wizard/base_partner_merge_views.xml 
+2025-11-09 18:01:43,882 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/ir_demo_failure_data.xml 
+2025-11-09 18:01:43,909 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_profile_views.xml 
+2025-11-09 18:01:43,959 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_company_views.xml 
+2025-11-09 18:01:44,010 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_lang_views.xml 
+2025-11-09 18:01:44,067 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_partner_views.xml 
+2025-11-09 18:01:44,305 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_bank_views.xml 
+2025-11-09 18:01:44,377 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_country_views.xml 
+2025-11-09 18:01:44,475 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_currency_views.xml 
+2025-11-09 18:01:44,585 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_users_views.xml 
+2025-11-09 18:01:44,917 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_users_identitycheck_views.xml 
+2025-11-09 18:01:44,945 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/ir_property_views.xml 
+2025-11-09 18:01:44,993 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/res_config_settings_views.xml 
+2025-11-09 18:01:45,016 370 INFO odoo-boats-db odoo.modules.loading: loading base/views/report_paperformat_views.xml 
+2025-11-09 18:01:45,087 370 INFO odoo-boats-db odoo.modules.loading: loading base/security/ir.model.access.csv 
+2025-11-09 18:01:45,419 370 INFO odoo-boats-db odoo.modules.loading: Module base: loading demo 
+2025-11-09 18:01:45,420 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_users_demo.xml 
+2025-11-09 18:01:45,431 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_partner_bank_demo.xml 
+2025-11-09 18:01:45,436 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_currency_demo.xml 
+2025-11-09 18:01:45,440 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_currency_rate_demo.xml 
+2025-11-09 18:01:45,598 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_bank_demo.xml 
+2025-11-09 18:01:45,603 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_partner_demo.xml 
+2025-11-09 18:01:46,121 370 INFO odoo-boats-db odoo.modules.loading: loading base/data/res_partner_image_demo.xml 
+2025-11-09 18:01:47,192 370 INFO odoo-boats-db odoo.modules.loading: Module base loaded in 14.73s, 8589 queries (+8589 other) 
+2025-11-09 18:01:47,192 370 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 14.73s, 8589 queries (+8589 extra) 
+2025-11-09 18:01:47,211 370 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 18:01:47,213 370 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 18:01:47,417 370 ERROR odoo-boats-db odoo.sql_db: bad query: INSERT INTO "ir_model_data" ("create_date", "create_uid", "model", "module", "name", "noupdate", "res_id", "write_date", "write_uid") VALUES ('2025-11-09 18:01:47.160341', 1, 'ir.module.module', 'base', 'module_boat_moderation', true, 691, '2025-11-09 18:01:47.160341', 1) RETURNING "id"
+ERROR: duplicate key value violates unique constraint "ir_model_data_module_name_uniq_index"
+DETAIL:  Key (module, name)=(base, module_boat_moderation) already exists.
+ 
+2025-11-09 18:01:47,425 370 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-09 18:01:47,428 370 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 444, in load_modules
+    Module.update_list()
+  File "<decorator-gen-87>", line 2, in update_list
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 75, in check_and_log
+    return method(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 788, in update_list
+    mod = self.create(dict(name=mod_name, state=state, **values))
+  File "<decorator-gen-86>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 430, in _model_create_multi
+    return create(self, [arg])
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 752, in create
+    self.env['ir.model.data'].create(module_metadata_list)
+  File "<decorator-gen-12>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 431, in _model_create_multi
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4656, in create
+    records = self._create(data_list)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4844, in _create
+    cr.execute(SQL(
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 335, in execute
+    res = self._obj.execute(query, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ir_model_data_module_name_uniq_index"
+DETAIL:  Key (module, name)=(base, module_boat_moderation) already exists.
+
+2025-11-09 18:01:47,436 370 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 1369, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 444, in load_modules
+    Module.update_list()
+  File "<decorator-gen-87>", line 2, in update_list
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 75, in check_and_log
+    return method(self, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 788, in update_list
+    mod = self.create(dict(name=mod_name, state=state, **values))
+  File "<decorator-gen-86>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 430, in _model_create_multi
+    return create(self, [arg])
+  File "/usr/lib/python3/dist-packages/odoo/addons/base/models/ir_module.py", line 752, in create
+    self.env['ir.model.data'].create(module_metadata_list)
+  File "<decorator-gen-12>", line 2, in create
+  File "/usr/lib/python3/dist-packages/odoo/api.py", line 431, in _model_create_multi
+    return create(self, arg)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4656, in create
+    records = self._create(data_list)
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 4844, in _create
+    cr.execute(SQL(
+  File "/usr/lib/python3/dist-packages/odoo/sql_db.py", line 335, in execute
+    res = self._obj.execute(query, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ir_model_data_module_name_uniq_index"
+DETAIL:  Key (module, name)=(base, module_boat_moderation) already exists.
+
+2025-11-09 18:01:47,439 370 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 18:01:47,439 370 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 18:01:47,439 370 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
