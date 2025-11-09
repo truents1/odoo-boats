@@ -260,3 +260,6 @@ DETAIL:  Key (name, master_type)=(Snorking, activity) already exists.
 2025-11-09 01:42:18,853 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [09/Nov/2025 01:42:18] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
 2025-11-09 01:42:28,943 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [09/Nov/2025 01:42:28] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
 2025-11-09 01:42:39,038 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [09/Nov/2025 01:42:39] "GET /web HTTP/1.1" 303 - 1 0.001 0.003
+2025-11-09 01:42:45,294 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 01:42:45,294 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 01:42:45,650 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 7 connections  
