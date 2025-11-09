@@ -1397,3 +1397,279 @@ Unknown field "boat.boat.website_published" in domain of <filter name="website_p
 2025-11-09 07:33:32,746 339 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
 2025-11-09 07:33:32,746 339 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
 2025-11-09 07:33:32,747 339 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 07:43:51,398 276 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 07:43:51,398 276 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 07:43:51,398 276 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 07:43:51,398 276 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 07:43:51,469 276 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 07:43:51,608 276 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 07:43:51,612 276 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-09 07:43:51,632 276 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 07:43:51,634 276 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 07:43:52,707 276 WARNING odoo-boats-db odoo.modules.loading: invalid module names, ignored: boat_seo, boat_moderation, boat_owner_portal, boat_payment, boat_reviews 
+2025-11-09 07:43:52,729 276 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 07:43:53,606 276 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 0.88s, 0 queries (+0 extra) 
+2025-11-09 07:43:55,648 276 WARNING odoo-boats-db odoo.modules.loading: invalid custom view(s) for model boat.boat: Error while validating view near:
+
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+Unknown field "boat.boat.website_published" in domain of <filter name="website_published"> ([('website_published', '=', True)])) 
+2025-11-09 07:43:58,042 276 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 07:43:58,062 276 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 6.483s 
+2025-11-09 07:43:58,063 276 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 07:43:58,064 276 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 07:43:58,065 276 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 08:07:58,671 1297 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 08:07:58,677 1297 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 08:07:58,677 1297 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 08:07:58,678 1297 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 08:07:59,795 1297 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 08:08:01,905 1297 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 08:08:01,962 1297 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.06s, 0 queries (+0 extra) 
+2025-11-09 08:08:02,121 1297 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 08:08:02,143 1297 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 08:08:12,297 1297 WARNING odoo-boats-db odoo.modules.loading: invalid module names, ignored: boat_owner_portal 
+2025-11-09 08:08:12,422 1297 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 08:08:18,074 1297 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 5.65s, 0 queries (+0 extra) 
+2025-11-09 08:08:21,902 1297 WARNING odoo-boats-db odoo.modules.loading: invalid custom view(s) for model boat.boat: Error while validating view near:
+
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+Unknown field "boat.boat.website_published" in domain of <filter name="website_published"> ([('website_published', '=', True)])) 
+2025-11-09 08:08:25,286 1297 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 08:08:25,314 1297 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 23.568s 
+2025-11-09 08:08:25,315 1297 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 08:08:25,316 1297 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 08:08:25,317 1297 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 08:15:45,694 1632 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 08:15:45,694 1632 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 08:15:45,694 1632 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 08:15:45,695 1632 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 08:15:45,854 1632 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 08:15:46,195 1632 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 08:15:46,207 1632 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-09 08:15:46,244 1632 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 08:15:46,252 1632 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 08:15:50,914 1632 WARNING odoo-boats-db odoo.modules.loading: invalid module names, ignored: boat_moderation 
+2025-11-09 08:15:50,953 1632 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 08:15:52,672 1632 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 1.72s, 0 queries (+0 extra) 
+2025-11-09 08:15:53,748 1632 WARNING odoo-boats-db odoo.modules.loading: invalid custom view(s) for model boat.boat: Error while validating view near:
+
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+Unknown field "boat.boat.website_published" in domain of <filter name="website_published"> ([('website_published', '=', True)])) 
+2025-11-09 08:15:54,472 1632 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 08:15:54,482 1632 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 8.332s 
+2025-11-09 08:15:54,482 1632 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 08:15:54,482 1632 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 08:15:54,483 1632 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 08:16:53,900 1691 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 08:16:53,900 1691 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 08:16:53,900 1691 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 08:16:53,900 1691 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 08:16:54,136 1691 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 08:16:54,618 1691 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 08:16:54,633 1691 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-09 08:16:54,676 1691 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 08:16:54,683 1691 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 08:16:59,734 1691 WARNING odoo-boats-db odoo.modules.loading: invalid module names, ignored: boat_moderation 
+2025-11-09 08:16:59,776 1691 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 08:17:01,646 1691 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 1.87s, 0 queries (+0 extra) 
+2025-11-09 08:17:04,985 1691 WARNING odoo-boats-db odoo.modules.loading: invalid custom view(s) for model boat.boat: Error while validating view near:
+
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+Unknown field "boat.boat.website_published" in domain of <filter name="website_published"> ([('website_published', '=', True)])) 
+2025-11-09 08:17:06,668 1691 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 08:17:06,685 1691 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 12.128s 
+2025-11-09 08:17:06,686 1691 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 08:17:06,686 1691 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 08:17:06,687 1691 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 08:17:13,125 1714 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 08:17:13,126 1714 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 08:17:13,126 1714 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 08:17:13,126 1714 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 08:17:13,628 1714 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 08:17:14,251 1714 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 08:17:14,270 1714 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.02s, 0 queries (+0 extra) 
+2025-11-09 08:17:14,332 1714 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 08:17:14,340 1714 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 08:17:18,546 1714 WARNING odoo-boats-db odoo.modules.loading: invalid module names, ignored: boat_payment 
+2025-11-09 08:17:18,684 1714 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 08:17:21,878 1714 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 3.19s, 0 queries (+0 extra) 
+2025-11-09 08:17:24,847 1714 WARNING odoo-boats-db odoo.modules.loading: invalid custom view(s) for model boat.boat: Error while validating view near:
+
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+Unknown field "boat.boat.website_published" in domain of <filter name="website_published"> ([('website_published', '=', True)])) 
+2025-11-09 08:17:26,648 1714 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 08:17:26,669 1714 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 12.486s 
+2025-11-09 08:17:26,670 1714 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 08:17:26,670 1714 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 08:17:26,671 1714 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 08:18:28,258 1773 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 08:18:28,258 1773 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 08:18:28,258 1773 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 08:18:28,258 1773 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 08:18:28,472 1773 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 08:18:28,835 1773 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 08:18:28,846 1773 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-09 08:18:28,883 1773 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 08:18:28,888 1773 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 08:18:31,579 1773 WARNING odoo-boats-db odoo.modules.loading: invalid module names, ignored: boat_moderation 
+2025-11-09 08:18:31,605 1773 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 08:18:32,632 1773 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 1.03s, 0 queries (+0 extra) 
+2025-11-09 08:18:33,769 1773 WARNING odoo-boats-db odoo.modules.loading: invalid custom view(s) for model boat.boat: Error while validating view near:
+
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+Unknown field "boat.boat.website_published" in domain of <filter name="website_published"> ([('website_published', '=', True)])) 
+2025-11-09 08:18:34,588 1773 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 08:18:34,600 1773 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 5.814s 
+2025-11-09 08:18:34,601 1773 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 08:18:34,601 1773 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 08:18:34,601 1773 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 11:20:21,612 4883 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 11:20:21,612 4883 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 11:20:21,612 4883 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 11:20:21,613 4883 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 11:20:21,786 4883 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 11:20:22,169 4883 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 11:20:22,176 4883 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-09 11:20:22,206 4883 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 11:20:22,211 4883 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 11:20:23,880 4883 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Guest Portal'] to user __system__ #1 via n/a 
+2025-11-09 11:20:23,881 4883 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Guest Portal'] to user __system__ #1 via n/a 
+2025-11-09 11:20:24,887 4883 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-09 11:20:24,941 4883 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 11:20:26,202 4883 INFO odoo-boats-db odoo.modules.loading: Loading module boat_guest_portal (51/66) 
+2025-11-09 11:20:26,619 4883 INFO odoo-boats-db odoo.modules.loading: loading boat_guest_portal/views/templates.xml 
+2025-11-09 11:20:26,697 4883 INFO odoo-boats-db odoo.modules.loading: loading boat_guest_portal/views/boat_guest_templates.xml 
+2025-11-09 11:20:26,743 4883 INFO odoo-boats-db odoo.modules.loading: Module boat_guest_portal loaded in 0.54s, 43 queries (+43 other) 
+2025-11-09 11:20:26,889 4883 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 1.95s, 43 queries (+43 extra) 
+2025-11-09 11:20:28,193 4883 WARNING odoo-boats-db odoo.modules.loading: invalid custom view(s) for model boat.boat: Error while validating view near:
+
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+Unknown field "boat.boat.website_published" in domain of <filter name="website_published"> ([('website_published', '=', True)])) 
+2025-11-09 11:20:28,787 4883 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 11:20:28,807 4883 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 6.699s 
+2025-11-09 11:20:28,807 4883 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 11:20:28,808 4883 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 11:20:28,808 4883 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 11:27:54,984 5282 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 11:27:54,984 5282 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 11:27:54,984 5282 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 11:27:54,985 5282 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 11:27:55,106 5282 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 11:27:55,344 5282 INFO ? odoo.service.server: Initiating shutdown 
+2025-11-09 11:27:55,345 5282 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 11:27:55,379 5282 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 11:27:55,388 5282 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-09 11:27:55,428 5282 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 11:27:56,292 5282 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 0.86s, 0 queries (+0 extra) 
+2025-11-09 11:27:56,511 5282 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 11:27:56,518 5282 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 1.173s 
+2025-11-09 12:58:04,782 6774 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 12:58:04,783 6774 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 12:58:04,783 6774 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 12:58:04,783 6774 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 12:58:05,042 6774 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 12:58:05,594 6774 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 12:58:05,604 6774 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-09 12:58:05,635 6774 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 12:58:05,640 6774 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 12:58:07,941 6774 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Core', 'Boat Guest Portal'] to user __system__ #1 via n/a 
+2025-11-09 12:58:07,941 6774 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Core', 'Boat Guest Portal'] to user __system__ #1 via n/a 
+2025-11-09 12:58:09,008 6774 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-09 12:58:09,059 6774 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 12:58:09,161 6774 INFO odoo-boats-db odoo.modules.loading: Loading module boat_core (10/66) 
+2025-11-09 12:58:09,221 6774 INFO odoo-boats-db odoo.modules.registry: module boat_core: creating or updating database tables 
+2025-11-09 12:58:09,338 6774 INFO odoo-boats-db odoo.schema: Table 'boat_boat': unable to set NOT NULL on column 'owner_partner_id' 
+2025-11-09 12:58:09,489 6774 INFO odoo-boats-db odoo.modules.loading: loading boat_core/security/security.xml 
+2025-11-09 12:58:09,597 6774 INFO odoo-boats-db odoo.modules.loading: loading boat_core/security/ir.model.access.csv 
+2025-11-09 12:58:09,656 6774 INFO odoo-boats-db odoo.modules.loading: Module boat_core loaded in 0.49s, 125 queries (+125 other) 
+2025-11-09 12:58:10,733 6774 INFO odoo-boats-db odoo.modules.loading: Loading module boat_booking (44/66) 
+2025-11-09 12:58:11,027 6774 INFO odoo-boats-db odoo.modules.registry: module boat_booking: creating or updating database tables 
+2025-11-09 12:58:11,091 6774 INFO odoo-boats-db odoo.modules.loading: loading boat_booking/security/ir.model.access.csv 
+2025-11-09 12:58:11,130 6774 INFO odoo-boats-db odoo.modules.loading: Module boat_booking loaded in 0.40s, 48 queries (+48 other) 
+2025-11-09 12:58:11,385 6774 INFO odoo-boats-db odoo.modules.loading: Loading module boat_guest_portal (51/66) 
+2025-11-09 12:58:11,750 6774 INFO odoo-boats-db odoo.modules.loading: loading boat_guest_portal/views/owner_portal_templates.xml 
+2025-11-09 12:58:11,845 6774 INFO odoo-boats-db odoo.modules.loading: Module boat_guest_portal loaded in 0.46s, 47 queries (+47 other) 
+2025-11-09 12:58:12,049 6774 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 2.99s, 220 queries (+220 extra) 
+2025-11-09 12:58:12,393 6774 WARNING odoo-boats-db odoo.schema: Table 'boat_boat': unable to set NOT NULL on column 'owner_partner_id' 
+2025-11-09 12:58:12,785 6774 INFO odoo-boats-db odoo.addons.base.models.ir_model: Deleting 2804@ir.ui.view (boat_guest_portal.book_form) 
+2025-11-09 12:58:12,958 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [1390263] 
+2025-11-09 12:58:12,959 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.ui.view records with IDs: [2804] 
+2025-11-09 12:58:12,960 6774 INFO odoo-boats-db odoo.addons.base.models.ir_model: Deleting 361@ir.ui.menu (boat_core.menu_boat_items) 
+2025-11-09 12:58:12,977 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [1387865] 
+2025-11-09 12:58:12,977 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.ui.menu records with IDs: [361] 
+2025-11-09 12:58:12,979 6774 INFO odoo-boats-db odoo.addons.base.models.ir_model: Deleting 360@ir.ui.menu (boat_core.menu_boat_backend_root) 
+2025-11-09 12:58:12,993 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [1387864] 
+2025-11-09 12:58:12,993 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.ui.menu records with IDs: [360] 
+2025-11-09 12:58:12,997 6774 INFO odoo-boats-db odoo.addons.base.models.ir_model: Deleting 2796@ir.ui.view (boat_core.view_boat_boat_form) 
+2025-11-09 12:58:13,019 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [1387863] 
+2025-11-09 12:58:13,019 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.ui.view records with IDs: [2796] 
+2025-11-09 12:58:13,023 6774 INFO odoo-boats-db odoo.addons.base.models.ir_model: Deleting 2795@ir.ui.view (boat_core.view_boat_boat_tree) 
+2025-11-09 12:58:13,047 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [1387862] 
+2025-11-09 12:58:13,047 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.ui.view records with IDs: [2795] 
+2025-11-09 12:58:13,048 6774 INFO odoo-boats-db odoo.addons.base.models.ir_model: Deleting 436@ir.actions.act_window (boat_core.action_boat_items) 
+2025-11-09 12:58:13,080 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [1387861] 
+2025-11-09 12:58:13,081 6774 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.actions.act_window records with IDs: [436] 
+2025-11-09 12:58:13,123 6774 INFO odoo-boats-db odoo.modules.registry: verifying fields for every extended model 
+2025-11-09 12:58:13,162 6774 ERROR odoo-boats-db odoo.schema: Table 'boat_boat': unable to set NOT NULL on column 'owner_partner_id' 
+2025-11-09 12:58:13,602 6774 WARNING odoo-boats-db odoo.modules.loading: invalid custom view(s) for model boat.boat: Error while validating view near:
+
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+Unknown field "boat.boat.website_published" in domain of <filter name="website_published"> ([('website_published', '=', True)])) 
+2025-11-09 12:58:14,406 6774 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 12:58:14,418 6774 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 8.874s 
+2025-11-09 12:58:14,419 6774 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 12:58:14,419 6774 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 12:58:14,419 6774 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 13:03:51,835 287 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 13:03:51,836 287 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 13:03:51,836 287 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 13:03:51,836 287 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 13:03:51,991 287 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 13:03:52,254 287 INFO ? odoo.service.server: Initiating shutdown 
+2025-11-09 13:03:52,254 287 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 13:03:52,293 287 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 13:03:52,304 287 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-09 13:03:52,352 287 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 13:03:53,676 287 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 1.32s, 0 queries (+0 extra) 
+2025-11-09 13:03:53,959 287 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 13:03:53,966 287 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 1.711s 

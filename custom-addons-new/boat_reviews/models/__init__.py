@@ -1,1 +1,0 @@
-from . import boat_review

@@ -1,1 +1,0 @@
-// Booking calculator JavaScript

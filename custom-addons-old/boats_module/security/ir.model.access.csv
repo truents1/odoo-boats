@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_boat_listing_all,boat.listing.all,model_boat_listing,base.group_user,1,1,1,1
-access_boat_region_all,boat.region.all,model_boat_region,base.group_user,1,1,1,1
-access_boat_category_all,boat.category.all,model_boat_category,base.group_user,1,1,1,1

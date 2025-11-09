@@ -9,6 +9,13 @@ class Boat(models.Model):
     _order = "create_date desc"
     _inherit = ["image.mixin"]
 
+
+    owner_partner_id = fields.Many2one('res.partner', required=True, index=True)
+    moderation_state = fields.Selection([
+        ('draft','Draft'),('submitted','Submitted'),
+        ('approved','Approved'),('rejected','Rejected')
+    ], default='draft', index=True)
+
     active = fields.Boolean(default=True)
     owner_id = fields.Many2one("res.users", required=True, index=True)
     name = fields.Char(required=True)

@@ -1,0 +1,92 @@
+<odoo>
+  <!-- Add Boat form -->
+  <template id="owner_boat_form" name="Owner Add Boat">
+    <t t-call="website.layout">
+      <div class="container py-4">
+        <h1 class="mb-3">Add your boat</h1>
+        <form action="/owner/boats/create" method="post" enctype="multipart/form-data" class="o_website_form">
+          <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Boat Name</label>
+              <input class="form-control" type="text" name="name" required="required"/>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Category</label>
+              <select class="form-select" name="category_id" required="required">
+                <option value="">Select</option>
+                <t t-foreach="categories" t-as="c">
+                  <option t-att-value="c.id"><t t-esc="c.name"/></option>
+                </t>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Region</label>
+              <select class="form-select" name="region_id" required="required">
+                <option value="">Select</option>
+                <t t-foreach="regions" t-as="r">
+                  <option t-att-value="r.id"><t t-esc="r.name"/></option>
+                </t>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Guest Capacity</label>
+              <input class="form-control" type="number" name="guest_capacity" min="1" />
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Pricing Period</label>
+              <select class="form-select" name="pricing_period">
+                <option value="flat_day">Flat per day</option>
+                <option value="hour_pp">Hourly per person</option>
+                <option value="day_pp">Daily per person</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label class="form-label">Rent Amount</label>
+              <input class="form-control" type="number" step="0.01" name="rent_amount"/>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Description</label>
+              <textarea class="form-control" name="description" rows="5"></textarea>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Featured Image</label>
+              <input class="form-control" type="file" name="image" accept="image/*"/>
+            </div>
+
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Submit for approval</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </t>
+  </template>
+
+  <!-- Thank you -->
+  <template id="owner_boat_thanks" name="Owner Boat Thanks">
+    <t t-call="website.layout">
+      <div class="container py-5">
+        <h2>Submitted</h2>
+        <p>Your boat was submitted for moderation. You will be notified after review.</p>
+      </div>
+    </t>
+  </template>
+
+    <template id="owner_entry_link" inherit_id="website.layout">
+    <xpath expr="//header" position="inside">
+      <t t-if="request.env.user.has_group('base.group_portal')">
+        <a class="btn btn-sm btn-outline-primary ms-2" href="/owner/boats/new">Add Boat</a>
+      </t>
+    </xpath>
+  </template>
+  
+</odoo>

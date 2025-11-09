@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_boat_boat_admin,Boat admin,model_boat_boat,,1,1,1,1
+boat_boat_user_ro,boat.boat user ro,model_boat_boat,base.group_user,1,1,1,0

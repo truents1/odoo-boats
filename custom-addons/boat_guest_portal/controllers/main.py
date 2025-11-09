@@ -15,6 +15,7 @@ class BoatWebsite(http.Controller):
         boats = request.env["boat.boat"].sudo().search(domain, limit=24)
         return request.render("boat_guest_portal.boat_list", {"boats": boats, "kw": kw})
 
+
     @http.route(
         ['/boats/<model("boat.boat"):boat>'], type="http", auth="public", website=True
     )

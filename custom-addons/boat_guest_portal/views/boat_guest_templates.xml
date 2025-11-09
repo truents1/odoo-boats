@@ -1,0 +1,10 @@
+<odoo>
+  <template id="boat_list" name="Boat List">
+    <t t-call="website.layout">
+      <div class="container py-4">
+        <h1>Boats</h1>
+        <!-- listing markup -->
+      </div>
+    </t>
+  </template>
+</odoo>

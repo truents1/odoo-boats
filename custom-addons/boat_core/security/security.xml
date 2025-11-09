@@ -1,0 +1,21 @@
+<odoo>
+
+    <!-- Website roles -->
+    <record id="group_boat_owner" model="res.groups">
+        <field name="name">Boat Owner</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+    </record>
+
+    <record id="rule_boat_owner_own_records" model="ir.rule">
+        <field name="name">Boat: owner can read/write own</field>
+        <field name="model_id" ref="model_boat_boat" />
+        <field name="groups"
+            eval="[(4, ref('base.group_portal')),(4, ref('boat_core.group_boat_owner'))]" />
+        <field name="domain_force">[('owner_partner_id','=',user.partner_id.id)]</field>
+        <field name="perm_read" eval="True" />
+        <field name="perm_write" eval="True" />
+        <field name="perm_create" eval="True" />
+        <field name="perm_unlink" eval="False" />
+    </record>
+
+</odoo>
