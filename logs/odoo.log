@@ -694,3 +694,185 @@ Unknown field "boat.boat.website_published" in domain of <filter name="website_p
 2025-11-08 20:17:22,542 219 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
 2025-11-08 20:17:22,542 219 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
 2025-11-08 20:17:22,542 219 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-08 20:28:16,845 239 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-08 20:28:16,847 239 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-08 20:28:16,847 239 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-08 20:28:16,847 239 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-08 20:28:16,973 239 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-08 20:28:17,252 239 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-08 20:28:17,256 239 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-08 20:28:17,268 239 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-08 20:28:17,271 239 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-08 20:28:18,326 239 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Core'] to user __system__ #1 via n/a 
+2025-11-08 20:28:18,326 239 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Core'] to user __system__ #1 via n/a 
+2025-11-08 20:28:18,904 239 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-08 20:28:18,937 239 INFO odoo-boats-db odoo.modules.loading: loading 63 modules... 
+2025-11-08 20:28:18,997 239 INFO odoo-boats-db odoo.modules.loading: Loading module boat_core (10/63) 
+2025-11-08 20:28:19,025 239 INFO odoo-boats-db odoo.modules.registry: module boat_core: creating or updating database tables 
+2025-11-08 20:28:19,133 239 INFO odoo-boats-db odoo.modules.loading: loading boat_core/security/ir.model.access.csv 
+2025-11-08 20:28:19,142 239 INFO odoo-boats-db odoo.modules.loading: loading boat_core/views/boat_boat_views.xml 
+2025-11-08 20:28:19,146 239 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-08 20:28:19,147 239 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 635, in convert_file
+    convert_xml_import(env, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 680, in convert_xml_import
+    doc = etree.parse(xmlfile)
+  File "src/lxml/etree.pyx", line 3536, in lxml.etree.parse
+  File "src/lxml/parser.pxi", line 1897, in lxml.etree._parseDocument
+  File "src/lxml/parser.pxi", line 1917, in lxml.etree._parseFilelikeDocument
+  File "src/lxml/parser.pxi", line 1811, in lxml.etree._parseDocFromFilelike
+  File "src/lxml/parser.pxi", line 1201, in lxml.etree._BaseParser._parseDocFromFilelike
+  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
+  File "/mnt/extra-addons/custom/boat_core/views/boat_boat_views.xml", line 96
+lxml.etree.XMLSyntaxError: xmlParseEntityRef: no name, line 96, column 34
+2025-11-08 20:28:19,150 239 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 1369, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 635, in convert_file
+    convert_xml_import(env, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 680, in convert_xml_import
+    doc = etree.parse(xmlfile)
+  File "src/lxml/etree.pyx", line 3536, in lxml.etree.parse
+  File "src/lxml/parser.pxi", line 1897, in lxml.etree._parseDocument
+  File "src/lxml/parser.pxi", line 1917, in lxml.etree._parseFilelikeDocument
+  File "src/lxml/parser.pxi", line 1811, in lxml.etree._parseDocFromFilelike
+  File "src/lxml/parser.pxi", line 1201, in lxml.etree._BaseParser._parseDocFromFilelike
+  File "src/lxml/parser.pxi", line 615, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 725, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 654, in lxml.etree._raiseParseError
+  File "/mnt/extra-addons/custom/boat_core/views/boat_boat_views.xml", line 96
+lxml.etree.XMLSyntaxError: xmlParseEntityRef: no name, line 96, column 34
+2025-11-08 20:28:19,151 239 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 20:28:19,151 239 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 20:28:19,151 239 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-08 20:30:27,934 369 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-08 20:30:27,935 369 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-08 20:30:27,935 369 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-08 20:30:27,935 369 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-08 20:30:28,054 369 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-08 20:30:28,301 369 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-08 20:30:28,305 369 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-08 20:30:28,317 369 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-08 20:30:28,319 369 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-08 20:30:29,453 369 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Core'] to user __system__ #1 via n/a 
+2025-11-08 20:30:29,454 369 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Core'] to user __system__ #1 via n/a 
+2025-11-08 20:30:30,084 369 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-08 20:30:30,108 369 INFO odoo-boats-db odoo.modules.loading: loading 63 modules... 
+2025-11-08 20:30:30,161 369 INFO odoo-boats-db odoo.modules.loading: Loading module boat_core (10/63) 
+2025-11-08 20:30:30,189 369 INFO odoo-boats-db odoo.modules.registry: module boat_core: creating or updating database tables 
+2025-11-08 20:30:30,246 369 INFO odoo-boats-db odoo.modules.loading: loading boat_core/security/ir.model.access.csv 
+2025-11-08 20:30:30,258 369 INFO odoo-boats-db odoo.modules.loading: loading boat_core/views/boat_boat_views.xml 
+2025-11-08 20:30:30,261 369 ERROR odoo-boats-db odoo.tools.convert: The XML file '/mnt/extra-addons/custom/boat_core/views/boat_boat_views.xml' does not fit the required schema! 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 684, in convert_xml_import
+    relaxng.assert_(doc)
+  File "src/lxml/etree.pyx", line 3648, in lxml.etree._Validator.assert_
+AssertionError: Element odoo has extra content: record, line 4
+2025-11-08 20:30:30,262 369 WARNING odoo-boats-db odoo.tools.convert: /mnt/extra-addons/custom/boat_core/views/boat_boat_views.xml:4:0:ERROR:RELAXNGV:RELAXNG_ERR_EXTRACONTENT: Element odoo has extra content: record 
+2025-11-08 20:30:30,263 369 INFO odoo-boats-db odoo.tools.convert: Install 'jingtrang' for more precise and useful validation messages. 
+2025-11-08 20:30:30,265 369 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-08 20:30:30,265 369 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 635, in convert_file
+    convert_xml_import(env, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 684, in convert_xml_import
+    relaxng.assert_(doc)
+  File "src/lxml/etree.pyx", line 3648, in lxml.etree._Validator.assert_
+AssertionError: Element odoo has extra content: record, line 4
+2025-11-08 20:30:30,268 369 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 1369, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 635, in convert_file
+    convert_xml_import(env, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 684, in convert_xml_import
+    relaxng.assert_(doc)
+  File "src/lxml/etree.pyx", line 3648, in lxml.etree._Validator.assert_
+AssertionError: Element odoo has extra content: record, line 4
+2025-11-08 20:30:30,269 369 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 20:30:30,269 369 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 20:30:30,269 369 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 01:34:21,558 875 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 01:34:21,559 875 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 01:34:21,559 875 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 01:34:21,559 875 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 01:34:21,701 875 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 01:34:22,019 875 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 01:34:22,024 875 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-09 01:34:22,042 875 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 01:34:22,046 875 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 01:34:23,240 875 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Core'] to user __system__ #1 via n/a 
+2025-11-09 01:34:23,241 875 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Core'] to user __system__ #1 via n/a 
+2025-11-09 01:34:23,793 875 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-09 01:34:23,828 875 INFO odoo-boats-db odoo.modules.loading: loading 63 modules... 
+2025-11-09 01:34:23,889 875 INFO odoo-boats-db odoo.modules.loading: Loading module boat_core (10/63) 
+2025-11-09 01:34:23,915 875 INFO odoo-boats-db odoo.modules.registry: module boat_core: creating or updating database tables 
+2025-11-09 01:34:24,002 875 INFO odoo-boats-db odoo.modules.loading: loading boat_core/security/ir.model.access.csv 
+2025-11-09 01:34:24,014 875 INFO odoo-boats-db odoo.modules.loading: loading boat_core/views/boat_boat_views.xml 
+2025-11-09 01:34:24,118 875 INFO odoo-boats-db odoo.modules.loading: Module boat_core loaded in 0.23s, 105 queries (+105 other) 
+2025-11-09 01:34:25,033 875 INFO odoo-boats-db odoo.modules.loading: 63 modules loaded in 1.20s, 105 queries (+105 extra) 
+2025-11-09 01:34:25,423 875 INFO odoo-boats-db odoo.modules.registry: verifying fields for every extended model 
+2025-11-09 01:34:25,671 875 WARNING odoo-boats-db odoo.modules.loading: invalid custom view(s) for model boat.boat: Error while validating view near:
+
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+Unknown field "boat.boat.website_published" in domain of <filter name="website_published"> ([('website_published', '=', True)])) 
+2025-11-09 01:34:25,939 875 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 01:34:25,943 875 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 3.977s 
+2025-11-09 01:34:25,943 875 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 01:34:25,943 875 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 01:34:25,943 875 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  

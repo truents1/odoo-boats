@@ -148,3 +148,7 @@ Unknown field "boat.boat.website_published" in domain of <filter name="website_p
 2025-11-08 20:22:37,032 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 20:22:37] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
 2025-11-08 20:22:47,130 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 20:22:47] "GET /web HTTP/1.1" 303 - 1 0.001 0.004
 2025-11-08 20:22:57,212 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 20:22:57] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 20:23:07,282 1 INFO odoo-boats-db werkzeug: 127.0.0.1 - - [08/Nov/2025 20:23:07] "GET /web HTTP/1.1" 303 - 1 0.000 0.003
+2025-11-08 20:23:08,039 1 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-08 20:23:08,040 1 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-08 20:23:08,384 1 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 7 connections  

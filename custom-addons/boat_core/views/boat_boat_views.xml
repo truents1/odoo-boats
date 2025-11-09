@@ -13,12 +13,14 @@
     <field name="model">boat.boat</field>
     <field name="arch" type="xml">
       <tree>
-        <field name="name" />
-        <field name="owner_id" />
-        <field name="category_id" />
-        <field name="region_id" />
-        <field name="state" />
-        <field name="active_service" />
+        <field name="name"/>
+        <field name="brand_name"/>
+        <field name="category_id"/>
+        <field name="region_id"/>
+        <field name="guest_capacity"/>
+        <field name="deck_count"/>
+        <field name="state"/>
+        <field name="active_service"/>
       </tree>
     </field>
   </record>
@@ -31,46 +33,104 @@
       <form>
         <header>
           <button name="action_submit" string="Submit for Review" type="object"
-            class="oe_highlight" invisible="state != 'draft'" />
+                  class="oe_highlight" invisible="state != 'draft'"/>
           <button name="action_approve" string="Approve" type="object"
-            class="oe_highlight" invisible="state != 'submitted'" />
+                  class="oe_highlight" invisible="state != 'submitted'"/>
           <button name="action_reject" string="Reject" type="object"
-            class="btn-secondary" invisible="state != 'submitted'" />
+                  class="btn-secondary" invisible="state != 'submitted'"/>
         </header>
-
         <sheet>
-          <group string="Basics">
-            <field name="name" />
-            <field name="owner_id" />
-            <field name="category_id" />
-            <field name="region_id" />
-            <field name="state" readonly="1" />
+          <group string="Basics" colspan="4">
+            <group>
+              <field name="name" string="Boat Name"/>
+              <field name="brand_name" string="Business/Brand Name"/>
+              <field name="registration_no" string="Registration Number"/>
+              <field name="category_id" options="{'no_create': True}"/>
+              <field name="build_type_id" string="Boat Build Type" options="{'no_create': True}"/>
+            </group>
+            <group>
+              <field name="region_id" options="{'no_create': True}"/>
+              <field name="year_built"/>
+              <field name="year_renovated"/>
+              <field name="deck_count" string="Number of Decks"/>
+              <field name="guest_capacity" string="Guest Capacity"/>
+            </group>
+            <group>
+              <field name="bedroom_count" string="Number of Bedrooms"/>
+              <field name="bathroom_count" string="Number of Bathrooms"/>
+              <field name="staff_count" string="Number of Onboat Staff"/>
+              <field name="website_url" string="Website URL"/>
+              <field name="video_url" string="Video URL"/>
+            </group>
+            <group>
+              <field name="active_service" string="Active in Service"/>
+              <field name="state" readonly="1"/>
+            </group>
           </group>
-          <group string="Specs">
-            <field name="guest_capacity" />
-            <field name="deck_count" />
-            <field name="bedroom_count" />
-            <field name="bathroom_count" />
-            <field name="staff_count" />
-          </group>
-          <group string="Pricing">
-            <field name="pricing_period" />
-            <field name="price_rent" />
-            <field name="price_extra_guest" />
-            <field name="price_advance_percent" />
-            <field name="min_duration_hours" />
-            <field name="max_duration_hours" />
-            <field name="advance_notice_hours" />
-          </group>
+
+          <notebook>
+            <page string="Description">
+              <field name="description_html"/>
+            </page>
+
+            <page string="Media">
+              <group>
+                <field name="image_ids" widget="many2many_binary" string="Images"/>
+                <field name="featured_image_id" domain="[('id','in', image_ids)]" string="Featured Image"/>
+              </group>
+            </page>
+
+            <page string="Pricing">
+              <group>
+                <field name="pricing_period"/>
+                <field name="price_rent" string="Price Rent"/>
+                <field name="price_extra_guest" string="Price Extra Guest"/>
+                <field name="price_advance_percent" string="Price Advance Percent"/>
+                <field name="min_duration_hours" string="Min Duration Hours"/>
+                <field name="max_duration_hours" string="Max Duration Hours"/>
+                <field name="advance_notice_hours" string="Advance Notice Hours"/>
+              </group>
+            </page>
+
+            <page string="Amenities &amp; Safety">
+              <group>
+                <field name="amenity_ids" widget="many2many_tags"/>
+                <field name="meal_type_ids" widget="many2many_tags"/>
+                <field name="cuisine_type_ids" widget="many2many_tags"/>
+                <field name="included_meal_ids" widget="many2many_tags"/>
+              </group>
+              <group>
+                <field name="safety_cert_text"/>
+                <field name="safety_check_ids" widget="many2many_tags"/>
+                <field name="emergency_phone"/>
+                <field name="is_certified"/>
+              </group>
+            </page>
+
+            <page string="Activities">
+              <group>
+                <field name="included_activity_ids" widget="many2many_tags"/>
+                <field name="paid_addon_ids" widget="many2many_tags"/>
+              </group>
+            </page>
+
+            <page string="SEO">
+              <group>
+                <field name="seo_title"/>
+                <field name="seo_description"/>
+                <field name="seo_keywords"/>
+              </group>
+            </page>
+          </notebook>
         </sheet>
       </form>
     </field>
   </record>
 
   <!-- menus AFTER action exists -->
-  <menuitem id="menu_boat_backend_root" name="Boats" sequence="10" />
+  <menuitem id="menu_boat_backend_root" name="Boats" sequence="10"/>
   <menuitem id="menu_boat_items" name="Boats"
-    parent="menu_boat_backend_root"
-    action="action_boat_items"
-    sequence="20" />
+            parent="menu_boat_backend_root"
+            action="action_boat_items"
+            sequence="20"/>
 </odoo>
