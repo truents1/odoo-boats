@@ -1186,3 +1186,214 @@ View error context:
 2025-11-09 02:36:49,985 290 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
 2025-11-09 02:36:49,986 290 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
 2025-11-09 02:36:49,986 290 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 07:18:34,836 28 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 07:18:34,836 28 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 07:18:34,836 28 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 07:18:34,836 28 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 07:18:34,959 28 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 07:18:35,306 28 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 07:18:35,311 28 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-09 07:18:35,349 28 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 07:18:35,373 28 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 07:18:37,780 28 WARNING odoo-boats-db odoo.modules.loading: invalid module names, ignored: boat_owner_portal 
+2025-11-09 07:18:37,783 28 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Booking', 'Boat Core', 'Boat Guest Portal', 'Boat Masterdata'] to user __system__ #1 via n/a 
+2025-11-09 07:18:37,783 28 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Booking', 'Boat Core', 'Boat Guest Portal', 'Boat Masterdata'] to user __system__ #1 via n/a 
+2025-11-09 07:18:38,903 28 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-09 07:18:38,992 28 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 07:18:38,993 28 INFO odoo-boats-db odoo.modules.loading: Loading module boat_masterdata (2/66) 
+2025-11-09 07:18:39,037 28 INFO odoo-boats-db odoo.modules.registry: module boat_masterdata: creating or updating database tables 
+2025-11-09 07:18:39,210 28 INFO odoo-boats-db odoo.modules.loading: loading boat_masterdata/security/ir.model.access.csv 
+2025-11-09 07:18:39,245 28 INFO odoo-boats-db odoo.modules.loading: loading boat_masterdata/views/boat_region_views.xml 
+2025-11-09 07:18:39,322 28 INFO odoo-boats-db odoo.modules.loading: loading boat_masterdata/views/boat_category_views.xml 
+2025-11-09 07:18:39,357 28 INFO odoo-boats-db odoo.modules.loading: loading boat_masterdata/views/boat_option_views.xml 
+2025-11-09 07:18:39,428 28 INFO odoo-boats-db odoo.modules.loading: Module boat_masterdata loaded in 0.43s, 159 queries (+159 other) 
+2025-11-09 07:18:39,465 28 INFO odoo-boats-db odoo.modules.loading: Loading module boat_core (10/66) 
+2025-11-09 07:18:39,561 28 INFO odoo-boats-db odoo.modules.registry: module boat_core: creating or updating database tables 
+2025-11-09 07:18:39,635 28 INFO odoo-boats-db odoo.modules.loading: loading boat_core/security/ir.model.access.csv 
+2025-11-09 07:18:39,651 28 INFO odoo-boats-db odoo.modules.loading: loading boat_core/views/boat_boat_views.xml 
+2025-11-09 07:18:39,729 28 INFO odoo-boats-db odoo.modules.loading: Module boat_core loaded in 0.26s, 106 queries (+106 other) 
+2025-11-09 07:18:40,133 28 INFO odoo-boats-db odoo.modules.loading: Loading module boat_booking (44/66) 
+2025-11-09 07:18:40,400 28 INFO odoo-boats-db odoo.modules.registry: module boat_booking: creating or updating database tables 
+2025-11-09 07:18:40,454 28 INFO odoo-boats-db odoo.modules.loading: loading boat_booking/security/ir.model.access.csv 
+2025-11-09 07:18:40,498 28 INFO odoo-boats-db odoo.modules.loading: Module boat_booking loaded in 0.36s, 48 queries (+48 other) 
+2025-11-09 07:18:40,591 28 INFO odoo-boats-db odoo.modules.loading: Loading module boat_guest_portal (51/66) 
+2025-11-09 07:18:40,872 28 INFO odoo-boats-db odoo.modules.loading: loading boat_guest_portal/views/templates.xml 
+2025-11-09 07:18:40,947 28 WARNING odoo-boats-db odoo.modules.loading: Transient module states were reset 
+2025-11-09 07:18:40,950 28 ERROR odoo-boats-db odoo.modules.registry: Failed to load registry 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 635, in convert_file
+    convert_xml_import(env, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 701, in convert_xml_import
+    obj.parse(doc.getroot())
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 621, in parse
+    self._tag_root(de)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 575, in _tag_root
+    raise ParseError(msg) from None  # Restart with "--log-handler odoo.tools.convert:DEBUG" for complete traceback
+odoo.tools.convert.ParseError: while parsing None:2
+Error while parsing or validating view:
+
+Element '<t name="Book Boat" t-name="boat_guest_portal.book_form">' cannot be located in parent view
+
+View error context:
+{'file': '/mnt/extra-addons/custom/boat_guest_portal/views/templates.xml',
+ 'line': 2,
+ 'name': 'Book Boat',
+ 'view': ir.ui.view(2804,),
+ 'view.model': False,
+ 'view.parent': ir.ui.view(1918,),
+ 'xmlid': 'book_form'}
+
+2025-11-09 07:18:40,957 28 CRITICAL odoo-boats-db odoo.service.server: Failed to initialize database `odoo-boats-db`. 
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/odoo/service/server.py", line 1369, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module)
+  File "<decorator-gen-16>", line 2, in new
+  File "/usr/lib/python3/dist-packages/odoo/tools/func.py", line 87, in locked
+    return func(inst, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/odoo/modules/registry.py", line 110, in new
+    odoo.modules.load_modules(registry, force_demo, status, update_module)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 481, in load_modules
+    processed_modules += load_marked_modules(env, graph,
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 366, in load_marked_modules
+    loaded, processed = load_module_graph(
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 229, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/usr/lib/python3/dist-packages/odoo/modules/loading.py", line 73, in load_data
+    tools.convert_file(env, package.name, filename, idref, mode, noupdate, kind)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 635, in convert_file
+    convert_xml_import(env, module, fp, idref, mode, noupdate)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 701, in convert_xml_import
+    obj.parse(doc.getroot())
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 621, in parse
+    self._tag_root(de)
+  File "/usr/lib/python3/dist-packages/odoo/tools/convert.py", line 575, in _tag_root
+    raise ParseError(msg) from None  # Restart with "--log-handler odoo.tools.convert:DEBUG" for complete traceback
+odoo.tools.convert.ParseError: while parsing None:2
+Error while parsing or validating view:
+
+Element '<t name="Book Boat" t-name="boat_guest_portal.book_form">' cannot be located in parent view
+
+View error context:
+{'file': '/mnt/extra-addons/custom/boat_guest_portal/views/templates.xml',
+ 'line': 2,
+ 'name': 'Book Boat',
+ 'view': ir.ui.view(2804,),
+ 'view.model': False,
+ 'view.parent': ir.ui.view(1918,),
+ 'xmlid': 'book_form'}
+
+2025-11-09 07:18:40,960 28 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 07:18:40,960 28 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 07:18:40,961 28 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  
+2025-11-09 07:25:15,698 321 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 07:25:15,698 321 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 07:25:15,698 321 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 07:25:15,698 321 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 07:25:15,785 321 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 07:25:15,983 321 INFO ? odoo.service.server: Initiating shutdown 
+2025-11-09 07:25:15,983 321 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 07:25:15,997 321 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 07:25:16,001 321 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2025-11-09 07:25:16,017 321 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 07:25:17,009 321 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 0.99s, 0 queries (+0 extra) 
+2025-11-09 07:25:17,195 321 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 07:25:17,202 321 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 1.218s 
+2025-11-09 07:25:24,400 321 WARNING odoo-boats-db py.warnings: /usr/lib/python3/dist-packages/odoo/models.py:1853: DeprecationWarning: Deprecated model.clear_cache(), use registry.clear_cache() instead
+  File "/usr/bin/odoo", line 8, in <module>
+    odoo.cli.main()
+  File "/usr/lib/python3/dist-packages/odoo/cli/command.py", line 67, in main
+    o.run(args)
+  File "/usr/lib/python3/dist-packages/odoo/cli/shell.py", line 129, in run
+    self.shell(config['db_name'])
+  File "/usr/lib/python3/dist-packages/odoo/cli/shell.py", line 122, in shell
+    self.console(local_vars)
+  File "/usr/lib/python3/dist-packages/odoo/cli/shell.py", line 82, in console
+    return getattr(self, shell)(local_vars)
+  File "/usr/lib/python3/dist-packages/odoo/cli/shell.py", line 102, in python
+    Console(locals=local_vars).interact()
+  File "/usr/lib/python3.10/code.py", line 232, in interact
+    more = self.push(line)
+  File "/usr/lib/python3.10/code.py", line 258, in push
+    more = self.runsource(source, self.filename)
+  File "/usr/lib/python3.10/code.py", line 74, in runsource
+    self.runcode(code)
+  File "/usr/lib/python3.10/code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 1853, in clear_caches
+    warnings.warn("Deprecated model.clear_cache(), use registry.clear_cache() instead", DeprecationWarning)
+ 
+2025-11-09 07:25:24,401 321 INFO odoo-boats-db odoo.modules.registry: Invalidating all model caches from clear_caches /usr/lib/python3/dist-packages/odoo/models.py:1854 
+2025-11-09 07:25:31,190 321 WARNING odoo-boats-db py.warnings: /usr/lib/python3/dist-packages/odoo/models.py:1853: DeprecationWarning: Deprecated model.clear_cache(), use registry.clear_cache() instead
+  File "/usr/bin/odoo", line 8, in <module>
+    odoo.cli.main()
+  File "/usr/lib/python3/dist-packages/odoo/cli/command.py", line 67, in main
+    o.run(args)
+  File "/usr/lib/python3/dist-packages/odoo/cli/shell.py", line 129, in run
+    self.shell(config['db_name'])
+  File "/usr/lib/python3/dist-packages/odoo/cli/shell.py", line 122, in shell
+    self.console(local_vars)
+  File "/usr/lib/python3/dist-packages/odoo/cli/shell.py", line 82, in console
+    return getattr(self, shell)(local_vars)
+  File "/usr/lib/python3/dist-packages/odoo/cli/shell.py", line 102, in python
+    Console(locals=local_vars).interact()
+  File "/usr/lib/python3.10/code.py", line 232, in interact
+    more = self.push(line)
+  File "/usr/lib/python3.10/code.py", line 258, in push
+    more = self.runsource(source, self.filename)
+  File "/usr/lib/python3.10/code.py", line 74, in runsource
+    self.runcode(code)
+  File "/usr/lib/python3.10/code.py", line 90, in runcode
+    exec(code, self.locals)
+  File "<console>", line 1, in <module>
+  File "/usr/lib/python3/dist-packages/odoo/models.py", line 1853, in clear_caches
+    warnings.warn("Deprecated model.clear_cache(), use registry.clear_cache() instead", DeprecationWarning)
+ 
+2025-11-09 07:25:31,190 321 INFO odoo-boats-db odoo.modules.registry: Invalidating all model caches from clear_caches /usr/lib/python3/dist-packages/odoo/models.py:1854 
+2025-11-09 07:33:22,760 339 INFO ? odoo: Odoo version 17.0-20251008 
+2025-11-09 07:33:22,762 339 INFO ? odoo: Using configuration file at /etc/odoo/odoo.conf 
+2025-11-09 07:33:22,762 339 INFO ? odoo: addons paths: ['/usr/lib/python3/dist-packages/odoo/addons', '/var/lib/odoo/.local/share/Odoo/addons/17.0', '/mnt/extra-addons/custom', '/mnt/extra-addons/third-party'] 
+2025-11-09 07:33:22,762 339 INFO ? odoo: database: odoo@odoo-boats-db:5432 
+2025-11-09 07:33:22,865 339 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2025-11-09 07:33:23,054 339 INFO odoo-boats-db odoo.modules.loading: loading 1 modules... 
+2025-11-09 07:33:23,060 339 INFO odoo-boats-db odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2025-11-09 07:33:23,083 339 INFO odoo-boats-db odoo.modules.loading: updating modules list 
+2025-11-09 07:33:23,087 339 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2025-11-09 07:33:25,365 339 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Boat Guest Portal'] to user __system__ #1 via n/a 
+2025-11-09 07:33:25,366 339 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Boat Guest Portal'] to user __system__ #1 via n/a 
+2025-11-09 07:33:28,059 339 INFO odoo-boats-db odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2025-11-09 07:33:28,112 339 INFO odoo-boats-db odoo.modules.loading: loading 66 modules... 
+2025-11-09 07:33:29,030 339 INFO odoo-boats-db odoo.modules.loading: Loading module boat_guest_portal (51/66) 
+2025-11-09 07:33:29,528 339 INFO odoo-boats-db odoo.modules.loading: loading boat_guest_portal/views/templates.xml 
+2025-11-09 07:33:29,605 339 INFO odoo-boats-db odoo.modules.loading: Module boat_guest_portal loaded in 0.57s, 37 queries (+37 other) 
+2025-11-09 07:33:29,707 339 INFO odoo-boats-db odoo.modules.loading: 66 modules loaded in 1.59s, 37 queries (+37 extra) 
+2025-11-09 07:33:30,724 339 INFO odoo-boats-db odoo.addons.base.models.ir_model: Deleting 2803@ir.ui.view (boat_guest_portal.boat_detail) 
+2025-11-09 07:33:30,859 339 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [1390262] 
+2025-11-09 07:33:30,859 339 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.ui.view records with IDs: [2803] 
+2025-11-09 07:33:30,864 339 INFO odoo-boats-db odoo.addons.base.models.ir_model: Deleting 2802@ir.ui.view (boat_guest_portal.boat_list) 
+2025-11-09 07:33:30,893 339 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.model.data records with IDs: [1390261] 
+2025-11-09 07:33:30,894 339 INFO odoo-boats-db odoo.models.unlink: User #1 deleted ir.ui.view records with IDs: [2802] 
+2025-11-09 07:33:31,606 339 WARNING odoo-boats-db odoo.modules.loading: invalid custom view(s) for model boat.boat: Error while validating view near:
+
+                <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                <separator/>
+                <filter string="Published on Website" name="website_published" domain="[('website_published', '=', True)]"/>
+                <separator/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+
+Unknown field "boat.boat.website_published" in domain of <filter name="website_published"> ([('website_published', '=', True)])) 
+2025-11-09 07:33:32,737 339 INFO odoo-boats-db odoo.modules.loading: Modules loaded. 
+2025-11-09 07:33:32,745 339 INFO odoo-boats-db odoo.modules.registry: Registry loaded in 9.718s 
+2025-11-09 07:33:32,746 339 INFO odoo-boats-db odoo.service.server: Initiating shutdown 
+2025-11-09 07:33:32,746 339 INFO odoo-boats-db odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2025-11-09 07:33:32,747 339 INFO odoo-boats-db odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 1 connections  

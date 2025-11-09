@@ -6,16 +6,13 @@
           <h2>Book: <t t-esc="boat.name"/></h2>
           <form action="/book/create" method="post" class="row g-3">
             <input type="hidden" name="boat_id" t-att-value="boat.id"/>
-            <div class="col-md-4">
-              <label class="form-label">Start</label>
+            <div class="col-md-4"><label class="form-label">Start</label>
               <input class="form-control" type="datetime-local" name="date_from" required="1"/>
             </div>
-            <div class="col-md-4">
-              <label class="form-label">End</label>
+            <div class="col-md-4"><label class="form-label">End</label>
               <input class="form-control" type="datetime-local" name="date_to" required="1"/>
             </div>
-            <div class="col-md-4">
-              <label class="form-label">Guests</label>
+            <div class="col-md-4"><label class="form-label">Guests</label>
               <input class="form-control" type="number" name="guest_count" value="2" min="1"/>
             </div>
             <div class="col-12">
