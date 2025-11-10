@@ -1,5 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
-    <menuitem id="menu_boat_backend_root" name="Boats" sequence="10"/>
-  </data>
+    <data>
+        <!-- Top-level “Boats” menu placed under Odoo’s Custom menu -->
+        <menuitem id="menu_boat_backend_root"
+                  name="Boats"
+                  parent="base.menu_custom"/>
+    </data>
 </odoo>
