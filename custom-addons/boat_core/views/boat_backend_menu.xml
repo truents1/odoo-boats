@@ -1,0 +1,9 @@
+<odoo>
+  <data noupdate="1">
+    <!-- Single backend root for all boat admin menus -->
+    <menuitem id="menu_boat_backend_root"
+              name="Boats"
+              sequence="10"
+              web_icon="boat_core,static/description/icon.png"/>
+  </data>
+</odoo>

@@ -1,31 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-  <record id="view_boat_moderation_kanban" model="ir.ui.view">
-    <field name="name">boat.boat.kanban.moderation</field>
-    <field name="model">boat.boat</field>
-    <field name="arch" type="xml">
-      <kanban default_group_by="state">
-        <field name="name" />
-        <templates>
-          <t t-name="kanban-box">
-            <div class="oe_kanban_global_click">
-              <strong>
-                <t t-esc="record.name.value" />
-              </strong>
-              <div>
-                <t t-esc="record.region_id.value" />
-              </div>
-            </div>
-          </t>
-        </templates>
-      </kanban>
-    </field>
-  </record>
-
   <data>
 
-    <!-- Action for Moderation list (adjust model if different) -->
+    <!-- Window action -->
     <record id="action_boat_moderation" model="ir.actions.act_window">
       <field name="name">Moderation</field>
       <field name="res_model">boat.moderation</field>
@@ -33,12 +10,46 @@
       <field name="target">current</field>
     </record>
 
-    <!-- Menu under Boats root -->
-    <menuitem id="menu_boat_moderation"
+    <!-- Menus: attach under boat_core.menu_boat_backend_root -->
+    <menuitem id="menu_boat_moderation_root"
       name="Moderation"
       parent="boat_core.menu_boat_backend_root"
-      action="action_boat_moderation" />
+      sequence="40" />
+
+    <menuitem id="menu_boat_moderation"
+      name="Submissions"
+      parent="menu_boat_moderation_root"
+      action="action_boat_moderation"
+      sequence="10" />
+
+    <!-- Minimal views so the action can open -->
+    <record id="view_boat_moderation_tree" model="ir.ui.view">
+      <field name="name">boat.moderation.tree</field>
+      <field name="model">boat.moderation</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="state" />
+          <field name="create_date" />
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_boat_moderation_form" model="ir.ui.view">
+      <field name="name">boat.moderation.form</field>
+      <field name="model">boat.moderation</field>
+      <field name="arch" type="xml">
+        <form string="Moderation">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="state" />
+              <!-- add other fields from your model -->
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
 
   </data>
-
 </odoo>
