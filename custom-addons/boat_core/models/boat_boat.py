@@ -9,7 +9,7 @@ class Boat(models.Model):
     _order = "create_date desc"
     _inherit = ["image.mixin"]
 
-
+    website_published = fields.Boolean(string='Published on Website')
     owner_partner_id = fields.Many2one('res.partner', required=True, index=True)
     moderation_state = fields.Selection([
         ('draft','Draft'),('submitted','Submitted'),

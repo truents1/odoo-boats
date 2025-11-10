@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
 
     <!-- Window action -->
     <record id="action_boat_moderation" model="ir.actions.act_window">
@@ -51,5 +50,4 @@
       </field>
     </record>
 
-  </data>
 </odoo>
