@@ -1,0 +1,5 @@
+<odoo>
+  <data>
+    <menuitem id="menu_boat_backend_root" name="Boats" sequence="10"/>
+  </data>
+</odoo>
