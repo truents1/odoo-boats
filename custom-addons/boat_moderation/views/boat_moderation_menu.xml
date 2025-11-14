@@ -1,0 +1,8 @@
+<odoo>
+  <menuitem id="menu_boat_moderation_root" name="Boats" sequence="10"/>
+  <menuitem id="menu_boat_moderation"
+            name="Moderation"
+            parent="menu_boat_moderation_root"
+            action="action_boat_moderation"
+            sequence="20"/>
+</odoo>

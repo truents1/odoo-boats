@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_boat_moderation_user,boat.moderation user,model_boat_moderation,base.group_user,1,1,1,1
