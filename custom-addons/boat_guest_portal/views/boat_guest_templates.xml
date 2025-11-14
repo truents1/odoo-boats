@@ -1,9 +1,11 @@
 <odoo>
-  <template id="boat_list" name="Boat List">
+  <template id="boat_list" name="Boat List" page="True">
     <t t-call="website.layout">
-      <div class="container py-4">
+      <div class="container my-4">
         <h1>Boats</h1>
-        <!-- listing markup -->
+        <t t-foreach="boats" t-as="b">
+          <div t-esc="b.name"/>
+        </t>
       </div>
     </t>
   </template>
