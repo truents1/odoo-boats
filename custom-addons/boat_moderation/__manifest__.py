@@ -5,11 +5,10 @@
   'license': 'LGPL-3',
   'author': 'Your Company',
   'website': 'https://example.com',
-  'depends': ['base', 'boat_core'],
+  'depends': ['base'],
      'data': [
         'security/ir.model.access.csv',
         'views/boat_moderation_views.xml',
-        'views/boat_moderation_menu.xml',
     ],
   'assets': {
     'web.assets_frontend': [],

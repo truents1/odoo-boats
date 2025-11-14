@@ -29,6 +29,9 @@
     <field name="name">Moderation</field>
     <field name="res_model">boat.moderation</field>
     <field name="view_mode">tree,form</field>
-    <field name="target">current</field>
   </record>
+
+  <menuitem id="menu_boat_root" name="Boats"/>
+  <menuitem id="menu_boat_moderation" name="Moderation"
+            parent="menu_boat_root" action="action_boat_moderation"/>
 </odoo>
