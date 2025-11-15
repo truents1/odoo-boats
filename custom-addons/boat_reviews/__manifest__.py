@@ -1,12 +1,12 @@
 {
-  "name": "Boat Owner Portal",
-  "summary": "Website portal for owners",
+  "name": "Boat Reviews",
+  "summary": "Ratings and reviews",
   "version": "17.0.1.0",
   "license": "LGPL-3",
   "author": "Your Company",
   "website": "https://example.com",
-  "depends": ["website", "auth_signup", "boat_core", "boat_masterdata"],
-  "data": ["views/templates.xml"],
+  "depends": ["boat_core", "boat_booking"],
+  "data": ["security/ir.model.access.csv"],
   "assets": {
     "web.assets_frontend": [],
     "web.assets_backend": []
