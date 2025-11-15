@@ -7,7 +7,14 @@ class BoatBooking(models.Model):
     _order = "create_date desc"
 
     boat_id = fields.Many2one('boat.boat', required=True, index=True)
-    owner_id = fields.Many2one(related='boat_id.owner_id', store=True)
+    owner_id = fields.Many2one(
+        'res.partner',
+        string='Owner',
+        related='boat_id.owner_id',
+        store=True,
+        readonly=True,
+        index=True,
+    )
     guest_id = fields.Many2one('res.users', required=True, index=True)
     region_id = fields.Many2one(related='boat_id.region_id', store=True)
 

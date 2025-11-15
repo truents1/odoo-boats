@@ -6,6 +6,13 @@ class BoatBoat(models.Model):
     _description = 'Boat'
 
     name = fields.Char(required=True)  # Boat Name
+    owner_id = fields.Many2one(
+        'res.partner',
+        string='Owner',
+        required=True,
+        index=True,
+        help='Boat owner (company or individual partner).',
+    )
     brand_name = fields.Char()  # Business/Brand Name
     registration_no = fields.Char()
     category_id = fields.Many2one('boat.category', string='Category', ondelete='restrict')

@@ -1,169 +1,198 @@
 <odoo>
-  <template id="boat_form" name="Boat Form">
-    <t t-call="website.layout">
-      <main id="wrap" class="oe_structure">
-        <section class="container my-4">
-          <h1 t-esc="page_title"/>
-          <form action="/boats/submit" method="post" enctype="multipart/form-data" class="o_website_form">
-            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+  <data>
 
-            <!-- Row 1 -->
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label">Boat Name *</label>
-                <input class="form-control" type="text" name="name" required/>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label">Business/Brand Name</label>
-                <input class="form-control" type="text" name="brand_name"/>
-              </div>
-            </div>
+    <template id="boat_form" name="Boat Form">
+      <t t-call="website.layout">
+        <main id="wrap" class="oe_structure">
+          <section class="container my-4">
+            <h1 t-esc="page_title" />
+            <form action="/boats/submit" method="post" enctype="multipart/form-data"
+              class="o_website_form">
+              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
 
-            <!-- Row 2 -->
-            <div class="row g-3 mt-2">
-              <div class="col-md-6">
-                <label class="form-label">Registration Number</label>
-                <input class="form-control" type="text" name="registration_no"/>
+              <!-- Row 1 -->
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Boat Name *</label>
+                  <input class="form-control" type="text" name="name" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Business/Brand Name</label>
+                  <input class="form-control" type="text" name="brand_name" />
+                </div>
               </div>
-              <div class="col-md-6">
-                <label class="form-label">Category</label>
-                <select class="form-select" name="category_id">
-                  <option value="">-- Select --</option>
-                  <t t-foreach="categories" t-as="c">
-                    <option t-att-value="c.id" t-esc="c.name"/>
-                  </t>
-                </select>
-              </div>
-            </div>
 
-            <!-- Row 3 -->
-            <div class="row g-3 mt-2">
-              <div class="col-md-6">
-                <label class="form-label">Boat Build Type</label>
-                <select class="form-select" name="build_type_id">
-                  <option value="">-- Select --</option>
-                  <t t-foreach="build_types" t-as="b">
-                    <option t-att-value="b.id" t-esc="b.name"/>
-                  </t>
-                </select>
+              <!-- Row 2 -->
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <label class="form-label">Registration Number</label>
+                  <input class="form-control" type="text" name="registration_no" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Category</label>
+                  <select class="form-select" name="category_id">
+                    <option value="">-- Select --</option>
+                    <t t-foreach="categories" t-as="c">
+                      <option t-att-value="c.id" t-esc="c.name" />
+                    </t>
+                  </select>
+                </div>
               </div>
-              <div class="col-md-3">
-                <label class="form-label">Year Built</label>
-                <input class="form-control" type="number" name="year_built" min="1900" max="2100"/>
-              </div>
-              <div class="col-md-3">
-                <label class="form-label">Year Renovated</label>
-                <input class="form-control" type="number" name="year_renovated" min="1900" max="2100"/>
-              </div>
-            </div>
 
-            <!-- Row 4 -->
-            <div class="row g-3 mt-2">
-              <div class="col-md-3">
-                <label class="form-label">Number of Decks</label>
-                <input class="form-control" type="number" name="decks" min="0"/>
+              <!-- Row 3 -->
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <label class="form-label">Boat Build Type</label>
+                  <select class="form-select" name="build_type_id">
+                    <option value="">-- Select --</option>
+                    <t t-foreach="build_types" t-as="b">
+                      <option t-att-value="b.id" t-esc="b.name" />
+                    </t>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Year Built</label>
+                  <input class="form-control" type="number" name="year_built" min="1900" max="2100" />
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Year Renovated</label>
+                  <input class="form-control" type="number" name="year_renovated" min="1900"
+                    max="2100" />
+                </div>
               </div>
-              <div class="col-md-3">
-                <label class="form-label">Guest Capacity</label>
-                <input class="form-control" type="number" name="guest_capacity" min="0" required/>
-              </div>
-              <div class="col-md-3">
-                <label class="form-label">Bedrooms</label>
-                <input class="form-control" type="number" name="bedrooms" min="0"/>
-              </div>
-              <div class="col-md-3">
-                <label class="form-label">Bathrooms</label>
-                <input class="form-control" type="number" name="bathrooms" min="0"/>
-              </div>
-            </div>
 
-            <!-- Row 5 -->
-            <div class="row g-3 mt-2">
-              <div class="col-md-3">
-                <label class="form-label">Onboat Staff</label>
-                <input class="form-control" type="number" name="onboat_staff" min="0"/>
+              <!-- Row 4 -->
+              <div class="row g-3 mt-2">
+                <div class="col-md-3">
+                  <label class="form-label">Number of Decks</label>
+                  <input class="form-control" type="number" name="decks" min="0" />
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Guest Capacity</label>
+                  <input class="form-control" type="number" name="guest_capacity" min="0" required />
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Bedrooms</label>
+                  <input class="form-control" type="number" name="bedrooms" min="0" />
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Bathrooms</label>
+                  <input class="form-control" type="number" name="bathrooms" min="0" />
+                </div>
               </div>
-              <div class="col-md-9">
-                <label class="form-label">Active in Service</label><br/>
-                <input class="form-check-input" type="checkbox" name="active_service"/>
+
+              <!-- Row 5 -->
+              <div class="row g-3 mt-2">
+                <div class="col-md-3">
+                  <label class="form-label">Onboat Staff</label>
+                  <input class="form-control" type="number" name="onboat_staff" min="0" />
+                </div>
+                <div class="col-md-9">
+                  <label class="form-label">Active in Service</label>
+                  <br />
+                  <input class="form-check-input" type="checkbox" name="active_service" />
+                </div>
               </div>
-            </div>
 
-            <!-- Description -->
-            <div class="mt-3">
-              <label class="form-label">Description</label>
-              <textarea class="form-control o_website_form_editor" name="description_html" rows="6"></textarea>
-            </div>
-
-            <!-- Media -->
-            <div class="row g-3 mt-3">
-              <div class="col-md-8">
-                <label class="form-label">Images (multiple)</label>
-                <input class="form-control" type="file" name="images" accept="image/*" multiple id="boat_images_input"/>
-                <small class="text-muted">Upload multiple images. Click a star to mark featured.</small>
-                <div id="image_preview" class="d-flex flex-wrap gap-2 mt-2"></div>
-                <input type="hidden" name="featured_image_index" id="featured_image_index" value=""/>
+              <!-- Description -->
+              <div class="mt-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control o_website_form_editor" name="description_html"
+                  rows="6"></textarea>
               </div>
-              <div class="col-md-4">
-                <label class="form-label">Video URL</label>
-                <input class="form-control" type="url" name="video_url" placeholder="https://..."/>
-                <label class="form-label mt-2">Website URL</label>
-                <input class="form-control" type="url" name="website_url" placeholder="https://..."/>
+
+              <!-- Media -->
+              <div class="row g-3 mt-3">
+                <div class="col-md-8">
+                  <label class="form-label">Images (multiple)</label>
+                  <input class="form-control" type="file" name="images" accept="image/*" multiple
+                    id="boat_images_input" />
+                  <small class="text-muted">Upload multiple images. Click a star to mark featured.</small>
+                  <div id="image_preview" class="d-flex flex-wrap gap-2 mt-2"></div>
+                  <input type="hidden" name="featured_image_index" id="featured_image_index"
+                    value="" />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Video URL</label>
+                  <input class="form-control" type="url" name="video_url" placeholder="https://..." />
+                  <label class="form-label mt-2">Website URL</label>
+                  <input class="form-control" type="url" name="website_url"
+                    placeholder="https://..." />
+                </div>
               </div>
-            </div>
 
-            <div class="mt-4">
-              <button type="submit" class="btn btn-success">Save Boat</button>
-              <a href="/boats" class="btn btn-link">Cancel</a>
-            </div>
-          </form>
-        </section>
-      </main>
-    </t>
-  </template>
+              <div class="mt-4">
+                <button type="submit" class="btn btn-success">Save Boat</button>
+                <a href="/boats" class="btn btn-link">Cancel</a>
+              </div>
+            </form>
+          </section>
+        </main>
+      </t>
+    </template>
 
-  <!-- Lightweight assets for preview/featured selection -->
-  <template id="assets_frontend" inherit_id="website.assets_frontend" name="Boat Form Assets">
-    <xpath expr="." position="inside">
-      <script type="text/javascript">
-        (function () {
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Boat Form Assets">
+      <xpath expr="." position="inside">
+        <script type="text/javascript">
+          (function () {
           function renderPreview(input, container, featuredInput) {
-            container.innerHTML = '';
-            const files = Array.from(input.files || []);
-            files.forEach((f, idx) => {
-              const card = document.createElement('div');
-              card.className = 'p-2 border rounded';
-              const img = document.createElement('img');
-              img.style.maxWidth = '160px';
-              img.style.maxHeight = '120px';
-              img.className = 'd-block';
-              const star = document.createElement('button');
-              star.type = 'button';
-              star.className = 'btn btn-sm mt-1';
-              star.textContent = '☆ Featured';
-              star.addEventListener('click', function () {
-                featuredInput.value = idx;
-                [...container.querySelectorAll('button')].forEach(b => b.textContent = '☆ Featured');
-                star.textContent = '★ Featured';
-              });
-              const reader = new FileReader();
-              reader.onload = e => img.src = e.target.result;
-              reader.readAsDataURL(f);
-              card.appendChild(img);
-              card.appendChild(star);
-              container.appendChild(card);
-            });
+          container.innerHTML = '';
+          const files = Array.from(input.files || []);
+          files.forEach((f, idx) => {
+          const card = document.createElement('div');
+          card.className = 'p-2 border rounded';
+          const img = document.createElement('img');
+          img.style.maxWidth = '160px';
+          img.style.maxHeight = '120px';
+          img.className = 'd-block';
+          const star = document.createElement('button');
+          star.type = 'button';
+          star.className = 'btn btn-sm mt-1';
+          star.textContent = '☆ Featured';
+          star.addEventListener('click', function () {
+          featuredInput.value = idx;
+          [...container.querySelectorAll('button')].forEach(b => b.textContent = '☆ Featured');
+          star.textContent = '★ Featured';
+          });
+          const reader = new FileReader();
+          reader.onload = e => img.src = e.target.result;
+          reader.readAsDataURL(f);
+          card.appendChild(img);
+          card.appendChild(star);
+          container.appendChild(card);
+          });
           }
           document.addEventListener('DOMContentLoaded', function () {
-            var input = document.getElementById('boat_images_input');
-            var cont = document.getElementById('image_preview');
-            var feat = document.getElementById('featured_image_index');
-            if (input && cont && feat) {
-              input.addEventListener('change', function () { renderPreview(input, cont, feat); });
-            }
+          var input = document.getElementById('boat_images_input');
+          var cont = document.getElementById('image_preview');
+          var feat = document.getElementById('featured_image_index');
+          if (input && cont && feat) {
+          input.addEventListener('change', function () { renderPreview(input, cont, feat); });
+          }
           });
-        })();
-      </script>
-    </xpath>
-  </template>
+          })();
+        </script>
+      </xpath>
+    </template>
+
+    <template id="boat_list" name="Boat List" inherit_id="website.layout">
+      <xpath expr="//main" position="replace">
+        <main id="wrap">
+          <section class="container py-5">
+            <h1 class="mb-3">Boats</h1>
+            <t t-foreach="boats" t-as="b">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h3 class="h5" t-esc="b.name" />
+                  <p t-esc="b.description_short" />
+                </div>
+              </div>
+            </t>
+          </section>
+        </main>
+      </xpath>
+    </template>
+
+  </data>
+
 </odoo>

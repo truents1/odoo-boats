@@ -1,0 +1,108 @@
+<!-- custom/boat_owner_portal/views/owner_boat_form.xml -->
+<odoo>
+  <data>
+    <template id="owner_boat_form_page" name="Owner Boat Form" inherit_id="website.layout">
+      <xpath expr="//main" position="replace">
+        <main id="wrap">
+          <section class="container py-5">
+            <h1 class="mb-4">Add a New Boat</h1>
+            <form t-attf-action="/boats/new" method="post" enctype="multipart/form-data" class="o_website_form">
+              <div class="row g-3">
+                <!-- Boat Name -->
+                <div class="col-md-6">
+                  <label class="form-label">Boat Name</label>
+                  <input type="text" name="name" required="required" class="form-control"/>
+                </div>
+                <!-- Brand Name -->
+                <div class="col-md-6">
+                  <label class="form-label">Business/Brand Name</label>
+                  <input type="text" name="brand_name" class="form-control"/>
+                </div>
+                <!-- Registration Number -->
+                <div class="col-md-6">
+                  <label class="form-label">Registration Number</label>
+                  <input type="text" name="registration_no" class="form-control"/>
+                </div>
+                <!-- Category -->
+                <div class="col-md-6">
+                  <label class="form-label">Category</label>
+                  <select name="category_id" class="form-select" required="required">
+                    <option value="">-- Select --</option>
+                    <t t-foreach="categories" t-as="c">
+                      <option t-att-value="c.id" t-esc="c.name"/>
+                    </t>
+                  </select>
+                </div>
+                <!-- Year Built/Renovated -->
+                <div class="col-md-6">
+                  <label class="form-label">Year Built/Renovated</label>
+                  <input type="text" name="year_built" class="form-control"/>
+                </div>
+                <!-- Build Type -->
+                <div class="col-md-6">
+                  <label class="form-label">Boat Build Type</label>
+                  <select name="build_type_id" class="form-select">
+                    <option value="">-- Select --</option>
+                    <t t-foreach="build_types" t-as="bt">
+                      <option t-att-value="bt.id" t-esc="bt.name"/>
+                    </t>
+                  </select>
+                </div>
+                <!-- Numbers -->
+                <div class="col-md-3">
+                  <label class="form-label">Number of Decks</label>
+                  <input type="number" min="0" name="decks" class="form-control"/>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Guest Capacity</label>
+                  <input type="number" min="0" name="guest_capacity" class="form-control"/>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Bedrooms</label>
+                  <input type="number" min="0" name="bedrooms" class="form-control"/>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Bathrooms</label>
+                  <input type="number" min="0" name="bathrooms" class="form-control"/>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Onboat Staff</label>
+                  <input type="number" min="0" name="onboat_staff" class="form-control"/>
+                </div>
+                <!-- Description -->
+                <div class="col-12">
+                  <label class="form-label">Description</label>
+                  <textarea name="description" class="form-control o_wysiwyg_loader" rows="6"></textarea>
+                </div>
+                <!-- URLs -->
+                <div class="col-md-6">
+                  <label class="form-label">Video URL</label>
+                  <input type="url" name="video_url" class="form-control"/>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Website URL</label>
+                  <input type="url" name="website_url" class="form-control"/>
+                </div>
+                <!-- Active -->
+                <div class="col-md-6 form-check mt-2">
+                  <input class="form-check-input" type="checkbox" name="active" id="activeCheck" checked="checked"/>
+                  <label class="form-check-label" for="activeCheck">Active in Service</label>
+                </div>
+                <!-- Images (multi) -->
+                <div class="col-12">
+                  <label class="form-label">Images</label>
+                  <input type="file" name="images" multiple="multiple" class="form-control"/>
+                  <small class="text-muted d-block mt-1">Upload multiple images; you can select featured after submission.</small>
+                </div>
+
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-primary">Save Boat</button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </main>
+      </xpath>
+    </template>
+  </data>
+</odoo>
