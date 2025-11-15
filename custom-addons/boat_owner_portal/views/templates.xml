@@ -1,6 +1,8 @@
 <odoo>
-  <template id="owner_boats" name="Owner Boats" inherit_id="website.layout">
-    <xpath expr="//main" position="inside">
+  <template id="owner_boats" name="Owner Boats">
+    <!-- <xpath expr="//main" position="inside"> -->
+  <t t-call="website.layout">
+    <main id="wrap" class="oe_structure">
       <section class="container mt-4">
         <h2>Your Boats</h2>
         <a class="btn btn-primary my-2" href="/owner/boats/new">New Boat</a>
@@ -21,11 +23,15 @@
           </t>
         </div>
       </section>
-    </xpath>
+    <!-- </xpath> -->
+    </main>
+    </t>  
   </template>
 
-  <template id="owner_boat_form" name="Owner Boat Form" inherit_id="website.layout">
-    <xpath expr="//main" position="inside">
+  <template id="owner_boat_form" name="Owner Boat Form" >
+    <!-- <xpath expr="//main" position="inside"> -->
+       <t t-call="website.layout">
+    <main id="wrap" class="oe_structure">
       <section class="container mt-4">
         <h2>Submit Boat</h2>
         <form id="boatForm">
@@ -83,6 +89,8 @@
           }});
         </script>
       </section>
-    </xpath>
+    </main>
+    </t>  
+    <!-- </xpath> -->
   </template>
 </odoo>

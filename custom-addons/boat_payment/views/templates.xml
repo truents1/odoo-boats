@@ -1,12 +1,18 @@
 <odoo>
-  <template id="payment_placeholder" name="Payment Placeholder" inherit_id="website.layout">
-    <xpath expr="//main" position="inside">
-      <section class="container mt-4">
-        <h2>Checkout</h2>
-        <p>Booking: <t t-esc="booking.id"/></p>
-        <p>Advance to pay: <t t-esc="booking.advance_amount"/></p>
-        <p>This is a placeholder page. Integrate with your payment provider.</p>
-      </section>
-    </xpath>
+  <template id="payment_placeholder" name="Payment Placeholder">
+    <t t-call="website.layout">
+      <main id="wrap" class="oe_structure">
+        <section class="container mt-4">
+          <h2>Checkout</h2>
+          <t t-if="booking">
+            <p>Booking: <t t-esc="booking.id"/></p>
+            <p>Advance to pay: <t t-esc="booking.advance_amount"/></p>
+          </t>
+          <t t-if="not booking">
+            <div class="alert alert-danger">No booking in context.</div>
+          </t>
+        </section>
+      </main>
+    </t>
   </template>
 </odoo>

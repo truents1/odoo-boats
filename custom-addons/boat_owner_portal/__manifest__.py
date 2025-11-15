@@ -6,7 +6,10 @@
   "author": "Your Company",
   "website": "https://example.com",
   "depends": ["website", "auth_signup", "boat_core", "boat_masterdata"],
-  "data": ["views/templates.xml"],
+  "data": [
+      "views/templates.xml", 
+      "views/boat_owner_portal_views.xml"
+  ],
   "assets": {
     "web.assets_frontend": [],
     "web.assets_backend": []

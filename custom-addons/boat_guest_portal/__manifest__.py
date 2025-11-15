@@ -7,7 +7,7 @@
   'website': 'https://example.com',
   'depends': ['website', 'portal', 'boat_core', 'boat_masterdata'],
   'data': [
-        'views/owner_portal_templates.xml',
+        'views/boat_guest_templates.xml', 'views/owner_portal_templates.xml',
     ],
   'assets': {
     'web.assets_frontend': [],
